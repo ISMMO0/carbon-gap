@@ -8,3 +8,7 @@ __pycache__/
 node_modules/
 dist/
 data/raw/
+video/frames/
+video/vo/
+video/*.wav
+video/*.mp4

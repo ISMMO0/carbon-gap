@@ -586,7 +586,7 @@ async function openReport(n){
   el.innerHTML=`<div class="report-tools"><span class="t">Report · ${disp}</span><button class="btn ghost" id="rclose"><i data-lucide="x" class="icon"></i>Close</button></div><ol class="steps">${steps.map(s=>`<li><span class="dot"></span>${s}</li>`).join('')}</ol>`;
   icons(); $('#rclose').onclick=closeReport;
   const lis=el.querySelectorAll('.steps li');
-  for(let i=0;i<lis.length;i++){lis[i].classList.add('now');await sleep(420);lis[i].classList.replace('now','done')}
+  for(let i=0;i<lis.length;i++){lis[i].classList.add('now');await sleep(window.REPORT_STEP_MS||420);lis[i].classList.replace('now','done')}
   if(!el.classList.contains('open')) return;
   const sites=sitesOf(rec).map(s=>({s,v:siteVals(s)})).sort((x,y)=>y.v.gap-x.v.gap);
   const secs=rec.sectors.map(s=>({...s,d:s.declared*YEAR_F[state.year],o:s.observed*YEAR_F[state.year]})).sort((x,y)=>(y.o-y.d)-(x.o-x.d));
