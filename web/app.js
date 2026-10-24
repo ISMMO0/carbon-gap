@@ -189,7 +189,7 @@ function renderWorld() {
   const th = (key, label) => `<th><button data-sort="${key}" ${k === key ? `aria-sort="${dir > 0 ? 'ascending' : 'descending'}"` : ''}>${label}</button></th>`;
   $('#sheet').innerHTML = `
     <div class="sheet-head"><div class="crumb">Latest UN inventory year per country</div><h2>World</h2>
-      <div class="meta"><span>${dec.length} countries with a UN inventory since 2015</span><span>Carbon price €${META.carbon_price}/t (assumption)</span></div></div>
+      <div class="meta"><span>${dec.length} countries with a UN inventory since 2015, ${dec.filter(c => c.agent).length} found by research agents</span><span>Carbon price €${META.carbon_price}/t (assumption)</span></div></div>
     <div class="block"><h3>Declared vs observed, all compared countries</h3>${strata(D, O, Math.max(D, O))}
       <dl class="figs"><div><dt>Declared</dt><dd>${fmtMt(D / 1000)} <small>Gt</small></dd></div><div><dt>Observed</dt><dd>${fmtMt(O / 1000)} <small>Gt</small></dd></div>
       <div class="gap"><dt>Gap</dt><dd>${fmtPct((O - D) / D)}</dd></div><div class="gap"><dt>At €${META.carbon_price}/t</dt><dd>${fmtEur((O - D) * 1e6 * META.carbon_price)}</dd></div></dl></div>
@@ -217,34 +217,84 @@ function sitesBlock(c) {
 function renderCountry(iso) {
   const c = byIso.get(iso);
   const head = `<div class="sheet-head"><div class="crumb"><button id="back">World</button><span>/</span><span>${esc(c.name)}</span></div><h2>${esc(c.name)}</h2>
-    <div class="meta">${isDeclared(c) ? `<span>Inventory year ${c.year}</span><span>${esc(c.source)}</span>` : `<span>No UN inventory since 2015</span>`}</div></div>`;
+    <div class="meta">${isDeclared(c) ? `<span>Inventory year ${c.year}</span><span>${esc(c.agent ? 'Found by research agent · unverified' : c.source)}</span>` : `<span>No UN inventory since 2015 in our dataset</span>`}</div></div>`;
   let body;
   if (isDeclared(c)) {
-    const gmax = d3.max(Object.values(c.groups), g => Math.max(g.declared || 0, g.observed || 0)) || 1;
     body = `<div class="block"><h3>Declared vs observed, ${c.year}</h3>${strata(c.declared, c.observed, Math.max(c.declared, c.observed))}
       <dl class="figs"><div><dt>Declared</dt><dd>${fmtMt(c.declared)} <small>Mt</small></dd></div><div><dt>Observed</dt><dd>${fmtMt(c.observed)} <small>Mt</small></dd></div>
       <div class="gap"><dt>Gap</dt><dd>${fmtMt(c.gap)} <small>Mt · ${fmtPct(c.gap_pct)}</small></dd></div><div class="gap"><dt>At €${META.carbon_price}/t</dt><dd>${fmtEur(c.value_eur)}</dd></div></dl>
-      ${c.observed_latest ? `<p class="lede" style="margin-top:10px">Observed in ${c.observed_latest.year}: <b>${fmtMt(c.observed_latest.total)} Mt</b>.</p>` : ''}</div>
-    <div class="block"><h3>By inventory sector</h3>${Object.entries(c.groups).map(([k, g]) => g.declared == null ? '' :
-      `<div class="secrow"><span class="n">${esc(META.group_labels[k])}</span>${strata(g.declared, g.observed, gmax, {h: 7, labels: false, w: 220})}<span class="v ${g.observed >= g.declared ? 'pos' : 'neg'}">${fmtPct((g.observed - g.declared) / g.declared)}</span></div>`).join('')}</div>`;
+      ${c.observed_latest ? `<p class="lede" style="margin-top:10px">Observed in ${c.observed_latest.year}: <b>${fmtMt(c.observed_latest.total)} Mt</b>.</p>` : ''}
+      ${c.agent ? agentBox(c.agent) : ''}</div>
+    ${groupsBlock(c)}`;
   } else {
     body = `<div class="block"><h3>Observed, ${c.observed_latest?.year}</h3>
       <dl class="figs" style="grid-template-columns:1fr 1fr"><div><dt>Observed</dt><dd>${fmtMt(c.observed_latest?.total)} <small>Mt</small></dd></div><div><dt>Declared</dt><dd><small>No inventory since 2015</small></dd></div></dl>
-      <div class="note-box">This country has not reported a national inventory to the UN since 2015, so there is nothing recent to compare with.</div></div>`;
+      <div class="note-box">Our dataset has no UN inventory for this country since 2015. A research agent can search recent UN reports (Biennial Transparency Reports) for a newer declaration.
+        ${c.research?.status === 'not_found' ? `<br><br><b>Last search:</b> nothing usable found${c.research.notes ? '. ' + esc(c.research.notes) : ''}` : ''}</div>
+      <div id="research"><button class="btn ghost" id="dores" style="margin-top:10px"><i data-lucide="search" class="icon"></i>${c.research ? 'Search again' : 'Find its latest declaration'}</button></div></div>`;
   }
   $('#sheet').innerHTML = head + body + `
     <div class="block bars"><h3>Observed by sector</h3>${sectorBars(c.sectors)}</div>
     <div class="block"><h3>Largest observed sites</h3><div id="sites">${sitesBlock(c)}</div></div>
     <div class="block"><h3>Sources</h3><ul class="sources">
-      ${isDeclared(c) ? `<li><span>${esc(c.source)} inventory, via Climate Watch</span><span>${c.year}</span></li>` : ''}
+      ${isDeclared(c) ? (c.agent ? `<li><a href="${esc(c.agent.source_url)}" target="_blank" rel="noopener">${esc(c.agent.document)}</a><span>${c.year}</span></li>`
+        : `<li><span>${esc(c.source)} inventory, via Climate Watch</span><span>${c.year}</span></li>`) : ''}
       <li><span>Climate TRACE country estimates</span><span>${isDeclared(c) ? c.year : c.observed_latest?.year}</span></li>
       <li><span>Climate TRACE asset-level estimates (sites)</span><span>2024</span></li></ul>
       <p class="lede" style="margin-top:10px">A gap is a lead to investigate, not proof of misreporting.</p></div>
     <div class="actions"><button class="btn" id="mkreport"><i data-lucide="file-text" class="icon"></i>Generate report</button><button class="btn ghost" id="askwhy"><i data-lucide="message-square-text" class="icon"></i>Ask why</button></div>`;
   $('#back').onclick = () => clearSelection();
+  $('#dores')?.addEventListener('click', () => runResearch(iso));
   $('#mkreport').onclick = () => openReport(iso);
   $('#askwhy').onclick = () => ask(isDeclared(c) ? `Why is ${c.name}'s gap ${c.gap >= 0 ? 'positive' : 'negative'}?` : `What drives ${c.name}'s emissions?`);
   bindSheet(); icons();
+}
+function groupsBlock(c) {
+  const rows = Object.entries(c.groups).filter(([, g]) => g.declared != null);
+  if (!rows.length) return '';
+  const gmax = d3.max(rows, ([, g]) => Math.max(g.declared, g.observed)) || 1;
+  return `<div class="block"><h3>By inventory sector</h3>${rows.map(([k, g]) =>
+    `<div class="secrow"><span class="n">${esc(META.group_labels[k])}</span>${strata(g.declared, g.observed, gmax, {h: 7, labels: false, w: 220})}<span class="v ${g.observed >= g.declared ? 'pos' : 'neg'}">${fmtPct((g.observed - g.declared) / g.declared)}</span></div>`).join('')}</div>`;
+}
+function agentBox(a) {
+  return `<div class="note-box"><b>Declared figure found by a research agent</b> (confidence ${esc(a.confidence)}, not yet verified by a person).<br>
+    “${esc(a.quote)}”<br><a href="${esc(a.source_url)}" target="_blank" rel="noopener">${esc(a.source_title || a.document)} ↗</a></div>`;
+}
+async function reloadData() {
+  const api = await fetch('/api/countries').then(r => r.json());
+  META = api; byIso.clear(); byNum.clear();
+  for (const c of api.countries) { byIso.set(c.iso3, c); byNum.set(c.numeric, c); }
+  recolour(); renderSheet();
+}
+async function runResearch(iso) {
+  const box = $('#research'); if (!box) return;
+  box.innerHTML = '<ol class="steps" style="margin:12px 0 0;max-width:none"></ol>';
+  const list = box.querySelector('ol');
+  const step = t => { list.querySelector('.now')?.classList.replace('now', 'done'); list.insertAdjacentHTML('beforeend', `<li class="now"><span class="dot"></span>${esc(t)}</li>`); };
+  try {
+    await readSSE(await fetch(`/api/research/${iso}`, {method: 'POST'}), ev => {
+      if (ev.type === 'step') step(ev.text);
+      else if (ev.type === 'error') step(ev.message);
+      else if (ev.type === 'result') {
+        list.querySelector('.now')?.classList.replace('now', 'done');
+        if (ev.finding.status === 'found') { toast(`${byIso.get(iso).name}: declaration found`); reloadData().then(() => draw()); }
+        else step('Nothing usable found. Try again later.');
+      }
+    });
+  } catch { step('The research agent is unreachable.'); }
+}
+async function readSSE(res, onEvent) {
+  if (!res.ok || !res.body) throw new Error('http');
+  const reader = res.body.getReader(), dec = new TextDecoder(); let buf = '';
+  for (;;) {
+    const {value, done} = await reader.read(); if (done) break;
+    buf += dec.decode(value, {stream: true});
+    let i;
+    while ((i = buf.indexOf('\n\n')) >= 0) {
+      const line = buf.slice(0, i).replace(/^data: /, ''); buf = buf.slice(i + 2);
+      if (line.trim()) onEvent(JSON.parse(line));
+    }
+  }
 }
 function bindSheet() {
   $('#sheet').querySelectorAll('tr[data-c]').forEach(tr => tr.onclick = () => selectCountry(tr.dataset.c, {fly: true}));
@@ -353,7 +403,7 @@ const scrollLog = () => { log.scrollTop = log.scrollHeight; };
 function addMsg(cls, html) { const d = document.createElement('div'); d.className = 'msg ' + cls; d.innerHTML = html; log.appendChild(d); scrollLog(); return d; }
 function addTool(name, args) {
   const d = document.createElement('div'); d.className = 'tool';
-  d.innerHTML = `<i data-lucide="${name === 'web_search' ? 'search' : 'map-pin'}" class="icon"></i><code>${esc(name)}</code> ${esc(args)}`;
+  d.innerHTML = `<i data-lucide="${{web_search: 'globe', knowledge_base: 'book-open', research_declaration: 'file-search'}[name] || 'map-pin'}" class="icon"></i><code>${esc(name)}</code> ${esc(args)}`;
   log.appendChild(d); icons(); scrollLog();
 }
 async function runAction(a) {
@@ -369,6 +419,7 @@ async function runAction(a) {
       break;
     case 'set_metric': setMetric(a.metric); break;
     case 'open_report': openReport(a.iso3); break;
+    case 'refresh_data': await reloadData(); if (a.iso3) await selectCountry(a.iso3, {fly: true}); break;
   }
 }
 async function ask(q) {
@@ -382,29 +433,19 @@ async function ask(q) {
   try {
     const res = await fetch('/api/chat', {method: 'POST', headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({message: q, previous_response_id: lastResponseId, selected: state.selected ? byIso.get(state.selected).name : null})});
-    if (!res.ok || !res.body) throw new Error('http');
-    const reader = res.body.getReader(), dec = new TextDecoder(); let buf = '';
-    for (;;) {
-      const {value, done} = await reader.read(); if (done) break;
-      buf += dec.decode(value, {stream: true});
-      let i;
-      while ((i = buf.indexOf('\n\n')) >= 0) {
-        const line = buf.slice(0, i).replace(/^data: /, ''); buf = buf.slice(i + 2);
-        if (!line.trim()) continue;
-        const ev = JSON.parse(line);
-        if (ev.type === 'delta') {
-          thinking.remove(); if (!bubble) bubble = addMsg('ai', '');
-          text += ev.text; bubble.innerHTML = md(text); scrollLog();
-        } else if (ev.type === 'tool') { thinking.remove(); addTool(ev.name, ev.args); bubble = null; text = ''; }
-        else if (ev.type === 'action') runAction(ev);
-        else if (ev.type === 'sources' && ev.items.length) {
-          const d = document.createElement('div'); d.className = 'cites';
-          d.innerHTML = ev.items.slice(0, 4).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">↗ ${esc(s.title)}</a>`).join('');
-          log.appendChild(d); scrollLog();
-        } else if (ev.type === 'done') lastResponseId = ev.response_id;
-        else if (ev.type === 'error') { thinking.remove(); addMsg('err', esc(ev.message)); }
-      }
-    }
+    await readSSE(res, ev => {
+      if (ev.type === 'delta') {
+        thinking.remove(); if (!bubble) bubble = addMsg('ai', '');
+        text += ev.text; bubble.innerHTML = md(text); scrollLog();
+      } else if (ev.type === 'tool') { thinking.remove(); addTool(ev.name, ev.args); bubble = null; text = ''; }
+      else if (ev.type === 'action') runAction(ev);
+      else if (ev.type === 'sources' && ev.items.length) {
+        const d = document.createElement('div'); d.className = 'cites';
+        d.innerHTML = ev.items.slice(0, 4).map(x => `<a href="${esc(x.url)}" target="_blank" rel="noopener">↗ ${esc(x.title)}</a>`).join('');
+        log.appendChild(d); scrollLog();
+      } else if (ev.type === 'done') lastResponseId = ev.response_id;
+      else if (ev.type === 'error') { thinking.remove(); addMsg('err', esc(ev.message)); }
+    });
   } catch {
     thinking.remove(); addMsg('err', 'The analyst is unreachable. Check that the server is running, then try again.');
   } finally {

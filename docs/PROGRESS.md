@@ -20,7 +20,12 @@ backend/app/main.py           FastAPI routes + static hosting
 backend/app/data.py           declared vs observed data, site fetch (Climate TRACE, disk cache)
 backend/app/agent.py          analyst: Responses API, gpt-5.5, function calling + web_search, SSE events
 backend/app/report.py         dossiers: Structured Outputs + web_search; spoken briefing (gpt-4o-mini-tts)
+backend/app/research.py       research agents: Keenable search/fetch + gpt-5.5 Structured Outputs, quote-checked
+backend/app/store.py          findings in Postgres (DATABASE_URL, Aiven), local JSON fallback if unreachable
 backend/scripts/build_data.py builds backend/data/countries.json from the live APIs
+backend/scripts/research_batch.py / research_retry.py   run research agents in parallel
+backend/scripts/sync_knowledge.py   uploads knowledge/*.md to an OpenAI vector store (file_search)
+knowledge/carbon-gap-knowledge.md   reporting rules, carbon markets & taxes, national targets, how to read a gap
 backend/.env                  keys (git-ignored). Template: backend/.env.example
 video/                        motion film pipeline (director.js, record.py, audio.py)
 ```
@@ -58,6 +63,20 @@ Or open `mockup/index.html` directly in a browser.
 - Tested in the browser: map, country sheets, sites, chat (ranking, Poland sites, France vs Germany + web news), report, audio.
 - Known caveats: carbon price €72/t is an assumption; GWP versions differ (inventories AR4/AR5, Climate TRACE 100-yr);
   Climate TRACE methane estimates drive many large gaps.
+
+### Phase 2: research agents, knowledge base, Postgres ✅ (24 Oct night)
+- Knowledge base (knowledge/carbon-gap-knowledge.md) in an OpenAI vector store; the analyst uses file_search for
+  markets, laws, targets, methodology, and web_search for recent news.
+- Research agents fill countries with no UN inventory in Climate Watch: 2 Keenable searches → read 3 best pages →
+  gpt-5.5 extracts total excl. LULUCF with strict schema → the quote must be found verbatim in the cited source
+  (else rejected) → Climate TRACE fetched for the same year → saved. Run in parallel (asyncio, semaphore);
+  Keenable rate-limits bursts, so search retries with backoff and concurrency 3 is safe.
+- Results: 13 found (China 14,314 Mt 2021 BTR1, Indonesia, Mexico, South Africa, Saudi Arabia, Iraq, UAE, Algeria,
+  Thailand, Vietnam, Malaysia, Taiwan, Philippines), not found: Iran, Egypt, Nigeria, Qatar, Argentina.
+  All shown as "found by research agent · unverified" with quote + source link. 77 countries compared in total.
+- Live: "Find its latest declaration" button in country sheets (SSE steps), and the analyst tool research_declaration.
+- Postgres (Aiven) table `findings`, created on startup; /api/health shows which store is used.
+- TODO: human verification flow (verified flag exists), Algeria's source is a LinkedIn post (medium confidence).
 
 ## 5. Next
 

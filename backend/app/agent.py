@@ -2,6 +2,7 @@
 
 Data tools run on the server. Map tools are forwarded to the browser as
 `action` events (the map moves while the model keeps talking)."""
+import asyncio
 import json
 from collections.abc import Iterator
 
@@ -23,14 +24,20 @@ Rules:
   focus_site for a site. Do this early, before writing your answer.
 - A gap is a lead to investigate, never proof of fraud. Mention likely methodological causes when relevant
   (methane from fossil fuel operations, emission factors, sector coverage, reporting year, GWP version).
-- Use web_search only for recent context (news, policy, incidents), and cite it.
+- For carbon markets, taxes, laws, targets (NDCs, net zero), reporting rules and how to read a gap, search the Carbon Gap
+  knowledge base first (file_search). Use web_search for recent news or to confirm a fact that may have changed; cite it.
+- Some declared figures were found by Carbon Gap research agents in recent UN reports (BTRs). They are marked
+  "found by agent, unverified": say so when you use them.
 - Answer in the user's language, short: 2-5 sentences or a short list. No headings. Bold the key numbers.
 - Countries without a UN inventory since 2015 (e.g. China) only have observed emissions: say so.
 """
 
 COUNTRY = {"type": "string", "description": "Country name or ISO3 code"}
+KNOWLEDGE = data.DATA / "knowledge.json"
+VECTOR_STORE = json.loads(KNOWLEDGE.read_text())["vector_store_id"] if KNOWLEDGE.exists() else None
 TOOLS = [
     {"type": "web_search"},
+    *([{"type": "file_search", "vector_store_ids": [VECTOR_STORE], "max_num_results": 4}] if VECTOR_STORE else []),
     {"type": "function", "name": "get_country", "strict": True,
      "description": "Declared vs observed emissions for one country, by sector group, plus metadata.",
      "parameters": {"type": "object", "properties": {"country": COUNTRY}, "required": ["country"], "additionalProperties": False}},
@@ -44,6 +51,10 @@ TOOLS = [
      "description": "Largest observed emitting sites (power plants, steel, cement, oil & gas, mines) in a country, with owner and confidence.",
      "parameters": {"type": "object", "properties": {"country": COUNTRY, "limit": {"type": "integer"}},
                     "required": ["country", "limit"], "additionalProperties": False}},
+    {"type": "function", "name": "research_declaration", "strict": True,
+     "description": "Launch a research agent that searches the web for the latest GHG inventory a country reported to the UN "
+                    "(e.g. its Biennial Transparency Report) and adds it to Carbon Gap. Takes ~25 s. Use when a country has no declaration.",
+     "parameters": {"type": "object", "properties": {"country": COUNTRY}, "required": ["country"], "additionalProperties": False}},
     # map tools (executed in the browser)
     {"type": "function", "name": "select_country", "strict": True,
      "description": "Fly the globe to a country and open its sheet.",
@@ -82,7 +93,9 @@ def _country_payload(c: dict) -> dict:
             "gap_Mt": round(s["gap"], 1), "gap_pct": round(s["gap_pct"] * 100, 1),
             "gap_value_eur": round(s["value_eur"]), "carbon_price_eur_per_t": data.CARBON_PRICE,
             "by_group": {data.GROUP_LABELS[k]: v for k, v in s["groups"].items()},
-            "observed_by_sector_Mt": c["observed_sectors"], "observed_latest": c["observed_latest"]}
+            "observed_by_sector_Mt": c["observed_sectors"], "observed_latest": c["observed_latest"],
+            **({"found_by_agent_unverified": {k: c["agent"][k] for k in ("document", "source_url", "quote", "confidence")}}
+               if c.get("agent") else {})}
 
 
 def run_tool(name: str, args: dict) -> tuple[dict, dict | None]:
@@ -103,6 +116,12 @@ def run_tool(name: str, args: dict) -> tuple[dict, dict | None]:
         rows = data.sites(iso, max(1, min(25, args["limit"])))
         return {"country": iso, "year": data.SITE_YEAR, "sites": [
             {k: s[k] for k in ("id", "name", "owner", "kind", "observed", "confidence")} for s in rows]}, None
+    if name == "research_declaration":
+        iso = _iso(args["country"])
+        if not iso:
+            return {"error": "Unknown country"}, None
+        f = asyncio.run(_research(iso))
+        return f, {"name": "refresh_data", "iso3": iso}
     if name in ("select_country", "open_report"):
         iso = _iso(args["country"])
         return ({"ok": True}, {"name": name, "iso3": iso}) if iso else ({"error": "Unknown country"}, None)
@@ -132,6 +151,8 @@ def chat(message: str, previous_response_id: str | None = None, context: dict | 
                 yield {"type": "delta", "text": ev.delta}
             elif ev.type == "response.output_item.added" and ev.item.type == "web_search_call":
                 yield {"type": "tool", "name": "web_search", "args": "searching the web"}
+            elif ev.type == "response.output_item.added" and ev.item.type == "file_search_call":
+                yield {"type": "tool", "name": "knowledge_base", "args": "reading the Carbon Gap knowledge base"}
             elif ev.type == "response.output_item.done" and ev.item.type == "function_call":
                 calls.append(ev.item)
             elif ev.type == "response.completed":
@@ -156,6 +177,15 @@ def chat(message: str, previous_response_id: str | None = None, context: dict | 
                 yield {"type": "action", **action}
             inputs.append({"type": "function_call_output", "call_id": call.call_id, "output": json.dumps(output)})
     yield {"type": "error", "message": "Too many steps. Ask a narrower question."}
+
+
+async def _research(iso: str) -> dict:
+    from . import research
+    last = {}
+    async for ev in research.research(iso):
+        last = ev
+    f = last.get("finding") or {"status": "error", "notes": last.get("message")}
+    return {k: v for k, v in f.items() if k != "observed"} | {"observed_same_year": (f.get("observed") or {}).get("total")}
 
 
 def _short(args: dict) -> str:

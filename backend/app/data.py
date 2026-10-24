@@ -1,10 +1,13 @@
 """Emissions data: declared vs observed per country (data/countries.json) and
 large emitting sites fetched on demand from Climate TRACE, cached on disk."""
 import json
+import time
 from functools import lru_cache
 from pathlib import Path
 
 import httpx
+
+from . import store
 
 DATA = Path(__file__).resolve().parents[1] / "data"
 SITES_DIR = DATA / "sites"
@@ -26,12 +29,49 @@ def load() -> dict:
     return json.loads((DATA / "countries.json").read_text())
 
 
+_findings: dict | None = None
+_findings_at = 0.0
+
+
+def invalidate() -> None:
+    global _findings
+    _findings = None
+
+
+def findings() -> dict:
+    """Declarations found by research agents (store), cached for a few seconds."""
+    global _findings, _findings_at
+    if _findings is None or time.monotonic() - _findings_at > 10:
+        try:
+            _findings = store.all_findings()
+        except Exception:
+            _findings = _findings or {}
+        _findings_at = time.monotonic()
+    return _findings
+
+
+def _from_finding(base: dict, f: dict) -> dict:
+    o = f["observed"]
+    return {"iso3": base["iso3"], "numeric": base["numeric"], "name": base["name"], "year": f["year"],
+            "source": f"Found by agent: {f['document']}",
+            "declared": {"total": f["total_mt"], "energy": f["energy_mt"], "agriculture": f["agriculture_mt"], "waste": f["waste_mt"]},
+            "observed": {k: o[k] for k in ("total", "energy", "agriculture", "waste")},
+            "observed_sectors": o.get("sectors") or base["observed_sectors"], "observed_latest": base["observed_latest"],
+            "agent": {k: f.get(k) for k in ("document", "source_url", "source_title", "quote", "confidence", "notes", "verified", "updated_at")}}
+
+
 def compared() -> dict:
-    return load()["countries"]
+    out = dict(load()["countries"])
+    for iso, f in findings().items():
+        base = load()["undeclared"].get(iso)
+        if base and f.get("status") == "found" and f.get("observed"):
+            out[iso] = _from_finding(base, f)
+    return out
 
 
 def undeclared() -> dict:
-    return load()["undeclared"]
+    found = compared()
+    return {iso: c for iso, c in load()["undeclared"].items() if iso not in found}
 
 
 def gap(c: dict) -> dict:
@@ -46,8 +86,10 @@ def summary(c: dict) -> dict:
         return {"iso3": c["iso3"], "numeric": c["numeric"], "name": c["name"], "year": c["year"],
                 "source": c["source"], **{k: round(v, 4) for k, v in gap(c).items()},
                 "groups": {k: {"declared": c["declared"][k], "observed": c["observed"][k]} for k in GROUP_LABELS},
-                "sectors": c["observed_sectors"], "observed_latest": c["observed_latest"]}
-    return {"iso3": c["iso3"], "numeric": c["numeric"], "name": c["name"], "declared": None,
+                "sectors": c["observed_sectors"], "observed_latest": c["observed_latest"], "agent": c.get("agent")}
+    f = findings().get(c["iso3"])
+    return {"research": {"status": f["status"], "notes": f.get("notes"), "updated_at": f.get("updated_at")} if f else None,
+            "iso3": c["iso3"], "numeric": c["numeric"], "name": c["name"], "declared": None,
             "observed_latest": c["observed_latest"], "sectors": c["observed_sectors"]}
 
 

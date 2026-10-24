@@ -14,14 +14,15 @@ from fastapi.responses import FileResponse, StreamingResponse  # noqa: E402
 from fastapi.staticfiles import StaticFiles  # noqa: E402
 from pydantic import BaseModel  # noqa: E402
 
-from . import agent, data, report  # noqa: E402
+from . import agent, data, report, research, store  # noqa: E402
 
 app = FastAPI(title="Carbon Gap")
 
 
 @app.get("/api/health")
 def health():
-    return {"ok": True, "openai": bool(os.getenv("OPENAI_API_KEY")), "countries": len(data.compared())}
+    return {"ok": True, "openai": bool(os.getenv("OPENAI_API_KEY")), "countries": len(data.compared()),
+            "store": store.backend(), "findings": len(data.findings())}
 
 
 @app.get("/api/countries")
@@ -36,6 +37,23 @@ async def sites(iso3: str, limit: int = 25):
         return {"year": data.SITE_YEAR, "sites": await run_in_threadpool(data.sites, iso3, limit)}
     except Exception:
         raise HTTPException(502, "Site data is unavailable right now.")
+
+
+@app.post("/api/research/{iso3}")
+async def run_research(iso3: str):
+    """Run a research agent live; streams its steps as SSE."""
+    async def events():
+        try:
+            async for ev in research.research(iso3.upper()):
+                yield f"data: {json.dumps(ev)}\n\n"
+        except Exception as e:
+            yield f"data: {json.dumps({'type': 'error', 'message': f'Research failed: {type(e).__name__}'})}\n\n"
+    return StreamingResponse(events(), media_type="text/event-stream")
+
+
+@app.get("/api/research")
+def list_research():
+    return {"store": store.backend(), "findings": list(data.findings().values())}
 
 
 class ChatIn(BaseModel):
