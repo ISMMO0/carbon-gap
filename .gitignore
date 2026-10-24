@@ -16,3 +16,4 @@ video/samples/
 backend/data/sites/
 backend/data/reports/
 backend/data/findings.json
+backend/data/raw/

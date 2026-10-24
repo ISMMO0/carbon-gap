@@ -31,6 +31,12 @@ def countries():
             "sector_labels": data.SECTOR_LABELS, "countries": data.all_countries()}
 
 
+@app.get("/api/market")
+def market():
+    m = data.market()
+    return {**m, "carbon_price": data.CARBON_PRICE}
+
+
 @app.get("/api/countries/{iso3}/sites")
 async def sites(iso3: str, limit: int = 25):
     try:

@@ -15,7 +15,7 @@ const TOT_BREAKS = [10, 30, 100, 300, 1000, 3000];
 const TOT_COLS = ['#EAE9DD', '#CFD3BF', '#A9B79C', '#7F997C', '#58775F', '#36553F', '#1E3628'];
 const NO_DATA = '#E4E2D9';
 const SUGGESTIONS = ['Which countries have the biggest gap?', 'Why is Russia so far above its declaration?',
-  'Compare France and Germany', 'Which big emitters have no recent UN inventory?', 'Show the largest sites in Poland'];
+  'Compare France and Germany', 'Which big emitters have no recent UN inventory?', 'Who has to buy the most carbon allowances in Europe?'];
 
 /* ---------- helpers ---------- */
 const $ = s => document.querySelector(s);
@@ -42,8 +42,10 @@ function md(text) {
 }
 
 /* ---------- state ---------- */
-const state = {metric: 'gap', selected: null, highlight: new Set(), sites: [], activeSite: null, sort: {key: 'gap', dir: -1}};
-let META = {}, byIso = new Map(), byNum = new Map(), features = [];
+const state = {view: 'gap', metric: 'gap', selected: null, highlight: new Set(), sites: [], activeSite: null, sort: {key: 'gap', dir: -1}};
+let META = {}, MARKET = {countries: {}}, byIso = new Map(), byNum = new Map(), features = [];
+const COVER_BREAKS = [.3, .45, .6, .8, 1];  // free allowances / verified emissions
+const COVER_COLS = ['var(--g4)', 'var(--g3)', 'var(--g2)', 'var(--g1)', 'var(--g0)', 'var(--neg)'];
 const siteCache = new Map();
 const isDeclared = c => c && c.declared != null;
 const disp = c => c.name;
@@ -51,6 +53,11 @@ const disp = c => c.name;
 /* ---------- colour ---------- */
 function colourOf(c) {
   if (!c) return NO_DATA;
+  if (state.view === 'market') {
+    const m = MARKET.countries[c.iso3];
+    if (!m) return 'url(#hatch-nodecl)';
+    const cover = m.free / m.verified; let i = 0; while (i < COVER_BREAKS.length && cover >= COVER_BREAKS[i]) i++; return COVER_COLS[i];
+  }
   if (state.metric === 'gap') {
     if (!isDeclared(c)) return 'url(#hatch-nodecl)';
     let i = 0; while (i < GAP_BREAKS.length && c.gap_pct >= GAP_BREAKS[i]) i++; return GAP_COLS[i];
@@ -60,6 +67,13 @@ function colourOf(c) {
   let i = 0; while (i < TOT_BREAKS.length && v >= TOT_BREAKS[i]) i++; return TOT_COLS[i];
 }
 function renderLegend() {
+  if (state.view === 'market') {
+    $('#legend').innerHTML = `<h4>Free allowances, share of verified emissions</h4>
+      <div class="ramp">${COVER_COLS.map(c => `<span style="background:${c}"></span>`).join('')}</div>
+      <div class="ticks">${['<30%', '30', '45', '60', '80', '100%+'].map(t => `<span>${t}</span>`).join('')}</div>
+      <div class="conf"><svg class="sw" viewBox="0 0 18 12"><rect width="18" height="12" fill="url(#hatch-nodecl)"/></svg>Not in the EU carbon market</div>`;
+    return;
+  }
   const g = state.metric === 'gap';
   const cols = g ? GAP_COLS : TOT_COLS, ticks = g ? ['<0', '0', '2%', '5%', '10%', '20%', '35%+'] : ['<10', '10', '30', '100', '300', '1k', '3k+'];
   $('#legend').innerHTML = `<h4>${g ? 'Gap: observed vs declared' : (state.metric === 'declared' ? 'Declared' : 'Observed') + ' emissions, MtCO₂e'}</h4>
@@ -86,7 +100,12 @@ function initGlobe() {
   gC = svg.append('g'); gHl = svg.append('g'); gSel = svg.append('g'); gSites = svg.append('g'); gLab = svg.append('g');
   gRim = svg.append('path').datum({type: 'Sphere'}).attr('fill', 'none').attr('stroke', 'var(--ink)').attr('stroke-width', 1.2);
   gC.selectAll('path').data(features).join('path').attr('class', 'country')
-    .on('click', (e, f) => { const c = byNum.get(f.id); c ? selectCountry(c.iso3, {fly: true}) : toast(`No data for ${f.properties.name}`); })
+    .on('click', (e, f) => {
+      const c = byNum.get(f.id);
+      if (!c) return toast(`No data for ${f.properties.name}`);
+      if (state.view === 'market' && !MARKET.countries[c.iso3]) return toast(`${c.name} is not in the EU carbon market`);
+      selectCountry(c.iso3, {fly: true});
+    })
     .append('title').text(f => f.properties.name);
   svg.call(d3.drag().on('drag', e => { const k = 70 / proj.scale(), r = proj.rotate(); proj.rotate([r[0] + e.dx * k, Math.max(-85, Math.min(85, r[1] - e.dy * k)), r[2]]); draw(); }));
   svg.node().addEventListener('wheel', e => { e.preventDefault(); zoomBy(e.deltaY < 0 ? 1.1 : 1 / 1.1, false); }, {passive: false});
@@ -160,17 +179,17 @@ function flyToMany(isos) {
 }
 
 /* ---------- strata: declared vs observed with the gap hatched ---------- */
-function strata(d, o, max, {h = 16, labels = true, w = 380} = {}) {
+function strata(d, o, max, {h = 16, labels = true, w = 380, names = ['Declared', 'Observed']} = {}) {
   const x = v => Math.max(0, v / max * (w - 2)), up = o >= d;
   const y1 = labels ? 16 : 0, y2 = y1 + h + 3, HH = y2 + h + (labels ? 18 : 0);
   return `<svg class="strata" viewBox="0 0 ${w} ${HH}" role="img" aria-label="Declared ${fmtMt(d)} Mt, observed ${fmtMt(o)} Mt">
-    ${labels ? `<text class="lbl" x="0" y="11">Declared</text><text x="${Math.max(60, x(d))}" y="11" text-anchor="end">${fmtMt(d)} Mt</text>` : ''}
+    ${labels ? `<text class="lbl" x="0" y="11">${names[0]}</text><text x="${Math.max(60, x(d))}" y="11" text-anchor="end">${fmtMt(d)} Mt</text>` : ''}
     <rect x="1" y="${y1}" width="${x(d)}" height="${h}" fill="var(--g0)" stroke="var(--ink)"/>
     ${!up ? `<rect x="${1 + x(o)}" y="${y1}" width="${x(d) - x(o)}" height="${h}" fill="url(#hatch-neg)" stroke="var(--ok)"/>` : ''}
     <rect x="1" y="${y2}" width="${x(o)}" height="${h}" fill="var(--sea)" stroke="var(--ink)"/>
     ${up ? `<rect x="${1 + x(d)}" y="${y2}" width="${Math.max(1.5, x(o) - x(d))}" height="${h}" fill="url(#hatch-gap)" stroke="var(--crit)"/>` : ''}
     <line x1="${1 + x(d)}" x2="${1 + x(d)}" y1="${y1 - 3}" y2="${y2 + h + 3}" stroke="var(--ink)" stroke-dasharray="2 2"/>
-    ${labels ? `<text class="lbl" x="0" y="${y2 + h + 14}">Observed</text><text x="${Math.max(60, x(o))}" y="${y2 + h + 14}" text-anchor="end">${fmtMt(o)} Mt</text>` : ''}
+    ${labels ? `<text class="lbl" x="0" y="${y2 + h + 14}">${names[1]}</text><text x="${Math.max(60, x(o))}" y="${y2 + h + 14}" text-anchor="end">${fmtMt(o)} Mt</text>` : ''}
   </svg>`;
 }
 function confTag(c) {
@@ -303,7 +322,71 @@ function bindSheet() {
     const key = b.dataset.sort; state.sort = {key, dir: state.sort.key === key ? -state.sort.dir : (key === 'name' ? 1 : -1)}; renderSheet();
   });
 }
-function renderSheet() { state.selected ? renderCountry(state.selected) : renderWorld(); }
+function renderSheet() {
+  if (state.view === 'market') return state.selected && MARKET.countries[state.selected] ? renderMarketCountry(state.selected) : renderMarketWorld();
+  state.selected ? renderCountry(state.selected) : renderWorld();
+}
+
+/* ---------- carbon market view (EU ETS) ---------- */
+const MARKET_NAMES = ['Free allowances', 'Verified emissions'];
+function renderMarketWorld() {
+  const rows = Object.values(MARKET.countries).sort((a, b) => b.shortfall - a.shortfall);
+  const V = d3.sum(rows, r => r.verified), F = d3.sum(rows, r => r.free), price = META.carbon_price;
+  $('#sheet').innerHTML = `
+    <div class="sheet-head"><div class="crumb">EU ETS · stationary installations · ${MARKET.year}</div><h2>Carbon market</h2>
+      <div class="meta"><span>${rows.length} countries (EU, Norway, Iceland, Liechtenstein)</span><span>€${price}/t (assumption)</span></div></div>
+    <div class="block"><h3>Free allowances vs verified emissions</h3>${strata(F, V, V, {names: MARKET_NAMES})}
+      <dl class="figs"><div><dt>Verified</dt><dd>${fmtMt(V)} <small>Mt</small></dd></div><div><dt>Free</dt><dd>${fmtMt(F)} <small>Mt</small></dd></div>
+      <div class="gap"><dt>To buy</dt><dd>${fmtMt(V - F)} <small>Mt</small></dd></div><div class="gap"><dt>At €${price}/t</dt><dd>${fmtEur((V - F) * 1e6 * price)}</dd></div></dl>
+      <p class="lede" style="margin-top:10px">Installations must surrender one allowance per tonne. What free allocation does not cover is bought at auction or on the market.</p></div>
+    <div class="block"><h3>Who must buy the most</h3>
+      <table><thead><tr><th>Country</th><th>Verified</th><th>Free</th><th>To buy</th><th>Cover</th></tr></thead>
+      <tbody>${rows.map(r => `<tr data-c="${r.iso3}"><td>${esc(r.name)}<span class="sub">${fmtEur(r.shortfall * 1e6 * price)}</span></td><td>${fmtMt(r.verified)}</td><td>${fmtMt(r.free)}</td><td class="${r.shortfall >= 0 ? 'gpos' : 'gneg'}">${fmtMt(r.shortfall)}</td><td>${d3.format('.0%')(r.free / r.verified)}</td></tr>`).join('')}</tbody></table></div>
+    <div class="block"><h3>Source</h3><ul class="sources"><li><span>${esc(MARKET.source)}</span><span>${MARKET.year}</span></li></ul></div>`;
+  bindSheet();
+}
+function historyChart(hist) {
+  const w = 380, h = 120, pad = {l: 34, r: 8, t: 8, b: 18};
+  const x = d3.scaleLinear([hist[0].year, hist.at(-1).year], [pad.l, w - pad.r]);
+  const y = d3.scaleLinear([0, d3.max(hist, d => Math.max(d.verified, d.free)) * 1.08], [h - pad.b, pad.t]);
+  const line = k => d3.line().x(d => x(d.year)).y(d => y(d[k]))(hist);
+  const area = d3.area().x(d => x(d.year)).y0(d => y(d.free)).y1(d => y(Math.max(d.free, d.verified)))(hist);
+  return `<svg class="strata" viewBox="0 0 ${w} ${h}" role="img" aria-label="Verified emissions and free allowances, ${hist[0].year} to ${hist.at(-1).year}">
+    ${y.ticks(3).map(t => `<line x1="${pad.l}" x2="${w - pad.r}" y1="${y(t)}" y2="${y(t)}" stroke="var(--rule)"/><text x="${pad.l - 6}" y="${y(t) + 4}" text-anchor="end">${t ? fmtMt(t) : 0}</text>`).join('')}
+    <path d="${area}" fill="url(#hatch-gap)" opacity=".8"/>
+    <path d="${line('free')}" fill="none" stroke="var(--ink-2)" stroke-width="1.6" stroke-dasharray="4 3"/>
+    <path d="${line('verified')}" fill="none" stroke="var(--ink)" stroke-width="2"/>
+    ${[hist[0].year, 2020, hist.at(-1).year].map(t => `<text x="${x(t)}" y="${h - 4}" text-anchor="middle">${t}</text>`).join('')}
+  </svg><p class="lede" style="font-size:12.5px">Solid: verified emissions. Dashed: free allowances. Hatched: allowances bought.</p>`;
+}
+function renderMarketCountry(iso) {
+  const m = MARKET.countries[iso], price = META.carbon_price;
+  const smax = d3.max(m.sectors, s => Math.max(s.verified, s.free)) || 1;
+  $('#sheet').innerHTML = `
+    <div class="sheet-head"><div class="crumb"><button id="back">Carbon market</button><span>/</span><span>${esc(m.name)}</span></div><h2>${esc(m.name)}</h2>
+      <div class="meta"><span>EU ETS · ${MARKET.year}</span><span>${d3.format('.0%')(m.free / m.verified)} covered by free allowances</span></div></div>
+    <div class="block"><h3>Free allowances vs verified emissions</h3>${strata(m.free, m.verified, Math.max(m.free, m.verified), {names: MARKET_NAMES})}
+      <dl class="figs"><div><dt>Verified</dt><dd>${fmtMt(m.verified)} <small>Mt</small></dd></div><div><dt>Free</dt><dd>${fmtMt(m.free)} <small>Mt</small></dd></div>
+      <div class="gap"><dt>${m.shortfall >= 0 ? 'To buy' : 'Surplus'}</dt><dd>${fmtMt(Math.abs(m.shortfall))} <small>Mt</small></dd></div><div class="gap"><dt>At €${price}/t</dt><dd>${fmtEur(m.shortfall * 1e6 * price)}</dd></div></dl></div>
+    <div class="block"><h3>By sector</h3>${m.sectors.map(s => `<div class="secrow"><span class="n">${esc(s.sector)}</span>${strata(s.free, s.verified, smax, {h: 7, labels: false, w: 220})}<span class="v ${s.verified >= s.free ? 'pos' : 'neg'}">${fmtMt(s.verified - s.free)}</span></div>`).join('')}
+      <p class="lede" style="margin-top:8px">Right column: Mt to buy (negative = surplus).</p></div>
+    <div class="block"><h3>Since 2013</h3>${historyChart(m.history)}</div>
+    <div class="block"><h3>Source</h3><ul class="sources"><li><span>${esc(MARKET.source)}</span><span>${MARKET.year}</span></li></ul></div>
+    <div class="actions"><button class="btn ghost" id="togap"><i data-lucide="globe-2" class="icon"></i>See its emissions gap</button><button class="btn ghost" id="askmk"><i data-lucide="message-square-text" class="icon"></i>Ask about it</button></div>`;
+  $('#back').onclick = () => { state.selected = null; renderSheet(); draw(); };
+  $('#togap').onclick = () => setView('gap', iso);
+  $('#askmk').onclick = () => ask(`Explain ${m.name}'s position in the EU carbon market.`);
+  bindSheet(); icons();
+}
+async function setView(view, iso = state.selected) {
+  state.view = view;
+  document.querySelectorAll('[data-view]').forEach(t => t.dataset.view === view ? t.setAttribute('aria-current', 'page') : t.removeAttribute('aria-current'));
+  $('#metric-sec').hidden = $('#symbols-sec').hidden = $('#data-gap').hidden = view === 'market'; $('#data-market').hidden = view !== 'market';
+  state.highlight.clear(); state.sites = []; state.activeSite = null; state.selected = null;
+  renderLegend(); recolour();
+  if (iso && (view === 'gap' ? byIso.has(iso) : MARKET.countries[iso])) await selectCountry(iso, {fly: true});
+  else { renderSheet(); draw(); if (view === 'market') flyToPoint([14, 51], 2.3); }
+}
 
 async function loadSites(iso) {
   if (siteCache.has(iso)) return siteCache.get(iso);
@@ -317,6 +400,7 @@ async function selectCountry(iso, {fly = false} = {}) {
   if (!byIso.has(iso)) return;
   state.selected = iso; state.activeSite = null; state.sites = []; state.sort = {key: 'gap', dir: -1};
   renderSheet(); draw(); history.replaceState(null, '', '#' + iso);
+  if (state.view === 'market') { if (fly) await flyToCountry(iso); return; }
   const sitesP = loadSites(iso).then(sites => {
     if (state.selected !== iso) return;
     if (!sites) { const m = $('#sites-msg'); if (m) m.textContent = 'Site data is unavailable right now.'; return; }
@@ -326,6 +410,7 @@ async function selectCountry(iso, {fly = false} = {}) {
   return sitesP;
 }
 function clearSelection() {
+  if (state.view === 'market') return setView('market', null);
   state.selected = null; state.sites = []; state.activeSite = null; state.highlight.clear(); state.sort = {key: 'gap', dir: -1};
   renderSheet(); draw(); history.replaceState(null, '', location.pathname); flyToPoint([12, 30], 1);
 }
@@ -408,7 +493,9 @@ function addTool(name, args) {
 }
 async function runAction(a) {
   switch (a.name) {
-    case 'select_country': state.highlight.clear(); await selectCountry(a.iso3, {fly: true}); break;
+    case 'select_country':
+      if (state.view === 'market' && !MARKET.countries[a.iso3]) await setView('gap');
+      state.highlight.clear(); await selectCountry(a.iso3, {fly: true}); break;
     case 'highlight_countries':
       state.highlight = new Set(a.iso3s); state.selected = null; state.sites = []; renderSheet(); draw();
       flyToMany(a.iso3s);
@@ -419,6 +506,7 @@ async function runAction(a) {
       break;
     case 'set_metric': setMetric(a.metric); break;
     case 'open_report': openReport(a.iso3); break;
+    case 'show_market': await setView('market', a.iso3); break;
     case 'refresh_data': await reloadData(); if (a.iso3) await selectCountry(a.iso3, {fly: true}); break;
   }
 }
@@ -466,6 +554,7 @@ function initControls() {
   document.querySelectorAll('[data-metric]').forEach(b => b.onclick = () => setMetric(b.dataset.metric));
   $('#zin').onclick = () => zoomBy(1.4); $('#zout').onclick = () => zoomBy(1 / 1.4); $('#zreset').onclick = () => clearSelection();
   document.querySelectorAll('[data-soon]').forEach(b => b.onclick = () => toast('Coming soon'));
+  document.querySelectorAll('[data-view]').forEach(b => b.onclick = () => setView(b.dataset.view, null));
   const names = [...byIso.values()].map(c => c.name).sort();
   $('#countries').innerHTML = names.map(n => `<option value="${esc(n)}">`).join('');
   $('#search').onchange = e => {
@@ -487,8 +576,9 @@ icons();
 Promise.all([
   d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json'),
   fetch('/api/countries').then(r => { if (!r.ok) throw new Error('api'); return r.json(); }),
-]).then(([topo, api]) => {
-  META = api;
+  fetch('/api/market').then(r => r.ok ? r.json() : {countries: {}}).catch(() => ({countries: {}})),
+]).then(([topo, api, market]) => {
+  META = api; MARKET = market;
   for (const c of api.countries) { byIso.set(c.iso3, c); byNum.set(c.numeric, c); }
   features = topojson.feature(topo, topo.objects.countries).features.filter(f => f.properties.name !== 'Antarctica');
   $('#stage-msg').remove();

@@ -60,6 +60,13 @@ def _from_finding(base: dict, f: dict) -> dict:
             "agent": {k: f.get(k) for k in ("document", "source_url", "source_title", "quote", "confidence", "notes", "verified", "updated_at")}}
 
 
+@lru_cache
+def market() -> dict:
+    """EU ETS free allocation vs verified emissions per country (data/market.json)."""
+    path = DATA / "market.json"
+    return json.loads(path.read_text()) if path.exists() else {"year": None, "countries": {}}
+
+
 def compared() -> dict:
     out = dict(load()["countries"])
     for iso, f in findings().items():

@@ -29,6 +29,7 @@ Rules:
 - Some declared figures were found by Carbon Gap research agents in recent UN reports (BTRs). They are marked
   "found by agent, unverified": say so when you use them.
 - Answer in the user's language, short: 2-5 sentences or a short list. No headings. Bold the key numbers.
+- Carbon market questions (who must buy allowances, free allocation, surplus) about Europe: use get_market and show_market.
 - Countries without a UN inventory since 2015 (e.g. China) only have observed emissions: say so.
 """
 
@@ -51,6 +52,14 @@ TOOLS = [
      "description": "Largest observed emitting sites (power plants, steel, cement, oil & gas, mines) in a country, with owner and confidence.",
      "parameters": {"type": "object", "properties": {"country": COUNTRY, "limit": {"type": "integer"}},
                     "required": ["country", "limit"], "additionalProperties": False}},
+    {"type": "function", "name": "get_market", "strict": True,
+     "description": "EU ETS carbon market position: verified emissions vs free allowances per country (latest year), the "
+                    "shortfall its installations must buy, by sector. Pass an empty string for all countries ranked.",
+     "parameters": {"type": "object", "properties": {"country": COUNTRY}, "required": ["country"], "additionalProperties": False}},
+    {"type": "function", "name": "show_market", "strict": True,
+     "description": "Switch the globe to the carbon market view (EU ETS allowances: who must buy, who has surplus).",
+     "parameters": {"type": "object", "properties": {"country": {"type": "string", "description": "Country to open, or empty"}},
+                    "required": ["country"], "additionalProperties": False}},
     {"type": "function", "name": "research_declaration", "strict": True,
      "description": "Launch a research agent that searches the web for the latest GHG inventory a country reported to the UN "
                     "(e.g. its Biennial Transparency Report) and adds it to Carbon Gap. Takes ~25 s. Use when a country has no declaration.",
@@ -75,7 +84,7 @@ TOOLS = [
      "description": "Generate and open the full sourced report (dossier) for a country.",
      "parameters": {"type": "object", "properties": {"country": COUNTRY}, "required": ["country"], "additionalProperties": False}},
 ]
-MAP_TOOLS = {"select_country", "highlight_countries", "focus_site", "set_metric", "open_report"}
+MAP_TOOLS = {"select_country", "highlight_countries", "focus_site", "set_metric", "open_report", "show_market"}
 
 
 def _iso(name: str) -> str | None:
@@ -116,6 +125,22 @@ def run_tool(name: str, args: dict) -> tuple[dict, dict | None]:
         rows = data.sites(iso, max(1, min(25, args["limit"])))
         return {"country": iso, "year": data.SITE_YEAR, "sites": [
             {k: s[k] for k in ("id", "name", "owner", "kind", "observed", "confidence")} for s in rows]}, None
+    if name == "get_market":
+        m = data.market()
+        price = data.CARBON_PRICE
+        if args["country"].strip():
+            iso = _iso(args["country"])
+            row = m["countries"].get(iso or "")
+            if not row:
+                return {"note": "Not covered by the EU ETS (EU, Norway, Iceland, Liechtenstein only)."}, None
+            return {"year": m["year"], **{k: row[k] for k in ("name", "verified", "free", "shortfall", "sectors")},
+                    "shortfall_value_eur": round(row["shortfall"] * 1e6 * price), "unit": "MtCO2e"}, None
+        rows = sorted(m["countries"].values(), key=lambda r: -r["shortfall"])
+        return {"year": m["year"], "unit": "MtCO2e", "carbon_price": price, "countries": [
+            {k: r[k] for k in ("name", "verified", "free", "shortfall")} for r in rows]}, None
+    if name == "show_market":
+        iso = _iso(args["country"]) if args["country"].strip() else None
+        return {"ok": True}, {"name": name, "iso3": iso}
     if name == "research_declaration":
         iso = _iso(args["country"])
         if not iso:

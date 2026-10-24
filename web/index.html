@@ -33,9 +33,9 @@
       Carbon Gap
     </div>
     <nav class="tabs" aria-label="Main">
-      <button class="tab" aria-current="page"><i data-lucide="globe-2" class="icon"></i>Map</button>
+      <button class="tab" data-view="gap" aria-current="page"><i data-lucide="globe-2" class="icon"></i>Emissions gap</button>
       <button class="tab" data-soon><i data-lucide="building-2" class="icon"></i>Companies <span class="soon">Soon</span></button>
-      <button class="tab" data-soon><i data-lucide="arrow-left-right" class="icon"></i>Market <span class="soon">Soon</span></button>
+      <button class="tab" data-view="market"><i data-lucide="arrow-left-right" class="icon"></i>Carbon market</button>
     </nav>
     <button class="talk-btn" id="talk" aria-label="Talk to Carbon Gap"><i data-lucide="mic" class="icon"></i>Talk</button>
     <label class="bar-search"><i data-lucide="search" class="icon"></i>
@@ -46,7 +46,7 @@
 
   <div class="main">
     <aside class="rail" aria-label="Map layers">
-      <section>
+      <section id="metric-sec">
         <h2>Colour countries by</h2>
         <div class="seg" role="group" aria-label="Metric">
           <button data-metric="gap" aria-pressed="true">Gap</button>
@@ -55,11 +55,16 @@
         </div>
         <p class="note" id="metric-note"></p>
       </section>
-      <section>
+      <section id="symbols-sec">
         <h2>Site symbols</h2>
         <div id="symbols"></div>
       </section>
-      <section>
+      <section id="data-market" hidden>
+        <h2>Data</h2>
+        <p class="note" style="margin-top:0"><b>EU ETS:</b> verified emissions and free allowances of stationary installations (power, industry), from the EEA Union Registry.</p>
+        <p class="note">What free allocation does not cover, installations must buy at auction or on the market.</p>
+      </section>
+      <section id="data-gap">
         <h2>Data</h2>
         <p class="note" style="margin-top:0"><b>Declared:</b> national inventories reported to the UN (UNFCCC), total GHG excluding land use, latest year since 2015.</p>
         <p class="note"><b>Observed:</b> Climate TRACE estimates for the same year (satellites and asset models), all sectors except forestry.</p>
