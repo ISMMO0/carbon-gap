@@ -99,3 +99,11 @@ def migrate_file_to_postgres() -> int:
     for f in rows.values():
         save(f)
     return len(rows)
+
+
+def set_verified(iso3: str, verified: bool) -> bool:
+    rows = all_findings()
+    if iso3 not in rows:
+        return False
+    save({**rows[iso3], "verified": verified})
+    return True

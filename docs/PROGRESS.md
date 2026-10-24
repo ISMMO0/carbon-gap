@@ -78,9 +78,19 @@ Or open `mockup/index.html` directly in a browser.
 - Postgres (Aiven) table `findings`, created on startup; /api/health shows which store is used.
 - TODO: human verification flow (verified flag exists), Algeria's source is a LinkedIn post (medium confidence).
 
+### Phase 3: voice, carbon market, verification ✅ (24 Oct night)
+- Voice mode ("Talk" in the top bar, web/voice.js): mic → /api/transcribe (gpt-4o-transcribe) → analyst in voice mode
+  (2 spoken sentences, still moves the map) → /api/speak (ElevenLabs flash v2.5, voice Sarah, streamed into <audio>)
+  → listens again. Silence detection ends a turn; tap the orb (or Space) to send / interrupt; Esc closes.
+  The orb is drawn on canvas: contour rings driven by mic / speaker level. Tested end to end in headless Chrome
+  with a fake microphone (Playwright, --use-file-for-fake-audio-capture). The Browser pane blocks the mic.
+- Carbon market tab: EU ETS verified emissions vs free allowances per country and sector (2025), history since 2013,
+  shortfall valued at €72/t. Data: datahub.io EU ETS package of the EEA Union Registry (scripts/build_market.py,
+  raw CSV in data/raw, git-ignored). Analyst tools get_market + show_market.
+- Human verification: "I checked the source" on agent findings → POST /api/research/{iso3}/verify (Postgres).
+
 ## 5. Next
 
-- Market view (EU ETS free allocation vs verified emissions per installation → surplus / shortfall).
-- Realtime voice (gpt-realtime) to talk to the map.
+- Companies tab: CSRD / annual reports (PDF) → Structured Outputs → company declared vs Climate TRACE assets.
 - Structured Outputs to extract declared emissions from company reports (PDF) → company-level gaps.
 - Deploy, re-shoot the film with real data, pitch video.

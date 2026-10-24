@@ -26,8 +26,8 @@ Rules:
   (methane from fossil fuel operations, emission factors, sector coverage, reporting year, GWP version).
 - For carbon markets, taxes, laws, targets (NDCs, net zero), reporting rules and how to read a gap, search the Carbon Gap
   knowledge base first (file_search). Use web_search for recent news or to confirm a fact that may have changed; cite it.
-- Some declared figures were found by Carbon Gap research agents in recent UN reports (BTRs). They are marked
-  "found by agent, unverified": say so when you use them.
+- Some declared figures were found by Carbon Gap research agents in recent UN reports (BTRs). Say so when you use
+  them, and whether a person has verified the source (field "verified").
 - Answer in the user's language, short: 2-5 sentences or a short list. No headings. Bold the key numbers.
 - Carbon market questions (who must buy allowances, free allocation, surplus) about Europe: use get_market and show_market.
 - Countries without a UN inventory since 2015 (e.g. China) only have observed emissions: say so.
@@ -103,7 +103,7 @@ def _country_payload(c: dict) -> dict:
             "gap_value_eur": round(s["value_eur"]), "carbon_price_eur_per_t": data.CARBON_PRICE,
             "by_group": {data.GROUP_LABELS[k]: v for k, v in s["groups"].items()},
             "observed_by_sector_Mt": c["observed_sectors"], "observed_latest": c["observed_latest"],
-            **({"found_by_agent_unverified": {k: c["agent"][k] for k in ("document", "source_url", "quote", "confidence")}}
+            **({"declaration_found_by_research_agent": {k: c["agent"][k] for k in ("document", "source_url", "quote", "confidence", "verified")}}
                if c.get("agent") else {})}
 
 

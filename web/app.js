@@ -236,7 +236,7 @@ function sitesBlock(c) {
 function renderCountry(iso) {
   const c = byIso.get(iso);
   const head = `<div class="sheet-head"><div class="crumb"><button id="back">World</button><span>/</span><span>${esc(c.name)}</span></div><h2>${esc(c.name)}</h2>
-    <div class="meta">${isDeclared(c) ? `<span>Inventory year ${c.year}</span><span>${esc(c.agent ? 'Found by research agent · unverified' : c.source)}</span>` : `<span>No UN inventory since 2015 in our dataset</span>`}</div></div>`;
+    <div class="meta">${isDeclared(c) ? `<span>Inventory year ${c.year}</span><span>${esc(c.agent ? `Found by research agent · ${c.agent.verified ? 'verified' : 'unverified'}` : c.source)}</span>` : `<span>No UN inventory since 2015 in our dataset</span>`}</div></div>`;
   let body;
   if (isDeclared(c)) {
     body = `<div class="block"><h3>Declared vs observed, ${c.year}</h3>${strata(c.declared, c.observed, Math.max(c.declared, c.observed))}
@@ -264,6 +264,11 @@ function renderCountry(iso) {
     <div class="actions"><button class="btn" id="mkreport"><i data-lucide="file-text" class="icon"></i>Generate report</button><button class="btn ghost" id="askwhy"><i data-lucide="message-square-text" class="icon"></i>Ask why</button></div>`;
   $('#back').onclick = () => clearSelection();
   $('#dores')?.addEventListener('click', () => runResearch(iso));
+  $('#verify')?.addEventListener('click', async e => {
+    const verified = e.currentTarget.dataset.v === '1';
+    const r = await fetch(`/api/research/${iso}/verify`, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({verified})});
+    if (r.ok) { toast(verified ? 'Marked as verified' : 'Verification removed'); reloadData(); } else toast('Could not save the verification');
+  });
   $('#mkreport').onclick = () => openReport(iso);
   $('#askwhy').onclick = () => ask(isDeclared(c) ? `Why is ${c.name}'s gap ${c.gap >= 0 ? 'positive' : 'negative'}?` : `What drives ${c.name}'s emissions?`);
   bindSheet(); icons();
@@ -276,8 +281,9 @@ function groupsBlock(c) {
     `<div class="secrow"><span class="n">${esc(META.group_labels[k])}</span>${strata(g.declared, g.observed, gmax, {h: 7, labels: false, w: 220})}<span class="v ${g.observed >= g.declared ? 'pos' : 'neg'}">${fmtPct((g.observed - g.declared) / g.declared)}</span></div>`).join('')}</div>`;
 }
 function agentBox(a) {
-  return `<div class="note-box"><b>Declared figure found by a research agent</b> (confidence ${esc(a.confidence)}, not yet verified by a person).<br>
-    “${esc(a.quote)}”<br><a href="${esc(a.source_url)}" target="_blank" rel="noopener">${esc(a.source_title || a.document)} ↗</a></div>`;
+  return `<div class="note-box"><b>Declared figure found by a research agent</b> (confidence ${esc(a.confidence)}, ${a.verified ? 'checked by a person' : 'not yet verified by a person'}).<br>
+    “${esc(a.quote)}”<br><a href="${esc(a.source_url)}" target="_blank" rel="noopener">${esc(a.source_title || a.document)} ↗</a>
+    <div style="margin-top:8px"><button class="btn ghost" id="verify" style="height:30px" data-v="${a.verified ? 0 : 1}"><i data-lucide="${a.verified ? 'undo-2' : 'badge-check'}" class="icon"></i>${a.verified ? 'Unmark as verified' : 'I checked the source'}</button></div></div>`;
 }
 async function reloadData() {
   const api = await fetch('/api/countries').then(r => r.json());

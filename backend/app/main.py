@@ -57,6 +57,19 @@ async def run_research(iso3: str):
     return StreamingResponse(events(), media_type="text/event-stream")
 
 
+class VerifyIn(BaseModel):
+    verified: bool
+
+
+@app.post("/api/research/{iso3}/verify")
+def verify(iso3: str, body: VerifyIn):
+    """A person confirms (or un-confirms) a figure found by a research agent."""
+    if not store.set_verified(iso3.upper(), body.verified):
+        raise HTTPException(404, "No finding for this country.")
+    data.invalidate()
+    return {"ok": True}
+
+
 @app.get("/api/research")
 def list_research():
     return {"store": store.backend(), "findings": list(data.findings().values())}
