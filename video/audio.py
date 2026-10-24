@@ -4,8 +4,8 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 DUR = 30.6
-# start time (s) of each voiceover line vo/l1..l9
-STARTS = [0.4, 2.45, 4.4, 9.45, 13.9, 18.35, 21.8, 23.85, 26.9]
+# start time (s) of each voiceover line vo/s1..s9 (ElevenLabs, voice Sarah)
+STARTS = [0.2, 2.45, 4.4, 10.1, 14.3, 18.7, 21.85, 23.9, 26.9]
 
 
 def ff(*args):
@@ -14,7 +14,7 @@ def ff(*args):
 
 inputs, chains = [], []
 for i, t in enumerate(STARTS):
-    inputs += ["-i", f"vo/l{i + 1}.aiff"]
+    inputs += ["-i", f"vo/s{i + 1}.wav"]
     ms = int(t * 1000)
     chains.append(f"[{i}:a]aresample=48000,adelay={ms}|{ms}[v{i}]")
 mix = "".join(f"[v{i}]" for i in range(len(STARTS)))

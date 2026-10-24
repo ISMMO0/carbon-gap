@@ -124,30 +124,30 @@ at(3.35, () => tween(.3, p => $f('#in-gn').setAttribute('opacity', p)));
 at(3.95, () => tween(.6, p => { $f('#intro').style.clipPath = `inset(0 0 ${p * 100}% 0)`; }, io));
 
 // S2 the gap, globally (4.3 – 9.3)
-at(4.35, () => caption('Carbon Gap compares what is <b>declared</b> with what is <b>observed</b>', 4.6));
+at(4.35, () => caption('Carbon Gap compares what is <b>declared</b> with what is <b>observed</b>', 5.4));
 at(4.5, () => camTo({ s: 1, x: 0, y: 0 }, 3.2, io));
 at(6.3, () => clickMetric('declared'));
 at(7.1, () => clickMetric('observed'));
 at(7.9, () => clickMetric('gap'));
 
 // S3 countries (9.5 – 13.6)
-at(9.4, () => { spinning = false; caption('Open any country: <b>France</b>, <b>United States</b>, <b>Australia</b>', 4.1); });
-at(9.6, () => selectCountry('France', { fly: true }));
-at(11.0, () => selectCountry('United States of America', { fly: true }));
-at(12.4, () => selectCountry('Australia', { fly: true }));
+at(10.0, () => { spinning = false; caption('Open any country: <b>France</b>, <b>United States</b>, <b>Australia</b>', 4.0); });
+at(10.2, () => selectCountry('France', { fly: true }));
+at(11.5, () => selectCountry('United States of America', { fly: true }));
+at(12.8, () => selectCountry('Australia', { fly: true }));
 
 // S4 the sheet (13.9 – 18.2)
-at(13.85, () => caption('The gap, <b>sector by sector</b>, site by site, priced in euros', 4.3));
-at(13.8, () => camTo(focus({ x: rSheet.x, y: rSheet.y, w: rSheet.w, h: 560 }, 1.72), 1.0, io));
-at(15.3, () => { const sh = document.querySelector('#sheet'); tween(1.9, p => { sh.scrollTop = 560 * p; }, io); });
-at(16.2, () => { const s = state.siteLayer && [...state.siteLayer].sort((a, b) => (b.observed - b.declared) - (a.observed - a.declared))[0]; if (s) { state.activeSite = s.id; draw(); document.querySelectorAll('tr[data-s]').forEach(tr => tr.classList.toggle('on', tr.dataset.s === s.id)); } });
+at(14.25, () => caption('The gap, <b>sector by sector</b>, site by site, priced in euros', 4.3));
+at(14.2, () => camTo(focus({ x: rSheet.x, y: rSheet.y, w: rSheet.w, h: 560 }, 1.72), 1.0, io));
+at(15.6, () => { const sh = document.querySelector('#sheet'); tween(1.9, p => { sh.scrollTop = 560 * p; }, io); });
+at(16.5, () => { const s = state.siteLayer && [...state.siteLayer].sort((a, b) => (b.observed - b.declared) - (a.observed - a.declared))[0]; if (s) { state.activeSite = s.id; draw(); document.querySelectorAll('tr[data-s]').forEach(tr => tr.classList.toggle('on', tr.dataset.s === s.id)); } });
 
 // S5 analyst (18.4 – 21.8)
-at(17.9, () => { document.querySelector('#sheet').scrollTop = 0; const r = R('#analyst'); camTo(focus({ x: r.x - 160, y: r.y - 40, w: r.w + 160, h: r.h + 40 }, 1.5), .75, io); });
-at(18.3, () => caption('Ask the analyst anything. <b>It moves the map.</b>', 3.4, 'top'));
-at(18.6, () => { const q = 'Which countries have the biggest gap?', inp = document.querySelector('#q'); tween(1.0, p => { inp.value = q.slice(0, Math.round(q.length * p)); }, e => e); });
-at(19.7, () => { const inp = document.querySelector('#q'); const q = inp.value; inp.value = ''; ask(q); });
-at(20.35, () => camTo({ s: 1, x: 0, y: 0 }, 1.1, io));
+at(18.2, () => { document.querySelector('#sheet').scrollTop = 0; const r = R('#analyst'); camTo(focus({ x: r.x - 160, y: r.y - 40, w: r.w + 160, h: r.h + 40 }, 1.5), .75, io); });
+at(18.65, () => caption('Ask the analyst anything. <b>It moves the map.</b>', 3.0, 'top'));
+at(18.9, () => { const q = 'Which countries have the biggest gap?', inp = document.querySelector('#q'); tween(1.0, p => { inp.value = q.slice(0, Math.round(q.length * p)); }, e => e); });
+at(20.0, () => { const inp = document.querySelector('#q'); const q = inp.value; inp.value = ''; ask(q); });
+at(20.6, () => camTo({ s: 1, x: 0, y: 0 }, 1.1, io));
 
 // S6 report (22.0 – 23.7)
 at(21.75, () => caption('A <b>sourced report</b> in seconds', 1.9));
