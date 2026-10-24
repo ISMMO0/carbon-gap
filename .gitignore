@@ -13,3 +13,5 @@ video/vo/
 video/*.wav
 video/*.mp4
 video/samples/
+backend/data/sites/
+backend/data/reports/

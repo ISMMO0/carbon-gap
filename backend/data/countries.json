@@ -1,0 +1,5622 @@
+{
+ "countries": {
+  "AUS": {
+   "iso3": "AUS",
+   "numeric": "036",
+   "name": "Australia",
+   "year": 2020,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 528.15,
+    "energy": 448.6,
+    "agriculture": 67.83,
+    "waste": 11.72
+   },
+   "observed": {
+    "energy": 655.977,
+    "agriculture": 91.2,
+    "waste": 25.887,
+    "total": 773.064
+   },
+   "observed_sectors": {
+    "power": 181.12,
+    "transportation": 155.085,
+    "buildings": 30.703,
+    "fossil-fuel-operations": 197.977,
+    "manufacturing": 67.882,
+    "mineral-extraction": 9.954,
+    "fluorinated-gases": 13.256,
+    "agriculture": 91.2,
+    "waste": 25.887
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 781.242
+   }
+  },
+  "AUT": {
+   "iso3": "AUT",
+   "numeric": "040",
+   "name": "Austria",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 77.53,
+    "energy": 69.1,
+    "agriculture": 7.22,
+    "waste": 1.21
+   },
+   "observed": {
+    "energy": 68.657,
+    "agriculture": 5.561,
+    "waste": 3.106,
+    "total": 77.324
+   },
+   "observed_sectors": {
+    "power": 12.286,
+    "transportation": 15.576,
+    "buildings": 10.235,
+    "fossil-fuel-operations": 3.705,
+    "manufacturing": 24.364,
+    "mineral-extraction": 0.278,
+    "fluorinated-gases": 2.213,
+    "agriculture": 5.561,
+    "waste": 3.106
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 71.699
+   }
+  },
+  "BEL": {
+   "iso3": "BEL",
+   "numeric": "056",
+   "name": "Belgium",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 110.95,
+    "energy": 100.28,
+    "agriculture": 9.41,
+    "waste": 1.25
+   },
+   "observed": {
+    "energy": 117.153,
+    "agriculture": 14.379,
+    "waste": 2.493,
+    "total": 134.025
+   },
+   "observed_sectors": {
+    "power": 14.878,
+    "transportation": 28.33,
+    "buildings": 25.348,
+    "fossil-fuel-operations": 6.993,
+    "manufacturing": 38.646,
+    "mineral-extraction": 0.045,
+    "fluorinated-gases": 2.913,
+    "agriculture": 14.379,
+    "waste": 2.493
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 123.225
+   }
+  },
+  "BGR": {
+   "iso3": "BGR",
+   "numeric": "100",
+   "name": "Bulgaria",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 53.92,
+    "energy": 44.97,
+    "agriculture": 6.11,
+    "waste": 2.83
+   },
+   "observed": {
+    "energy": 49.363,
+    "agriculture": 6.24,
+    "waste": 3.791,
+    "total": 59.394
+   },
+   "observed_sectors": {
+    "power": 21.577,
+    "transportation": 11.478,
+    "buildings": 2.201,
+    "fossil-fuel-operations": 4.089,
+    "manufacturing": 8.604,
+    "mineral-extraction": 0.147,
+    "fluorinated-gases": 1.266,
+    "agriculture": 6.24,
+    "waste": 3.791
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 46.915
+   }
+  },
+  "BLR": {
+   "iso3": "BLR",
+   "numeric": "112",
+   "name": "Belarus",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 91.99,
+    "energy": 64.83,
+    "agriculture": 21.18,
+    "waste": 5.98
+   },
+   "observed": {
+    "energy": 65.808,
+    "agriculture": 62.636,
+    "waste": 6.076,
+    "total": 134.52
+   },
+   "observed_sectors": {
+    "power": 27.997,
+    "transportation": 16.599,
+    "buildings": 8.0,
+    "fossil-fuel-operations": 3.639,
+    "manufacturing": 9.462,
+    "mineral-extraction": 0.034,
+    "fluorinated-gases": 0.076,
+    "agriculture": 62.636,
+    "waste": 6.076
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 130.469
+   }
+  },
+  "CAN": {
+   "iso3": "CAN",
+   "numeric": "124",
+   "name": "Canada",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 670.43,
+    "energy": 595.12,
+    "agriculture": 54.24,
+    "waste": 21.06
+   },
+   "observed": {
+    "energy": 677.944,
+    "agriculture": 124.762,
+    "waste": 21.592,
+    "total": 824.298
+   },
+   "observed_sectors": {
+    "power": 86.29,
+    "transportation": 165.532,
+    "buildings": 90.707,
+    "fossil-fuel-operations": 224.345,
+    "manufacturing": 83.514,
+    "mineral-extraction": 8.006,
+    "fluorinated-gases": 19.549,
+    "agriculture": 124.762,
+    "waste": 21.592
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 866.907
+   }
+  },
+  "CHE": {
+   "iso3": "CHE",
+   "numeric": "756",
+   "name": "Switzerland",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 45.14,
+    "energy": 38.08,
+    "agriculture": 5.9,
+    "waste": 1.14
+   },
+   "observed": {
+    "energy": 39.843,
+    "agriculture": 5.191,
+    "waste": 0.88,
+    "total": 45.913
+   },
+   "observed_sectors": {
+    "power": 3.842,
+    "transportation": 12.15,
+    "buildings": 13.643,
+    "fossil-fuel-operations": 0.526,
+    "manufacturing": 8.065,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 1.617,
+    "agriculture": 5.191,
+    "waste": 0.88
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 43.628
+   }
+  },
+  "CYP": {
+   "iso3": "CYP",
+   "numeric": "196",
+   "name": "Cyprus",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 8.67,
+    "energy": 7.45,
+    "agriculture": 0.56,
+    "waste": 0.66
+   },
+   "observed": {
+    "energy": 9.122,
+    "agriculture": 0.368,
+    "waste": 1.511,
+    "total": 11.002
+   },
+   "observed_sectors": {
+    "power": 3.825,
+    "transportation": 3.423,
+    "buildings": 0.37,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.983,
+    "mineral-extraction": 0.059,
+    "fluorinated-gases": 0.463,
+    "agriculture": 0.368,
+    "waste": 1.511
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 11.635
+   }
+  },
+  "CZE": {
+   "iso3": "CZE",
+   "numeric": "203",
+   "name": "Czechia",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 118.38,
+    "energy": 104.83,
+    "agriculture": 7.84,
+    "waste": 5.7
+   },
+   "observed": {
+    "energy": 113.939,
+    "agriculture": 4.561,
+    "waste": 5.232,
+    "total": 123.731
+   },
+   "observed_sectors": {
+    "power": 50.231,
+    "transportation": 13.012,
+    "buildings": 13.179,
+    "fossil-fuel-operations": 9.652,
+    "manufacturing": 23.048,
+    "mineral-extraction": 0.202,
+    "fluorinated-gases": 4.616,
+    "agriculture": 4.561,
+    "waste": 5.232
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 99.63
+   }
+  },
+  "DEU": {
+   "iso3": "DEU",
+   "numeric": "276",
+   "name": "Germany",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 760.36,
+    "energy": 699.53,
+    "agriculture": 56.33,
+    "waste": 4.49
+   },
+   "observed": {
+    "energy": 739.18,
+    "agriculture": 84.538,
+    "waste": 17.112,
+    "total": 840.83
+   },
+   "observed_sectors": {
+    "power": 258.829,
+    "transportation": 132.693,
+    "buildings": 134.315,
+    "fossil-fuel-operations": 43.24,
+    "manufacturing": 156.134,
+    "mineral-extraction": 0.654,
+    "fluorinated-gases": 13.315,
+    "agriculture": 84.538,
+    "waste": 17.112
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 737.723
+   }
+  },
+  "DNK": {
+   "iso3": "DNK",
+   "numeric": "208",
+   "name": "Denmark",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 45.52,
+    "energy": 32.08,
+    "agriculture": 12.17,
+    "waste": 1.26
+   },
+   "observed": {
+    "energy": 37.651,
+    "agriculture": 17.093,
+    "waste": 3.344,
+    "total": 58.088
+   },
+   "observed_sectors": {
+    "power": 7.848,
+    "transportation": 17.779,
+    "buildings": 4.609,
+    "fossil-fuel-operations": 3.172,
+    "manufacturing": 3.55,
+    "mineral-extraction": 0.22,
+    "fluorinated-gases": 0.473,
+    "agriculture": 17.093,
+    "waste": 3.344
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 53.347
+   }
+  },
+  "ESP": {
+   "iso3": "ESP",
+   "numeric": "724",
+   "name": "Spain",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 288.85,
+    "energy": 240.18,
+    "agriculture": 34.37,
+    "waste": 14.3
+   },
+   "observed": {
+    "energy": 255.032,
+    "agriculture": 38.484,
+    "waste": 21.135,
+    "total": 314.651
+   },
+   "observed_sectors": {
+    "power": 40.757,
+    "transportation": 103.59,
+    "buildings": 34.619,
+    "fossil-fuel-operations": 15.301,
+    "manufacturing": 54.309,
+    "mineral-extraction": 0.916,
+    "fluorinated-gases": 5.54,
+    "agriculture": 38.484,
+    "waste": 21.135
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 313.993
+   }
+  },
+  "EST": {
+   "iso3": "EST",
+   "numeric": "233",
+   "name": "Estonia",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 12.62,
+    "energy": 10.72,
+    "agriculture": 1.58,
+    "waste": 0.32
+   },
+   "observed": {
+    "energy": 15.023,
+    "agriculture": 7.25,
+    "waste": 0.381,
+    "total": 22.654
+   },
+   "observed_sectors": {
+    "power": 4.865,
+    "transportation": 3.984,
+    "buildings": 0.847,
+    "fossil-fuel-operations": 4.373,
+    "manufacturing": 0.685,
+    "mineral-extraction": 0.029,
+    "fluorinated-gases": 0.241,
+    "agriculture": 7.25,
+    "waste": 0.381
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 20.743
+   }
+  },
+  "FIN": {
+   "iso3": "FIN",
+   "numeric": "246",
+   "name": "Finland",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 47.8,
+    "energy": 39.68,
+    "agriculture": 6.3,
+    "waste": 1.82
+   },
+   "observed": {
+    "energy": 53.004,
+    "agriculture": 19.022,
+    "waste": 2.545,
+    "total": 74.571
+   },
+   "observed_sectors": {
+    "power": 13.224,
+    "transportation": 19.827,
+    "buildings": 4.756,
+    "fossil-fuel-operations": 2.414,
+    "manufacturing": 11.677,
+    "mineral-extraction": 0.07,
+    "fluorinated-gases": 1.035,
+    "agriculture": 19.022,
+    "waste": 2.545
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 66.863
+   }
+  },
+  "FRA": {
+   "iso3": "FRA",
+   "numeric": "250",
+   "name": "France",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 420.06,
+    "energy": 335.08,
+    "agriculture": 66.53,
+    "waste": 18.45
+   },
+   "observed": {
+    "energy": 353.277,
+    "agriculture": 63.873,
+    "waste": 24.465,
+    "total": 441.614
+   },
+   "observed_sectors": {
+    "power": 36.226,
+    "transportation": 138.762,
+    "buildings": 80.445,
+    "fossil-fuel-operations": 8.806,
+    "manufacturing": 75.703,
+    "mineral-extraction": 0.736,
+    "fluorinated-gases": 12.598,
+    "agriculture": 63.873,
+    "waste": 24.465
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 403.623
+   }
+  },
+  "GBR": {
+   "iso3": "GBR",
+   "numeric": "826",
+   "name": "United Kingdom",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 429.49,
+    "energy": 367.3,
+    "agriculture": 43.09,
+    "waste": 19.1
+   },
+   "observed": {
+    "energy": 388.958,
+    "agriculture": 73.522,
+    "waste": 14.924,
+    "total": 477.404
+   },
+   "observed_sectors": {
+    "power": 79.611,
+    "transportation": 107.223,
+    "buildings": 104.121,
+    "fossil-fuel-operations": 29.907,
+    "manufacturing": 54.178,
+    "mineral-extraction": 0.025,
+    "fluorinated-gases": 13.893,
+    "agriculture": 73.522,
+    "waste": 14.924
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 436.153
+   }
+  },
+  "GRC": {
+   "iso3": "GRC",
+   "numeric": "300",
+   "name": "Greece",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 77.49,
+    "energy": 63.59,
+    "agriculture": 8.05,
+    "waste": 5.85
+   },
+   "observed": {
+    "energy": 81.652,
+    "agriculture": 6.598,
+    "waste": 4.846,
+    "total": 93.096
+   },
+   "observed_sectors": {
+    "power": 20.614,
+    "transportation": 33.04,
+    "buildings": 6.882,
+    "fossil-fuel-operations": 7.285,
+    "manufacturing": 7.757,
+    "mineral-extraction": 0.296,
+    "fluorinated-gases": 5.777,
+    "agriculture": 6.598,
+    "waste": 4.846
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 89.266
+   }
+  },
+  "HRV": {
+   "iso3": "HRV",
+   "numeric": "191",
+   "name": "Croatia",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 24.45,
+    "energy": 19.87,
+    "agriculture": 2.7,
+    "waste": 1.88
+   },
+   "observed": {
+    "energy": 23.168,
+    "agriculture": 1.924,
+    "waste": 1.415,
+    "total": 26.506
+   },
+   "observed_sectors": {
+    "power": 3.054,
+    "transportation": 9.988,
+    "buildings": 3.378,
+    "fossil-fuel-operations": 0.542,
+    "manufacturing": 4.198,
+    "mineral-extraction": 0.013,
+    "fluorinated-gases": 1.995,
+    "agriculture": 1.924,
+    "waste": 1.415
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 27.323
+   }
+  },
+  "HUN": {
+   "iso3": "HUN",
+   "numeric": "348",
+   "name": "Hungary",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 64.22,
+    "energy": 53.28,
+    "agriculture": 7.2,
+    "waste": 3.73
+   },
+   "observed": {
+    "energy": 58.29,
+    "agriculture": 10.66,
+    "waste": 3.6,
+    "total": 72.55
+   },
+   "observed_sectors": {
+    "power": 10.091,
+    "transportation": 15.587,
+    "buildings": 13.403,
+    "fossil-fuel-operations": 5.095,
+    "manufacturing": 11.495,
+    "mineral-extraction": 0.077,
+    "fluorinated-gases": 2.542,
+    "agriculture": 10.66,
+    "waste": 3.6
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 68.663
+   }
+  },
+  "IRL": {
+   "iso3": "IRL",
+   "numeric": "372",
+   "name": "Ireland",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 62.11,
+    "energy": 38.21,
+    "agriculture": 22.95,
+    "waste": 0.94
+   },
+   "observed": {
+    "energy": 43.103,
+    "agriculture": 30.448,
+    "waste": 1.39,
+    "total": 74.942
+   },
+   "observed_sectors": {
+    "power": 12.955,
+    "transportation": 12.32,
+    "buildings": 8.955,
+    "fossil-fuel-operations": 0.895,
+    "manufacturing": 7.012,
+    "mineral-extraction": 0.035,
+    "fluorinated-gases": 0.931,
+    "agriculture": 30.448,
+    "waste": 1.39
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 71.558
+   }
+  },
+  "ISL": {
+   "iso3": "ISL",
+   "numeric": "352",
+   "name": "Iceland",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 4.66,
+    "energy": 3.78,
+    "agriculture": 0.62,
+    "waste": 0.27
+   },
+   "observed": {
+    "energy": 6.591,
+    "agriculture": 1.26,
+    "waste": 0.303,
+    "total": 8.155
+   },
+   "observed_sectors": {
+    "power": 0.003,
+    "transportation": 3.631,
+    "buildings": 0.608,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 2.036,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.314,
+    "agriculture": 1.26,
+    "waste": 0.303
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 8.872
+   }
+  },
+  "ITA": {
+   "iso3": "ITA",
+   "numeric": "380",
+   "name": "Italy",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 417.59,
+    "energy": 364.68,
+    "agriculture": 32.72,
+    "waste": 20.19
+   },
+   "observed": {
+    "energy": 354.988,
+    "agriculture": 31.68,
+    "waste": 17.036,
+    "total": 403.704
+   },
+   "observed_sectors": {
+    "power": 89.558,
+    "transportation": 97.263,
+    "buildings": 73.258,
+    "fossil-fuel-operations": 17.475,
+    "manufacturing": 58.13,
+    "mineral-extraction": 0.378,
+    "fluorinated-gases": 18.926,
+    "agriculture": 31.68,
+    "waste": 17.036
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 363.414
+   }
+  },
+  "JPN": {
+   "iso3": "JPN",
+   "numeric": "392",
+   "name": "Japan",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 1168.09,
+    "energy": 1118.21,
+    "agriculture": 32.17,
+    "waste": 17.71
+   },
+   "observed": {
+    "energy": 1334.0,
+    "agriculture": 52.432,
+    "waste": 20.99,
+    "total": 1407.422
+   },
+   "observed_sectors": {
+    "power": 525.014,
+    "transportation": 347.225,
+    "buildings": 122.954,
+    "fossil-fuel-operations": 44.891,
+    "manufacturing": 268.144,
+    "mineral-extraction": 0.567,
+    "fluorinated-gases": 25.206,
+    "agriculture": 52.432,
+    "waste": 20.99
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 1321.615
+   }
+  },
+  "KAZ": {
+   "iso3": "KAZ",
+   "numeric": "398",
+   "name": "Kazakhstan",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 338.12,
+    "energy": 289.01,
+    "agriculture": 42.85,
+    "waste": 6.26
+   },
+   "observed": {
+    "energy": 339.695,
+    "agriculture": 17.507,
+    "waste": 6.458,
+    "total": 363.659
+   },
+   "observed_sectors": {
+    "power": 114.687,
+    "transportation": 25.512,
+    "buildings": 41.939,
+    "fossil-fuel-operations": 103.513,
+    "manufacturing": 37.809,
+    "mineral-extraction": 12.479,
+    "fluorinated-gases": 3.756,
+    "agriculture": 17.507,
+    "waste": 6.458
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 371.633
+   }
+  },
+  "LIE": {
+   "iso3": "LIE",
+   "numeric": "438",
+   "name": "Liechtenstein",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 0.18,
+    "energy": 0.16,
+    "agriculture": 0.03,
+    "waste": 0.0
+   },
+   "observed": {
+    "energy": 0.132,
+    "agriculture": 0.0,
+    "waste": 0.004,
+    "total": 0.136
+   },
+   "observed_sectors": {
+    "power": 0.005,
+    "transportation": 0.042,
+    "buildings": 0.085,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.004
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.114
+   }
+  },
+  "LTU": {
+   "iso3": "LTU",
+   "numeric": "440",
+   "name": "Lithuania",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 20.25,
+    "energy": 15.03,
+    "agriculture": 4.33,
+    "waste": 0.89
+   },
+   "observed": {
+    "energy": 17.892,
+    "agriculture": 14.622,
+    "waste": 0.526,
+    "total": 33.04
+   },
+   "observed_sectors": {
+    "power": 1.431,
+    "transportation": 6.455,
+    "buildings": 1.676,
+    "fossil-fuel-operations": 1.501,
+    "manufacturing": 6.028,
+    "mineral-extraction": 0.089,
+    "fluorinated-gases": 0.713,
+    "agriculture": 14.622,
+    "waste": 0.526
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 30.074
+   }
+  },
+  "LUX": {
+   "iso3": "LUX",
+   "numeric": "442",
+   "name": "Luxembourg",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 9.39,
+    "energy": 8.61,
+    "agriculture": 0.7,
+    "waste": 0.09
+   },
+   "observed": {
+    "energy": 6.179,
+    "agriculture": 0.742,
+    "waste": 0.122,
+    "total": 7.044
+   },
+   "observed_sectors": {
+    "power": 0.356,
+    "transportation": 2.645,
+    "buildings": 1.756,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 1.353,
+    "mineral-extraction": 0.005,
+    "fluorinated-gases": 0.064,
+    "agriculture": 0.742,
+    "waste": 0.122
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 6.401
+   }
+  },
+  "LVA": {
+   "iso3": "LVA",
+   "numeric": "428",
+   "name": "Latvia",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 10.73,
+    "energy": 7.91,
+    "agriculture": 2.25,
+    "waste": 0.56
+   },
+   "observed": {
+    "energy": 9.956,
+    "agriculture": 8.012,
+    "waste": 0.852,
+    "total": 18.82
+   },
+   "observed_sectors": {
+    "power": 1.454,
+    "transportation": 5.413,
+    "buildings": 1.639,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.877,
+    "mineral-extraction": 0.074,
+    "fluorinated-gases": 0.5,
+    "agriculture": 8.012,
+    "waste": 0.852
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 18.345
+   }
+  },
+  "MCO": {
+   "iso3": "MCO",
+   "numeric": "492",
+   "name": "Monaco",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 0.07,
+    "energy": 0.08,
+    "agriculture": null,
+    "waste": 0.0
+   },
+   "observed": {
+    "energy": 0.154,
+    "agriculture": 0.0,
+    "waste": 0.002,
+    "total": 0.156
+   },
+   "observed_sectors": {
+    "power": 0.019,
+    "transportation": 0.093,
+    "buildings": 0.041,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.002
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.167
+   }
+  },
+  "MLT": {
+   "iso3": "MLT",
+   "numeric": "470",
+   "name": "Malta",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 2.13,
+    "energy": 1.85,
+    "agriculture": 0.09,
+    "waste": 0.2
+   },
+   "observed": {
+    "energy": 4.284,
+    "agriculture": 0.069,
+    "waste": 0.126,
+    "total": 4.479
+   },
+   "observed_sectors": {
+    "power": 1.11,
+    "transportation": 2.745,
+    "buildings": 0.134,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.089,
+    "mineral-extraction": 0.008,
+    "fluorinated-gases": 0.199,
+    "agriculture": 0.069,
+    "waste": 0.126
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 4.652
+   }
+  },
+  "NLD": {
+   "iso3": "NLD",
+   "numeric": "528",
+   "name": "Netherlands",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 167.15,
+    "energy": 145.67,
+    "agriculture": 17.97,
+    "waste": 3.51
+   },
+   "observed": {
+    "energy": 201.793,
+    "agriculture": 29.428,
+    "waste": 5.071,
+    "total": 236.291
+   },
+   "observed_sectors": {
+    "power": 47.098,
+    "transportation": 53.257,
+    "buildings": 31.518,
+    "fossil-fuel-operations": 20.696,
+    "manufacturing": 47.63,
+    "mineral-extraction": 0.143,
+    "fluorinated-gases": 1.449,
+    "agriculture": 29.428,
+    "waste": 5.071
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 206.877
+   }
+  },
+  "NOR": {
+   "iso3": "NOR",
+   "numeric": "578",
+   "name": "Norway",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 48.9,
+    "energy": 42.75,
+    "agriculture": 4.7,
+    "waste": 1.44
+   },
+   "observed": {
+    "energy": 94.591,
+    "agriculture": 9.06,
+    "waste": 1.125,
+    "total": 104.775
+   },
+   "observed_sectors": {
+    "power": 2.065,
+    "transportation": 29.399,
+    "buildings": 2.811,
+    "fossil-fuel-operations": 43.057,
+    "manufacturing": 15.564,
+    "mineral-extraction": 0.217,
+    "fluorinated-gases": 1.478,
+    "agriculture": 9.06,
+    "waste": 1.125
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 107.859
+   }
+  },
+  "NZL": {
+   "iso3": "NZL",
+   "numeric": "554",
+   "name": "New Zealand",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 76.82,
+    "energy": 35.82,
+    "agriculture": 37.79,
+    "waste": 3.21
+   },
+   "observed": {
+    "energy": 44.211,
+    "agriculture": 38.395,
+    "waste": 5.159,
+    "total": 87.765
+   },
+   "observed_sectors": {
+    "power": 6.043,
+    "transportation": 20.412,
+    "buildings": 3.652,
+    "fossil-fuel-operations": 2.945,
+    "manufacturing": 9.194,
+    "mineral-extraction": 0.22,
+    "fluorinated-gases": 1.745,
+    "agriculture": 38.395,
+    "waste": 5.159
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 87.348
+   }
+  },
+  "POL": {
+   "iso3": "POL",
+   "numeric": "616",
+   "name": "Poland",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 399.44,
+    "energy": 360.73,
+    "agriculture": 34.04,
+    "waste": 4.67
+   },
+   "observed": {
+    "energy": 374.358,
+    "agriculture": 56.0,
+    "waste": 11.319,
+    "total": 441.678
+   },
+   "observed_sectors": {
+    "power": 166.821,
+    "transportation": 50.702,
+    "buildings": 54.677,
+    "fossil-fuel-operations": 43.486,
+    "manufacturing": 51.928,
+    "mineral-extraction": 0.425,
+    "fluorinated-gases": 6.319,
+    "agriculture": 56.0,
+    "waste": 11.319
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 380.013
+   }
+  },
+  "PRT": {
+   "iso3": "PRT",
+   "numeric": "620",
+   "name": "Portugal",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 56.36,
+    "energy": 44.09,
+    "agriculture": 7.26,
+    "waste": 5.01
+   },
+   "observed": {
+    "energy": 67.172,
+    "agriculture": 7.095,
+    "waste": 4.667,
+    "total": 78.934
+   },
+   "observed_sectors": {
+    "power": 8.503,
+    "transportation": 39.728,
+    "buildings": 4.499,
+    "fossil-fuel-operations": 2.279,
+    "manufacturing": 8.236,
+    "mineral-extraction": 0.108,
+    "fluorinated-gases": 3.819,
+    "agriculture": 7.095,
+    "waste": 4.667
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 82.766
+   }
+  },
+  "ROU": {
+   "iso3": "ROU",
+   "numeric": "642",
+   "name": "Romania",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 115.4,
+    "energy": 89.7,
+    "agriculture": 19.17,
+    "waste": 6.53
+   },
+   "observed": {
+    "energy": 105.842,
+    "agriculture": 15.935,
+    "waste": 10.024,
+    "total": 131.801
+   },
+   "observed_sectors": {
+    "power": 20.701,
+    "transportation": 25.019,
+    "buildings": 15.86,
+    "fossil-fuel-operations": 14.203,
+    "manufacturing": 26.682,
+    "mineral-extraction": 0.159,
+    "fluorinated-gases": 3.219,
+    "agriculture": 15.935,
+    "waste": 10.024
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 115.972
+   }
+  },
+  "RUS": {
+   "iso3": "RUS",
+   "numeric": "643",
+   "name": "Russian Federation",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 2156.6,
+    "energy": 1938.62,
+    "agriculture": 121.28,
+    "waste": 96.69
+   },
+   "observed": {
+    "energy": 2661.253,
+    "agriculture": 137.503,
+    "waste": 110.321,
+    "total": 2909.077
+   },
+   "observed_sectors": {
+    "power": 840.529,
+    "transportation": 301.766,
+    "buildings": 241.742,
+    "fossil-fuel-operations": 869.79,
+    "manufacturing": 332.921,
+    "mineral-extraction": 14.174,
+    "fluorinated-gases": 60.332,
+    "agriculture": 137.503,
+    "waste": 110.321
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 2854.453
+   }
+  },
+  "SVK": {
+   "iso3": "SVK",
+   "numeric": "703",
+   "name": "Slovakia",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 41.23,
+    "energy": 36.91,
+    "agriculture": 2.43,
+    "waste": 1.88
+   },
+   "observed": {
+    "energy": 37.211,
+    "agriculture": 2.68,
+    "waste": 2.573,
+    "total": 42.463
+   },
+   "observed_sectors": {
+    "power": 5.835,
+    "transportation": 5.733,
+    "buildings": 5.402,
+    "fossil-fuel-operations": 2.185,
+    "manufacturing": 17.063,
+    "mineral-extraction": 0.121,
+    "fluorinated-gases": 0.872,
+    "agriculture": 2.68,
+    "waste": 2.573
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 37.518
+   }
+  },
+  "SVN": {
+   "iso3": "SVN",
+   "numeric": "705",
+   "name": "Slovenia",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 16.11,
+    "energy": 13.86,
+    "agriculture": 1.81,
+    "waste": 0.43
+   },
+   "observed": {
+    "energy": 14.159,
+    "agriculture": 1.274,
+    "waste": 0.523,
+    "total": 15.957
+   },
+   "observed_sectors": {
+    "power": 4.38,
+    "transportation": 4.574,
+    "buildings": 1.347,
+    "fossil-fuel-operations": 0.826,
+    "manufacturing": 2.498,
+    "mineral-extraction": 0.031,
+    "fluorinated-gases": 0.503,
+    "agriculture": 1.274,
+    "waste": 0.523
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 15.646
+   }
+  },
+  "SWE": {
+   "iso3": "SWE",
+   "numeric": "752",
+   "name": "Sweden",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 47.82,
+    "energy": 40.15,
+    "agriculture": 6.67,
+    "waste": 0.99
+   },
+   "observed": {
+    "energy": 55.664,
+    "agriculture": 15.932,
+    "waste": 2.383,
+    "total": 73.979
+   },
+   "observed_sectors": {
+    "power": 6.527,
+    "transportation": 27.081,
+    "buildings": 2.923,
+    "fossil-fuel-operations": 3.073,
+    "manufacturing": 13.812,
+    "mineral-extraction": 1.072,
+    "fluorinated-gases": 1.175,
+    "agriculture": 15.932,
+    "waste": 2.383
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 71.611
+   }
+  },
+  "TUR": {
+   "iso3": "TUR",
+   "numeric": "792",
+   "name": "Türkiye",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 564.39,
+    "energy": 477.62,
+    "agriculture": 72.08,
+    "waste": 14.7
+   },
+   "observed": {
+    "energy": 510.289,
+    "agriculture": 44.218,
+    "waste": 63.774,
+    "total": 618.281
+   },
+   "observed_sectors": {
+    "power": 163.928,
+    "transportation": 115.891,
+    "buildings": 73.867,
+    "fossil-fuel-operations": 21.109,
+    "manufacturing": 125.625,
+    "mineral-extraction": 1.801,
+    "fluorinated-gases": 8.068,
+    "agriculture": 44.218,
+    "waste": 63.774
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 635.127
+   }
+  },
+  "UKR": {
+   "iso3": "UKR",
+   "numeric": "804",
+   "name": "Ukraine",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 327.26,
+    "energy": 268.1,
+    "agriculture": 47.02,
+    "waste": 12.14
+   },
+   "observed": {
+    "energy": 262.309,
+    "agriculture": 59.353,
+    "waste": 15.377,
+    "total": 337.038
+   },
+   "observed_sectors": {
+    "power": 74.495,
+    "transportation": 55.987,
+    "buildings": 24.622,
+    "fossil-fuel-operations": 31.892,
+    "manufacturing": 66.914,
+    "mineral-extraction": 6.236,
+    "fluorinated-gases": 2.162,
+    "agriculture": 59.353,
+    "waste": 15.377
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 249.183
+   }
+  },
+  "USA": {
+   "iso3": "USA",
+   "numeric": "840",
+   "name": "United States",
+   "year": 2021,
+   "source": "UNFCCC Annex I",
+   "declared": {
+    "total": 6340.23,
+    "energy": 5572.96,
+    "agriculture": 598.1,
+    "waste": 169.16
+   },
+   "observed": {
+    "energy": 6000.984,
+    "agriculture": 403.908,
+    "waste": 157.241,
+    "total": 6562.133
+   },
+   "observed_sectors": {
+    "power": 1679.39,
+    "transportation": 1886.195,
+    "buildings": 577.859,
+    "fossil-fuel-operations": 944.014,
+    "manufacturing": 664.726,
+    "mineral-extraction": 11.322,
+    "fluorinated-gases": 237.478,
+    "agriculture": 403.908,
+    "waste": 157.241
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 6613.431
+   }
+  },
+  "BDI": {
+   "iso3": "BDI",
+   "numeric": "108",
+   "name": "Burundi",
+   "year": 2015,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 1.71,
+    "energy": 1.08,
+    "agriculture": 0.4,
+    "waste": 0.23
+   },
+   "observed": {
+    "energy": 2.561,
+    "agriculture": 5.204,
+    "waste": 1.336,
+    "total": 9.101
+   },
+   "observed_sectors": {
+    "power": 0.089,
+    "transportation": 0.905,
+    "buildings": 1.283,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.139,
+    "mineral-extraction": 0.004,
+    "fluorinated-gases": 0.142,
+    "agriculture": 5.204,
+    "waste": 1.336
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 11.315
+   }
+  },
+  "BFA": {
+   "iso3": "BFA",
+   "numeric": "854",
+   "name": "Burkina Faso",
+   "year": 2017,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 25.0,
+    "energy": 5.53,
+    "agriculture": 17.64,
+    "waste": 1.82
+   },
+   "observed": {
+    "energy": 8.383,
+    "agriculture": 17.199,
+    "waste": 3.34,
+    "total": 28.921
+   },
+   "observed_sectors": {
+    "power": 0.895,
+    "transportation": 2.855,
+    "buildings": 2.407,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 1.455,
+    "mineral-extraction": 0.038,
+    "fluorinated-gases": 0.733,
+    "agriculture": 17.199,
+    "waste": 3.34
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 32.301
+   }
+  },
+  "BRA": {
+   "iso3": "BRA",
+   "numeric": "076",
+   "name": "Brazil",
+   "year": 2016,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 1014.7,
+    "energy": 512.61,
+    "agriculture": 439.21,
+    "waste": 62.88
+   },
+   "observed": {
+    "energy": 635.957,
+    "agriculture": 363.057,
+    "waste": 83.408,
+    "total": 1082.422
+   },
+   "observed_sectors": {
+    "power": 74.433,
+    "transportation": 260.389,
+    "buildings": 44.154,
+    "fossil-fuel-operations": 87.05,
+    "manufacturing": 149.574,
+    "mineral-extraction": 5.822,
+    "fluorinated-gases": 14.535,
+    "agriculture": 363.057,
+    "waste": 83.408
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 1138.054
+   }
+  },
+  "BTN": {
+   "iso3": "BTN",
+   "numeric": "064",
+   "name": "Bhutan",
+   "year": 2015,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 2.18,
+    "energy": 1.51,
+    "agriculture": 0.55,
+    "waste": 0.13
+   },
+   "observed": {
+    "energy": 2.188,
+    "agriculture": 0.32,
+    "waste": 0.159,
+    "total": 2.666
+   },
+   "observed_sectors": {
+    "power": 0.187,
+    "transportation": 0.259,
+    "buildings": 0.526,
+    "fossil-fuel-operations": 0.037,
+    "manufacturing": 1.171,
+    "mineral-extraction": 0.008,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.32,
+    "waste": 0.159
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 2.978
+   }
+  },
+  "BWA": {
+   "iso3": "BWA",
+   "numeric": "072",
+   "name": "Botswana",
+   "year": 2015,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 23.98,
+    "energy": 7.43,
+    "agriculture": 16.4,
+    "waste": 0.14
+   },
+   "observed": {
+    "energy": 14.398,
+    "agriculture": 3.505,
+    "waste": 0.554,
+    "total": 18.458
+   },
+   "observed_sectors": {
+    "power": 4.334,
+    "transportation": 7.558,
+    "buildings": 0.411,
+    "fossil-fuel-operations": 0.965,
+    "manufacturing": 0.372,
+    "mineral-extraction": 0.538,
+    "fluorinated-gases": 0.218,
+    "agriculture": 3.505,
+    "waste": 0.554
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 17.736
+   }
+  },
+  "CHL": {
+   "iso3": "CHL",
+   "numeric": "152",
+   "name": "Chile",
+   "year": 2018,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 112.0,
+    "energy": 94.98,
+    "agriculture": 10.98,
+    "waste": 5.92
+   },
+   "observed": {
+    "energy": 117.356,
+    "agriculture": 9.256,
+    "waste": 5.881,
+    "total": 132.493
+   },
+   "observed_sectors": {
+    "power": 38.909,
+    "transportation": 34.321,
+    "buildings": 8.908,
+    "fossil-fuel-operations": 3.429,
+    "manufacturing": 12.061,
+    "mineral-extraction": 11.879,
+    "fluorinated-gases": 7.848,
+    "agriculture": 9.256,
+    "waste": 5.881
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 125.184
+   }
+  },
+  "DMA": {
+   "iso3": "DMA",
+   "numeric": "212",
+   "name": "Dominica",
+   "year": 2017,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 0.21,
+    "energy": 0.16,
+    "agriculture": 0.02,
+    "waste": 0.03
+   },
+   "observed": {
+    "energy": 0.253,
+    "agriculture": 0.027,
+    "waste": 0.029,
+    "total": 0.31
+   },
+   "observed_sectors": {
+    "power": 0.088,
+    "transportation": 0.154,
+    "buildings": 0.007,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.004,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.027,
+    "waste": 0.029
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.384
+   }
+  },
+  "GEO": {
+   "iso3": "GEO",
+   "numeric": "268",
+   "name": "Georgia",
+   "year": 2017,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 16.98,
+    "energy": 11.93,
+    "agriculture": 3.49,
+    "waste": 1.56
+   },
+   "observed": {
+    "energy": 14.449,
+    "agriculture": 1.857,
+    "waste": 1.68,
+    "total": 17.986
+   },
+   "observed_sectors": {
+    "power": 1.096,
+    "transportation": 6.411,
+    "buildings": 2.446,
+    "fossil-fuel-operations": 0.316,
+    "manufacturing": 3.743,
+    "mineral-extraction": 0.059,
+    "fluorinated-gases": 0.378,
+    "agriculture": 1.857,
+    "waste": 1.68
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 21.441
+   }
+  },
+  "HND": {
+   "iso3": "HND",
+   "numeric": "340",
+   "name": "Honduras",
+   "year": 2015,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 15.98,
+    "energy": 11.13,
+    "agriculture": 3.5,
+    "waste": 1.35
+   },
+   "observed": {
+    "energy": 13.458,
+    "agriculture": 3.809,
+    "waste": 3.089,
+    "total": 20.356
+   },
+   "observed_sectors": {
+    "power": 4.579,
+    "transportation": 4.112,
+    "buildings": 1.261,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 3.11,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.395,
+    "agriculture": 3.809,
+    "waste": 3.089
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 22.76
+   }
+  },
+  "IND": {
+   "iso3": "IND",
+   "numeric": "356",
+   "name": "India",
+   "year": 2016,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 2839.42,
+    "energy": 2356.11,
+    "agriculture": 407.97,
+    "waste": 75.34
+   },
+   "observed": {
+    "energy": 2386.838,
+    "agriculture": 579.102,
+    "waste": 123.926,
+    "total": 3089.866
+   },
+   "observed_sectors": {
+    "power": 1078.615,
+    "transportation": 158.583,
+    "buildings": 242.234,
+    "fossil-fuel-operations": 222.233,
+    "manufacturing": 629.26,
+    "mineral-extraction": 4.396,
+    "fluorinated-gases": 51.517,
+    "agriculture": 579.102,
+    "waste": 123.926
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 4165.367
+   }
+  },
+  "ISR": {
+   "iso3": "ISR",
+   "numeric": "376",
+   "name": "Israel",
+   "year": 2020,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 77.52,
+    "energy": 68.84,
+    "agriculture": 2.21,
+    "waste": 6.47
+   },
+   "observed": {
+    "energy": 80.988,
+    "agriculture": 0.91,
+    "waste": 6.95,
+    "total": 88.848
+   },
+   "observed_sectors": {
+    "power": 42.569,
+    "transportation": 11.651,
+    "buildings": 1.99,
+    "fossil-fuel-operations": 7.736,
+    "manufacturing": 10.809,
+    "mineral-extraction": 0.002,
+    "fluorinated-gases": 6.23,
+    "agriculture": 0.91,
+    "waste": 6.95
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 93.32
+   }
+  },
+  "JOR": {
+   "iso3": "JOR",
+   "numeric": "400",
+   "name": "Jordan",
+   "year": 2016,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 31.96,
+    "energy": 26.8,
+    "agriculture": 1.32,
+    "waste": 3.81
+   },
+   "observed": {
+    "energy": 31.738,
+    "agriculture": 1.219,
+    "waste": 4.013,
+    "total": 36.97
+   },
+   "observed_sectors": {
+    "power": 11.486,
+    "transportation": 10.437,
+    "buildings": 3.024,
+    "fossil-fuel-operations": 0.434,
+    "manufacturing": 4.445,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 1.912,
+    "agriculture": 1.219,
+    "waste": 4.013
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 38.454
+   }
+  },
+  "KOR": {
+   "iso3": "KOR",
+   "numeric": "410",
+   "name": "South Korea",
+   "year": 2018,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 727.64,
+    "energy": 689.36,
+    "agriculture": 21.19,
+    "waste": 17.09
+   },
+   "observed": {
+    "energy": 766.318,
+    "agriculture": 13.886,
+    "waste": 13.126,
+    "total": 793.331
+   },
+   "observed_sectors": {
+    "power": 348.944,
+    "transportation": 100.789,
+    "buildings": 61.934,
+    "fossil-fuel-operations": 38.101,
+    "manufacturing": 196.592,
+    "mineral-extraction": 0.124,
+    "fluorinated-gases": 19.832,
+    "agriculture": 13.886,
+    "waste": 13.126
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 708.502
+   }
+  },
+  "KWT": {
+   "iso3": "KWT",
+   "numeric": "414",
+   "name": "Kuwait",
+   "year": 2016,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 86.34,
+    "energy": 84.49,
+    "agriculture": 0.14,
+    "waste": 1.71
+   },
+   "observed": {
+    "energy": 152.043,
+    "agriculture": 0.455,
+    "waste": 8.242,
+    "total": 160.739
+   },
+   "observed_sectors": {
+    "power": 45.567,
+    "transportation": 9.554,
+    "buildings": 0.886,
+    "fossil-fuel-operations": 63.246,
+    "manufacturing": 22.546,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 10.245,
+    "agriculture": 0.455,
+    "waste": 8.242
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 188.08
+   }
+  },
+  "MDV": {
+   "iso3": "MDV",
+   "numeric": "462",
+   "name": "Maldives",
+   "year": 2015,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 1.54,
+    "energy": 1.47,
+    "agriculture": null,
+    "waste": 0.06
+   },
+   "observed": {
+    "energy": 1.766,
+    "agriculture": 0.0,
+    "waste": 0.117,
+    "total": 1.883
+   },
+   "observed_sectors": {
+    "power": 0.542,
+    "transportation": 0.821,
+    "buildings": 0.266,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.127,
+    "mineral-extraction": 0.009,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.117
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 2.614
+   }
+  },
+  "MOZ": {
+   "iso3": "MOZ",
+   "numeric": "508",
+   "name": "Mozambique",
+   "year": 2016,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 21.77,
+    "energy": 18.7,
+    "agriculture": 1.88,
+    "waste": 1.2
+   },
+   "observed": {
+    "energy": 25.104,
+    "agriculture": 2.309,
+    "waste": 3.496,
+    "total": 30.908
+   },
+   "observed_sectors": {
+    "power": 2.366,
+    "transportation": 11.375,
+    "buildings": 2.256,
+    "fossil-fuel-operations": 5.02,
+    "manufacturing": 3.358,
+    "mineral-extraction": 0.427,
+    "fluorinated-gases": 0.302,
+    "agriculture": 2.309,
+    "waste": 3.496
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 43.757
+   }
+  },
+  "PAK": {
+   "iso3": "PAK",
+   "numeric": "586",
+   "name": "Pakistan",
+   "year": 2015,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 394.58,
+    "energy": 205.44,
+    "agriculture": 173.52,
+    "waste": 15.63
+   },
+   "observed": {
+    "energy": 199.649,
+    "agriculture": 153.832,
+    "waste": 26.699,
+    "total": 380.18
+   },
+   "observed_sectors": {
+    "power": 47.914,
+    "transportation": 31.549,
+    "buildings": 33.053,
+    "fossil-fuel-operations": 27.449,
+    "manufacturing": 53.306,
+    "mineral-extraction": 0.135,
+    "fluorinated-gases": 6.242,
+    "agriculture": 153.832,
+    "waste": 26.699
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 482.044
+   }
+  },
+  "PRY": {
+   "iso3": "PRY",
+   "numeric": "600",
+   "name": "Paraguay",
+   "year": 2017,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 35.21,
+    "energy": 9.03,
+    "agriculture": 24.89,
+    "waste": 1.29
+   },
+   "observed": {
+    "energy": 8.919,
+    "agriculture": 13.624,
+    "waste": 1.089,
+    "total": 23.631
+   },
+   "observed_sectors": {
+    "power": 0.001,
+    "transportation": 6.191,
+    "buildings": 0.749,
+    "fossil-fuel-operations": 0.015,
+    "manufacturing": 1.506,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.457,
+    "agriculture": 13.624,
+    "waste": 1.089
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 26.683
+   }
+  },
+  "SSD": {
+   "iso3": "SSD",
+   "numeric": "728",
+   "name": "South Sudan",
+   "year": 2015,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 33.64,
+    "energy": 2.67,
+    "agriculture": 26.83,
+    "waste": 4.14
+   },
+   "observed": {
+    "energy": 7.06,
+    "agriculture": 38.879,
+    "waste": 1.401,
+    "total": 47.34
+   },
+   "observed_sectors": {
+    "power": 0.501,
+    "transportation": 2.785,
+    "buildings": 0.941,
+    "fossil-fuel-operations": 2.781,
+    "manufacturing": 0.052,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 38.879,
+    "waste": 1.401
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 51.34
+   }
+  },
+  "TGO": {
+   "iso3": "TGO",
+   "numeric": "768",
+   "name": "Togo",
+   "year": 2018,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 23.57,
+    "energy": 3.73,
+    "agriculture": 19.52,
+    "waste": 0.32
+   },
+   "observed": {
+    "energy": 5.104,
+    "agriculture": 2.678,
+    "waste": 1.428,
+    "total": 9.21
+   },
+   "observed_sectors": {
+    "power": 0.318,
+    "transportation": 2.615,
+    "buildings": 0.664,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.93,
+    "mineral-extraction": 0.002,
+    "fluorinated-gases": 0.575,
+    "agriculture": 2.678,
+    "waste": 1.428
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 12.217
+   }
+  },
+  "URY": {
+   "iso3": "URY",
+   "numeric": "858",
+   "name": "Uruguay",
+   "year": 2019,
+   "source": "UNFCCC non-Annex I",
+   "declared": {
+    "total": 31.02,
+    "energy": 7.2,
+    "agriculture": 22.58,
+    "waste": 1.14
+   },
+   "observed": {
+    "energy": 8.54,
+    "agriculture": 19.622,
+    "waste": 0.616,
+    "total": 28.777
+   },
+   "observed_sectors": {
+    "power": 0.211,
+    "transportation": 5.059,
+    "buildings": 1.063,
+    "fossil-fuel-operations": 0.158,
+    "manufacturing": 1.845,
+    "mineral-extraction": 0.016,
+    "fluorinated-gases": 0.188,
+    "agriculture": 19.622,
+    "waste": 0.616
+   },
+   "observed_latest": {
+    "year": 2024,
+    "total": 33.753
+   }
+  }
+ },
+ "undeclared": {
+  "ABW": {
+   "iso3": "ABW",
+   "numeric": "533",
+   "name": "Aruba",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.715
+   },
+   "observed_sectors": {
+    "power": 0.754,
+    "transportation": 0.844,
+    "buildings": 0.049,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.046,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.022
+   }
+  },
+  "AFG": {
+   "iso3": "AFG",
+   "numeric": "004",
+   "name": "Afghanistan",
+   "observed_latest": {
+    "year": 2024,
+    "total": 45.188
+   },
+   "observed_sectors": {
+    "power": 2.922,
+    "transportation": 12.163,
+    "buildings": 1.715,
+    "fossil-fuel-operations": 1.388,
+    "manufacturing": 4.367,
+    "mineral-extraction": 0.077,
+    "fluorinated-gases": 1.112,
+    "agriculture": 15.883,
+    "waste": 5.561
+   }
+  },
+  "AGO": {
+   "iso3": "AGO",
+   "numeric": "024",
+   "name": "Angola",
+   "observed_latest": {
+    "year": 2024,
+    "total": 86.261
+   },
+   "observed_sectors": {
+    "power": 3.791,
+    "transportation": 18.684,
+    "buildings": 9.399,
+    "fossil-fuel-operations": 33.786,
+    "manufacturing": 5.453,
+    "mineral-extraction": 0.001,
+    "fluorinated-gases": 0.765,
+    "agriculture": 9.968,
+    "waste": 4.415
+   }
+  },
+  "AIA": {
+   "iso3": "AIA",
+   "numeric": "660",
+   "name": "Anguilla",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.17
+   },
+   "observed_sectors": {
+    "power": 0.101,
+    "transportation": 0.064,
+    "buildings": 0.001,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.004
+   }
+  },
+  "ALA": {
+   "iso3": "ALA",
+   "numeric": "248",
+   "name": "Åland Islands",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.391
+   },
+   "observed_sectors": {
+    "power": 0.0,
+    "transportation": 0.359,
+    "buildings": 0.029,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.002
+   }
+  },
+  "ALB": {
+   "iso3": "ALB",
+   "numeric": "008",
+   "name": "Albania",
+   "observed_latest": {
+    "year": 2024,
+    "total": 12.005
+   },
+   "observed_sectors": {
+    "power": 0.0,
+    "transportation": 3.773,
+    "buildings": 0.823,
+    "fossil-fuel-operations": 1.215,
+    "manufacturing": 2.342,
+    "mineral-extraction": 0.022,
+    "fluorinated-gases": 0.291,
+    "agriculture": 2.44,
+    "waste": 1.099
+   }
+  },
+  "AND": {
+   "iso3": "AND",
+   "numeric": "020",
+   "name": "Andorra",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.26
+   },
+   "observed_sectors": {
+    "power": 0.127,
+    "transportation": 0.053,
+    "buildings": 0.058,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.023
+   }
+  },
+  "ARE": {
+   "iso3": "ARE",
+   "numeric": "784",
+   "name": "United Arab Emirates",
+   "observed_latest": {
+    "year": 2024,
+    "total": 410.475
+   },
+   "observed_sectors": {
+    "power": 65.382,
+    "transportation": 63.938,
+    "buildings": 0.906,
+    "fossil-fuel-operations": 138.339,
+    "manufacturing": 104.589,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 28.474,
+    "agriculture": 2.12,
+    "waste": 6.726
+   }
+  },
+  "ARG": {
+   "iso3": "ARG",
+   "numeric": "032",
+   "name": "Argentina",
+   "observed_latest": {
+    "year": 2024,
+    "total": 388.398
+   },
+   "observed_sectors": {
+    "power": 42.123,
+    "transportation": 92.041,
+    "buildings": 40.679,
+    "fossil-fuel-operations": 61.12,
+    "manufacturing": 33.082,
+    "mineral-extraction": 0.32,
+    "fluorinated-gases": 20.095,
+    "agriculture": 84.888,
+    "waste": 14.05
+   }
+  },
+  "ARM": {
+   "iso3": "ARM",
+   "numeric": "051",
+   "name": "Armenia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 12.594
+   },
+   "observed_sectors": {
+    "power": 1.847,
+    "transportation": 3.641,
+    "buildings": 2.829,
+    "fossil-fuel-operations": 0.242,
+    "manufacturing": 1.047,
+    "mineral-extraction": 1.018,
+    "fluorinated-gases": 0.44,
+    "agriculture": 0.86,
+    "waste": 0.669
+   }
+  },
+  "ASM": {
+   "iso3": "ASM",
+   "numeric": "016",
+   "name": "American Samoa",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.358
+   },
+   "observed_sectors": {
+    "power": 0.149,
+    "transportation": 0.193,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.007,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.007
+   }
+  },
+  "ATA": {
+   "iso3": "ATA",
+   "numeric": "010",
+   "name": "Antarctica",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.466
+   },
+   "observed_sectors": {
+    "power": 0.0,
+    "transportation": 0.466,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.0
+   }
+  },
+  "ATG": {
+   "iso3": "ATG",
+   "numeric": "028",
+   "name": "Antigua and Barbuda",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.091
+   },
+   "observed_sectors": {
+    "power": 0.303,
+    "transportation": 0.68,
+    "buildings": 0.031,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.01,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.001,
+    "agriculture": 0.021,
+    "waste": 0.046
+   }
+  },
+  "AZE": {
+   "iso3": "AZE",
+   "numeric": "031",
+   "name": "Azerbaijan",
+   "observed_latest": {
+    "year": 2024,
+    "total": 80.735
+   },
+   "observed_sectors": {
+    "power": 15.723,
+    "transportation": 14.392,
+    "buildings": 10.185,
+    "fossil-fuel-operations": 24.712,
+    "manufacturing": 4.94,
+    "mineral-extraction": 0.049,
+    "fluorinated-gases": 2.231,
+    "agriculture": 5.281,
+    "waste": 3.222
+   }
+  },
+  "BEN": {
+   "iso3": "BEN",
+   "numeric": "204",
+   "name": "Benin",
+   "observed_latest": {
+    "year": 2024,
+    "total": 17.555
+   },
+   "observed_sectors": {
+    "power": 0.73,
+    "transportation": 5.115,
+    "buildings": 1.062,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 1.985,
+    "mineral-extraction": 0.016,
+    "fluorinated-gases": 1.124,
+    "agriculture": 4.608,
+    "waste": 2.916
+   }
+  },
+  "BES": {
+   "iso3": "BES",
+   "numeric": "535",
+   "name": "Bonaire, Sint Eustatius and Saba",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.144
+   },
+   "observed_sectors": {
+    "power": 0.672,
+    "transportation": 0.455,
+    "buildings": 0.012,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.005
+   }
+  },
+  "BGD": {
+   "iso3": "BGD",
+   "numeric": "050",
+   "name": "Bangladesh",
+   "observed_latest": {
+    "year": 2024,
+    "total": 284.223
+   },
+   "observed_sectors": {
+    "power": 63.679,
+    "transportation": 13.54,
+    "buildings": 17.218,
+    "fossil-fuel-operations": 9.408,
+    "manufacturing": 39.353,
+    "mineral-extraction": 0.001,
+    "fluorinated-gases": 3.428,
+    "agriculture": 111.253,
+    "waste": 26.341
+   }
+  },
+  "BHR": {
+   "iso3": "BHR",
+   "numeric": "048",
+   "name": "Bahrain",
+   "observed_latest": {
+    "year": 2024,
+    "total": 52.162
+   },
+   "observed_sectors": {
+    "power": 24.077,
+    "transportation": 6.237,
+    "buildings": 0.265,
+    "fossil-fuel-operations": 11.259,
+    "manufacturing": 6.855,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 2.614,
+    "agriculture": 0.038,
+    "waste": 0.818
+   }
+  },
+  "BHS": {
+   "iso3": "BHS",
+   "numeric": "044",
+   "name": "Bahamas",
+   "observed_latest": {
+    "year": 2024,
+    "total": 7.609
+   },
+   "observed_sectors": {
+    "power": 1.855,
+    "transportation": 5.254,
+    "buildings": 0.131,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.037,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.02,
+    "waste": 0.312
+   }
+  },
+  "BIH": {
+   "iso3": "BIH",
+   "numeric": "070",
+   "name": "Bosnia and Herzegovina",
+   "observed_latest": {
+    "year": 2024,
+    "total": 31.194
+   },
+   "observed_sectors": {
+    "power": 12.048,
+    "transportation": 5.091,
+    "buildings": 1.375,
+    "fossil-fuel-operations": 4.927,
+    "manufacturing": 3.007,
+    "mineral-extraction": 0.548,
+    "fluorinated-gases": 0.749,
+    "agriculture": 1.793,
+    "waste": 1.656
+   }
+  },
+  "BLM": {
+   "iso3": "BLM",
+   "numeric": "652",
+   "name": "Saint Barthélemy",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.132
+   },
+   "observed_sectors": {
+    "power": 0.0,
+    "transportation": 0.102,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.03
+   }
+  },
+  "BLZ": {
+   "iso3": "BLZ",
+   "numeric": "084",
+   "name": "Belize",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.861
+   },
+   "observed_sectors": {
+    "power": 0.194,
+    "transportation": 0.897,
+    "buildings": 0.048,
+    "fossil-fuel-operations": 0.011,
+    "manufacturing": 0.015,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.408,
+    "waste": 0.288
+   }
+  },
+  "BMU": {
+   "iso3": "BMU",
+   "numeric": "060",
+   "name": "Bermuda",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.206
+   },
+   "observed_sectors": {
+    "power": 0.601,
+    "transportation": 0.532,
+    "buildings": 0.036,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.007,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.03
+   }
+  },
+  "BOL": {
+   "iso3": "BOL",
+   "numeric": "068",
+   "name": "Bolivia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 69.954
+   },
+   "observed_sectors": {
+    "power": 5.064,
+    "transportation": 26.487,
+    "buildings": 3.525,
+    "fossil-fuel-operations": 5.15,
+    "manufacturing": 5.312,
+    "mineral-extraction": 0.052,
+    "fluorinated-gases": 0.053,
+    "agriculture": 22.247,
+    "waste": 2.064
+   }
+  },
+  "BRB": {
+   "iso3": "BRB",
+   "numeric": "052",
+   "name": "Barbados",
+   "observed_latest": {
+    "year": 2024,
+    "total": 2.637
+   },
+   "observed_sectors": {
+    "power": 0.958,
+    "transportation": 1.255,
+    "buildings": 0.055,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.172,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.043,
+    "waste": 0.154
+   }
+  },
+  "BRN": {
+   "iso3": "BRN",
+   "numeric": "096",
+   "name": "Brunei Darussalam",
+   "observed_latest": {
+    "year": 2024,
+    "total": 13.474
+   },
+   "observed_sectors": {
+    "power": 4.605,
+    "transportation": 1.559,
+    "buildings": 0.09,
+    "fossil-fuel-operations": 5.449,
+    "manufacturing": 0.95,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.321,
+    "agriculture": 0.374,
+    "waste": 0.126
+   }
+  },
+  "CAF": {
+   "iso3": "CAF",
+   "numeric": "140",
+   "name": "Central African Republic",
+   "observed_latest": {
+    "year": 2024,
+    "total": 9.114
+   },
+   "observed_sectors": {
+    "power": 0.061,
+    "transportation": 1.924,
+    "buildings": 0.85,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.057,
+    "mineral-extraction": 0.017,
+    "fluorinated-gases": 0.567,
+    "agriculture": 4.629,
+    "waste": 1.009
+   }
+  },
+  "CHN": {
+   "iso3": "CHN",
+   "numeric": "156",
+   "name": "China",
+   "observed_latest": {
+    "year": 2024,
+    "total": 17240.664
+   },
+   "observed_sectors": {
+    "power": 6643.503,
+    "transportation": 1380.722,
+    "buildings": 675.949,
+    "fossil-fuel-operations": 2309.388,
+    "manufacturing": 4682.207,
+    "mineral-extraction": 33.734,
+    "fluorinated-gases": 570.662,
+    "agriculture": 550.753,
+    "waste": 393.745
+   }
+  },
+  "CIV": {
+   "iso3": "CIV",
+   "numeric": "384",
+   "name": "Côte d'Ivoire",
+   "observed_latest": {
+    "year": 2024,
+    "total": 42.762
+   },
+   "observed_sectors": {
+    "power": 4.595,
+    "transportation": 12.001,
+    "buildings": 4.093,
+    "fossil-fuel-operations": 1.938,
+    "manufacturing": 6.363,
+    "mineral-extraction": 0.205,
+    "fluorinated-gases": 3.013,
+    "agriculture": 6.405,
+    "waste": 4.149
+   }
+  },
+  "CMR": {
+   "iso3": "CMR",
+   "numeric": "120",
+   "name": "Cameroon",
+   "observed_latest": {
+    "year": 2024,
+    "total": 48.832
+   },
+   "observed_sectors": {
+    "power": 1.99,
+    "transportation": 14.062,
+    "buildings": 3.526,
+    "fossil-fuel-operations": 3.691,
+    "manufacturing": 3.38,
+    "mineral-extraction": 0.001,
+    "fluorinated-gases": 4.379,
+    "agriculture": 11.891,
+    "waste": 5.913
+   }
+  },
+  "COD": {
+   "iso3": "COD",
+   "numeric": "180",
+   "name": "Congo, The Democratic Republic of the",
+   "observed_latest": {
+    "year": 2024,
+    "total": 70.332
+   },
+   "observed_sectors": {
+    "power": 0.216,
+    "transportation": 17.923,
+    "buildings": 9.232,
+    "fossil-fuel-operations": 0.883,
+    "manufacturing": 2.193,
+    "mineral-extraction": 12.188,
+    "fluorinated-gases": 3.126,
+    "agriculture": 5.755,
+    "waste": 18.815
+   }
+  },
+  "COG": {
+   "iso3": "COG",
+   "numeric": "178",
+   "name": "Congo",
+   "observed_latest": {
+    "year": 2024,
+    "total": 27.684
+   },
+   "observed_sectors": {
+    "power": 2.762,
+    "transportation": 4.743,
+    "buildings": 0.615,
+    "fossil-fuel-operations": 13.355,
+    "manufacturing": 0.951,
+    "mineral-extraction": 0.048,
+    "fluorinated-gases": 0.48,
+    "agriculture": 3.767,
+    "waste": 0.965
+   }
+  },
+  "COK": {
+   "iso3": "COK",
+   "numeric": "184",
+   "name": "Cook Islands",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.184
+   },
+   "observed_sectors": {
+    "power": 0.023,
+    "transportation": 0.12,
+    "buildings": 0.014,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.009,
+    "mineral-extraction": 0.001,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.011,
+    "waste": 0.005
+   }
+  },
+  "COL": {
+   "iso3": "COL",
+   "numeric": "170",
+   "name": "Colombia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 199.53
+   },
+   "observed_sectors": {
+    "power": 21.394,
+    "transportation": 30.894,
+    "buildings": 10.405,
+    "fossil-fuel-operations": 34.733,
+    "manufacturing": 20.034,
+    "mineral-extraction": 0.906,
+    "fluorinated-gases": 10.834,
+    "agriculture": 46.714,
+    "waste": 23.615
+   }
+  },
+  "COM": {
+   "iso3": "COM",
+   "numeric": "174",
+   "name": "Comoros",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.903
+   },
+   "observed_sectors": {
+    "power": 0.123,
+    "transportation": 0.26,
+    "buildings": 0.12,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.028,
+    "mineral-extraction": 0.009,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.18,
+    "waste": 0.183
+   }
+  },
+  "CPV": {
+   "iso3": "CPV",
+   "numeric": "132",
+   "name": "Cabo Verde",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.813
+   },
+   "observed_sectors": {
+    "power": 0.319,
+    "transportation": 1.105,
+    "buildings": 0.129,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.071,
+    "mineral-extraction": 0.025,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.084,
+    "waste": 0.08
+   }
+  },
+  "CRI": {
+   "iso3": "CRI",
+   "numeric": "188",
+   "name": "Costa Rica",
+   "observed_latest": {
+    "year": 2024,
+    "total": 17.366
+   },
+   "observed_sectors": {
+    "power": 0.384,
+    "transportation": 6.781,
+    "buildings": 0.556,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 1.252,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.669,
+    "agriculture": 5.441,
+    "waste": 2.284
+   }
+  },
+  "CUB": {
+   "iso3": "CUB",
+   "numeric": "192",
+   "name": "Cuba",
+   "observed_latest": {
+    "year": 2024,
+    "total": 41.582
+   },
+   "observed_sectors": {
+    "power": 13.299,
+    "transportation": 8.096,
+    "buildings": 3.277,
+    "fossil-fuel-operations": 0.673,
+    "manufacturing": 6.706,
+    "mineral-extraction": 0.052,
+    "fluorinated-gases": 0.814,
+    "agriculture": 3.7,
+    "waste": 4.965
+   }
+  },
+  "CUW": {
+   "iso3": "CUW",
+   "numeric": "531",
+   "name": "Curaçao",
+   "observed_latest": {
+    "year": 2024,
+    "total": 2.815
+   },
+   "observed_sectors": {
+    "power": 1.034,
+    "transportation": 1.187,
+    "buildings": 0.089,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.491,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.014
+   }
+  },
+  "CYM": {
+   "iso3": "CYM",
+   "numeric": "136",
+   "name": "Cayman Islands",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.136
+   },
+   "observed_sectors": {
+    "power": 0.615,
+    "transportation": 0.452,
+    "buildings": 0.032,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.011,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.026
+   }
+  },
+  "DJI": {
+   "iso3": "DJI",
+   "numeric": "262",
+   "name": "Djibouti",
+   "observed_latest": {
+    "year": 2024,
+    "total": 3.175
+   },
+   "observed_sectors": {
+    "power": 0.132,
+    "transportation": 1.279,
+    "buildings": 0.167,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.539,
+    "mineral-extraction": 0.027,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.48,
+    "waste": 0.55
+   }
+  },
+  "DOM": {
+   "iso3": "DOM",
+   "numeric": "214",
+   "name": "Dominican Republic",
+   "observed_latest": {
+    "year": 2024,
+    "total": 48.455
+   },
+   "observed_sectors": {
+    "power": 14.818,
+    "transportation": 10.866,
+    "buildings": 2.125,
+    "fossil-fuel-operations": 0.146,
+    "manufacturing": 5.243,
+    "mineral-extraction": 0.586,
+    "fluorinated-gases": 2.418,
+    "agriculture": 7.324,
+    "waste": 4.928
+   }
+  },
+  "DZA": {
+   "iso3": "DZA",
+   "numeric": "012",
+   "name": "Algeria",
+   "observed_latest": {
+    "year": 2024,
+    "total": 442.768
+   },
+   "observed_sectors": {
+    "power": 52.517,
+    "transportation": 44.224,
+    "buildings": 33.161,
+    "fossil-fuel-operations": 239.869,
+    "manufacturing": 35.473,
+    "mineral-extraction": 2.442,
+    "fluorinated-gases": 3.71,
+    "agriculture": 11.816,
+    "waste": 19.557
+   }
+  },
+  "ECU": {
+   "iso3": "ECU",
+   "numeric": "218",
+   "name": "Ecuador",
+   "observed_latest": {
+    "year": 2024,
+    "total": 77.762
+   },
+   "observed_sectors": {
+    "power": 8.439,
+    "transportation": 19.914,
+    "buildings": 9.698,
+    "fossil-fuel-operations": 14.819,
+    "manufacturing": 6.987,
+    "mineral-extraction": 0.192,
+    "fluorinated-gases": 1.115,
+    "agriculture": 11.471,
+    "waste": 5.127
+   }
+  },
+  "EGY": {
+   "iso3": "EGY",
+   "numeric": "818",
+   "name": "Egypt",
+   "observed_latest": {
+    "year": 2024,
+    "total": 385.047
+   },
+   "observed_sectors": {
+    "power": 113.005,
+    "transportation": 69.946,
+    "buildings": 18.938,
+    "fossil-fuel-operations": 38.053,
+    "manufacturing": 88.889,
+    "mineral-extraction": 0.001,
+    "fluorinated-gases": 21.035,
+    "agriculture": 16.724,
+    "waste": 18.457
+   }
+  },
+  "ERI": {
+   "iso3": "ERI",
+   "numeric": "232",
+   "name": "Eritrea",
+   "observed_latest": {
+    "year": 2024,
+    "total": 9.418
+   },
+   "observed_sectors": {
+    "power": 0.369,
+    "transportation": 2.25,
+    "buildings": 0.305,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.176,
+    "mineral-extraction": 0.963,
+    "fluorinated-gases": 0.0,
+    "agriculture": 4.623,
+    "waste": 0.732
+   }
+  },
+  "ESH": {
+   "iso3": "ESH",
+   "numeric": "732",
+   "name": "Western Sahara",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.248
+   },
+   "observed_sectors": {
+    "power": 0.053,
+    "transportation": 0.961,
+    "buildings": 0.05,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.002,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.183
+   }
+  },
+  "ETH": {
+   "iso3": "ETH",
+   "numeric": "231",
+   "name": "Ethiopia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 227.275
+   },
+   "observed_sectors": {
+    "power": 0.002,
+    "transportation": 26.765,
+    "buildings": 18.168,
+    "fossil-fuel-operations": 0.342,
+    "manufacturing": 11.969,
+    "mineral-extraction": 0.05,
+    "fluorinated-gases": 0.001,
+    "agriculture": 148.468,
+    "waste": 21.51
+   }
+  },
+  "FJI": {
+   "iso3": "FJI",
+   "numeric": "242",
+   "name": "Fiji",
+   "observed_latest": {
+    "year": 2024,
+    "total": 4.007
+   },
+   "observed_sectors": {
+    "power": 0.375,
+    "transportation": 2.02,
+    "buildings": 0.229,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.217,
+    "mineral-extraction": 0.012,
+    "fluorinated-gases": 0.271,
+    "agriculture": 0.4,
+    "waste": 0.484
+   }
+  },
+  "FLK": {
+   "iso3": "FLK",
+   "numeric": "238",
+   "name": "Falkland Islands (Malvinas)",
+   "observed_latest": {
+    "year": 2024,
+    "total": 6.961
+   },
+   "observed_sectors": {
+    "power": 0.011,
+    "transportation": 0.369,
+    "buildings": 0.002,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.001,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 6.577,
+    "waste": 0.001
+   }
+  },
+  "FRO": {
+   "iso3": "FRO",
+   "numeric": "234",
+   "name": "Faroe Islands",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.608
+   },
+   "observed_sectors": {
+    "power": 0.233,
+    "transportation": 1.037,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.001,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.31,
+    "waste": 0.026
+   }
+  },
+  "FSM": {
+   "iso3": "FSM",
+   "numeric": "583",
+   "name": "Micronesia, Federated States of",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.506
+   },
+   "observed_sectors": {
+    "power": 0.149,
+    "transportation": 0.306,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.021,
+    "mineral-extraction": 0.002,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.02,
+    "waste": 0.007
+   }
+  },
+  "GAB": {
+   "iso3": "GAB",
+   "numeric": "266",
+   "name": "Gabon",
+   "observed_latest": {
+    "year": 2024,
+    "total": 17.12
+   },
+   "observed_sectors": {
+    "power": 1.442,
+    "transportation": 2.67,
+    "buildings": 0.685,
+    "fossil-fuel-operations": 8.515,
+    "manufacturing": 1.049,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 1.424,
+    "agriculture": 0.901,
+    "waste": 0.433
+   }
+  },
+  "GGY": {
+   "iso3": "GGY",
+   "numeric": "831",
+   "name": "Guernsey",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.912
+   },
+   "observed_sectors": {
+    "power": 0.687,
+    "transportation": 0.218,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.007
+   }
+  },
+  "GHA": {
+   "iso3": "GHA",
+   "numeric": "288",
+   "name": "Ghana",
+   "observed_latest": {
+    "year": 2024,
+    "total": 57.349
+   },
+   "observed_sectors": {
+    "power": 8.422,
+    "transportation": 19.609,
+    "buildings": 1.703,
+    "fossil-fuel-operations": 4.393,
+    "manufacturing": 8.357,
+    "mineral-extraction": 0.027,
+    "fluorinated-gases": 2.711,
+    "agriculture": 7.902,
+    "waste": 4.225
+   }
+  },
+  "GIB": {
+   "iso3": "GIB",
+   "numeric": "292",
+   "name": "Gibraltar",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.826
+   },
+   "observed_sectors": {
+    "power": 0.158,
+    "transportation": 0.648,
+    "buildings": 0.002,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.018
+   }
+  },
+  "GIN": {
+   "iso3": "GIN",
+   "numeric": "324",
+   "name": "Guinea",
+   "observed_latest": {
+    "year": 2024,
+    "total": 31.54
+   },
+   "observed_sectors": {
+    "power": 0.911,
+    "transportation": 7.824,
+    "buildings": 2.275,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 2.841,
+    "mineral-extraction": 3.064,
+    "fluorinated-gases": 1.067,
+    "agriculture": 10.975,
+    "waste": 2.582
+   }
+  },
+  "GLP": {
+   "iso3": "GLP",
+   "numeric": "312",
+   "name": "Guadeloupe",
+   "observed_latest": {
+    "year": 2024,
+    "total": 3.193
+   },
+   "observed_sectors": {
+    "power": 1.052,
+    "transportation": 1.711,
+    "buildings": 0.08,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.244,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.106
+   }
+  },
+  "GMB": {
+   "iso3": "GMB",
+   "numeric": "270",
+   "name": "Gambia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 3.383
+   },
+   "observed_sectors": {
+    "power": 0.451,
+    "transportation": 1.876,
+    "buildings": 0.181,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.073,
+    "mineral-extraction": 0.024,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.428,
+    "waste": 0.35
+   }
+  },
+  "GNB": {
+   "iso3": "GNB",
+   "numeric": "624",
+   "name": "Guinea-Bissau",
+   "observed_latest": {
+    "year": 2024,
+    "total": 3.066
+   },
+   "observed_sectors": {
+    "power": 0.072,
+    "transportation": 1.098,
+    "buildings": 0.436,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.045,
+    "mineral-extraction": 0.014,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.931,
+    "waste": 0.469
+   }
+  },
+  "GNQ": {
+   "iso3": "GNQ",
+   "numeric": "226",
+   "name": "Equatorial Guinea",
+   "observed_latest": {
+    "year": 2024,
+    "total": 10.445
+   },
+   "observed_sectors": {
+    "power": 0.67,
+    "transportation": 1.635,
+    "buildings": 0.169,
+    "fossil-fuel-operations": 6.425,
+    "manufacturing": 0.884,
+    "mineral-extraction": 0.031,
+    "fluorinated-gases": 0.298,
+    "agriculture": 0.018,
+    "waste": 0.315
+   }
+  },
+  "GRD": {
+   "iso3": "GRD",
+   "numeric": "308",
+   "name": "Grenada",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.689
+   },
+   "observed_sectors": {
+    "power": 0.212,
+    "transportation": 0.396,
+    "buildings": 0.015,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.005,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.004,
+    "agriculture": 0.014,
+    "waste": 0.043
+   }
+  },
+  "GRL": {
+   "iso3": "GRL",
+   "numeric": "304",
+   "name": "Greenland",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.404
+   },
+   "observed_sectors": {
+    "power": 0.087,
+    "transportation": 0.921,
+    "buildings": 0.339,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.001,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.056
+   }
+  },
+  "GTM": {
+   "iso3": "GTM",
+   "numeric": "320",
+   "name": "Guatemala",
+   "observed_latest": {
+    "year": 2024,
+    "total": 39.98
+   },
+   "observed_sectors": {
+    "power": 3.196,
+    "transportation": 9.149,
+    "buildings": 4.653,
+    "fossil-fuel-operations": 0.188,
+    "manufacturing": 6.559,
+    "mineral-extraction": 0.032,
+    "fluorinated-gases": 0.43,
+    "agriculture": 7.562,
+    "waste": 8.211
+   }
+  },
+  "GUF": {
+   "iso3": "GUF",
+   "numeric": "254",
+   "name": "French Guiana",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.053
+   },
+   "observed_sectors": {
+    "power": 0.271,
+    "transportation": 0.502,
+    "buildings": 0.082,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.089,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.047,
+    "waste": 0.062
+   }
+  },
+  "GUM": {
+   "iso3": "GUM",
+   "numeric": "316",
+   "name": "Guam",
+   "observed_latest": {
+    "year": 2024,
+    "total": 2.687
+   },
+   "observed_sectors": {
+    "power": 1.598,
+    "transportation": 0.857,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.133,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.098
+   }
+  },
+  "GUY": {
+   "iso3": "GUY",
+   "numeric": "328",
+   "name": "Guyana",
+   "observed_latest": {
+    "year": 2024,
+    "total": 19.708
+   },
+   "observed_sectors": {
+    "power": 1.529,
+    "transportation": 1.191,
+    "buildings": 0.242,
+    "fossil-fuel-operations": 9.012,
+    "manufacturing": 0.896,
+    "mineral-extraction": 0.607,
+    "fluorinated-gases": 0.0,
+    "agriculture": 5.734,
+    "waste": 0.498
+   }
+  },
+  "HKG": {
+   "iso3": "HKG",
+   "numeric": "344",
+   "name": "Hong Kong",
+   "observed_latest": {
+    "year": 2024,
+    "total": 81.094
+   },
+   "observed_sectors": {
+    "power": 22.799,
+    "transportation": 47.996,
+    "buildings": 1.938,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 1.745,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.249,
+    "agriculture": 0.036,
+    "waste": 6.331
+   }
+  },
+  "HTI": {
+   "iso3": "HTI",
+   "numeric": "332",
+   "name": "Haiti",
+   "observed_latest": {
+    "year": 2024,
+    "total": 9.508
+   },
+   "observed_sectors": {
+    "power": 0.86,
+    "transportation": 2.189,
+    "buildings": 1.168,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.99,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 2.514,
+    "waste": 1.787
+   }
+  },
+  "IDN": {
+   "iso3": "IDN",
+   "numeric": "360",
+   "name": "Indonesia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1569.979
+   },
+   "observed_sectors": {
+    "power": 352.82,
+    "transportation": 204.632,
+    "buildings": 33.813,
+    "fossil-fuel-operations": 348.697,
+    "manufacturing": 171.958,
+    "mineral-extraction": 3.749,
+    "fluorinated-gases": 20.947,
+    "agriculture": 390.832,
+    "waste": 42.531
+   }
+  },
+  "IMN": {
+   "iso3": "IMN",
+   "numeric": "833",
+   "name": "Isle of Man",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.825
+   },
+   "observed_sectors": {
+    "power": 0.541,
+    "transportation": 0.25,
+    "buildings": 0.001,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.024,
+    "waste": 0.009
+   }
+  },
+  "IOT": {
+   "iso3": "IOT",
+   "numeric": "086",
+   "name": "British Indian Ocean Territory",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.124
+   },
+   "observed_sectors": {
+    "power": 0.076,
+    "transportation": 0.049,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.0
+   }
+  },
+  "IRN": {
+   "iso3": "IRN",
+   "numeric": "364",
+   "name": "Iran",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1154.15
+   },
+   "observed_sectors": {
+    "power": 212.714,
+    "transportation": 87.421,
+    "buildings": 178.44,
+    "fossil-fuel-operations": 324.059,
+    "manufacturing": 270.09,
+    "mineral-extraction": 7.366,
+    "fluorinated-gases": 23.165,
+    "agriculture": 34.15,
+    "waste": 16.744
+   }
+  },
+  "IRQ": {
+   "iso3": "IRQ",
+   "numeric": "368",
+   "name": "Iraq",
+   "observed_latest": {
+    "year": 2024,
+    "total": 384.092
+   },
+   "observed_sectors": {
+    "power": 104.499,
+    "transportation": 40.334,
+    "buildings": 10.396,
+    "fossil-fuel-operations": 154.022,
+    "manufacturing": 49.868,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 5.314,
+    "agriculture": 5.583,
+    "waste": 14.076
+   }
+  },
+  "JAM": {
+   "iso3": "JAM",
+   "numeric": "388",
+   "name": "Jamaica",
+   "observed_latest": {
+    "year": 2024,
+    "total": 13.532
+   },
+   "observed_sectors": {
+    "power": 2.645,
+    "transportation": 4.615,
+    "buildings": 0.776,
+    "fossil-fuel-operations": 0.121,
+    "manufacturing": 2.762,
+    "mineral-extraction": 1.205,
+    "fluorinated-gases": 0.213,
+    "agriculture": 0.685,
+    "waste": 0.511
+   }
+  },
+  "JEY": {
+   "iso3": "JEY",
+   "numeric": "832",
+   "name": "Jersey",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.065
+   },
+   "observed_sectors": {
+    "power": 0.77,
+    "transportation": 0.284,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.011
+   }
+  },
+  "KEN": {
+   "iso3": "KEN",
+   "numeric": "404",
+   "name": "Kenya",
+   "observed_latest": {
+    "year": 2024,
+    "total": 97.269
+   },
+   "observed_sectors": {
+    "power": 1.253,
+    "transportation": 22.689,
+    "buildings": 6.229,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 8.011,
+    "mineral-extraction": 0.109,
+    "fluorinated-gases": 0.183,
+    "agriculture": 51.78,
+    "waste": 7.014
+   }
+  },
+  "KGZ": {
+   "iso3": "KGZ",
+   "numeric": "417",
+   "name": "Kyrgyzstan",
+   "observed_latest": {
+    "year": 2024,
+    "total": 24.776
+   },
+   "observed_sectors": {
+    "power": 2.755,
+    "transportation": 6.928,
+    "buildings": 4.816,
+    "fossil-fuel-operations": 0.852,
+    "manufacturing": 2.613,
+    "mineral-extraction": 0.051,
+    "fluorinated-gases": 0.002,
+    "agriculture": 5.137,
+    "waste": 1.623
+   }
+  },
+  "KHM": {
+   "iso3": "KHM",
+   "numeric": "116",
+   "name": "Cambodia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 47.48
+   },
+   "observed_sectors": {
+    "power": 9.95,
+    "transportation": 5.012,
+    "buildings": 2.252,
+    "fossil-fuel-operations": 0.025,
+    "manufacturing": 7.34,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.706,
+    "agriculture": 20.184,
+    "waste": 2.011
+   }
+  },
+  "KIR": {
+   "iso3": "KIR",
+   "numeric": "296",
+   "name": "Kiribati",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.316
+   },
+   "observed_sectors": {
+    "power": 0.024,
+    "transportation": 0.244,
+    "buildings": 0.012,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.009,
+    "mineral-extraction": 0.001,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.008,
+    "waste": 0.019
+   }
+  },
+  "KNA": {
+   "iso3": "KNA",
+   "numeric": "659",
+   "name": "Saint Kitts and Nevis",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.546
+   },
+   "observed_sectors": {
+    "power": 0.187,
+    "transportation": 0.302,
+    "buildings": 0.012,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.008,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.006,
+    "waste": 0.031
+   }
+  },
+  "LAO": {
+   "iso3": "LAO",
+   "numeric": "418",
+   "name": "Laos",
+   "observed_latest": {
+    "year": 2024,
+    "total": 40.094
+   },
+   "observed_sectors": {
+    "power": 16.54,
+    "transportation": 1.5,
+    "buildings": 0.734,
+    "fossil-fuel-operations": 4.716,
+    "manufacturing": 7.469,
+    "mineral-extraction": 0.502,
+    "fluorinated-gases": 0.0,
+    "agriculture": 7.394,
+    "waste": 1.24
+   }
+  },
+  "LBN": {
+   "iso3": "LBN",
+   "numeric": "422",
+   "name": "Lebanon",
+   "observed_latest": {
+    "year": 2024,
+    "total": 20.519
+   },
+   "observed_sectors": {
+    "power": 2.795,
+    "transportation": 7.576,
+    "buildings": 0.515,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 1.866,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 3.471,
+    "agriculture": 0.672,
+    "waste": 3.624
+   }
+  },
+  "LBR": {
+   "iso3": "LBR",
+   "numeric": "430",
+   "name": "Liberia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 6.473
+   },
+   "observed_sectors": {
+    "power": 0.232,
+    "transportation": 2.091,
+    "buildings": 1.477,
+    "fossil-fuel-operations": 0.041,
+    "manufacturing": 0.484,
+    "mineral-extraction": 0.088,
+    "fluorinated-gases": 0.006,
+    "agriculture": 1.036,
+    "waste": 1.02
+   }
+  },
+  "LBY": {
+   "iso3": "LBY",
+   "numeric": "434",
+   "name": "Libya",
+   "observed_latest": {
+    "year": 2024,
+    "total": 132.074
+   },
+   "observed_sectors": {
+    "power": 23.598,
+    "transportation": 20.261,
+    "buildings": 1.308,
+    "fossil-fuel-operations": 64.821,
+    "manufacturing": 10.183,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 6.228,
+    "agriculture": 2.804,
+    "waste": 2.872
+   }
+  },
+  "LCA": {
+   "iso3": "LCA",
+   "numeric": "662",
+   "name": "Saint Lucia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.097
+   },
+   "observed_sectors": {
+    "power": 0.345,
+    "transportation": 0.561,
+    "buildings": 0.028,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.008,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.098,
+    "agriculture": 0.016,
+    "waste": 0.041
+   }
+  },
+  "LKA": {
+   "iso3": "LKA",
+   "numeric": "144",
+   "name": "Sri Lanka",
+   "observed_latest": {
+    "year": 2024,
+    "total": 42.01
+   },
+   "observed_sectors": {
+    "power": 8.337,
+    "transportation": 14.326,
+    "buildings": 2.155,
+    "fossil-fuel-operations": 0.229,
+    "manufacturing": 2.358,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.654,
+    "agriculture": 6.443,
+    "waste": 7.507
+   }
+  },
+  "LSO": {
+   "iso3": "LSO",
+   "numeric": "426",
+   "name": "Lesotho",
+   "observed_latest": {
+    "year": 2024,
+    "total": 5.034
+   },
+   "observed_sectors": {
+    "power": 0.187,
+    "transportation": 1.843,
+    "buildings": 0.561,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.911,
+    "mineral-extraction": 0.036,
+    "fluorinated-gases": 0.0,
+    "agriculture": 1.153,
+    "waste": 0.342
+   }
+  },
+  "MAC": {
+   "iso3": "MAC",
+   "numeric": "446",
+   "name": "Macao",
+   "observed_latest": {
+    "year": 2024,
+    "total": 2.327
+   },
+   "observed_sectors": {
+    "power": 0.426,
+    "transportation": 1.454,
+    "buildings": 0.174,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.178,
+    "mineral-extraction": 0.01,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.002,
+    "waste": 0.083
+   }
+  },
+  "MAF": {
+   "iso3": "MAF",
+   "numeric": "663",
+   "name": "Saint Martin (French part)",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.474
+   },
+   "observed_sectors": {
+    "power": 0.329,
+    "transportation": 0.127,
+    "buildings": 0.016,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.002
+   }
+  },
+  "MAR": {
+   "iso3": "MAR",
+   "numeric": "504",
+   "name": "Morocco",
+   "observed_latest": {
+    "year": 2024,
+    "total": 116.835
+   },
+   "observed_sectors": {
+    "power": 27.016,
+    "transportation": 32.905,
+    "buildings": 12.883,
+    "fossil-fuel-operations": 0.056,
+    "manufacturing": 8.619,
+    "mineral-extraction": 1.07,
+    "fluorinated-gases": 2.424,
+    "agriculture": 10.802,
+    "waste": 21.059
+   }
+  },
+  "MDA": {
+   "iso3": "MDA",
+   "numeric": "498",
+   "name": "Moldova",
+   "observed_latest": {
+    "year": 2024,
+    "total": 15.682
+   },
+   "observed_sectors": {
+    "power": 3.656,
+    "transportation": 5.903,
+    "buildings": 1.701,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 1.642,
+    "mineral-extraction": 0.013,
+    "fluorinated-gases": 0.327,
+    "agriculture": 1.328,
+    "waste": 1.112
+   }
+  },
+  "MDG": {
+   "iso3": "MDG",
+   "numeric": "450",
+   "name": "Madagascar",
+   "observed_latest": {
+    "year": 2024,
+    "total": 38.265
+   },
+   "observed_sectors": {
+    "power": 1.992,
+    "transportation": 5.764,
+    "buildings": 2.772,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.293,
+    "mineral-extraction": 0.579,
+    "fluorinated-gases": 1.176,
+    "agriculture": 20.563,
+    "waste": 5.126
+   }
+  },
+  "MEX": {
+   "iso3": "MEX",
+   "numeric": "484",
+   "name": "Mexico",
+   "observed_latest": {
+    "year": 2024,
+    "total": 754.324
+   },
+   "observed_sectors": {
+    "power": 155.439,
+    "transportation": 207.021,
+    "buildings": 35.158,
+    "fossil-fuel-operations": 93.256,
+    "manufacturing": 99.384,
+    "mineral-extraction": 2.242,
+    "fluorinated-gases": 26.989,
+    "agriculture": 66.449,
+    "waste": 68.385
+   }
+  },
+  "MHL": {
+   "iso3": "MHL",
+   "numeric": "584",
+   "name": "Marshall Islands",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.372
+   },
+   "observed_sectors": {
+    "power": 0.154,
+    "transportation": 0.203,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.012,
+    "mineral-extraction": 0.001,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.002
+   }
+  },
+  "MKD": {
+   "iso3": "MKD",
+   "numeric": "807",
+   "name": "North Macedonia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 10.192
+   },
+   "observed_sectors": {
+    "power": 3.43,
+    "transportation": 2.58,
+    "buildings": 0.262,
+    "fossil-fuel-operations": 0.376,
+    "manufacturing": 0.877,
+    "mineral-extraction": 0.144,
+    "fluorinated-gases": 0.937,
+    "agriculture": 0.88,
+    "waste": 0.706
+   }
+  },
+  "MLI": {
+   "iso3": "MLI",
+   "numeric": "466",
+   "name": "Mali",
+   "observed_latest": {
+    "year": 2024,
+    "total": 58.966
+   },
+   "observed_sectors": {
+    "power": 3.256,
+    "transportation": 15.205,
+    "buildings": 1.751,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 1.682,
+    "mineral-extraction": 0.072,
+    "fluorinated-gases": 0.706,
+    "agriculture": 32.74,
+    "waste": 3.553
+   }
+  },
+  "MMR": {
+   "iso3": "MMR",
+   "numeric": "104",
+   "name": "Myanmar",
+   "observed_latest": {
+    "year": 2024,
+    "total": 92.758
+   },
+   "observed_sectors": {
+    "power": 8.6,
+    "transportation": 9.426,
+    "buildings": 8.024,
+    "fossil-fuel-operations": 5.497,
+    "manufacturing": 9.164,
+    "mineral-extraction": 1.64,
+    "fluorinated-gases": 0.678,
+    "agriculture": 40.89,
+    "waste": 8.839
+   }
+  },
+  "MNE": {
+   "iso3": "MNE",
+   "numeric": "499",
+   "name": "Montenegro",
+   "observed_latest": {
+    "year": 2024,
+    "total": 4.382
+   },
+   "observed_sectors": {
+    "power": 1.579,
+    "transportation": 1.557,
+    "buildings": 0.216,
+    "fossil-fuel-operations": 0.096,
+    "manufacturing": 0.274,
+    "mineral-extraction": 0.031,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.366,
+    "waste": 0.263
+   }
+  },
+  "MNG": {
+   "iso3": "MNG",
+   "numeric": "496",
+   "name": "Mongolia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 134.392
+   },
+   "observed_sectors": {
+    "power": 17.901,
+    "transportation": 7.689,
+    "buildings": 5.441,
+    "fossil-fuel-operations": 47.885,
+    "manufacturing": 2.981,
+    "mineral-extraction": 1.416,
+    "fluorinated-gases": 0.0,
+    "agriculture": 50.192,
+    "waste": 0.887
+   }
+  },
+  "MNP": {
+   "iso3": "MNP",
+   "numeric": "580",
+   "name": "Northern Mariana Islands",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.664
+   },
+   "observed_sectors": {
+    "power": 0.345,
+    "transportation": 0.188,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.125,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.006
+   }
+  },
+  "MRT": {
+   "iso3": "MRT",
+   "numeric": "478",
+   "name": "Mauritania",
+   "observed_latest": {
+    "year": 2024,
+    "total": 21.711
+   },
+   "observed_sectors": {
+    "power": 1.059,
+    "transportation": 5.697,
+    "buildings": 0.985,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 1.025,
+    "mineral-extraction": 2.315,
+    "fluorinated-gases": 0.966,
+    "agriculture": 8.704,
+    "waste": 0.961
+   }
+  },
+  "MTQ": {
+   "iso3": "MTQ",
+   "numeric": "474",
+   "name": "Martinique",
+   "observed_latest": {
+    "year": 2024,
+    "total": 3.724
+   },
+   "observed_sectors": {
+    "power": 1.069,
+    "transportation": 1.808,
+    "buildings": 0.079,
+    "fossil-fuel-operations": 0.12,
+    "manufacturing": 0.568,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.081
+   }
+  },
+  "MUS": {
+   "iso3": "MUS",
+   "numeric": "480",
+   "name": "Mauritius",
+   "observed_latest": {
+    "year": 2024,
+    "total": 9.193
+   },
+   "observed_sectors": {
+    "power": 2.757,
+    "transportation": 3.524,
+    "buildings": 0.246,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.358,
+    "mineral-extraction": 0.002,
+    "fluorinated-gases": 1.566,
+    "agriculture": 0.109,
+    "waste": 0.631
+   }
+  },
+  "MWI": {
+   "iso3": "MWI",
+   "numeric": "454",
+   "name": "Malawi",
+   "observed_latest": {
+    "year": 2024,
+    "total": 20.54
+   },
+   "observed_sectors": {
+    "power": 0.504,
+    "transportation": 5.191,
+    "buildings": 1.308,
+    "fossil-fuel-operations": 0.05,
+    "manufacturing": 0.836,
+    "mineral-extraction": 0.057,
+    "fluorinated-gases": 0.51,
+    "agriculture": 8.711,
+    "waste": 3.373
+   }
+  },
+  "MYS": {
+   "iso3": "MYS",
+   "numeric": "458",
+   "name": "Malaysia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 392.228
+   },
+   "observed_sectors": {
+    "power": 129.181,
+    "transportation": 59.02,
+    "buildings": 8.11,
+    "fossil-fuel-operations": 58.241,
+    "manufacturing": 75.747,
+    "mineral-extraction": 0.037,
+    "fluorinated-gases": 2.691,
+    "agriculture": 47.534,
+    "waste": 11.667
+   }
+  },
+  "MYT": {
+   "iso3": "MYT",
+   "numeric": "175",
+   "name": "Mayotte",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.7
+   },
+   "observed_sectors": {
+    "power": 0.446,
+    "transportation": 0.232,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.023
+   }
+  },
+  "NAM": {
+   "iso3": "NAM",
+   "numeric": "516",
+   "name": "Namibia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 16.104
+   },
+   "observed_sectors": {
+    "power": 0.043,
+    "transportation": 7.931,
+    "buildings": 1.052,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.865,
+    "mineral-extraction": 0.081,
+    "fluorinated-gases": 0.394,
+    "agriculture": 5.188,
+    "waste": 0.55
+   }
+  },
+  "NCL": {
+   "iso3": "NCL",
+   "numeric": "540",
+   "name": "New Caledonia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 6.485
+   },
+   "observed_sectors": {
+    "power": 2.92,
+    "transportation": 1.269,
+    "buildings": 0.351,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 1.385,
+    "mineral-extraction": 0.023,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.077,
+    "waste": 0.461
+   }
+  },
+  "NER": {
+   "iso3": "NER",
+   "numeric": "562",
+   "name": "Niger",
+   "observed_latest": {
+    "year": 2024,
+    "total": 48.345
+   },
+   "observed_sectors": {
+    "power": 0.817,
+    "transportation": 7.834,
+    "buildings": 1.505,
+    "fossil-fuel-operations": 0.932,
+    "manufacturing": 0.719,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.754,
+    "agriculture": 31.485,
+    "waste": 4.299
+   }
+  },
+  "NGA": {
+   "iso3": "NGA",
+   "numeric": "566",
+   "name": "Nigeria",
+   "observed_latest": {
+    "year": 2024,
+    "total": 336.912
+   },
+   "observed_sectors": {
+    "power": 22.06,
+    "transportation": 72.75,
+    "buildings": 15.414,
+    "fossil-fuel-operations": 82.57,
+    "manufacturing": 26.011,
+    "mineral-extraction": 0.001,
+    "fluorinated-gases": 17.114,
+    "agriculture": 65.213,
+    "waste": 35.777
+   }
+  },
+  "NIC": {
+   "iso3": "NIC",
+   "numeric": "558",
+   "name": "Nicaragua",
+   "observed_latest": {
+    "year": 2024,
+    "total": 22.677
+   },
+   "observed_sectors": {
+    "power": 2.389,
+    "transportation": 3.791,
+    "buildings": 1.267,
+    "fossil-fuel-operations": 0.086,
+    "manufacturing": 1.236,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.319,
+    "agriculture": 11.806,
+    "waste": 1.782
+   }
+  },
+  "NPL": {
+   "iso3": "NPL",
+   "numeric": "524",
+   "name": "Nepal",
+   "observed_latest": {
+    "year": 2024,
+    "total": 47.815
+   },
+   "observed_sectors": {
+    "power": 0.0,
+    "transportation": 4.374,
+    "buildings": 6.105,
+    "fossil-fuel-operations": 0.259,
+    "manufacturing": 11.113,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 22.502,
+    "waste": 3.463
+   }
+  },
+  "NRU": {
+   "iso3": "NRU",
+   "numeric": "520",
+   "name": "Nauru",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.06
+   },
+   "observed_sectors": {
+    "power": 0.033,
+    "transportation": 0.024,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.001,
+    "waste": 0.002
+   }
+  },
+  "OMN": {
+   "iso3": "OMN",
+   "numeric": "512",
+   "name": "Oman",
+   "observed_latest": {
+    "year": 2024,
+    "total": 158.758
+   },
+   "observed_sectors": {
+    "power": 21.911,
+    "transportation": 17.245,
+    "buildings": 24.592,
+    "fossil-fuel-operations": 56.715,
+    "manufacturing": 33.007,
+    "mineral-extraction": 0.065,
+    "fluorinated-gases": 1.633,
+    "agriculture": 1.721,
+    "waste": 1.869
+   }
+  },
+  "PAN": {
+   "iso3": "PAN",
+   "numeric": "591",
+   "name": "Panama",
+   "observed_latest": {
+    "year": 2024,
+    "total": 25.793
+   },
+   "observed_sectors": {
+    "power": 3.482,
+    "transportation": 13.031,
+    "buildings": 0.608,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 2.584,
+    "mineral-extraction": 0.015,
+    "fluorinated-gases": 1.171,
+    "agriculture": 3.169,
+    "waste": 1.733
+   }
+  },
+  "PER": {
+   "iso3": "PER",
+   "numeric": "604",
+   "name": "Peru",
+   "observed_latest": {
+    "year": 2024,
+    "total": 122.476
+   },
+   "observed_sectors": {
+    "power": 14.429,
+    "transportation": 30.774,
+    "buildings": 6.015,
+    "fossil-fuel-operations": 10.15,
+    "manufacturing": 14.373,
+    "mineral-extraction": 5.779,
+    "fluorinated-gases": 1.297,
+    "agriculture": 29.854,
+    "waste": 9.806
+   }
+  },
+  "PHL": {
+   "iso3": "PHL",
+   "numeric": "608",
+   "name": "Philippines",
+   "observed_latest": {
+    "year": 2024,
+    "total": 255.21
+   },
+   "observed_sectors": {
+    "power": 98.53,
+    "transportation": 33.424,
+    "buildings": 13.172,
+    "fossil-fuel-operations": 8.978,
+    "manufacturing": 26.772,
+    "mineral-extraction": 1.374,
+    "fluorinated-gases": 8.412,
+    "agriculture": 43.37,
+    "waste": 21.178
+   }
+  },
+  "PLW": {
+   "iso3": "PLW",
+   "numeric": "585",
+   "name": "Palau",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.782
+   },
+   "observed_sectors": {
+    "power": 0.491,
+    "transportation": 0.123,
+    "buildings": 0.132,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.029,
+    "mineral-extraction": 0.002,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.004
+   }
+  },
+  "PNG": {
+   "iso3": "PNG",
+   "numeric": "598",
+   "name": "Papua New Guinea",
+   "observed_latest": {
+    "year": 2024,
+    "total": 43.194
+   },
+   "observed_sectors": {
+    "power": 3.131,
+    "transportation": 3.847,
+    "buildings": 1.201,
+    "fossil-fuel-operations": 7.536,
+    "manufacturing": 0.846,
+    "mineral-extraction": 0.41,
+    "fluorinated-gases": 0.031,
+    "agriculture": 24.569,
+    "waste": 1.624
+   }
+  },
+  "PRI": {
+   "iso3": "PRI",
+   "numeric": "630",
+   "name": "Puerto Rico",
+   "observed_latest": {
+    "year": 2024,
+    "total": 32.016
+   },
+   "observed_sectors": {
+    "power": 15.878,
+    "transportation": 9.701,
+    "buildings": 0.037,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 3.754,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.358,
+    "waste": 2.288
+   }
+  },
+  "PRK": {
+   "iso3": "PRK",
+   "numeric": "408",
+   "name": "North Korea",
+   "observed_latest": {
+    "year": 2024,
+    "total": 115.538
+   },
+   "observed_sectors": {
+    "power": 13.539,
+    "transportation": 11.179,
+    "buildings": 17.006,
+    "fossil-fuel-operations": 10.918,
+    "manufacturing": 36.475,
+    "mineral-extraction": 0.141,
+    "fluorinated-gases": 3.789,
+    "agriculture": 17.23,
+    "waste": 5.26
+   }
+  },
+  "PSE": {
+   "iso3": "PSE",
+   "numeric": "275",
+   "name": "Palestine, State of",
+   "observed_latest": {
+    "year": 2024,
+    "total": 6.416
+   },
+   "observed_sectors": {
+    "power": 0.584,
+    "transportation": 3.646,
+    "buildings": 1.078,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.43,
+    "waste": 0.677
+   }
+  },
+  "PYF": {
+   "iso3": "PYF",
+   "numeric": "258",
+   "name": "French Polynesia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 2.75
+   },
+   "observed_sectors": {
+    "power": 0.424,
+    "transportation": 1.983,
+    "buildings": 0.141,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.113,
+    "mineral-extraction": 0.009,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.021,
+    "waste": 0.059
+   }
+  },
+  "QAT": {
+   "iso3": "QAT",
+   "numeric": "634",
+   "name": "Qatar",
+   "observed_latest": {
+    "year": 2024,
+    "total": 215.168
+   },
+   "observed_sectors": {
+    "power": 30.098,
+    "transportation": 28.269,
+    "buildings": 0.473,
+    "fossil-fuel-operations": 112.606,
+    "manufacturing": 37.278,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 4.122,
+    "agriculture": 0.585,
+    "waste": 1.737
+   }
+  },
+  "REU": {
+   "iso3": "REU",
+   "numeric": "638",
+   "name": "Réunion",
+   "observed_latest": {
+    "year": 2024,
+    "total": 7.028
+   },
+   "observed_sectors": {
+    "power": 2.302,
+    "transportation": 2.495,
+    "buildings": 0.311,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 1.604,
+    "mineral-extraction": 0.146,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.172
+   }
+  },
+  "RWA": {
+   "iso3": "RWA",
+   "numeric": "646",
+   "name": "Rwanda",
+   "observed_latest": {
+    "year": 2024,
+    "total": 13.471
+   },
+   "observed_sectors": {
+    "power": 0.552,
+    "transportation": 3.659,
+    "buildings": 1.281,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.839,
+    "mineral-extraction": 0.024,
+    "fluorinated-gases": 0.031,
+    "agriculture": 4.508,
+    "waste": 2.578
+   }
+  },
+  "SAU": {
+   "iso3": "SAU",
+   "numeric": "682",
+   "name": "Saudi Arabia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 947.748
+   },
+   "observed_sectors": {
+    "power": 293.695,
+    "transportation": 100.32,
+    "buildings": 5.331,
+    "fossil-fuel-operations": 226.399,
+    "manufacturing": 219.148,
+    "mineral-extraction": 0.047,
+    "fluorinated-gases": 73.963,
+    "agriculture": 11.16,
+    "waste": 17.685
+   }
+  },
+  "SDN": {
+   "iso3": "SDN",
+   "numeric": "729",
+   "name": "Sudan",
+   "observed_latest": {
+    "year": 2024,
+    "total": 119.746
+   },
+   "observed_sectors": {
+    "power": 4.006,
+    "transportation": 26.166,
+    "buildings": 3.534,
+    "fossil-fuel-operations": 1.044,
+    "manufacturing": 3.179,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 2.486,
+    "agriculture": 67.446,
+    "waste": 11.885
+   }
+  },
+  "SEN": {
+   "iso3": "SEN",
+   "numeric": "686",
+   "name": "Senegal",
+   "observed_latest": {
+    "year": 2024,
+    "total": 42.73
+   },
+   "observed_sectors": {
+    "power": 6.097,
+    "transportation": 16.193,
+    "buildings": 1.103,
+    "fossil-fuel-operations": 0.625,
+    "manufacturing": 5.977,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 1.707,
+    "agriculture": 8.627,
+    "waste": 2.399
+   }
+  },
+  "SGP": {
+   "iso3": "SGP",
+   "numeric": "702",
+   "name": "Singapore",
+   "observed_latest": {
+    "year": 2024,
+    "total": 118.646
+   },
+   "observed_sectors": {
+    "power": 23.012,
+    "transportation": 45.369,
+    "buildings": 1.306,
+    "fossil-fuel-operations": 10.238,
+    "manufacturing": 23.724,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 13.703,
+    "agriculture": 0.014,
+    "waste": 1.281
+   }
+  },
+  "SGS": {
+   "iso3": "SGS",
+   "numeric": "239",
+   "name": "South Georgia and the South Sandwich Islands",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.121
+   },
+   "observed_sectors": {
+    "power": 0.0,
+    "transportation": 0.121,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.0
+   }
+  },
+  "SHN": {
+   "iso3": "SHN",
+   "numeric": "654",
+   "name": "Saint Helena, Ascension and Tristan da Cunha",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.061
+   },
+   "observed_sectors": {
+    "power": 0.007,
+    "transportation": 0.053,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.001
+   }
+  },
+  "SJM": {
+   "iso3": "SJM",
+   "numeric": "744",
+   "name": "Svalbard and Jan Mayen",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.448
+   },
+   "observed_sectors": {
+    "power": 0.0,
+    "transportation": 0.353,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.051,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.044
+   }
+  },
+  "SLB": {
+   "iso3": "SLB",
+   "numeric": "090",
+   "name": "Solomon Islands",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.928
+   },
+   "observed_sectors": {
+    "power": 0.091,
+    "transportation": 0.443,
+    "buildings": 0.059,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.031,
+    "mineral-extraction": 0.011,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.053,
+    "waste": 0.24
+   }
+  },
+  "SLE": {
+   "iso3": "SLE",
+   "numeric": "694",
+   "name": "Sierra Leone",
+   "observed_latest": {
+    "year": 2024,
+    "total": 8.271
+   },
+   "observed_sectors": {
+    "power": 0.246,
+    "transportation": 2.656,
+    "buildings": 1.05,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.375,
+    "mineral-extraction": 0.238,
+    "fluorinated-gases": 0.002,
+    "agriculture": 2.622,
+    "waste": 1.083
+   }
+  },
+  "SLV": {
+   "iso3": "SLV",
+   "numeric": "222",
+   "name": "El Salvador",
+   "observed_latest": {
+    "year": 2024,
+    "total": 14.132
+   },
+   "observed_sectors": {
+    "power": 1.215,
+    "transportation": 4.859,
+    "buildings": 0.83,
+    "fossil-fuel-operations": 0.094,
+    "manufacturing": 2.399,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.554,
+    "agriculture": 2.296,
+    "waste": 1.886
+   }
+  },
+  "SMR": {
+   "iso3": "SMR",
+   "numeric": "674",
+   "name": "San Marino",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.074
+   },
+   "observed_sectors": {
+    "power": 0.0,
+    "transportation": 0.032,
+    "buildings": 0.039,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.004
+   }
+  },
+  "SOM": {
+   "iso3": "SOM",
+   "numeric": "706",
+   "name": "Somalia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 39.389
+   },
+   "observed_sectors": {
+    "power": 0.303,
+    "transportation": 7.194,
+    "buildings": 2.6,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.766,
+    "mineral-extraction": 0.034,
+    "fluorinated-gases": 2.13,
+    "agriculture": 23.342,
+    "waste": 3.021
+   }
+  },
+  "SPM": {
+   "iso3": "SPM",
+   "numeric": "666",
+   "name": "Saint Pierre and Miquelon",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.121
+   },
+   "observed_sectors": {
+    "power": 0.044,
+    "transportation": 0.067,
+    "buildings": 0.003,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.001,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.005
+   }
+  },
+  "SRB": {
+   "iso3": "SRB",
+   "numeric": "688",
+   "name": "Serbia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 60.858
+   },
+   "observed_sectors": {
+    "power": 27.875,
+    "transportation": 9.775,
+    "buildings": 2.784,
+    "fossil-fuel-operations": 7.296,
+    "manufacturing": 5.306,
+    "mineral-extraction": 0.361,
+    "fluorinated-gases": 0.0,
+    "agriculture": 5.787,
+    "waste": 1.674
+   }
+  },
+  "STP": {
+   "iso3": "STP",
+   "numeric": "678",
+   "name": "Sao Tome and Principe",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.302
+   },
+   "observed_sectors": {
+    "power": 0.071,
+    "transportation": 0.118,
+    "buildings": 0.038,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.017,
+    "mineral-extraction": 0.006,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.016,
+    "waste": 0.035
+   }
+  },
+  "SUR": {
+   "iso3": "SUR",
+   "numeric": "740",
+   "name": "Suriname",
+   "observed_latest": {
+    "year": 2024,
+    "total": 5.065
+   },
+   "observed_sectors": {
+    "power": 0.925,
+    "transportation": 1.46,
+    "buildings": 0.608,
+    "fossil-fuel-operations": 0.35,
+    "manufacturing": 0.144,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 1.313,
+    "waste": 0.265
+   }
+  },
+  "SWZ": {
+   "iso3": "SWZ",
+   "numeric": "748",
+   "name": "Eswatini",
+   "observed_latest": {
+    "year": 2024,
+    "total": 3.148
+   },
+   "observed_sectors": {
+    "power": 0.044,
+    "transportation": 1.646,
+    "buildings": 0.158,
+    "fossil-fuel-operations": 0.148,
+    "manufacturing": 0.18,
+    "mineral-extraction": 0.015,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.703,
+    "waste": 0.254
+   }
+  },
+  "SXM": {
+   "iso3": "SXM",
+   "numeric": "534",
+   "name": "Sint Maarten (Dutch part)",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.773
+   },
+   "observed_sectors": {
+    "power": 0.0,
+    "transportation": 0.718,
+    "buildings": 0.024,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.024,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.007
+   }
+  },
+  "SYC": {
+   "iso3": "SYC",
+   "numeric": "690",
+   "name": "Seychelles",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.469
+   },
+   "observed_sectors": {
+    "power": 0.468,
+    "transportation": 0.668,
+    "buildings": 0.13,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.099,
+    "mineral-extraction": 0.035,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.004,
+    "waste": 0.065
+   }
+  },
+  "SYR": {
+   "iso3": "SYR",
+   "numeric": "760",
+   "name": "Syria",
+   "observed_latest": {
+    "year": 2024,
+    "total": 70.874
+   },
+   "observed_sectors": {
+    "power": 16.752,
+    "transportation": 13.599,
+    "buildings": 3.344,
+    "fossil-fuel-operations": 14.814,
+    "manufacturing": 7.14,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 6.374,
+    "agriculture": 5.734,
+    "waste": 3.117
+   }
+  },
+  "TCA": {
+   "iso3": "TCA",
+   "numeric": "796",
+   "name": "Turks and Caicos Islands",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.763
+   },
+   "observed_sectors": {
+    "power": 0.23,
+    "transportation": 0.502,
+    "buildings": 0.02,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.004,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.007
+   }
+  },
+  "TCD": {
+   "iso3": "TCD",
+   "numeric": "148",
+   "name": "Chad",
+   "observed_latest": {
+    "year": 2024,
+    "total": 93.524
+   },
+   "observed_sectors": {
+    "power": 0.41,
+    "transportation": 7.158,
+    "buildings": 1.5,
+    "fossil-fuel-operations": 2.68,
+    "manufacturing": 0.53,
+    "mineral-extraction": 0.031,
+    "fluorinated-gases": 0.76,
+    "agriculture": 76.934,
+    "waste": 3.519
+   }
+  },
+  "THA": {
+   "iso3": "THA",
+   "numeric": "764",
+   "name": "Thailand",
+   "observed_latest": {
+    "year": 2024,
+    "total": 494.062
+   },
+   "observed_sectors": {
+    "power": 93.366,
+    "transportation": 84.315,
+    "buildings": 15.363,
+    "fossil-fuel-operations": 40.137,
+    "manufacturing": 64.992,
+    "mineral-extraction": 0.043,
+    "fluorinated-gases": 46.104,
+    "agriculture": 130.084,
+    "waste": 19.656
+   }
+  },
+  "TJK": {
+   "iso3": "TJK",
+   "numeric": "762",
+   "name": "Tajikistan",
+   "observed_latest": {
+    "year": 2024,
+    "total": 27.933
+   },
+   "observed_sectors": {
+    "power": 1.862,
+    "transportation": 6.029,
+    "buildings": 3.621,
+    "fossil-fuel-operations": 1.099,
+    "manufacturing": 6.835,
+    "mineral-extraction": 0.014,
+    "fluorinated-gases": 0.008,
+    "agriculture": 6.051,
+    "waste": 2.415
+   }
+  },
+  "TKM": {
+   "iso3": "TKM",
+   "numeric": "795",
+   "name": "Turkmenistan",
+   "observed_latest": {
+    "year": 2024,
+    "total": 206.037
+   },
+   "observed_sectors": {
+    "power": 21.255,
+    "transportation": 10.494,
+    "buildings": 39.916,
+    "fossil-fuel-operations": 107.733,
+    "manufacturing": 11.614,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.342,
+    "agriculture": 12.662,
+    "waste": 2.022
+   }
+  },
+  "TLS": {
+   "iso3": "TLS",
+   "numeric": "626",
+   "name": "Timor-Leste",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.859
+   },
+   "observed_sectors": {
+    "power": 0.452,
+    "transportation": 0.31,
+    "buildings": 0.013,
+    "fossil-fuel-operations": 0.196,
+    "manufacturing": 0.026,
+    "mineral-extraction": 0.002,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.672,
+    "waste": 0.187
+   }
+  },
+  "TON": {
+   "iso3": "TON",
+   "numeric": "776",
+   "name": "Tonga",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.49
+   },
+   "observed_sectors": {
+    "power": 0.054,
+    "transportation": 0.266,
+    "buildings": 0.025,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.014,
+    "mineral-extraction": 0.001,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.05,
+    "waste": 0.079
+   }
+  },
+  "TTO": {
+   "iso3": "TTO",
+   "numeric": "780",
+   "name": "Trinidad and Tobago",
+   "observed_latest": {
+    "year": 2024,
+    "total": 40.535
+   },
+   "observed_sectors": {
+    "power": 6.028,
+    "transportation": 3.978,
+    "buildings": 0.396,
+    "fossil-fuel-operations": 12.823,
+    "manufacturing": 13.131,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 2.17,
+    "agriculture": 0.262,
+    "waste": 1.747
+   }
+  },
+  "TUN": {
+   "iso3": "TUN",
+   "numeric": "788",
+   "name": "Tunisia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 56.599
+   },
+   "observed_sectors": {
+    "power": 11.773,
+    "transportation": 19.367,
+    "buildings": 5.187,
+    "fossil-fuel-operations": 1.985,
+    "manufacturing": 8.152,
+    "mineral-extraction": 0.316,
+    "fluorinated-gases": 1.919,
+    "agriculture": 4.06,
+    "waste": 3.84
+   }
+  },
+  "TUV": {
+   "iso3": "TUV",
+   "numeric": "798",
+   "name": "Tuvalu",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.093
+   },
+   "observed_sectors": {
+    "power": 0.021,
+    "transportation": 0.064,
+    "buildings": 0.0,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.0,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.007,
+    "waste": 0.001
+   }
+  },
+  "TWN": {
+   "iso3": "TWN",
+   "numeric": "158",
+   "name": "Taiwan",
+   "observed_latest": {
+    "year": 2024,
+    "total": 305.795
+   },
+   "observed_sectors": {
+    "power": 164.537,
+    "transportation": 43.398,
+    "buildings": 11.239,
+    "fossil-fuel-operations": 10.317,
+    "manufacturing": 56.742,
+    "mineral-extraction": 0.02,
+    "fluorinated-gases": 9.966,
+    "agriculture": 3.132,
+    "waste": 6.444
+   }
+  },
+  "TZA": {
+   "iso3": "TZA",
+   "numeric": "834",
+   "name": "Tanzania",
+   "observed_latest": {
+    "year": 2024,
+    "total": 128.992
+   },
+   "observed_sectors": {
+    "power": 4.742,
+    "transportation": 27.023,
+    "buildings": 7.559,
+    "fossil-fuel-operations": 1.984,
+    "manufacturing": 7.127,
+    "mineral-extraction": 0.47,
+    "fluorinated-gases": 0.0,
+    "agriculture": 72.031,
+    "waste": 8.057
+   }
+  },
+  "UGA": {
+   "iso3": "UGA",
+   "numeric": "800",
+   "name": "Uganda",
+   "observed_latest": {
+    "year": 2024,
+    "total": 63.526
+   },
+   "observed_sectors": {
+    "power": 0.132,
+    "transportation": 9.442,
+    "buildings": 5.378,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 5.865,
+    "mineral-extraction": 0.043,
+    "fluorinated-gases": 0.0,
+    "agriculture": 33.916,
+    "waste": 8.749
+   }
+  },
+  "UZB": {
+   "iso3": "UZB",
+   "numeric": "860",
+   "name": "Uzbekistan",
+   "observed_latest": {
+    "year": 2024,
+    "total": 227.983
+   },
+   "observed_sectors": {
+    "power": 54.619,
+    "transportation": 32.835,
+    "buildings": 40.518,
+    "fossil-fuel-operations": 30.24,
+    "manufacturing": 23.625,
+    "mineral-extraction": 0.994,
+    "fluorinated-gases": 0.308,
+    "agriculture": 33.937,
+    "waste": 10.907
+   }
+  },
+  "VCT": {
+   "iso3": "VCT",
+   "numeric": "670",
+   "name": "Saint Vincent and the Grenadines",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.511
+   },
+   "observed_sectors": {
+    "power": 0.114,
+    "transportation": 0.33,
+    "buildings": 0.012,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.005,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.009,
+    "waste": 0.04
+   }
+  },
+  "VEN": {
+   "iso3": "VEN",
+   "numeric": "862",
+   "name": "Venezuela",
+   "observed_latest": {
+    "year": 2024,
+    "total": 254.486
+   },
+   "observed_sectors": {
+    "power": 14.153,
+    "transportation": 29.566,
+    "buildings": 3.715,
+    "fossil-fuel-operations": 140.908,
+    "manufacturing": 21.549,
+    "mineral-extraction": 0.007,
+    "fluorinated-gases": 10.585,
+    "agriculture": 26.202,
+    "waste": 7.8
+   }
+  },
+  "VGB": {
+   "iso3": "VGB",
+   "numeric": "092",
+   "name": "Virgin Islands, British",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.584
+   },
+   "observed_sectors": {
+    "power": 0.151,
+    "transportation": 0.405,
+    "buildings": 0.019,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.003,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.005
+   }
+  },
+  "VIR": {
+   "iso3": "VIR",
+   "numeric": "850",
+   "name": "Virgin Islands, U.S.",
+   "observed_latest": {
+    "year": 2024,
+    "total": 1.404
+   },
+   "observed_sectors": {
+    "power": 0.0,
+    "transportation": 1.202,
+    "buildings": 0.001,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.066,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.0,
+    "waste": 0.135
+   }
+  },
+  "VNM": {
+   "iso3": "VNM",
+   "numeric": "704",
+   "name": "Vietnam",
+   "observed_latest": {
+    "year": 2024,
+    "total": 507.547
+   },
+   "observed_sectors": {
+    "power": 202.304,
+    "transportation": 41.651,
+    "buildings": 18.44,
+    "fossil-fuel-operations": 39.946,
+    "manufacturing": 95.833,
+    "mineral-extraction": 0.706,
+    "fluorinated-gases": 12.495,
+    "agriculture": 77.117,
+    "waste": 19.055
+   }
+  },
+  "VUT": {
+   "iso3": "VUT",
+   "numeric": "548",
+   "name": "Vanuatu",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.723
+   },
+   "observed_sectors": {
+    "power": 0.066,
+    "transportation": 0.384,
+    "buildings": 0.05,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.021,
+    "mineral-extraction": 0.001,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.099,
+    "waste": 0.102
+   }
+  },
+  "WSM": {
+   "iso3": "WSM",
+   "numeric": "882",
+   "name": "Samoa",
+   "observed_latest": {
+    "year": 2024,
+    "total": 0.588
+   },
+   "observed_sectors": {
+    "power": 0.082,
+    "transportation": 0.332,
+    "buildings": 0.058,
+    "fossil-fuel-operations": 0.0,
+    "manufacturing": 0.032,
+    "mineral-extraction": 0.002,
+    "fluorinated-gases": 0.0,
+    "agriculture": 0.053,
+    "waste": 0.029
+   }
+  },
+  "YEM": {
+   "iso3": "YEM",
+   "numeric": "887",
+   "name": "Yemen",
+   "observed_latest": {
+    "year": 2024,
+    "total": 46.903
+   },
+   "observed_sectors": {
+    "power": 3.003,
+    "transportation": 9.323,
+    "buildings": 2.588,
+    "fossil-fuel-operations": 5.311,
+    "manufacturing": 5.174,
+    "mineral-extraction": 0.0,
+    "fluorinated-gases": 7.47,
+    "agriculture": 8.617,
+    "waste": 5.417
+   }
+  },
+  "ZAF": {
+   "iso3": "ZAF",
+   "numeric": "710",
+   "name": "South Africa",
+   "observed_latest": {
+    "year": 2024,
+    "total": 557.842
+   },
+   "observed_sectors": {
+    "power": 233.556,
+    "transportation": 102.968,
+    "buildings": 26.433,
+    "fossil-fuel-operations": 70.935,
+    "manufacturing": 44.949,
+    "mineral-extraction": 5.227,
+    "fluorinated-gases": 20.229,
+    "agriculture": 30.876,
+    "waste": 22.668
+   }
+  },
+  "ZMB": {
+   "iso3": "ZMB",
+   "numeric": "894",
+   "name": "Zambia",
+   "observed_latest": {
+    "year": 2024,
+    "total": 49.816
+   },
+   "observed_sectors": {
+    "power": 4.299,
+    "transportation": 8.764,
+    "buildings": 3.379,
+    "fossil-fuel-operations": 0.225,
+    "manufacturing": 5.366,
+    "mineral-extraction": 2.799,
+    "fluorinated-gases": 0.0,
+    "agriculture": 22.662,
+    "waste": 2.322
+   }
+  },
+  "ZWE": {
+   "iso3": "ZWE",
+   "numeric": "716",
+   "name": "Zimbabwe",
+   "observed_latest": {
+    "year": 2024,
+    "total": 35.771
+   },
+   "observed_sectors": {
+    "power": 5.821,
+    "transportation": 8.169,
+    "buildings": 2.94,
+    "fossil-fuel-operations": 1.686,
+    "manufacturing": 4.357,
+    "mineral-extraction": 0.325,
+    "fluorinated-gases": 0.84,
+    "agriculture": 9.266,
+    "waste": 2.368
+   }
+  }
+ }
+}

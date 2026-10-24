@@ -13,12 +13,20 @@ Carbon Gap compares what countries and companies **declare** they emit with what
 ## 2. Where things are
 
 ```
-PRODUCT.md            product context (users, purpose, principles)
-mockup/index.html     clickable mockup, single file, SYNTHETIC data, no backend needed
-backend/app/main.py   FastAPI: /api/health + serves the mockup at /
-backend/.env          keys (git-ignored). Template: backend/.env.example
-docs/PROGRESS.md      this file
+PRODUCT.md                    product context (users, purpose, principles)
+web/                          the real app (index.html, style.css, app.js), served at /
+mockup/index.html             original clickable mockup, SYNTHETIC data, served at /mockup
+backend/app/main.py           FastAPI routes + static hosting
+backend/app/data.py           declared vs observed data, site fetch (Climate TRACE, disk cache)
+backend/app/agent.py          analyst: Responses API, gpt-5.5, function calling + web_search, SSE events
+backend/app/report.py         dossiers: Structured Outputs + web_search; spoken briefing (gpt-4o-mini-tts)
+backend/scripts/build_data.py builds backend/data/countries.json from the live APIs
+backend/.env                  keys (git-ignored). Template: backend/.env.example
+video/                        motion film pipeline (director.js, record.py, audio.py)
 ```
+
+API: `GET /api/countries`, `GET /api/countries/{iso3}/sites`, `POST /api/chat` (SSE: delta, tool, action, sources, done, error),
+`POST /api/report/{iso3}` (cached in data/reports), `GET /api/report/{iso3}/audio`.
 
 ## 3. How to run
 
@@ -36,9 +44,24 @@ Or open `mockup/index.html` directly in a browser.
 - Mockup (all fake data): orthographic globe coloured by gap (hatched = low confidence), metric switch (gap / declared / observed), sector filters, year; country sheet with declared-vs-observed "strata" chart, sector breakdown, sortable site table, sources; scripted analyst that calls map "tools" (highlight_countries, fly_to, set_layer, select_country, focus_site, generate_report); report view with print-to-PDF.
 - Design direction: geological survey map (light paper, flat tints, hatching, Barlow).
 
+### Phase 1: real app ✅ (24 Oct evening)
+- Data: declared = UNFCCC inventories via Climate Watch API (Annex I + non-Annex I, total excl. LULUCF, latest year ≥ 2015);
+  observed = Climate TRACE v6 for the SAME year, all sectors except forestry. 64 countries compared, 172 observed-only
+  (no UN inventory since 2015: China, Indonesia, Iran, Saudi Arabia…). Sector groups: energy & industry (Energy + IPPU),
+  agriculture, waste. Rebuild: `cd backend && .venv/bin/python -m scripts.build_data` (~25 s).
+- Sites: Climate TRACE assets (2024) for power, manufacturing, fossil fuel ops, mining, waste; top 60 by emissions, cached.
+- Analyst: gpt-5.5 (reasoning low), tools get_country / rank_countries / get_sites + map tools select_country /
+  highlight_countries / focus_site / set_metric / open_report (forwarded to the browser) + built-in web_search with
+  citations. Conversation kept with previous_response_id. ~8 s per answer.
+- Reports: gpt-5.5 + web_search + strict JSON schema (headline, summary, findings, sectors, sites, next steps, caveats,
+  briefing). ~30 s, cached. Briefing read by gpt-4o-mini-tts (voice sage).
+- Tested in the browser: map, country sheets, sites, chat (ranking, Poland sites, France vs Germany + web news), report, audio.
+- Known caveats: carbon price €72/t is an assumption; GWP versions differ (inventories AR4/AR5, Climate TRACE 100-yr);
+  Climate TRACE methane estimates drive many large gaps.
+
 ## 5. Next
 
-- Real data pipeline (national inventories, EU ETS, Climate TRACE, Sentinel-5P, grid data) → prepared local files.
-- Replace the scripted analyst with OpenAI Responses API + function calling; same tool names as the mockup.
-- Structured Outputs to extract declared emissions from company reports (PDF).
-- Report generation by the model, Realtime voice (bonus), deploy.
+- Market view (EU ETS free allocation vs verified emissions per installation → surplus / shortfall).
+- Realtime voice (gpt-realtime) to talk to the map.
+- Structured Outputs to extract declared emissions from company reports (PDF) → company-level gaps.
+- Deploy, re-shoot the film with real data, pitch video.

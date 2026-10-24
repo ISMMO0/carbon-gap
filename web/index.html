@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carbon Gap</title>
+<meta name="description" content="Declared vs observed greenhouse-gas emissions, country by country, priced at the cost of carbon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <pattern id="hatch-gap" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(45)">
+      <rect width="5" height="5" fill="#F2D6CF"/><line x1="0" y1="0" x2="0" y2="5" stroke="#A3362E" stroke-width="2"/>
+    </pattern>
+    <pattern id="hatch-neg" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(-45)">
+      <rect width="5" height="5" fill="#DCE9E0"/><line x1="0" y1="0" x2="0" y2="5" stroke="#3B7653" stroke-width="1.6"/>
+    </pattern>
+    <pattern id="hatch-nodecl" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+      <rect width="6" height="6" fill="#DDDAD0"/><line x1="0" y1="0" x2="0" y2="6" stroke="#8C8A80" stroke-width="1.2"/>
+    </pattern>
+  </defs>
+</svg>
+
+<div class="app">
+  <header class="bar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2.5 9h19M2.5 15h19"/><path d="M4 15h16" stroke="#F0D68A" stroke-width="3.2"/></svg>
+      Carbon Gap
+    </div>
+    <nav class="tabs" aria-label="Main">
+      <button class="tab" aria-current="page"><i data-lucide="globe-2" class="icon"></i>Map</button>
+      <button class="tab" data-soon><i data-lucide="building-2" class="icon"></i>Companies <span class="soon">Soon</span></button>
+      <button class="tab" data-soon><i data-lucide="arrow-left-right" class="icon"></i>Market <span class="soon">Soon</span></button>
+    </nav>
+    <label class="bar-search"><i data-lucide="search" class="icon"></i>
+      <input id="search" list="countries" placeholder="Find a country" autocomplete="off" aria-label="Find a country">
+      <datalist id="countries"></datalist>
+    </label>
+  </header>
+
+  <div class="main">
+    <aside class="rail" aria-label="Map layers">
+      <section>
+        <h2>Colour countries by</h2>
+        <div class="seg" role="group" aria-label="Metric">
+          <button data-metric="gap" aria-pressed="true">Gap</button>
+          <button data-metric="declared" aria-pressed="false">Declared</button>
+          <button data-metric="observed" aria-pressed="false">Observed</button>
+        </div>
+        <p class="note" id="metric-note"></p>
+      </section>
+      <section>
+        <h2>Site symbols</h2>
+        <div id="symbols"></div>
+      </section>
+      <section>
+        <h2>Data</h2>
+        <p class="note" style="margin-top:0"><b>Declared:</b> national inventories reported to the UN (UNFCCC), total GHG excluding land use, latest year since 2015.</p>
+        <p class="note"><b>Observed:</b> Climate TRACE estimates for the same year (satellites and asset models), all sectors except forestry.</p>
+        <p class="note">A gap is a lead to investigate, not proof of misreporting.</p>
+      </section>
+    </aside>
+
+    <div class="stage" id="stage">
+      <svg id="globe" role="img" aria-label="Globe coloured by emissions gap"></svg>
+      <div class="stage-msg" id="stage-msg">Loading the map…</div>
+      <div class="map-ctrl">
+        <button id="zin" aria-label="Zoom in"><i data-lucide="plus" class="icon"></i></button>
+        <button id="zout" aria-label="Zoom out"><i data-lucide="minus" class="icon"></i></button>
+        <button id="zreset" aria-label="Reset view"><i data-lucide="rotate-ccw" class="icon"></i></button>
+      </div>
+      <div class="legend" id="legend"></div>
+
+      <section class="analyst" id="analyst" aria-label="Analyst">
+        <header>
+          <i data-lucide="message-square-text" class="icon"></i><b>Analyst</b><small>GPT-5.5 · moves the map · searches the web</small>
+          <button id="amin" aria-label="Minimise analyst"><i data-lucide="chevron-down" class="icon"></i></button>
+        </header>
+        <div class="log" id="log" aria-live="polite"></div>
+        <div class="sugg" id="sugg"></div>
+        <form id="ask">
+          <input id="q" placeholder="Ask about any country, sector or site" autocomplete="off" aria-label="Ask the analyst">
+          <button class="btn icon-only" aria-label="Send"><i data-lucide="arrow-up" class="icon"></i></button>
+        </form>
+      </section>
+
+      <div class="report" id="report" aria-label="Report"></div>
+    </div>
+
+    <aside class="sheet" id="sheet" aria-live="polite"></aside>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
