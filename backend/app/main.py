@@ -8,13 +8,13 @@ from dotenv import load_dotenv
 ROOT = Path(__file__).resolve().parents[2]
 load_dotenv(ROOT / "backend" / ".env")
 
-from fastapi import FastAPI, HTTPException  # noqa: E402
+from fastapi import FastAPI, File, HTTPException, UploadFile  # noqa: E402
 from fastapi.concurrency import run_in_threadpool  # noqa: E402
 from fastapi.responses import FileResponse, StreamingResponse  # noqa: E402
 from fastapi.staticfiles import StaticFiles  # noqa: E402
 from pydantic import BaseModel  # noqa: E402
 
-from . import agent, data, report, research, store  # noqa: E402
+from . import agent, data, report, research, store, voice  # noqa: E402
 
 app = FastAPI(title="Carbon Gap")
 
@@ -60,17 +60,44 @@ class ChatIn(BaseModel):
     message: str
     previous_response_id: str | None = None
     selected: str | None = None
+    voice: bool = False
 
 
 @app.post("/api/chat")
 def chat(body: ChatIn):
     def events():
         try:
-            for ev in agent.chat(body.message, body.previous_response_id, {"selected": body.selected}):
+            for ev in agent.chat(body.message, body.previous_response_id, {"selected": body.selected, "voice": body.voice}):
                 yield f"data: {json.dumps(ev)}\n\n"
         except Exception as e:  # surface a readable error to the UI
             yield f"data: {json.dumps({'type': 'error', 'message': f'Analyst error: {type(e).__name__}'})}\n\n"
     return StreamingResponse(events(), media_type="text/event-stream")
+
+
+@app.post("/api/transcribe")
+async def transcribe(audio: UploadFile = File(...)):
+    blob = await audio.read()
+    if len(blob) < 1200:
+        return {"text": ""}
+    try:
+        return {"text": await run_in_threadpool(voice.transcribe, blob, audio.filename or "speech.webm")}
+    except Exception:
+        raise HTTPException(502, "Transcription failed.")
+
+
+class SpeakIn(BaseModel):
+    text: str
+
+
+@app.post("/api/speak")
+def speak(body: SpeakIn):
+    return StreamingResponse(voice.speak(body.text[:1500]), media_type="audio/mpeg")
+
+
+@app.get("/api/speak")
+def speak_get(text: str):
+    """GET variant so an <audio> element can stream the answer as it is generated."""
+    return StreamingResponse(voice.speak(text[:1500]), media_type="audio/mpeg")
 
 
 @app.post("/api/report/{iso3}")

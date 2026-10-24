@@ -139,7 +139,10 @@ def chat(message: str, previous_response_id: str | None = None, context: dict | 
     """Stream events: delta, tool, action, sources, done, error."""
     text = message
     if context and context.get("selected"):
-        text = f"[The user is looking at {context['selected']} on the map]\n{message}"
+        text = f"[The user is looking at {context['selected']} on the map]\n{text}"
+    if context and context.get("voice"):
+        text = ("[Voice mode: your answer is read aloud. At most 2 short spoken sentences, under 45 words, no markdown, "
+                "no lists, round numbers (\"about 750 million tonnes\"), mention at most 3 countries. Still move the map.]\n" + text)
     inputs: list = [{"role": "user", "content": text}]
     prev = previous_response_id
     for _ in range(8):  # tool rounds

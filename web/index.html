@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Ccircle cx=%2712%27 cy=%2712%27 r=%2710%27 fill=%27%231F2D28%27/%3E%3Cpath d=%27M4 15h16%27 stroke=%27%23F0D68A%27 stroke-width=%273%27/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -36,6 +37,7 @@
       <button class="tab" data-soon><i data-lucide="building-2" class="icon"></i>Companies <span class="soon">Soon</span></button>
       <button class="tab" data-soon><i data-lucide="arrow-left-right" class="icon"></i>Market <span class="soon">Soon</span></button>
     </nav>
+    <button class="talk-btn" id="talk" aria-label="Talk to Carbon Gap"><i data-lucide="mic" class="icon"></i>Talk</button>
     <label class="bar-search"><i data-lucide="search" class="icon"></i>
       <input id="search" list="countries" placeholder="Find a country" autocomplete="off" aria-label="Find a country">
       <datalist id="countries"></datalist>
@@ -88,6 +90,15 @@
         </form>
       </section>
 
+      <section class="voice" id="voice" aria-label="Voice conversation" hidden>
+        <button class="voice-close" id="vclose" aria-label="End voice conversation"><i data-lucide="x" class="icon"></i></button>
+        <button class="orb" id="orb" aria-label="Tap to talk"><canvas id="orbc" width="240" height="240"></canvas></button>
+        <div class="voice-state" id="vstate">Tap to talk</div>
+        <p class="voice-you" id="vyou"></p>
+        <p class="voice-ai" id="vai"></p>
+        <div class="voice-tools" id="vtools"></div>
+      </section>
+
       <div class="report" id="report" aria-label="Report"></div>
     </div>
 
@@ -100,5 +111,6 @@
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
 <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
 <script src="app.js"></script>
+<script src="voice.js"></script>
 </body>
 </html>

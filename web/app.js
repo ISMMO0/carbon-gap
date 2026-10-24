@@ -195,7 +195,7 @@ function renderWorld() {
       <div class="gap"><dt>Gap</dt><dd>${fmtPct((O - D) / D)}</dd></div><div class="gap"><dt>At €${META.carbon_price}/t</dt><dd>${fmtEur((O - D) * 1e6 * META.carbon_price)}</dd></div></dl></div>
     <div class="block"><h3>Largest gaps</h3>
       <table><thead><tr><th>Country</th>${th('declared', 'Declared')}${th('observed', 'Observed')}${th('gap', 'Gap Mt')}${th('gap_pct', 'Gap %')}</tr></thead>
-      <tbody>${rows.slice(0, 15).map(c => `<tr data-c="${c.iso3}"><td>${esc(c.name)}<span class="sub">${c.year} · ${esc(c.source.replace('UNFCCC ', ''))}</span></td><td>${fmtMt(c.declared)}</td><td>${fmtMt(c.observed)}</td><td class="${c.gap >= 0 ? 'gpos' : 'gneg'}">${fmtMt(c.gap)}</td><td class="${c.gap >= 0 ? 'gpos' : 'gneg'}">${fmtPct(c.gap_pct)}</td></tr>`).join('')}</tbody></table></div>
+      <tbody>${rows.slice(0, 15).map(c => `<tr data-c="${c.iso3}"><td>${esc(c.name)}<span class="sub">${c.year} · ${c.agent ? 'found by agent' : esc(c.source.replace('UNFCCC ', ''))}</span></td><td>${fmtMt(c.declared)}</td><td>${fmtMt(c.observed)}</td><td class="${c.gap >= 0 ? 'gpos' : 'gneg'}">${fmtMt(c.gap)}</td><td class="${c.gap >= 0 ? 'gpos' : 'gneg'}">${fmtPct(c.gap_pct)}</td></tr>`).join('')}</tbody></table></div>
     <div class="block"><h3>Big emitters with no UN inventory since 2015</h3>
       <table><thead><tr><th>Country</th><th>Observed ${noInv[0]?.observed_latest?.year || ''}</th></tr></thead>
       <tbody>${noInv.map(c => `<tr data-c="${c.iso3}"><td>${esc(c.name)}</td><td>${fmtMt(c.observed_latest?.total)} Mt</td></tr>`).join('')}</tbody></table>
@@ -422,9 +422,10 @@ async function runAction(a) {
     case 'refresh_data': await reloadData(); if (a.iso3) await selectCountry(a.iso3, {fly: true}); break;
   }
 }
-async function ask(q) {
-  q = q.trim(); if (busy || !q) return;
-  busy = true; $('#ask button').disabled = true; $('#analyst').classList.remove('min');
+/** Ask the analyst. Returns the final answer text. hooks: onTool(name, args), onDelta(text) */
+async function ask(q, {voice = false, hooks = {}} = {}) {
+  q = q.trim(); if (busy || !q) return '';
+  busy = true; $('#ask button').disabled = true; if (!voice) $('#analyst').classList.remove('min');
   [...$('#sugg').children].forEach(b => { if (b.textContent === q) b.remove(); });
   $('#sugg').hidden = true;
   addMsg('user', esc(q));
@@ -432,12 +433,12 @@ async function ask(q) {
   let text = '', bubble = null;
   try {
     const res = await fetch('/api/chat', {method: 'POST', headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({message: q, previous_response_id: lastResponseId, selected: state.selected ? byIso.get(state.selected).name : null})});
+      body: JSON.stringify({message: q, voice, previous_response_id: lastResponseId, selected: state.selected ? byIso.get(state.selected).name : null})});
     await readSSE(res, ev => {
       if (ev.type === 'delta') {
         thinking.remove(); if (!bubble) bubble = addMsg('ai', '');
-        text += ev.text; bubble.innerHTML = md(text); scrollLog();
-      } else if (ev.type === 'tool') { thinking.remove(); addTool(ev.name, ev.args); bubble = null; text = ''; }
+        text += ev.text; bubble.innerHTML = md(text); scrollLog(); hooks.onDelta?.(text);
+      } else if (ev.type === 'tool') { thinking.remove(); addTool(ev.name, ev.args); hooks.onTool?.(ev.name, ev.args); bubble = null; text = ''; }
       else if (ev.type === 'action') runAction(ev);
       else if (ev.type === 'sources' && ev.items.length) {
         const d = document.createElement('div'); d.className = 'cites';
@@ -451,6 +452,7 @@ async function ask(q) {
   } finally {
     thinking.remove(); busy = false; $('#ask button').disabled = false;
   }
+  return text;
 }
 
 /* ---------- controls ---------- */
