@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Ccircle cx=%2712%27 cy=%2712%27 r=%2710%27 fill=%27%231F2D28%27/%3E%3Cpath d=%27M4 15h16%27 stroke=%27%23F0D68A%27 stroke-width=%273%27/%3E%3C/svg%3E">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,12 +29,12 @@
 <div class="app">
   <header class="bar">
     <div class="brand">
-      <svg class="brand-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2.5 9h19M2.5 15h19"/><path d="M4 15h16" stroke="#F0D68A" stroke-width="3.2"/></svg>
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><clipPath id="bm-clip"><circle cx="16" cy="16" r="13"/></clipPath><pattern id="bm-hatch" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="3" height="3" fill="#F0D68A"/><line y2="3" stroke="#B6463B" stroke-width="1.6"/></pattern></defs><g clip-path="url(#bm-clip)"><rect width="32" height="32" fill="#2B3C36"/><rect y="10" width="18" height="5" fill="#EEF0EA"/><rect y="17" width="18" height="5" fill="#EEF0EA"/><rect x="18" y="17" width="9" height="5" fill="url(#bm-hatch)"/></g><circle cx="16" cy="16" r="13" fill="none" stroke="#EEF0EA" stroke-width="1.8"/></svg>
       Carbon Gap
     </div>
     <nav class="tabs" aria-label="Main">
       <button class="tab" data-view="gap" aria-current="page"><i data-lucide="globe-2" class="icon"></i>Emissions gap</button>
-      <button class="tab" data-soon><i data-lucide="building-2" class="icon"></i>Companies <span class="soon">Soon</span></button>
+      <button class="tab" data-view="companies"><i data-lucide="building-2" class="icon"></i>Companies</button>
       <button class="tab" data-view="market"><i data-lucide="arrow-left-right" class="icon"></i>Carbon market</button>
     </nav>
     <button class="talk-btn" id="talk" aria-label="Talk to Carbon Gap"><i data-lucide="mic" class="icon"></i>Talk</button>
@@ -58,6 +58,12 @@
       <section id="symbols-sec">
         <h2>Site symbols</h2>
         <div id="symbols"></div>
+      </section>
+      <section id="data-companies" hidden>
+        <h2>Data</h2>
+        <p class="note" style="margin-top:0"><b>Observed:</b> emissions of the large sites Climate TRACE tracks for each company (power, industry, oil and gas, mining) in 24 major countries. A site with several owners is split equally.</p>
+        <p class="note"><b>Reported:</b> the company's own Scope 1 figure, found in its reports by a research agent, with the exact quote.</p>
+        <p class="note">Tracked sites are only part of a company. If they alone exceed what it reports, that is worth a look.</p>
       </section>
       <section id="data-market" hidden>
         <h2>Data</h2>

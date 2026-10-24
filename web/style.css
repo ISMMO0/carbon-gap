@@ -22,7 +22,7 @@ button,input,select{font:inherit;color:inherit}
 .app{display:grid;grid-template-rows:52px 1fr;height:100vh}
 .bar{background:var(--shell);color:var(--shell-ink);display:flex;align-items:center;gap:20px;padding:0 16px 0 18px}
 .brand{display:flex;align-items:center;gap:10px;font:700 19px/1 var(--cond);letter-spacing:.01em;white-space:nowrap}
-.brand-mark{width:22px;height:22px}
+.brand-mark{width:26px;height:26px}
 .tabs{display:flex;gap:2px;height:100%}
 .tab{display:flex;align-items:center;gap:6px;padding:0 12px;background:none;border:0;border-bottom:2px solid transparent;color:var(--shell-ink-2);font-weight:500;cursor:pointer}
 .tab:hover{color:var(--shell-ink)}

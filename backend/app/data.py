@@ -34,8 +34,9 @@ _findings_at = 0.0
 
 
 def invalidate() -> None:
-    global _findings
+    global _findings, _company_findings
     _findings = None
+    _company_findings = None
 
 
 def findings() -> dict:
@@ -58,6 +59,53 @@ def _from_finding(base: dict, f: dict) -> dict:
             "observed": {k: o[k] for k in ("total", "energy", "agriculture", "waste")},
             "observed_sectors": o.get("sectors") or base["observed_sectors"], "observed_latest": base["observed_latest"],
             "agent": {k: f.get(k) for k in ("document", "source_url", "source_title", "quote", "confidence", "notes", "verified", "updated_at")}}
+
+
+_company_findings: dict | None = None
+_company_at = 0.0
+
+
+@lru_cache
+def _companies_raw() -> dict:
+    path = DATA / "companies.json"
+    return json.loads(path.read_text()) if path.exists() else {"years": [], "companies": []}
+
+
+def companies() -> list[dict]:
+    """Largest companies: observed (Climate TRACE tracked assets) vs self-reported Scope 1 (research agents)."""
+    global _company_findings, _company_at
+    if _company_findings is None or time.monotonic() - _company_at > 10:
+        try:
+            _company_findings = store.company_findings()
+        except Exception:
+            _company_findings = _company_findings or {}
+        _company_at = time.monotonic()
+    raw = _companies_raw()
+    latest = str(max(raw["years"])) if raw["years"] else None
+    out = []
+    for c in raw["companies"]:
+        f = _company_findings.get(c["id"])
+        row = {**c, "observed_latest": c["observed"].get(latest), "observed_year": latest, "reported": None,
+               "research": {"status": f["status"], "notes": f.get("notes")} if f else None}
+        if f and f.get("status") == "found" and f["scope1_mt"] < max(c["observed"].values()) / 3:
+            row["research"] = {"status": "implausible", "notes": f"Reported {f['scope1_mt']} Mt is far below the tracked sites: "
+                               "likely a unit or scope error. Run the agent again."}
+        elif f and f.get("status") == "found":
+            year = str(f["year"]) if str(f["year"]) in c["observed"] else latest
+            obs = c["observed"][year]
+            row["reported"] = {k: f.get(k) for k in ("year", "scope1_mt", "document", "source_url", "source_title",
+                                                     "quote", "confidence", "verified")}
+            row["compare"] = {"year": int(year), "reported_year": f["year"], "observed": obs, "reported": f["scope1_mt"],
+                              "ratio": obs / f["scope1_mt"] if f["scope1_mt"] else None}
+        out.append(row)
+    return out
+
+
+def find_company(query: str) -> dict | None:
+    q = query.strip().lower()
+    rows = companies()
+    return next((c for c in rows if c["id"] == q or c["name"].lower() == q), None) or \
+        next((c for c in rows if q in c["name"].lower() or any(q in s.lower() for s in c["subsidiaries"])), None)
 
 
 @lru_cache

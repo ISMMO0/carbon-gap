@@ -29,6 +29,26 @@ create table if not exists findings (
   updated_at timestamptz not null default now()
 );
 """
+COMPANY_SCHEMA = """
+create table if not exists company_findings (
+  key text primary key,               -- company id (slug)
+  status text not null,               -- found | not_found | error
+  year int,
+  scope1_mt double precision,
+  document text,
+  source_url text,
+  source_title text,
+  quote text,
+  confidence text,
+  notes text,
+  verified boolean not null default false,
+  updated_at timestamptz not null default now()
+);
+"""
+COMPANY_COLS = ["key", "status", "year", "scope1_mt", "document", "source_url", "source_title", "quote", "confidence",
+                "notes", "verified", "updated_at"]
+COMPANY_FALLBACK = DATA / "company_findings.json"
+
 COLS = ["iso3", "status", "year", "total_mt", "energy_mt", "agriculture_mt", "waste_mt", "observed", "document",
         "source_url", "source_title", "quote", "confidence", "notes", "verified", "updated_at"]
 
@@ -48,6 +68,7 @@ def backend() -> str:
         try:
             with _pg() as c:
                 c.execute(SCHEMA)
+                c.execute(COMPANY_SCHEMA)
             _pg_ok = True
         except Exception:
             _pg_ok = False
@@ -107,3 +128,35 @@ def set_verified(iso3: str, verified: bool) -> bool:
         return False
     save({**rows[iso3], "verified": verified})
     return True
+
+
+def save_company(f: dict) -> None:
+    f = {**{k: None for k in COMPANY_COLS}, **f, "verified": bool(f.get("verified")),
+         "updated_at": datetime.now(timezone.utc).isoformat()}
+    if backend() == "postgres":
+        sets = ", ".join(f"{k} = excluded.{k}" for k in COMPANY_COLS[1:])
+        try:
+            with _pg() as c:
+                c.execute(f"insert into company_findings ({', '.join(COMPANY_COLS)}) values "
+                          f"({', '.join(['%s'] * len(COMPANY_COLS))}) on conflict (key) do update set {sets}",
+                          [f[k] for k in COMPANY_COLS])
+            return
+        except Exception:
+            pass
+    with _lock:
+        rows = json.loads(COMPANY_FALLBACK.read_text()) if COMPANY_FALLBACK.exists() else {}
+        rows[f["key"]] = f
+        COMPANY_FALLBACK.write_text(json.dumps(rows, ensure_ascii=False, indent=1))
+
+
+def company_findings() -> dict[str, dict]:
+    local = json.loads(COMPANY_FALLBACK.read_text()) if COMPANY_FALLBACK.exists() else {}
+    if backend() == "postgres":
+        from psycopg.rows import dict_row
+        try:
+            with _pg() as c, c.cursor(row_factory=dict_row) as cur:
+                rows = cur.execute("select * from company_findings").fetchall()
+            return {**local, **{r["key"]: {**r, "updated_at": r["updated_at"].isoformat()} for r in rows}}
+        except Exception:
+            pass
+    return local

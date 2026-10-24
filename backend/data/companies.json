@@ -1,0 +1,8669 @@
+{
+ "years": [
+  2023,
+  2024
+ ],
+ "countries_scanned": [
+  "DEU",
+  "POL",
+  "CZE",
+  "ITA",
+  "ESP",
+  "FRA",
+  "NLD",
+  "GBR",
+  "BEL",
+  "AUT",
+  "USA",
+  "CAN",
+  "AUS",
+  "JPN",
+  "KOR",
+  "IND",
+  "CHN",
+  "ZAF",
+  "BRA",
+  "MEX",
+  "IDN",
+  "SAU",
+  "RUS",
+  "TUR"
+ ],
+ "companies": [
+  {
+   "id": "ntpc",
+   "name": "NTPC",
+   "subsidiaries": [
+    "NTPC Ltd"
+   ],
+   "observed": {
+    "2023": 344.818,
+    "2024": 359.357
+   },
+   "countries": [
+    "IND"
+   ],
+   "asset_count": 39,
+   "kinds": [
+    "mining",
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25451489",
+     "name": "Vindhyachal power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 36.247,
+     "coord": [
+      82.6719,
+      24.0983
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451483",
+     "name": "Ramagundam power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 23.765,
+     "coord": [
+      79.4601,
+      18.7565
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448682",
+     "name": "Rihand power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 22.514,
+     "coord": [
+      82.7915,
+      24.027
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453799",
+     "name": "Talcher Kaniha Super Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 21.14,
+     "coord": [
+      85.075,
+      21.0971
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25452937",
+     "name": "Sipat power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 20.975,
+     "coord": [
+      82.2904,
+      22.1317
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451481",
+     "name": "Korba Super Thermal Power Station (NTPC)",
+     "country": "IND",
+     "kind": "power",
+     "observed": 19.865,
+     "coord": [
+      82.6858,
+      22.3881
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451479",
+     "name": "Kahalgaon Super Thermal Power Plant",
+     "country": "IND",
+     "kind": "power",
+     "observed": 18.776,
+     "coord": [
+      87.2656,
+      25.2369
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451486",
+     "name": "Singrauli Super Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 15.75,
+     "coord": [
+      82.7064,
+      24.1042
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25452938",
+     "name": "Barh I & II power stations",
+     "country": "IND",
+     "kind": "power",
+     "observed": 14.708,
+     "coord": [
+      85.7452,
+      25.4865
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451477",
+     "name": "Farakka power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 13.605,
+     "coord": [
+      87.8937,
+      24.7727
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453947",
+     "name": "Mauda power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 13.421,
+     "coord": [
+      79.3965,
+      21.1807
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454007",
+     "name": "Nabinagar Super Thermal Power Project",
+     "country": "IND",
+     "kind": "power",
+     "observed": 12.134,
+     "coord": [
+      84.158,
+      24.776
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25452724",
+     "name": "Simhadri power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 11.71,
+     "coord": [
+      83.0917,
+      17.591
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454369",
+     "name": "Lara Integrated Thermal Power Project",
+     "country": "IND",
+     "kind": "power",
+     "observed": 11.058,
+     "coord": [
+      83.4575,
+      21.7577
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "451683",
+     "name": "Kudgi Super Thermal Power Project",
+     "country": "IND",
+     "kind": "power",
+     "observed": 10.767,
+     "coord": [
+      75.8346,
+      16.4995
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454678",
+     "name": "Darlipali power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 10.614,
+     "coord": [
+      83.8919,
+      21.9636
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448679",
+     "name": "Dadri Combined Cycle power plant",
+     "country": "IND",
+     "kind": "power",
+     "observed": 9.999,
+     "coord": [
+      77.6078,
+      28.603
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25452423",
+     "name": "Tanda power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 9.7,
+     "coord": [
+      82.6004,
+      26.5892
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451488",
+     "name": "Feroze Gandhi Unchahar Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 9.359,
+     "coord": [
+      81.3239,
+      25.914
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454553",
+     "name": "Gadarwara Super Thermal Power Project",
+     "country": "IND",
+     "kind": "power",
+     "observed": 8.502,
+     "coord": [
+      78.8661,
+      22.8618
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3900",
+     "name": "North Karanpura power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 8.016,
+     "coord": [
+      85.0124,
+      23.8508
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453594",
+     "name": "Chhabra Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 7.051,
+     "coord": [
+      77.0376,
+      24.6274
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25454186",
+     "name": "Solapur power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 5.97,
+     "coord": [
+      75.9832,
+      17.5513
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454554",
+     "name": "Khargone power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 5.76,
+     "coord": [
+      75.8519,
+      22.0652
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450307",
+     "name": "Barauni power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 3.822,
+     "coord": [
+      86.0235,
+      25.3914
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453636",
+     "name": "Bongaigaon power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 3.555,
+     "coord": [
+      90.3672,
+      26.4444
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450309",
+     "name": "Muzaffarpur power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 2.457,
+     "coord": [
+      85.3033,
+      26.1948
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "16676",
+     "name": "Pakri Barwadih Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 2.032,
+     "coord": [
+      85.233799,
+      23.881918
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25452489",
+     "name": "Santaldih Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 2.02,
+     "coord": [
+      86.4666,
+      23.6013
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "16677",
+     "name": "Talaipalli Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 1.321,
+     "coord": [
+      83.355201,
+      22.17758
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "eskom",
+   "name": "Eskom",
+   "subsidiaries": [
+    "Eskom Holdings SOC Ltd"
+   ],
+   "observed": {
+    "2023": 196.399,
+    "2024": 200.103
+   },
+   "countries": [
+    "ZAF"
+   ],
+   "asset_count": 18,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25450906",
+     "name": "Majuba power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 20.199,
+     "coord": [
+      29.771,
+      -27.1006
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453872",
+     "name": "Medupi power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 18.801,
+     "coord": [
+      27.5638,
+      -23.705
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450908",
+     "name": "Matla power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 18.753,
+     "coord": [
+      29.1415,
+      -26.2813
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450905",
+     "name": "Lethabo power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 18.722,
+     "coord": [
+      27.9769,
+      -26.742
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450899",
+     "name": "Duvha power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 17.221,
+     "coord": [
+      29.3397,
+      -25.9613
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450902",
+     "name": "Kendal power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 17.169,
+     "coord": [
+      28.9688,
+      -26.0903
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450907",
+     "name": "Matimba power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 16.666,
+     "coord": [
+      27.6108,
+      -23.6688
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454015",
+     "name": "Kusile power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 15.766,
+     "coord": [
+      28.9249,
+      -25.9201
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450904",
+     "name": "Kriel power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 14.981,
+     "coord": [
+      29.1785,
+      -26.2539
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450910",
+     "name": "Tutuka power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 12.611,
+     "coord": [
+      29.3524,
+      -26.7772
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450897",
+     "name": "Arnot power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 9.723,
+     "coord": [
+      29.792,
+      -25.9438
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450901",
+     "name": "Hendrina power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 7.298,
+     "coord": [
+      29.6016,
+      -26.032
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450898",
+     "name": "Camden power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 7.042,
+     "coord": [
+      30.0901,
+      -26.6215
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450900",
+     "name": "Grootvlei power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 3.567,
+     "coord": [
+      28.4978,
+      -26.7685
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453592",
+     "name": "Ankerlig power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 0.876,
+     "coord": [
+      18.4615,
+      -33.5895
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453593",
+     "name": "Gourikwa power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 0.484,
+     "coord": [
+      21.9607,
+      -34.1668
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448093",
+     "name": "Acacia power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 0.112,
+     "coord": [
+      18.5358,
+      -33.8831
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448106",
+     "name": "Port Rex power station",
+     "country": "ZAF",
+     "kind": "power",
+     "observed": 0.112,
+     "coord": [
+      27.8812,
+      -33.0285
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "saudi-electricity",
+   "name": "Saudi Electricity",
+   "subsidiaries": [
+    "Saudi Electricity Co"
+   ],
+   "observed": {
+    "2023": 178.676,
+    "2024": 180.132
+   },
+   "countries": [
+    "SAU"
+   ],
+   "asset_count": 42,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "449168",
+     "name": "Qurayyah Thermal power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 20.488,
+     "coord": [
+      50.1351,
+      25.826
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449190",
+     "name": "Rabigh-2 power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 18.162,
+     "coord": [
+      39.0365,
+      22.6694
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449864",
+     "name": "Shoaiba power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 18.016,
+     "coord": [
+      39.5559,
+      20.6275
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451979",
+     "name": "Ghazlan power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 16.379,
+     "coord": [
+      49.8976,
+      26.8541
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "451589",
+     "name": "Riyadh 9 power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 10.883,
+     "coord": [
+      47.0649,
+      24.9491
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449165",
+     "name": "Riyadh 8 power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 7.58,
+     "coord": [
+      46.5718,
+      24.5946
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "450095",
+     "name": "Riyadh 10 power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 6.697,
+     "coord": [
+      47.017,
+      24.4165
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449175",
+     "name": "Shuqaiq Steam Power Plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 5.954,
+     "coord": [
+      42.1078,
+      17.6391
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "451607",
+     "name": "Jeddah South power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 5.954,
+     "coord": [
+      39.1773,
+      21.2121
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449186",
+     "name": "Jeddah PP3 power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 5.763,
+     "coord": [
+      39.2043,
+      21.4327
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451977",
+     "name": "Faras power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 5.153,
+     "coord": [
+      49.2855,
+      25.2097
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451969",
+     "name": "Riyadh 7 power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 5.022,
+     "coord": [
+      46.883,
+      24.57
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449179",
+     "name": "Jizan Central power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 4.984,
+     "coord": [
+      42.6339,
+      16.9385
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449161",
+     "name": "Al-Qassim power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 4.756,
+     "coord": [
+      44.016,
+      26.204
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451980",
+     "name": "Shedgum power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 4.256,
+     "coord": [
+      49.4329,
+      25.6745
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4406882",
+     "name": "Riyadh City-14 power station",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 3.511,
+     "coord": [
+      47.0231,
+      24.4179
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "452205",
+     "name": "Riyadh 12 power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 3.382,
+     "coord": [
+      45.6053,
+      24.7843
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4406881",
+     "name": "Riyadh City-13 power station",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 3.167,
+     "coord": [
+      45.6215,
+      24.785
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451995",
+     "name": "Makkah 2 power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 2.958,
+     "coord": [
+      39.7992,
+      21.4731
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1747933",
+     "name": "Hail-2 power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 2.256,
+     "coord": [
+      41.7414,
+      27.4687
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4403729",
+     "name": "Tabuk 1 power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 2.232,
+     "coord": [
+      36.5178,
+      28.4708
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449177",
+     "name": "Asir Central power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 2.069,
+     "coord": [
+      42.578,
+      18.2457
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451976",
+     "name": "Al Dammam power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 2.024,
+     "coord": [
+      50.0945,
+      26.3808
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "451609",
+     "name": "Waad Al Shamal power station",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 1.914,
+     "coord": [
+      38.8614,
+      31.6508
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "715944",
+     "name": "Riyadh 5 power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 1.758,
+     "coord": [
+      46.7247,
+      24.7169
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "715962",
+     "name": "Najran power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 1.623,
+     "coord": [
+      44.3372,
+      17.5984
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "715964",
+     "name": "Tehama Central power station",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 1.491,
+     "coord": [
+      41.1584,
+      19.0994
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447405",
+     "name": "Al Qurayyat power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 1.462,
+     "coord": [
+      37.4243,
+      31.2537
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447402",
+     "name": "Al-Jouf power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 1.315,
+     "coord": [
+      40.012,
+      29.78
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447435",
+     "name": "Arar power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 1.294,
+     "coord": [
+      41.0558,
+      30.9265
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "kepco",
+   "name": "KEPCO",
+   "subsidiaries": [
+    "Korea East-West Power Co Ltd",
+    "Korea Midland Power Co Ltd",
+    "Korea South-East Power Co Ltd",
+    "Korea Southern Power Co Ltd",
+    "Korea Western Power Co Ltd"
+   ],
+   "observed": {
+    "2023": 164.852,
+    "2024": 155.813
+   },
+   "countries": [
+    "KOR"
+   ],
+   "asset_count": 31,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "448452",
+     "name": "Taean power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 23.488,
+     "coord": [
+      126.2343,
+      36.9033
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451254",
+     "name": "Dangjin power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 22.385,
+     "coord": [
+      126.5122,
+      37.0551
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451260",
+     "name": "Yeongheung power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 20.034,
+     "coord": [
+      126.4361,
+      37.2369
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451242",
+     "name": "Hadong power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 17.3,
+     "coord": [
+      127.8199,
+      34.9524
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448447",
+     "name": "Boryeong power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 12.898,
+     "coord": [
+      126.4908,
+      36.4009
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451251",
+     "name": "Samchonpo power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 9.175,
+     "coord": [
+      128.1084,
+      34.9107
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454680",
+     "name": "Shin Boryeong power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 8.117,
+     "coord": [
+      126.4862,
+      36.3846
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448449",
+     "name": "Pyeongtaek power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 5.316,
+     "coord": [
+      126.7953,
+      37.0045
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25455080",
+     "name": "Bukpyung power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 4.672,
+     "coord": [
+      129.1433,
+      37.4805
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448444",
+     "name": "KOMIPO Incheon power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 3.521,
+     "coord": [
+      126.609,
+      37.5109
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25455476",
+     "name": "Shin Seocheon power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 3.094,
+     "coord": [
+      126.4959,
+      36.1441
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454776",
+     "name": "Samcheok Green power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 2.881,
+     "coord": [
+      129.3418,
+      37.186
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "450298",
+     "name": "Seoincheon KOWEPO power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 2.874,
+     "coord": [
+      126.6086,
+      37.5364
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448455",
+     "name": "Ulsan power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 2.861,
+     "coord": [
+      129.3796,
+      35.4731
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448458",
+     "name": "Yeosu power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 2.764,
+     "coord": [
+      127.6908,
+      34.8393
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448448",
+     "name": "Busan power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 2.324,
+     "coord": [
+      129.0003,
+      35.0851
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448454",
+     "name": "Donghae power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 1.959,
+     "coord": [
+      129.1473,
+      37.4863
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448451",
+     "name": "Seoul power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 1.794,
+     "coord": [
+      126.9199,
+      37.5442
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "451835",
+     "name": "Sejong (KOMIPO) power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 1.327,
+     "coord": [
+      127.2471,
+      36.4686
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448440",
+     "name": "Bundang power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 1.081,
+     "coord": [
+      127.1482,
+      37.3642
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448460",
+     "name": "Yeongwol power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 0.948,
+     "coord": [
+      128.4923,
+      37.1629
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "719899",
+     "name": "Gimpo CHP power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 0.787,
+     "coord": [
+      126.5844,
+      37.6007
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4407772",
+     "name": "Shinsejong power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 0.759,
+     "coord": [
+      127.2966,
+      36.5273
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448439",
+     "name": "Jeju thermal power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 0.638,
+     "coord": [
+      126.5933,
+      33.5345
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448443",
+     "name": "Ilsan power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 0.612,
+     "coord": [
+      126.7974,
+      37.6479
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448446",
+     "name": "Namjeju Power Complex",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 0.577,
+     "coord": [
+      126.3405,
+      33.2368
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454468",
+     "name": "Andong power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 0.5,
+     "coord": [
+      128.5413,
+      36.5959
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25455810",
+     "name": "Yeongnam power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 0.412,
+     "coord": [
+      129.3834,
+      35.514
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "453113",
+     "name": "KEPCO Gunsan power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 0.397,
+     "coord": [
+      126.7307,
+      35.9836
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25455813",
+     "name": "Chuncheon CHP power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 0.28,
+     "coord": [
+      127.7738,
+      37.7655
+     ],
+     "shared_with": 2
+    }
+   ]
+  },
+  {
+   "id": "china-baowu",
+   "name": "China Baowu",
+   "subsidiaries": [
+    "Baoshan Iron & Steel Co Ltd",
+    "Baosteel Zhanjiang Iron & Steel Co Ltd",
+    "Maanshan Iron & Steel Co Ltd",
+    "Shanxi Taigang Stainless Steel Co Ltd",
+    "Wuhan Iron and Steel Co Ltd"
+   ],
+   "observed": {
+    "2023": 124.138,
+    "2024": 127.64
+   },
+   "countries": [
+    "CHN"
+   ],
+   "asset_count": 11,
+   "kinds": [
+    "power",
+    "steel"
+   ],
+   "assets": [
+    {
+     "id": "38089178",
+     "name": "Maanshan Iron and Steel Co Ltd",
+     "country": "CHN",
+     "kind": "steel",
+     "observed": 29.359,
+     "coord": [
+      118.472269928503,
+      31.7031920212503
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566560",
+     "name": "Wuhan Iron and Steel Co Ltd",
+     "country": "CHN",
+     "kind": "steel",
+     "observed": 26.018,
+     "coord": [
+      114.448152348092,
+      30.6269888930925
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "32440567",
+     "name": "Baoshan Iron and Steel Co Ltd Headquarters",
+     "country": "CHN",
+     "kind": "steel",
+     "observed": 24.353,
+     "coord": [
+      121.431570271147,
+      31.4381773367548
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "32440568",
+     "name": "Shanxi Taigang Stainless Steel Co Ltd",
+     "country": "CHN",
+     "kind": "steel",
+     "observed": 17.111,
+     "coord": [
+      112.540146674964,
+      37.9309278461558
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566499",
+     "name": "Baosteel Zhanjiang Iron and Steel Co Ltd",
+     "country": "CHN",
+     "kind": "steel",
+     "observed": 16.077,
+     "coord": [
+      110.502211577761,
+      21.0585578022727
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450589",
+     "name": "Baoshan Works power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 6.439,
+     "coord": [
+      121.4356,
+      31.4422
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454935",
+     "name": "Zhanjiang Baosteel power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 3.674,
+     "coord": [
+      110.494,
+      21.0699
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "450814",
+     "name": "Taiyuan Steel Mill power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 3.438,
+     "coord": [
+      112.5378,
+      37.9194
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "450750",
+     "name": "Ma'anshan Steel power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 1.047,
+     "coord": [
+      118.4894,
+      31.7335
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "43158109",
+     "name": "Zhongjiu Mine",
+     "country": "CHN",
+     "kind": "steel",
+     "observed": 0.062,
+     "coord": [
+      118.479825,
+      31.474509
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "43158042",
+     "name": "Heshangqiao Mine",
+     "country": "CHN",
+     "kind": "steel",
+     "observed": 0.062,
+     "coord": [
+      118.554773,
+      31.636184
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "jera",
+   "name": "JERA",
+   "subsidiaries": [
+    "JERA Co Inc"
+   ],
+   "observed": {
+    "2023": 128.458,
+    "2024": 121.484
+   },
+   "countries": [
+    "JPN"
+   ],
+   "asset_count": 25,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25450446",
+     "name": "Hekinan power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 19.594,
+     "coord": [
+      136.9593,
+      34.8346
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25452336",
+     "name": "Hitachinaka power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 12.16,
+     "coord": [
+      140.6138,
+      36.4368
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "449534",
+     "name": "Hirono Thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 9.23,
+     "coord": [
+      141.0174,
+      37.2383
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "449532",
+     "name": "Futtsu thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 8.46,
+     "coord": [
+      139.8349,
+      35.3447
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "451590",
+     "name": "Kawasaki thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 8.264,
+     "coord": [
+      139.7626,
+      35.5134
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25450447",
+     "name": "Kawagoe thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 7.436,
+     "coord": [
+      136.6873,
+      35.0079
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "449531",
+     "name": "Chiba thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 7.412,
+     "coord": [
+      140.1056,
+      35.5646
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "4406849",
+     "name": "Yokosuka power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 6.404,
+     "coord": [
+      139.7164,
+      35.2156
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "447649",
+     "name": "Shin-Nagoya thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 6.098,
+     "coord": [
+      136.8794,
+      35.0663
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "449541",
+     "name": "Sodegaura thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 5.668,
+     "coord": [
+      139.9768,
+      35.4626
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "449542",
+     "name": "Yokohama thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 5.152,
+     "coord": [
+      139.6779,
+      35.477
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "451814",
+     "name": "Nishi-Nagoya thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 4.772,
+     "coord": [
+      136.8303,
+      35.0326
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "449523",
+     "name": "Joetsu thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 4.258,
+     "coord": [
+      138.277,
+      37.209
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25452334",
+     "name": "Higashi-Ohgishima thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 3.162,
+     "coord": [
+      139.7456,
+      35.4949
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "449536",
+     "name": "Kashima thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 2.702,
+     "coord": [
+      140.7017,
+      35.9169
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "4407725",
+     "name": "Shin Goi power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 1.75,
+     "coord": [
+      140.0725,
+      35.5469
+     ],
+     "shared_with": 2
+    },
+    {
+     "id": "447650",
+     "name": "Taketoyo power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 1.53,
+     "coord": [
+      136.9236,
+      34.8242
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25452338",
+     "name": "Minami Yokohama thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 1.5,
+     "coord": [
+      139.6372,
+      35.4044
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "447644",
+     "name": "Chita thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 1.486,
+     "coord": [
+      136.8441,
+      34.9869
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "447646",
+     "name": "Chita Daini thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 1.484,
+     "coord": [
+      136.864,
+      35.0065
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "449540",
+     "name": "Shinagawa thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 1.436,
+     "coord": [
+      139.7564,
+      35.6206
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25452331",
+     "name": "Anegasaki thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 0.692,
+     "coord": [
+      140.018,
+      35.4849
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "6757",
+     "name": "Anegasaki thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 0.588,
+     "coord": [
+      140.0144,
+      35.487
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "447651",
+     "name": "Yokkaichi thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 0.172,
+     "coord": [
+      136.6459,
+      34.974
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "447643",
+     "name": "Atsumi Thermal power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 0.078,
+     "coord": [
+      137.0676,
+      34.6543
+     ],
+     "shared_with": 1
+    }
+   ]
+  },
+  {
+   "id": "gazprom",
+   "name": "Gazprom",
+   "subsidiaries": [
+    "Mosenergo PJSC",
+    "OGK-2 PJSC"
+   ],
+   "observed": {
+    "2023": 91.628,
+    "2024": 91.915
+   },
+   "countries": [
+    "RUS"
+   ],
+   "asset_count": 23,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "449560",
+     "name": "Surgut GRES-1 and Surgut GRES-2 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 13.834,
+     "coord": [
+      73.4889,
+      61.2794
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "449138",
+     "name": "Ryazanskaya GRES power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 11.889,
+     "coord": [
+      39.7799,
+      54.0346
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451931",
+     "name": "Novocherkasskaya GRES power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 11.432,
+     "coord": [
+      40.232,
+      47.401
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449128",
+     "name": "Stavropolskaya GRES power plant",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 8.175,
+     "coord": [
+      41.5131,
+      45.3118
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449903",
+     "name": "Kirishi GRES power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 6.875,
+     "coord": [
+      32.0489,
+      59.4858
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448624",
+     "name": "CHP-26 (Mosenergo) power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 5.847,
+     "coord": [
+      37.6301,
+      55.5776
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448621",
+     "name": "Moscow CHP-22 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 5.097,
+     "coord": [
+      37.8183,
+      55.6341
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448620",
+     "name": "CHP-21 (Mosenergo) power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 4.397,
+     "coord": [
+      37.511,
+      55.8946
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448619",
+     "name": "CHP-20 (Mosenergo) power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 3.572,
+     "coord": [
+      37.5865,
+      55.6996
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448622",
+     "name": "CHP-23 (Mosenergo) power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 3.237,
+     "coord": [
+      37.7707,
+      55.8213
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448625",
+     "name": "CHP-27 (Mosenergo) power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 2.191,
+     "coord": [
+      37.6869,
+      55.9158
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448623",
+     "name": "CHP-25 (Mosenergo) power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 2.103,
+     "coord": [
+      37.4457,
+      55.6953
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448613",
+     "name": "CHP-8 (Mosenergo) power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 2.063,
+     "coord": [
+      37.6966,
+      55.7243
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448616",
+     "name": "CHP-12 (Mosenergo) power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.991,
+     "coord": [
+      37.5601,
+      55.7356
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448617",
+     "name": "CHP-16 (Mosenergo) power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.868,
+     "coord": [
+      37.5025,
+      55.7829
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25452010",
+     "name": "Pskov GRES power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.485,
+     "coord": [
+      29.9694,
+      57.5097
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25452418",
+     "name": "Troitskaya GRES power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.124,
+     "coord": [
+      61.648,
+      54.0366
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448615",
+     "name": "CHP-11 (Mosenergo) power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.956,
+     "coord": [
+      37.73,
+      55.7526
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448614",
+     "name": "CHP-9 (Mosenergo) power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.901,
+     "coord": [
+      37.65,
+      55.705
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25455366",
+     "name": "Grozny power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.822,
+     "coord": [
+      45.6275,
+      43.2933
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "450982",
+     "name": "Cherepovetskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.754,
+     "coord": [
+      37.1259,
+      59.2284
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449419",
+     "name": "Serovskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.701,
+     "coord": [
+      60.7031,
+      59.6351
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "451065",
+     "name": "Adler power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.602,
+     "coord": [
+      39.9492,
+      43.4202
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "sinopec",
+   "name": "Sinopec",
+   "subsidiaries": [
+    "China Petrochemical Corp"
+   ],
+   "observed": {
+    "2023": 80.482,
+    "2024": 82.027
+   },
+   "countries": [
+    "CHN",
+    "SAU"
+   ],
+   "asset_count": 42,
+   "kinds": [
+    "oil",
+    "other"
+   ],
+   "assets": [
+    {
+     "id": "1753467",
+     "name": "Sinopec Zhenhai Refining and Chemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 5.218,
+     "coord": [
+      121.66684,
+      29.98097
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753507",
+     "name": "Sinopec Jinling Petrochemical Nanjing Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 4.474,
+     "coord": [
+      118.9214881,
+      32.16669394
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753469",
+     "name": "Sinopec Shanghai Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 3.977,
+     "coord": [
+      121.454759,
+      30.788636
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648398",
+     "name": "Sinopec Zhenhai Petrochemical, Zhejiang, Zhenhai",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 3.762,
+     "coord": [
+      121.675935,
+      29.979223
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753468",
+     "name": "Sinopec Maoming Refining and Chemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 3.447,
+     "coord": [
+      110.884341,
+      21.678287
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "712309",
+     "name": "Sinopec Qilu Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 3.231,
+     "coord": [
+      118.266812,
+      36.788515
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753473",
+     "name": "Sinopec Guangzhou Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 3.231,
+     "coord": [
+      113.478267,
+      23.12427
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753502",
+     "name": "Sinopec Yangzi Petrochemical Nanjing Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 3.107,
+     "coord": [
+      118.803988,
+      32.245878
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753957",
+     "name": "Sinopec Shanghai Gaoqiao Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 3.107,
+     "coord": [
+      121.5567,
+      31.338799
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753495",
+     "name": "Sinopec Qingdao Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 2.983,
+     "coord": [
+      120.364169,
+      36.213682
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753472",
+     "name": "Sinopec Beijing Yanshan Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 2.485,
+     "coord": [
+      115.969481,
+      39.730714
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3144218",
+     "name": "Sinopec ZhongKe (Guangdong) Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 2.485,
+     "coord": [
+      110.456395,
+      21.050818
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "712328",
+     "name": "Sinopec Cangzhou Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 2.113,
+     "coord": [
+      116.87434,
+      38.33889
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143813",
+     "name": "Sinopec Shijiazhuang Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 2.113,
+     "coord": [
+      114.67362,
+      37.977354
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "712320",
+     "name": "Sinopec Anqing Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.988,
+     "coord": [
+      117.01962,
+      30.5286
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753491",
+     "name": "Sinopec Beihai Refining and Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.988,
+     "coord": [
+      109.515918,
+      21.500001
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753493",
+     "name": "Sinopec Hainan Refining and Chemical Yangpu Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.988,
+     "coord": [
+      109.196208,
+      19.820693
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648394",
+     "name": "Sinopec Maoming Petrochemical, Guangdong, Maoming",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 1.881,
+     "coord": [
+      110.88425,
+      21.676212
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753774",
+     "name": "YASREF Yanbu Refinery",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 1.722,
+     "coord": [
+      38.282828,
+      23.960421
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "18648411",
+     "name": "Sinopec Hainan Petrochemical, Hainan, Yangpu",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 1.71,
+     "coord": [
+      109.173931,
+      19.762809
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "712329",
+     "name": "Sinopec Jinan Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.628,
+     "coord": [
+      117.17723,
+      36.73766
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753488",
+     "name": "Sinopec-SK Wuhan Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.628,
+     "coord": [
+      114.42901,
+      30.65233
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753483",
+     "name": "Sinopec Yueyang Petrochemical (Changling) Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.616,
+     "coord": [
+      113.37067,
+      29.540318
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753530",
+     "name": "Sinopec Tianjin Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.478,
+     "coord": [
+      117.411683,
+      38.829008
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648391",
+     "name": "Sinopec Yanshan Petrochemical, Beijing, Yanshan",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 1.47,
+     "coord": [
+      115.970859,
+      39.727033
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "712323",
+     "name": "Sinopec Jingmen Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.417,
+     "coord": [
+      112.216833,
+      31.019187
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648418",
+     "name": "Sinopec Yangzi Petrochemical, Jiangsu, Nanjing",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 1.368,
+     "coord": [
+      118.790689,
+      32.258406
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143822",
+     "name": "Sinopec Tahe Akesu Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.243,
+     "coord": [
+      83.043143,
+      41.710398
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648396",
+     "name": "Sinopec Qilu Petrochemical, Shandong, Qilu",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 1.215,
+     "coord": [
+      118.267204,
+      36.781296
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648408",
+     "name": "Zhonghan Wuhan Petrochemical, Hubei, Wuhan",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 1.197,
+     "coord": [
+      114.538857,
+      30.6365
+     ],
+     "shared_with": 1
+    }
+   ]
+  },
+  {
+   "id": "aditya-birla-group",
+   "name": "Aditya Birla Group",
+   "subsidiaries": [
+    "Hindalco Industries Ltd",
+    "UltraTech Cement Ltd"
+   ],
+   "observed": {
+    "2023": 81.078,
+    "2024": 81.05
+   },
+   "countries": [
+    "IND"
+   ],
+   "asset_count": 51,
+   "kinds": [
+    "cement",
+    "mining",
+    "oil",
+    "other",
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "1896920",
+     "name": "UltraTech Cement Maihar Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 6.912,
+     "coord": [
+      80.7979960424816,
+      24.1998946224102
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "451549",
+     "name": "Aditya Aluminium power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 5.495,
+     "coord": [
+      84.0606,
+      21.7401
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454355",
+     "name": "Mahan Aluminium power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 5.489,
+     "coord": [
+      82.4544,
+      24.2226
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897064",
+     "name": "UltraTech Cement Tadipatri Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 5.022,
+     "coord": [
+      78.0148451149318,
+      15.0190132708267
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451914",
+     "name": "Renusagar power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 4.818,
+     "coord": [
+      82.7913,
+      24.1811
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897067",
+     "name": "UltraTech Cement Amreli Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 4.579,
+     "coord": [
+      71.4612069196609,
+      20.9101711700938
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897060",
+     "name": "UltraTech Cement Nrupathanga Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 4.321,
+     "coord": [
+      77.1753041861604,
+      17.1396395155868
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897066",
+     "name": "UltraTech Cement Vikram Nagar Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 3.606,
+     "coord": [
+      74.8037231354484,
+      24.5778491751495
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897061",
+     "name": "UltraTech Cement Adityapuram Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 3.304,
+     "coord": [
+      74.6074497455937,
+      24.7646588565828
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897070",
+     "name": "UltraTech Cement Rawan Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 3.12,
+     "coord": [
+      82.023357790908,
+      21.5756108437148
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "32438620",
+     "name": "UltraTech Cement Sewagram Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 2.826,
+     "coord": [
+      68.7130310541852,
+      23.4304243318669
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897074",
+     "name": "UltraTech Cement Tonki Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 2.683,
+     "coord": [
+      75.1331241326404,
+      22.2660443778426
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897059",
+     "name": "UltraTech Cement Budawada Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 2.667,
+     "coord": [
+      80.0208592862453,
+      16.8703886571605
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897062",
+     "name": "UltraTech Cement Chandrapur Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 2.56,
+     "coord": [
+      79.1484871767824,
+      19.7847885974633
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1896919",
+     "name": "UltraTech Cement Gadchandur Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 2.5,
+     "coord": [
+      79.1768417605983,
+      19.7217153184657
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25452975",
+     "name": "Hirakud Smelter power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 2.34,
+     "coord": [
+      83.9046,
+      21.5297
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897055",
+     "name": "UltraTech Cement Sirohi Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 2.131,
+     "coord": [
+      73.0918411383785,
+      24.8229609984219
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897065",
+     "name": "UltraTech Cement Hirmi Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 1.935,
+     "coord": [
+      81.9489875727592,
+      21.5435346591964
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897056",
+     "name": "UltraTech Cement Sidhi Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 1.89,
+     "coord": [
+      81.3288423097216,
+      24.3258909055797
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "32438616",
+     "name": "UltraTech Cement Kotputli Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 1.747,
+     "coord": [
+      76.1306246701259,
+      27.6668482755605
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "42547391",
+     "name": "UltraTech Cement Pali Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 1.391,
+     "coord": [
+      74.0940845801709,
+      26.2589188769213
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897058",
+     "name": "UltraTech Cement Jaypee Puram Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 1.375,
+     "coord": [
+      81.1687419643984,
+      24.5281618516521
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25455120",
+     "name": "Sidhi Cement Plant power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 1.033,
+     "coord": [
+      81.3287,
+      24.3293
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897073",
+     "name": "UltraTech Cement Kandhar Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 1.032,
+     "coord": [
+      76.8945252598973,
+      31.3283257135563
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897069",
+     "name": "UltraTech Cement Kharia Khangar Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 0.936,
+     "coord": [
+      73.683366895085,
+      26.6050366648503
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897063",
+     "name": "UltraTech Cement Jafrabad Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 0.813,
+     "coord": [
+      71.3977359558793,
+      20.8684192549259
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897057",
+     "name": "UltraTech Cement Dalla Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 0.695,
+     "coord": [
+      83.0404597108685,
+      24.450364765198
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1897071",
+     "name": "UltraTech Cement Reddipalayam Cement Plant",
+     "country": "IND",
+     "kind": "cement",
+     "observed": 0.665,
+     "coord": [
+      79.1720723544248,
+      11.1060895277237
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454434",
+     "name": "Utkal Smelter power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 0.612,
+     "coord": [
+      83.0299,
+      19.195
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "43765039",
+     "name": "Muri Alumina Plant",
+     "country": "IND",
+     "kind": "oil",
+     "observed": 0.585,
+     "coord": [
+      85.872996,
+      23.379994
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "adani",
+   "name": "Adani",
+   "subsidiaries": [
+    "Adani Power Ltd"
+   ],
+   "observed": {
+    "2023": 67.27,
+    "2024": 78.603
+   },
+   "countries": [
+    "IND"
+   ],
+   "asset_count": 8,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25453453",
+     "name": "Mundra Thermal Power Project (Adani)",
+     "country": "IND",
+     "kind": "power",
+     "observed": 26.444,
+     "coord": [
+      69.5535,
+      22.8235
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454050",
+     "name": "Tiroda Thermal Power Project",
+     "country": "IND",
+     "kind": "power",
+     "observed": 19.43,
+     "coord": [
+      79.9673,
+      21.4125
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454271",
+     "name": "Raikheda power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 8.479,
+     "coord": [
+      81.8475,
+      21.448
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454267",
+     "name": "Kawai Thermal Power Project",
+     "country": "IND",
+     "kind": "power",
+     "observed": 8.464,
+     "coord": [
+      76.7371,
+      24.778
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "46885434",
+     "name": "Adani Godda power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 7.367,
+     "coord": [
+      87.1355,
+      24.8141
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451354",
+     "name": "Udupi power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 4.913,
+     "coord": [
+      74.8002,
+      13.1596
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "718368",
+     "name": "Adani Raigarh Thermal Power Plant",
+     "country": "IND",
+     "kind": "power",
+     "observed": 3.482,
+     "coord": [
+      83.2764,
+      21.7485
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "717596",
+     "name": "Butibori Power Project",
+     "country": "IND",
+     "kind": "power",
+     "observed": 0.024,
+     "coord": [
+      78.9333,
+      20.9286
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "ansteel",
+   "name": "Ansteel",
+   "subsidiaries": [
+    "Angang Steel Co Ltd",
+    "Bengang Steel Plates Co Ltd"
+   ],
+   "observed": {
+    "2023": 72.424,
+    "2024": 74.97
+   },
+   "countries": [
+    "CHN"
+   ],
+   "asset_count": 5,
+   "kinds": [
+    "power",
+    "steel"
+   ],
+   "assets": [
+    {
+     "id": "1566610",
+     "name": "Angang Steel Co Ltd",
+     "country": "CHN",
+     "kind": "steel",
+     "observed": 37.194,
+     "coord": [
+      122.981078374674,
+      41.1392046339499
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "32440544",
+     "name": "Bengang Steel Plates Co Ltd",
+     "country": "CHN",
+     "kind": "steel",
+     "observed": 21.116,
+     "coord": [
+      123.720619258997,
+      41.2779217142276
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566611",
+     "name": "Angang Steel Co Ltd Bayuquan branch",
+     "country": "CHN",
+     "kind": "steel",
+     "observed": 12.092,
+     "coord": [
+      122.12967812922,
+      40.3128472773855
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566612",
+     "name": "Ansteel Group Chaoyang Steel and Iron Co Ltd",
+     "country": "CHN",
+     "kind": "steel",
+     "observed": 3.402,
+     "coord": [
+      120.366797414023,
+      41.527341766471
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449812",
+     "name": "Benxi Steel & Iron power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 1.165,
+     "coord": [
+      123.7314,
+      41.2768
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "saudi-aramco",
+   "name": "Saudi Aramco",
+   "subsidiaries": [
+    "Saudi Arabian Oil Co",
+    "Saudi Basic Industries Corp"
+   ],
+   "observed": {
+    "2023": 74.354,
+    "2024": 73.495
+   },
+   "countries": [
+    "CHN",
+    "KOR",
+    "NLD",
+    "POL",
+    "SAU",
+    "USA"
+   ],
+   "asset_count": 37,
+   "kinds": [
+    "oil",
+    "other",
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "712515",
+     "name": "S-Oil Onsan Refinery",
+     "country": "KOR",
+     "kind": "oil",
+     "observed": 6.197,
+     "coord": [
+      129.341925,
+      35.445626
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753266",
+     "name": "Motiva Port Arthur Refinery",
+     "country": "USA",
+     "kind": "oil",
+     "observed": 6.114,
+     "coord": [
+      -93.960709,
+      29.884891
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3144102",
+     "name": "Saudi Aramco Ras Tanura Refinery",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 5.77,
+     "coord": [
+      50.09207,
+      26.70243
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "451881",
+     "name": "Wasit Gas power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 4.292,
+     "coord": [
+      49.312,
+      27.11
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3144215",
+     "name": "Saudi Aramco Jazan Refinery",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 4.196,
+     "coord": [
+      42.38259483,
+      17.28602922
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3144103",
+     "name": "Saudi Aramco SASREF Jubail Refinery",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 3.2,
+     "coord": [
+      49.59827,
+      27.0658503
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "731926",
+     "name": "Arabian Petrochemical Co. (Petrokemya South), Al Jubail,",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 3.075,
+     "coord": [
+      49.601834,
+      27.043006
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25452735",
+     "name": "Shaybah Gas power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 2.878,
+     "coord": [
+      54.0711,
+      22.6062
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3144175",
+     "name": "SATORP Saudi Aramco Total Jubail Refinery",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 2.413,
+     "coord": [
+      49.500533,
+      26.962343
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "40040650",
+     "name": "Saudi Aramco Yanbu Refinery",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 2.413,
+     "coord": [
+      38.292246,
+      23.956083
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4406800",
+     "name": "Jizan IGCC power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 2.218,
+     "coord": [
+      42.3626,
+      17.2775
+     ],
+     "shared_with": 2
+    },
+    {
+     "id": "1753769",
+     "name": "SAMREF Yanbu Refinery",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 2.098,
+     "coord": [
+      38.23277,
+      23.98139
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "731930",
+     "name": "Saudi Kayan Petrochemical Co. , Al Jubail,",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 2.064,
+     "coord": [
+      49.519285,
+      27.027458
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "731929",
+     "name": "Jubail United Petrochemical Co. , Al Jubail,",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 1.982,
+     "coord": [
+      49.549632,
+      27.046397
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "731934",
+     "name": "Yanbu National Petrochemical Company (Yansab), Yanbu,",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 1.855,
+     "coord": [
+      38.255464,
+      23.980352
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753774",
+     "name": "YASREF Yanbu Refinery",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 1.722,
+     "coord": [
+      38.282828,
+      23.960421
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "18648366",
+     "name": "SABIC Europe , Geleen (No. 4)",
+     "country": "NLD",
+     "kind": "other",
+     "observed": 1.71,
+     "coord": [
+      5.788983,
+      50.955911
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "731931",
+     "name": "Arabian Petrochemical Co. (Petrokemya North), Al Jubail,",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 1.651,
+     "coord": [
+      49.594339,
+      27.056295
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753768",
+     "name": "Saudi Aramco Rabigh Refinery",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 1.399,
+     "coord": [
+      39.016967,
+      22.717525
+     ],
+     "shared_with": 2
+    },
+    {
+     "id": "3144104",
+     "name": "Saudi Aramco Riyadh Refinery",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 1.364,
+     "coord": [
+      46.86798,
+      24.51852
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3144059",
+     "name": "Lotos Gdansk Refinery",
+     "country": "POL",
+     "kind": "oil",
+     "observed": 1.345,
+     "coord": [
+      18.73541,
+      54.34837
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "731928",
+     "name": "Eastern Petrochemical Co. (SHARQ), Al Jubail,",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 1.228,
+     "coord": [
+      49.57382,
+      27.05952
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "1753492",
+     "name": "Fujian Refining and Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.16,
+     "coord": [
+      118.934066,
+      25.176552
+     ],
+     "shared_with": 2
+    },
+    {
+     "id": "731937",
+     "name": "Petro Rabigh, Rabigh,",
+     "country": "SAU",
+     "kind": "other",
+     "observed": 1.158,
+     "coord": [
+      39.015825,
+      22.719417
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "18648335",
+     "name": "Exxon/SABIC, Portland, Tex",
+     "country": "USA",
+     "kind": "oil",
+     "observed": 1.143,
+     "coord": [
+      -97.32348,
+      27.93016
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25454257",
+     "name": "Khursaniyah power plant",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 1.111,
+     "coord": [
+      49.2067,
+      27.1463
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648390",
+     "name": "Sinopec - SABIC Tianjin Petrochemical, Tianjin, Tianjin ",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 1.111,
+     "coord": [
+      117.420173,
+      38.819873
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "731936",
+     "name": "Sadara Basic Services Company, Al Jubail,",
+     "country": "SAU",
+     "kind": "other",
+     "observed": 1.086,
+     "coord": [
+      49.480387,
+      26.942049
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "731935",
+     "name": "Yanbu Petrochemical Co. (Yanpet), Yanbu,",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 1.075,
+     "coord": [
+      38.22094,
+      23.98482
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25453291",
+     "name": "Berri Gas power plant II",
+     "country": "SAU",
+     "kind": "power",
+     "observed": 0.93,
+     "coord": [
+      49.5948,
+      26.9642
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "posco",
+   "name": "POSCO",
+   "subsidiaries": [
+    "POSCO Holdings Inc"
+   ],
+   "observed": {
+    "2023": 72.32,
+    "2024": 72.42
+   },
+   "countries": [
+    "KOR"
+   ],
+   "asset_count": 6,
+   "kinds": [
+    "power",
+    "steel"
+   ],
+   "assets": [
+    {
+     "id": "1566956",
+     "name": "POSCO Gwangyang steel plant",
+     "country": "KOR",
+     "kind": "steel",
+     "observed": 38.336,
+     "coord": [
+      127.73213500275,
+      34.92026635257
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566957",
+     "name": "POSCO Pohang steel plant",
+     "country": "KOR",
+     "kind": "steel",
+     "observed": 29.01,
+     "coord": [
+      129.393784109359,
+      36.0182619894792
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448444",
+     "name": "KOMIPO Incheon power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 3.521,
+     "coord": [
+      126.609,
+      37.5109
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25455339",
+     "name": "Pohang steel works power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 0.709,
+     "coord": [
+      129.4173,
+      36.0325
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448857",
+     "name": "Gwangyang steelworks power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 0.564,
+     "coord": [
+      127.7451,
+      34.9078
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25455813",
+     "name": "Chuncheon CHP power station",
+     "country": "KOR",
+     "kind": "power",
+     "observed": 0.28,
+     "coord": [
+      127.7738,
+      37.7655
+     ],
+     "shared_with": 2
+    }
+   ]
+  },
+  {
+   "id": "huaneng",
+   "name": "Huaneng",
+   "subsidiaries": [
+    "HUA NENG Yimin Coal and POWER Co Ltd",
+    "Huaneng International Power Co Ltd Yuhuan Power Plant",
+    "Huaneng Qinbei Power Generation Co Ltd",
+    "Huaneng Shantou Haimen Power Generation Co Ltd"
+   ],
+   "observed": {
+    "2023": 70.004,
+    "2024": 70.842
+   },
+   "countries": [
+    "CHN"
+   ],
+   "asset_count": 4,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25451058",
+     "name": "Yimin power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 19.73,
+     "coord": [
+      119.7739,
+      48.5497
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453816",
+     "name": "Haimen power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 17.625,
+     "coord": [
+      116.6548,
+      23.1899
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451015",
+     "name": "Qinbei power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 17.045,
+     "coord": [
+      112.7165,
+      35.1676
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453164",
+     "name": "Yuhuan power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 16.442,
+     "coord": [
+      121.1391,
+      28.1152
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "comisi-n-federal-de-electricidad",
+   "name": "Comisión Federal de Electricidad",
+   "subsidiaries": [
+    "Comisión Federal de Electricidad EPE"
+   ],
+   "observed": {
+    "2023": 71.446,
+    "2024": 70.482
+   },
+   "countries": [
+    "MEX"
+   ],
+   "asset_count": 37,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "447705",
+     "name": "Manzanillo (Manuel Álvarez Moreno) power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 9.023,
+     "coord": [
+      -104.3192,
+      19.0278
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450513",
+     "name": "Petacalco power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 6.633,
+     "coord": [
+      -102.1154,
+      17.9837
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447715",
+     "name": "Presidente Juárez power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 4.703,
+     "coord": [
+      -117.0709,
+      32.3694
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450491",
+     "name": "Carbón II power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 3.84,
+     "coord": [
+      -100.699,
+      28.467
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447704",
+     "name": "Pdte. Adolfo Lopez Mateos (Tuxpan) Power Plant",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 3.715,
+     "coord": [
+      -97.3338,
+      21.0143
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450517",
+     "name": "Puerto Libertad power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 3.036,
+     "coord": [
+      -112.6933,
+      29.907
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450502",
+     "name": "José López Portillo power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 2.96,
+     "coord": [
+      -100.6875,
+      28.4884
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447719",
+     "name": "Samalayuca power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 2.898,
+     "coord": [
+      -106.4871,
+      31.3289
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447718",
+     "name": "Salamanca CFE power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 2.758,
+     "coord": [
+      -101.1708,
+      20.5694
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "450742",
+     "name": "Empalme I power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 2.499,
+     "coord": [
+      -110.7818,
+      27.9261
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447687",
+     "name": "Altamira power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 2.402,
+     "coord": [
+      -98.0067,
+      22.4346
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447723",
+     "name": "Valle de México power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 2.257,
+     "coord": [
+      -98.9776,
+      19.6187
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1921607",
+     "name": "Emilio Portes Gil power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 2.135,
+     "coord": [
+      -98.0633,
+      25.9811
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4407810",
+     "name": "Mexicali Oriente power plant",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 1.918,
+     "coord": [
+      -115.2891,
+      32.565
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447700",
+     "name": "Josè Aceves Pozos power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 1.892,
+     "coord": [
+      -106.3555,
+      23.1903
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447693",
+     "name": "El Sauz power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 1.627,
+     "coord": [
+      -100.1205,
+      20.4573
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447722",
+     "name": "Juan de Dios Bátiz Paredes power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 1.537,
+     "coord": [
+      -109.0515,
+      25.6079
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447711",
+     "name": "Tula power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 1.48,
+     "coord": [
+      -99.275,
+      20.0569
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447692",
+     "name": "Chihuahua II (El Encino) power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 1.406,
+     "coord": [
+      -105.9202,
+      28.4455
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "451865",
+     "name": "Centro Morelos (Huexca) power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 1.221,
+     "coord": [
+      -98.8782,
+      18.8013
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "451584",
+     "name": "Cogen Salamanca power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 1.035,
+     "coord": [
+      -101.1644,
+      20.5788
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447721",
+     "name": "Villa de Reyes power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 0.998,
+     "coord": [
+      -100.9332,
+      21.8322
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4407811",
+     "name": "Parque Industrial power plant",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 0.956,
+     "coord": [
+      -114.7145,
+      32.4182
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447691",
+     "name": "Dos Bocas power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 0.869,
+     "coord": [
+      -96.1464,
+      19.0856
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "450327",
+     "name": "Agua Prieta II power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 0.826,
+     "coord": [
+      -109.5911,
+      31.2656
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447699",
+     "name": "Huinalá CC power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 0.823,
+     "coord": [
+      -100.1035,
+      25.7219
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "450449",
+     "name": "San Lorenzo Potencia power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 0.726,
+     "coord": [
+      -98.2412,
+      19.1194
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "49534295",
+     "name": "Carlos Rodríguez Rivero power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 0.69,
+     "coord": [
+      -110.8659,
+      27.9366
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447714",
+     "name": "Poza Rica power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 0.562,
+     "coord": [
+      -97.4933,
+      20.5258
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449834",
+     "name": "Hermosillo power station",
+     "country": "MEX",
+     "kind": "power",
+     "observed": 0.483,
+     "coord": [
+      -110.8343,
+      29.0347
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "duke-energy",
+   "name": "Duke Energy",
+   "subsidiaries": [
+    "Duke Energy Carolinas LLC",
+    "Duke Energy Indiana LLC",
+    "Duke Energy Progress LLC"
+   ],
+   "observed": {
+    "2023": 62.505,
+    "2024": 67.652
+   },
+   "countries": [
+    "USA"
+   ],
+   "asset_count": 22,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25449166",
+     "name": "Gibson",
+     "country": "USA",
+     "kind": "power",
+     "observed": 9.971,
+     "coord": [
+      -87.7658,
+      38.3722
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25448913",
+     "name": "Roxboro",
+     "country": "USA",
+     "kind": "power",
+     "observed": 8.083,
+     "coord": [
+      -79.0731,
+      36.4833
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "712914",
+     "name": "Belews Creek",
+     "country": "USA",
+     "kind": "power",
+     "observed": 7.703,
+     "coord": [
+      -80.0587,
+      36.2824
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "712917",
+     "name": "Marshall (NC)",
+     "country": "USA",
+     "kind": "power",
+     "observed": 6.764,
+     "coord": [
+      -80.9658,
+      35.5975
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25448972",
+     "name": "Lincoln Combustion",
+     "country": "USA",
+     "kind": "power",
+     "observed": 4.898,
+     "coord": [
+      -81.0347,
+      35.4317
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "712915",
+     "name": "James E. Rogers Energy Complex",
+     "country": "USA",
+     "kind": "power",
+     "observed": 4.883,
+     "coord": [
+      -81.7594,
+      35.22
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449164",
+     "name": "Cayuga",
+     "country": "USA",
+     "kind": "power",
+     "observed": 4.469,
+     "coord": [
+      -87.4244,
+      39.9242
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449320",
+     "name": "Sherwood H Smith Jr Energy Complex",
+     "country": "USA",
+     "kind": "power",
+     "observed": 3.836,
+     "coord": [
+      -79.7406,
+      34.8392
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "923",
+     "name": "HF Lee and Wayne County power complex",
+     "country": "USA",
+     "kind": "power",
+     "observed": 3.28,
+     "coord": [
+      -78.089,
+      35.3732
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449165",
+     "name": "Edwardsport",
+     "country": "USA",
+     "kind": "power",
+     "observed": 2.518,
+     "coord": [
+      -87.2505,
+      38.7975
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25448912",
+     "name": "Mayo",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.911,
+     "coord": [
+      -78.8917,
+      36.5278
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449775",
+     "name": "Dan River",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.899,
+     "coord": [
+      -79.7214,
+      36.4905
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449774",
+     "name": "Buck",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.743,
+     "coord": [
+      -80.3767,
+      35.7133
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449831",
+     "name": "W S Lee",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.315,
+     "coord": [
+      -82.435,
+      34.6022
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449770",
+     "name": "Asheville",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.165,
+     "coord": [
+      -82.5417,
+      35.4731
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25457022",
+     "name": "LV Sutton Combined Cycle and Steam",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.123,
+     "coord": [
+      -77.9853,
+      34.2831
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25456535",
+     "name": "Madison",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.769,
+     "coord": [
+      -84.4647,
+      39.4522
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449528",
+     "name": "Noblesville",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.386,
+     "coord": [
+      -85.9714,
+      40.0969
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25456536",
+     "name": "Vermillion Energy Facility",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.27,
+     "coord": [
+      -87.4464,
+      39.9223
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25448969",
+     "name": "G G Allen",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.269,
+     "coord": [
+      -81.0087,
+      35.1906
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450039",
+     "name": "Henry County",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.211,
+     "coord": [
+      -85.5039,
+      39.9528
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449773",
+     "name": "W H Weatherspoon",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.184,
+     "coord": [
+      -78.9739,
+      34.588
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "coal-india",
+   "name": "Coal India",
+   "subsidiaries": [
+    "Mahanadi Coalfields Ltd",
+    "Northern Coalfields Ltd",
+    "South Eastern Coalfields Ltd"
+   ],
+   "observed": {
+    "2023": 67.128,
+    "2024": 66.125
+   },
+   "countries": [
+    "IND"
+   ],
+   "asset_count": 90,
+   "kinds": [
+    "mining"
+   ],
+   "assets": [
+    {
+     "id": "15908",
+     "name": "Gevra Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 6.718,
+     "coord": [
+      82.545748,
+      22.336312
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "15929",
+     "name": "Kusmunda Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 5.862,
+     "coord": [
+      82.666666,
+      22.332635
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "15945",
+     "name": "Nigahi Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 4.035,
+     "coord": [
+      82.599444,
+      24.135
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "15905",
+     "name": "Dipka Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 3.91,
+     "coord": [
+      82.544192,
+      22.345077
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "56162127",
+     "name": "Integrated Belpahar, Lakhanpur, Lilari Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 3.765,
+     "coord": [
+      83.854397,
+      21.771004
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "710137",
+     "name": "Lingaraj Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 3.538,
+     "coord": [
+      85.200747,
+      20.960432
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "15918",
+     "name": "Jayant Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 3.508,
+     "coord": [
+      82.6546,
+      24.1583
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "15891",
+     "name": "Amlohri Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 3.008,
+     "coord": [
+      82.593,
+      24.134
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163475",
+     "name": "Bhubaneswari Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 2.92,
+     "coord": [
+      85.160099,
+      20.961693
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163525",
+     "name": "Garjanbahal Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 2.416,
+     "coord": [
+      83.74266,
+      22.034519
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163435",
+     "name": "Ananta Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 2.339,
+     "coord": [
+      85.163715,
+      20.943609
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163624",
+     "name": "Kulda Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 2.095,
+     "coord": [
+      83.734846,
+      22.033526
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "43159895",
+     "name": "Siarmal Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 1.658,
+     "coord": [
+      83.733619,
+      22.043469
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "15916",
+     "name": "Hingula-II Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 1.527,
+     "coord": [
+      85.01637,
+      20.966051
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163605",
+     "name": "Khadia Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 1.415,
+     "coord": [
+      82.7144,
+      24.1318
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "15913",
+     "name": "Gopalji Kaniha Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 1.381,
+     "coord": [
+      85.079292,
+      21.095844
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "15899",
+     "name": "Bharatpur Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 1.37,
+     "coord": [
+      85.128911,
+      20.95753
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163480",
+     "name": "Bina Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 1.165,
+     "coord": [
+      82.7476,
+      24.1483
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "15907",
+     "name": "Dudhichua Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 1.084,
+     "coord": [
+      82.67287,
+      24.16474
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "15964",
+     "name": "Samleswari Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.942,
+     "coord": [
+      83.903847,
+      21.805789
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163441",
+     "name": "Balaram Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.905,
+     "coord": [
+      85.178092,
+      20.962009
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163559",
+     "name": "Jagannath Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.876,
+     "coord": [
+      85.147665,
+      20.949857
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "15902",
+     "name": "Block-B Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.758,
+     "coord": [
+      82.56028175,
+      24.17502419
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163489",
+     "name": "Chhal Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.716,
+     "coord": [
+      83.110483,
+      22.100202
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "15933",
+     "name": "Manikpur Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.62,
+     "coord": [
+      82.71690602,
+      22.32047888
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163631",
+     "name": "Lajkura Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.527,
+     "coord": [
+      83.901262,
+      21.814345
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163575",
+     "name": "Jhingurda Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.507,
+     "coord": [
+      82.698427,
+      24.212132
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163431",
+     "name": "Amlai Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.503,
+     "coord": [
+      81.59593,
+      23.167675
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163452",
+     "name": "Baroud Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.49,
+     "coord": [
+      83.345538,
+      22.268463
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163560",
+     "name": "Jagannathpur Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.457,
+     "coord": [
+      83.215,
+      23.3704
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "nippon-steel",
+   "name": "Nippon Steel",
+   "subsidiaries": [
+    "Nippon Steel Corp"
+   ],
+   "observed": {
+    "2023": 64.821,
+    "2024": 64.535
+   },
+   "countries": [
+    "AUS",
+    "JPN"
+   ],
+   "asset_count": 14,
+   "kinds": [
+    "mining",
+    "power",
+    "steel"
+   ],
+   "assets": [
+    {
+     "id": "1566925",
+     "name": "Nippon Kyushu Works (Oita Area, Oita) steel plant",
+     "country": "JPN",
+     "kind": "steel",
+     "observed": 13.816,
+     "coord": [
+      131.646196771159,
+      33.260570013592
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566923",
+     "name": "Nippon East Japan Works (Kimitsu) steel plant",
+     "country": "JPN",
+     "kind": "steel",
+     "observed": 12.485,
+     "coord": [
+      139.868542482411,
+      35.3582338626058
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566927",
+     "name": "Nippon East Japan Works (Kashima) steel plant",
+     "country": "JPN",
+     "kind": "steel",
+     "observed": 8.559,
+     "coord": [
+      140.677810631168,
+      35.9349894229244
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566924",
+     "name": "Nippon Nagoya steel plant",
+     "country": "JPN",
+     "kind": "steel",
+     "observed": 7.929,
+     "coord": [
+      136.86710914077,
+      35.0289478646419
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566926",
+     "name": "Nippon Kyushu Works (Yawata Area, Tobata) steel plant",
+     "country": "JPN",
+     "kind": "steel",
+     "observed": 5.487,
+     "coord": [
+      130.84114134312,
+      33.9151486042609
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "32440858",
+     "name": "Nippon Kansai Works (Wakayama Area, Wakayama) steel plant",
+     "country": "JPN",
+     "kind": "steel",
+     "observed": 3.226,
+     "coord": [
+      135.133901317377,
+      34.236518911772
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "32440852",
+     "name": "Nippon Setouchi Works (Hirohata Area) steel plant",
+     "country": "JPN",
+     "kind": "steel",
+     "observed": 2.86,
+     "coord": [
+      134.636026689439,
+      34.7881653000254
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25455362",
+     "name": "Nippon Steel (NSC) Kashima Works power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 2.745,
+     "coord": [
+      140.6887,
+      35.9471
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "38089122",
+     "name": "North Nippon Muroran Works steel plant",
+     "country": "JPN",
+     "kind": "steel",
+     "observed": 2.241,
+     "coord": [
+      140.997913537043,
+      42.3418171374632
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451516",
+     "name": "Hirohata Works power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 1.624,
+     "coord": [
+      134.6237,
+      34.7878
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448715",
+     "name": "NSC Muroran Works power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 1.315,
+     "coord": [
+      140.993,
+      42.3507
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453133",
+     "name": "Nippon Steel Oita Works power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 1.221,
+     "coord": [
+      131.6494,
+      33.2691
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448714",
+     "name": "Kamaishi Works power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 0.879,
+     "coord": [
+      141.8769,
+      39.2686
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "14864",
+     "name": "Blackwood Coal Mine",
+     "country": "AUS",
+     "kind": "mining",
+     "observed": 0.149,
+     "coord": [
+      148.130942,
+      -41.559798
+     ],
+     "shared_with": 1
+    }
+   ]
+  },
+  {
+   "id": "zhejiang-energy",
+   "name": "Zhejiang Energy",
+   "subsidiaries": [
+    "Anhui Huainan Pingwei Power Generation Co Ltd",
+    "Zhejiang Guohua Zheneng Power Generation Co Ltd",
+    "Zhejiang Zheneng Jiahua Power Generator Co Ltd"
+   ],
+   "observed": {
+    "2023": 65.66,
+    "2024": 64.493
+   },
+   "countries": [
+    "CHN"
+   ],
+   "asset_count": 3,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25452549",
+     "name": "Jiaxing power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 24.669,
+     "coord": [
+      121.1442,
+      30.628
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450220",
+     "name": "Pingwei power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 20.051,
+     "coord": [
+      116.9014,
+      32.6842
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453234",
+     "name": "Ninghai power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 19.773,
+     "coord": [
+      121.5115,
+      29.4818
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "cnpc",
+   "name": "CNPC",
+   "subsidiaries": [
+    "PetroChina Co Ltd"
+   ],
+   "observed": {
+    "2023": 60.902,
+    "2024": 59.878
+   },
+   "countries": [
+    "CHN",
+    "FRA",
+    "GBR",
+    "JPN"
+   ],
+   "asset_count": 36,
+   "kinds": [
+    "oil",
+    "other"
+   ],
+   "assets": [
+    {
+     "id": "1753506",
+     "name": "PetroChina Guangdong Petrochemical Jieyang Complex Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 3.83,
+     "coord": [
+      116.227218,
+      22.93953
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648389",
+     "name": "Petrochina Dushanzi Petrochemical, Xinjiang, Dushanzi ",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 3.42,
+     "coord": [
+      84.860593,
+      44.360849
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143824",
+     "name": "PetroChina Yunnan Anning Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 3.231,
+     "coord": [
+      102.377071,
+      24.9137
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753471",
+     "name": "PetroChina Fushun Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 2.858,
+     "coord": [
+      124.03889,
+      41.83474
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143799",
+     "name": "PetroChina Lanzhou Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 2.61,
+     "coord": [
+      103.64567,
+      36.109481
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143830",
+     "name": "PetroChina Liaoning Liaoyang Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 2.485,
+     "coord": [
+      123.215406,
+      41.213913
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753476",
+     "name": "PetroChina Dushanzi Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 2.485,
+     "coord": [
+      84.8638,
+      44.36397
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143825",
+     "name": "PetroChina Sichuan Pengzhou Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 2.485,
+     "coord": [
+      103.898941,
+      31.065658
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143794",
+     "name": "PetroChina Daqing Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 2.485,
+     "coord": [
+      124.82719,
+      46.56157
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143793",
+     "name": "PetroChina Dalian Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 2.352,
+     "coord": [
+      121.657388,
+      38.976702
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143798",
+     "name": "PetroChina Jinzhou Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 2.237,
+     "coord": [
+      121.087008,
+      41.138061
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648410",
+     "name": "Petrochina Guangdong Petrochemical, Guangdong, Jieyang",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 2.052,
+     "coord": [
+      116.223162,
+      22.936049
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648383",
+     "name": "PetroChina Daqing Petrochemical, Heilongjiang, Daqing ",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 2.052,
+     "coord": [
+      125.205968,
+      46.445736
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143844",
+     "name": "PetroChina Huabei Renqiu Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.915,
+     "coord": [
+      116.13743,
+      38.741215
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753505",
+     "name": "PetroChina Guangxi Petrochemical Qinzhou Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.915,
+     "coord": [
+      108.611677,
+      21.715297
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648385",
+     "name": "PetroChina Fushun Petrochemical , Liaoning, Fushun",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 1.71,
+     "coord": [
+      124.038518,
+      41.831107
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "45257163",
+     "name": "PetroChina Lanzhou Petrochemical Company Lanzhou Complex",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 1.403,
+     "coord": [
+      103.639211,
+      36.1037448
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648420",
+     "name": "PetroChina Sichuan Petrochemical, Sichuan, Pengzhou",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 1.368,
+     "coord": [
+      103.909322,
+      31.065145
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143843",
+     "name": "PetroChina Liaoning Liaohe Panjin Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.367,
+     "coord": [
+      122.091393,
+      41.156833
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143797",
+     "name": "PetroChina Jinxi Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.26,
+     "coord": [
+      121.04504,
+      40.834
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143884",
+     "name": "INEOS Lavera Marseilles Refinery",
+     "country": "FRA",
+     "kind": "oil",
+     "observed": 1.222,
+     "coord": [
+      5.00396,
+      43.39076
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "18648387",
+     "name": "PetroChina Lanzhou Chemical Industry, Gansu, Lanzhou ",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 1.197,
+     "coord": [
+      103.60683,
+      36.117698
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143796",
+     "name": "PetroChina Jilin Chemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.182,
+     "coord": [
+      126.637427,
+      43.868419
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3144206",
+     "name": "PetroChina Yumen Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.044,
+     "coord": [
+      97.560662,
+      39.830516
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648386",
+     "name": "PetroChina Jilin Petrochemical, Jilin, Jilin",
+     "country": "CHN",
+     "kind": "other",
+     "observed": 1.026,
+     "coord": [
+      126.597437,
+      43.913921
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753482",
+     "name": "PetroChina Urumqi Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.005,
+     "coord": [
+      87.709487,
+      43.963713
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3144205",
+     "name": "PetroChina Karamay Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 0.994,
+     "coord": [
+      84.993466,
+      45.577537
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143852",
+     "name": "PetroChina Hohhot Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 0.958,
+     "coord": [
+      111.755088,
+      40.738681
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143849",
+     "name": "PetroChina Ningxia Yinchuan Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 0.958,
+     "coord": [
+      106.059862,
+      38.480763
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3144204",
+     "name": "PetroChina Qingyang Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 0.921,
+     "coord": [
+      107.628019,
+      35.652062
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "siberian-generating-company",
+   "name": "Siberian Generating Company",
+   "subsidiaries": [
+    "Kuzbassenergo JSC",
+    "SGK-Novosibirsk JSC"
+   ],
+   "observed": {
+    "2023": 57.525,
+    "2024": 59.643
+   },
+   "countries": [
+    "RUS"
+   ],
+   "asset_count": 9,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25452218",
+     "name": "Reftinskaya GRES power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 19.442,
+     "coord": [
+      61.7059,
+      57.1108
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25452664",
+     "name": "Primorsky power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 9.113,
+     "coord": [
+      134.2906,
+      46.4652
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448486",
+     "name": "Tom-Usinskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 7.758,
+     "coord": [
+      87.5874,
+      53.7814
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451585",
+     "name": "Novosibirsk-5 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 7.213,
+     "coord": [
+      83.0615,
+      55.0055
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451288",
+     "name": "Belovskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 7.09,
+     "coord": [
+      86.4253,
+      54.4449
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448780",
+     "name": "Novosibirsk-3 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 3.545,
+     "coord": [
+      82.8537,
+      55.0087
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448779",
+     "name": "Novosibirsk-2 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 2.137,
+     "coord": [
+      82.8749,
+      55.0001
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448970",
+     "name": "Barabinsk power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.812,
+     "coord": [
+      78.3659,
+      55.4475
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448781",
+     "name": "Novosibirsk-4 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.532,
+     "coord": [
+      82.9889,
+      55.1002
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "inter-rao",
+   "name": "Inter RAO",
+   "subsidiaries": [
+    "Inter RAO – Electric Power Generation JSC"
+   ],
+   "observed": {
+    "2023": 58.812,
+    "2024": 58.941
+   },
+   "countries": [
+    "RUS"
+   ],
+   "asset_count": 18,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25452872",
+     "name": "Kostromskaya GRES power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 12.653,
+     "coord": [
+      41.1747,
+      57.4595
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451786",
+     "name": "Gusinoozyorskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 7.881,
+     "coord": [
+      106.4841,
+      51.2984
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451787",
+     "name": "Iriklinsk GRES power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 7.187,
+     "coord": [
+      58.8033,
+      51.754
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449026",
+     "name": "Perm GRES power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 7.178,
+     "coord": [
+      56.3516,
+      58.4944
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450440",
+     "name": "Kharanorskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 4.193,
+     "coord": [
+      115.7012,
+      50.8553
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449081",
+     "name": "Yuzhnouralskaya GRES-2 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 3.972,
+     "coord": [
+      61.2359,
+      54.4552
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25452009",
+     "name": "Pechora GRES power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 3.576,
+     "coord": [
+      57.3139,
+      65.1324
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449421",
+     "name": "Verkhnetagilskaya GRES power plant",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 2.686,
+     "coord": [
+      59.9603,
+      57.3556
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "450079",
+     "name": "Kaliningrad CHP-2 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 2.067,
+     "coord": [
+      20.5889,
+      54.659
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448513",
+     "name": "Severo-Zapadnaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.88,
+     "coord": [
+      30.0964,
+      60.0148
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25455794",
+     "name": "Primorskaya TPP power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.195,
+     "coord": [
+      20.2831,
+      54.6908
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25452358",
+     "name": "Cherepetskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.142,
+     "coord": [
+      36.48,
+      54.136
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "450752",
+     "name": "Ivanovskie CHP-4 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.986,
+     "coord": [
+      40.3848,
+      57.0231
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449064",
+     "name": "Urengoyskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.746,
+     "coord": [
+      78.0868,
+      66.0342
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454616",
+     "name": "Dzhubginskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.468,
+     "coord": [
+      38.7636,
+      44.4388
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25455557",
+     "name": "Talakhovskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.43,
+     "coord": [
+      21.8012,
+      55.0946
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25455556",
+     "name": "Mayakovskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.43,
+     "coord": [
+      22.1805,
+      54.5685
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "450470",
+     "name": "Sochinskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.269,
+     "coord": [
+      39.7544,
+      43.5947
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "southern-company",
+   "name": "Southern Company",
+   "subsidiaries": [
+    "Alabama Power Co",
+    "Georgia Power Co"
+   ],
+   "observed": {
+    "2023": 55.642,
+    "2024": 57.501
+   },
+   "countries": [
+    "USA"
+   ],
+   "asset_count": 17,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25448871",
+     "name": "James H Miller Jr",
+     "country": "USA",
+     "kind": "power",
+     "observed": 18.463,
+     "coord": [
+      -87.0597,
+      33.6319
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449001",
+     "name": "Bowen",
+     "country": "USA",
+     "kind": "power",
+     "observed": 10.541,
+     "coord": [
+      -84.9222,
+      34.1256
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4400377",
+     "name": "Jack McDonough",
+     "country": "USA",
+     "kind": "power",
+     "observed": 6.953,
+     "coord": [
+      -84.4758,
+      33.8239
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25448865",
+     "name": "Barry",
+     "country": "USA",
+     "kind": "power",
+     "observed": 5.171,
+     "coord": [
+      -88.0103,
+      31.0069
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25456791",
+     "name": "McIntosh Combined Cycle Facility",
+     "country": "USA",
+     "kind": "power",
+     "observed": 3.2,
+     "coord": [
+      -81.1817,
+      32.3478
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25448867",
+     "name": "E C Gaston",
+     "country": "USA",
+     "kind": "power",
+     "observed": 3.039,
+     "coord": [
+      -86.4581,
+      33.2442
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449004",
+     "name": "Scherer",
+     "country": "USA",
+     "kind": "power",
+     "observed": 2.501,
+     "coord": [
+      -83.8075,
+      33.0606
+     ],
+     "shared_with": 2
+    },
+    {
+     "id": "25449008",
+     "name": "Yates",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.698,
+     "coord": [
+      -84.8986,
+      33.4622
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449383",
+     "name": "Central Alabama Generating Station",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.413,
+     "coord": [
+      -86.74,
+      32.6497
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449006",
+     "name": "Wansley",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.369,
+     "coord": [
+      -85.0371,
+      33.4088
+     ],
+     "shared_with": 3
+    },
+    {
+     "id": "25448870",
+     "name": "Greene County",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.213,
+     "coord": [
+      -87.7811,
+      32.6017
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449502",
+     "name": "McManus",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.631,
+     "coord": [
+      -81.5462,
+      31.2136
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450031",
+     "name": "Theodore Cogen Facility",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.414,
+     "coord": [
+      -88.1285,
+      30.5254
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449926",
+     "name": "Wilson",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.358,
+     "coord": [
+      -81.7483,
+      33.1377
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4401404",
+     "name": "Robins",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.207,
+     "coord": [
+      -83.5822,
+      32.5792
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450024",
+     "name": "Washington County Cogeneration Facility",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.183,
+     "coord": [
+      -88.0026,
+      31.264
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450025",
+     "name": "General Electric Plastic",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.145,
+     "coord": [
+      -86.5254,
+      32.3102
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "tata-group",
+   "name": "Tata Group",
+   "subsidiaries": [
+    "Tata Power Company Ltd",
+    "Tata Steel Ltd"
+   ],
+   "observed": {
+    "2023": 52.186,
+    "2024": 56.933
+   },
+   "countries": [
+    "GBR",
+    "IND"
+   ],
+   "asset_count": 15,
+   "kinds": [
+    "mining",
+    "power",
+    "steel"
+   ],
+   "assets": [
+    {
+     "id": "25453692",
+     "name": "Tata Mundra Ultra Mega Power Project",
+     "country": "IND",
+     "kind": "power",
+     "observed": 20.24,
+     "coord": [
+      69.5281,
+      22.8158
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566853",
+     "name": "Tata Steel Jamshedpur steel plant",
+     "country": "IND",
+     "kind": "steel",
+     "observed": 12.662,
+     "coord": [
+      86.2001310770696,
+      22.788289867606
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "32440770",
+     "name": "Tata Steel Meramandali steel plant",
+     "country": "IND",
+     "kind": "steel",
+     "observed": 8.478,
+     "coord": [
+      85.2597979369664,
+      20.7942396304886
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449456",
+     "name": "Trombay Combined Cycle power plant",
+     "country": "IND",
+     "kind": "power",
+     "observed": 4.026,
+     "coord": [
+      72.8979,
+      19.0027
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566854",
+     "name": "Tata Steel Kalinganagar steel plant",
+     "country": "IND",
+     "kind": "steel",
+     "observed": 3.563,
+     "coord": [
+      86.0111162492288,
+      20.9683940841979
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451149",
+     "name": "Jojobera Power Plant",
+     "country": "IND",
+     "kind": "power",
+     "observed": 2.333,
+     "coord": [
+      86.2491,
+      22.7554
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453916",
+     "name": "Meramandali power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 1.821,
+     "coord": [
+      85.2536,
+      20.8064
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163805",
+     "name": "West Bokaro Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 1.334,
+     "coord": [
+      85.55423096,
+      23.7927473
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449457",
+     "name": "Jamshedpur Works power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 1.152,
+     "coord": [
+      86.2001,
+      22.7874
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454183",
+     "name": "Bhubaneshwar Jasper power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 0.887,
+     "coord": [
+      85.7476,
+      20.4784
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450323",
+     "name": "Port Talbot Steelworks power station",
+     "country": "GBR",
+     "kind": "power",
+     "observed": 0.171,
+     "coord": [
+      -3.759,
+      51.5679
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "43158221",
+     "name": "Joda East Mine",
+     "country": "IND",
+     "kind": "steel",
+     "observed": 0.129,
+     "coord": [
+      85.437204,
+      22.010132
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "43158287",
+     "name": "Noamundi-Katamati Mine",
+     "country": "IND",
+     "kind": "steel",
+     "observed": 0.113,
+     "coord": [
+      85.49832,
+      22.13471
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163572",
+     "name": "Jharia Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.023,
+     "coord": [
+      86.400024,
+      23.708161
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "451247",
+     "name": "Rithala Gas power plant",
+     "country": "IND",
+     "kind": "power",
+     "observed": 0.001,
+     "coord": [
+      77.1016,
+      28.7327
+     ],
+     "shared_with": 1
+    }
+   ]
+  },
+  {
+   "id": "pln",
+   "name": "PLN",
+   "subsidiaries": [
+    "PT PLN (Persero)"
+   ],
+   "observed": {
+    "2023": 53.323,
+    "2024": 55.948
+   },
+   "countries": [
+    "IDN"
+   ],
+   "asset_count": 47,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "448927",
+     "name": "Banten Suralaya power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 8.266,
+     "coord": [
+      106.0336,
+      -5.8892
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25453780",
+     "name": "Banten Lontar power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 5.047,
+     "coord": [
+      106.4643,
+      -6.0589
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454025",
+     "name": "Indramayu power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 4.185,
+     "coord": [
+      107.9704,
+      -6.2747
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454420",
+     "name": "Pangkalan Susu power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 3.677,
+     "coord": [
+      98.2582,
+      4.1207
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453781",
+     "name": "Tanjung Awar-Awar power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 2.946,
+     "coord": [
+      111.9955,
+      -6.8105
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453776",
+     "name": "Pacitan power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 2.672,
+     "coord": [
+      111.3736,
+      -8.2578
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453779",
+     "name": "Rembang power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 2.672,
+     "coord": [
+      111.4749,
+      -6.636
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454032",
+     "name": "Adipala power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 2.542,
+     "coord": [
+      109.1376,
+      -7.6859
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451708",
+     "name": "Asam-Asam power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 1.929,
+     "coord": [
+      115.1058,
+      -3.9265
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448910",
+     "name": "Belawan power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 1.589,
+     "coord": [
+      98.67,
+      3.7731
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448912",
+     "name": "Bukit Asam Muara Enim power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 1.278,
+     "coord": [
+      103.7975,
+      -3.7321
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25455044",
+     "name": "Banten Serang power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 1.254,
+     "coord": [
+      106.0459,
+      -5.883
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25453756",
+     "name": "Labuhan Angin power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 1.195,
+     "coord": [
+      98.7313,
+      1.7519
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453782",
+     "name": "Teluk Sirih power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 1.023,
+     "coord": [
+      100.3724,
+      -1.0765
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453716",
+     "name": "Kaltim Teluk Balikpapan power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 1.006,
+     "coord": [
+      116.7887,
+      -1.1704
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454609",
+     "name": "Pekanbaru Tenayan power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 1.006,
+     "coord": [
+      101.5235,
+      0.5644
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454117",
+     "name": "Nagan Raya power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 0.981,
+     "coord": [
+      96.1986,
+      4.1077
+     ],
+     "shared_with": 2
+    },
+    {
+     "id": "25454608",
+     "name": "Barru power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 0.951,
+     "coord": [
+      119.6313,
+      -4.2933
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454347",
+     "name": "Lampung Sebalang power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 0.94,
+     "coord": [
+      105.3872,
+      -5.5859
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451724",
+     "name": "Ombilin power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 0.932,
+     "coord": [
+      100.7537,
+      -0.609
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25457247",
+     "name": "Kaltim FTP2 power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 0.922,
+     "coord": [
+      117.4946,
+      0.0552
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453783",
+     "name": "Tarahan power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 0.922,
+     "coord": [
+      105.3535,
+      -5.5212
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453784",
+     "name": "Takalar power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 0.922,
+     "coord": [
+      119.5508,
+      -5.6236
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25452728",
+     "name": "North Duri cogeneration power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 0.701,
+     "coord": [
+      101.2251,
+      1.3722
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "452461",
+     "name": "Bangkanai I power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 0.661,
+     "coord": [
+      115.1368,
+      -0.6225
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454033",
+     "name": "Kalteng-1 Pulang Pisau power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 0.579,
+     "coord": [
+      114.2095,
+      -2.8225
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451925",
+     "name": "Arun II power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 0.56,
+     "coord": [
+      97.0871,
+      5.2145
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "452768",
+     "name": "Bengkayang Power Station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 0.528,
+     "coord": [
+      108.8736,
+      0.8371
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "49533838",
+     "name": "Timor-1 power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 0.49,
+     "coord": [
+      123.4599,
+      -10.352
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "44369541",
+     "name": "Rokan Block power station",
+     "country": "IDN",
+     "kind": "power",
+     "observed": 0.418,
+     "coord": [
+      100.4471,
+      0.514
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "jindal-steel",
+   "name": "Jindal Steel",
+   "subsidiaries": [
+    "Jindal Steel Ltd"
+   ],
+   "observed": {
+    "2023": 53.952,
+    "2024": 55.758
+   },
+   "countries": [
+    "IND"
+   ],
+   "asset_count": 9,
+   "kinds": [
+    "mining",
+    "power",
+    "steel"
+   ],
+   "assets": [
+    {
+     "id": "25453047",
+     "name": "Tamnar power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 24.736,
+     "coord": [
+      83.4513,
+      22.0987
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "32440773",
+     "name": "Jindal Steel Angul steel plant",
+     "country": "IND",
+     "kind": "steel",
+     "observed": 10.412,
+     "coord": [
+      84.9896803446675,
+      20.8780717356154
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "32440774",
+     "name": "Jindal Steel Raigarh steel plant",
+     "country": "IND",
+     "kind": "steel",
+     "observed": 8.55,
+     "coord": [
+      83.3472521936468,
+      21.9277521470116
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454469",
+     "name": "Angul Steel power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 4.987,
+     "coord": [
+      84.9904,
+      20.8925
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454926",
+     "name": "Dongamahua Captive Power Plant",
+     "country": "IND",
+     "kind": "power",
+     "observed": 3.295,
+     "coord": [
+      83.5359,
+      22.1279
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "450121",
+     "name": "Raigarh Jindal power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 2.066,
+     "coord": [
+      83.3454,
+      21.925
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163520",
+     "name": "Gare Palma IV 1 Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.842,
+     "coord": [
+      83.53358,
+      22.11866
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3587523",
+     "name": "Gare Palma IV 6 Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.481,
+     "coord": [
+      83.53358,
+      22.11866
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "43163633",
+     "name": "Utkal C Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.391,
+     "coord": [
+      84.9544075201659,
+      20.95664286
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "maharashtra-state-power-generation",
+   "name": "Maharashtra State Power Generation",
+   "subsidiaries": [
+    "Maharashtra State Power Generation Co Ltd"
+   ],
+   "observed": {
+    "2023": 54.108,
+    "2024": 55.44
+   },
+   "countries": [
+    "IND"
+   ],
+   "asset_count": 8,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25451342",
+     "name": "Chandrapur Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 15.573,
+     "coord": [
+      79.29,
+      20.0063
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451344",
+     "name": "Koradi Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 12.916,
+     "coord": [
+      79.095,
+      21.2421
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448540",
+     "name": "Khaperkheda power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 8.898,
+     "coord": [
+      79.116,
+      21.2818
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451341",
+     "name": "Bhusawal Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 6.804,
+     "coord": [
+      75.8477,
+      21.0498
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "715312",
+     "name": "Parli Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 3.989,
+     "coord": [
+      76.543,
+      18.9076
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448543",
+     "name": "Paras power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 3.239,
+     "coord": [
+      76.7948,
+      20.7147
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451345",
+     "name": "Nasik MAHAGENCO Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 2.881,
+     "coord": [
+      73.8921,
+      19.9815
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448545",
+     "name": "Uran Combined Cycle power plant",
+     "country": "IND",
+     "kind": "power",
+     "observed": 1.139,
+     "coord": [
+      72.9697,
+      18.8816
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "datang",
+   "name": "Datang",
+   "subsidiaries": [
+    "Datang International Power Generation Co Ltd",
+    "Datang Yangcheng Power Generation Co Ltd",
+    "Guangdongdatanginternationalchaozhoupower Co Ltd"
+   ],
+   "observed": {
+    "2023": 48.895,
+    "2024": 48.099
+   },
+   "countries": [
+    "CHN"
+   ],
+   "asset_count": 6,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25452514",
+     "name": "Yangcheng power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 16.835,
+     "coord": [
+      112.5742,
+      35.4661
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453372",
+     "name": "Chaozhou Sanbaimen power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 14.116,
+     "coord": [
+      117.0972,
+      23.5665
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451551",
+     "name": "Zhangjiakou power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 11.383,
+     "coord": [
+      114.9438,
+      40.6596
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451534",
+     "name": "Douhe power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 2.282,
+     "coord": [
+      118.2723,
+      39.7724
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454923",
+     "name": "Chongqing Longqiao power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 1.99,
+     "coord": [
+      107.3033,
+      29.7071
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448732",
+     "name": "Gaojing power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 1.494,
+     "coord": [
+      116.1271,
+      39.9429
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "exxonmobil",
+   "name": "ExxonMobil",
+   "subsidiaries": [
+    "Exxon Mobil Corp"
+   ],
+   "observed": {
+    "2023": 47.173,
+    "2024": 46.399
+   },
+   "countries": [
+    "AUS",
+    "BEL",
+    "CAN",
+    "CHN",
+    "FRA",
+    "GBR",
+    "NLD",
+    "SAU",
+    "USA"
+   ],
+   "asset_count": 25,
+   "kinds": [
+    "oil",
+    "other",
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "1753273",
+     "name": "Exxonmobil Beaumont Refinery",
+     "country": "USA",
+     "kind": "oil",
+     "observed": 5.819,
+     "coord": [
+      -94.074933,
+      30.064923
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753269",
+     "name": "Exxonmobil Baytown Refinery",
+     "country": "USA",
+     "kind": "oil",
+     "observed": 5.527,
+     "coord": [
+      -94.976798,
+      29.761431
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753270",
+     "name": "Exxonmobil Baton Rouge Refinery",
+     "country": "USA",
+     "kind": "oil",
+     "observed": 5.225,
+     "coord": [
+      -91.169797,
+      30.486272
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648322",
+     "name": "ExxonMobil Chemical Co., Baytown,Tex.",
+     "country": "USA",
+     "kind": "other",
+     "observed": 4.743,
+     "coord": [
+      -95.017536,
+      29.74163
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3143743",
+     "name": "ExxonMobil Antwerp Refinery",
+     "country": "BEL",
+     "kind": "oil",
+     "observed": 3.352,
+     "coord": [
+      4.34045,
+      51.25477
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753289",
+     "name": "Exxonmobil Joliet Refinery",
+     "country": "USA",
+     "kind": "oil",
+     "observed": 2.516,
+     "coord": [
+      -88.183309,
+      41.41471
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3144159",
+     "name": "Esso Fawley Southampton Refinery",
+     "country": "GBR",
+     "kind": "oil",
+     "observed": 2.404,
+     "coord": [
+      -1.36678,
+      50.83316
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753769",
+     "name": "SAMREF Yanbu Refinery",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 2.098,
+     "coord": [
+      38.23277,
+      23.98139
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "3144034",
+     "name": "ExxonMobil Botlek Rotterdam Refinery",
+     "country": "NLD",
+     "kind": "oil",
+     "observed": 1.86,
+     "coord": [
+      4.29,
+      51.8762
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648321",
+     "name": "ExxonMobil Chemical Co., Baton Rouge,La",
+     "country": "USA",
+     "kind": "other",
+     "observed": 1.355,
+     "coord": [
+      -91.17697,
+      30.551384
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648323",
+     "name": "ExxonMobil Chemical Co., Beuamont,Tex.",
+     "country": "USA",
+     "kind": "other",
+     "observed": 1.22,
+     "coord": [
+      -94.071299,
+      30.067115
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1753492",
+     "name": "Fujian Refining and Petrochemical Refinery",
+     "country": "CHN",
+     "kind": "oil",
+     "observed": 1.16,
+     "coord": [
+      118.934066,
+      25.176552
+     ],
+     "shared_with": 2
+    },
+    {
+     "id": "18648335",
+     "name": "Exxon/SABIC, Portland, Tex",
+     "country": "USA",
+     "kind": "oil",
+     "observed": 1.143,
+     "coord": [
+      -97.32348,
+      27.93016
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "731935",
+     "name": "Yanbu Petrochemical Co. (Yanpet), Yanbu,",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 1.075,
+     "coord": [
+      38.22094,
+      23.98482
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "3143882",
+     "name": "ExxonMobil Port Jerome-Gravenchon Refinery",
+     "country": "FRA",
+     "kind": "oil",
+     "observed": 1.061,
+     "coord": [
+      0.55077,
+      49.475
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "3143768",
+     "name": "Imperial Oil Strathcona Refinery",
+     "country": "CAN",
+     "kind": "oil",
+     "observed": 0.978,
+     "coord": [
+      -113.178,
+      53.72841
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "3143772",
+     "name": "Imperial Oil Sarnia Refinery",
+     "country": "CAN",
+     "kind": "oil",
+     "observed": 0.813,
+     "coord": [
+      -82.416,
+      42.95186
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "18648379",
+     "name": "ExxonMobil Chemical Co. , Mossmorran Fife",
+     "country": "GBR",
+     "kind": "oil",
+     "observed": 0.696,
+     "coord": [
+      -3.313367,
+      56.093287
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "731925",
+     "name": "Al Jubail Petrochemical Co. (Kemya), Al Jubail,",
+     "country": "SAU",
+     "kind": "oil",
+     "observed": 0.656,
+     "coord": [
+      49.593083,
+      27.031429
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "3143773",
+     "name": "Imperial Oil Nanticoke Refinery",
+     "country": "CAN",
+     "kind": "oil",
+     "observed": 0.559,
+     "coord": [
+      -80.04841,
+      42.83497
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25449599",
+     "name": "Louisiana 2",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.508,
+     "coord": [
+      -91.1877,
+      30.4906
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25456114",
+     "name": "ExxonMobil Baton Rouge Turbine Generator",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.496,
+     "coord": [
+      -91.1876,
+      30.4897
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "732022",
+     "name": "Imperial Oil Products & Chemicals , Sarnia,Ontario",
+     "country": "CAN",
+     "kind": "other",
+     "observed": 0.438,
+     "coord": [
+      -82.41476,
+      42.95917
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "18648347",
+     "name": "ExxonMobil Corp., Notre Dame",
+     "country": "FRA",
+     "kind": "other",
+     "observed": 0.402,
+     "coord": [
+      0.56058,
+      49.482646
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25454624",
+     "name": "Barrow Island LNG power station",
+     "country": "AUS",
+     "kind": "power",
+     "observed": 0.296,
+     "coord": [
+      115.4464,
+      -20.7917
+     ],
+     "shared_with": 2
+    }
+   ]
+  },
+  {
+   "id": "nextera-energy",
+   "name": "NextEra Energy",
+   "subsidiaries": [
+    "Florida Power & Light Co"
+   ],
+   "observed": {
+    "2023": 44.728,
+    "2024": 44.401
+   },
+   "countries": [
+    "USA"
+   ],
+   "asset_count": 14,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25449407",
+     "name": "West County Energy Center",
+     "country": "USA",
+     "kind": "power",
+     "observed": 7.65,
+     "coord": [
+      -80.3747,
+      26.6986
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25448987",
+     "name": "Fort Myers",
+     "country": "USA",
+     "kind": "power",
+     "observed": 4.832,
+     "coord": [
+      -81.7831,
+      26.6967
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25448992",
+     "name": "Sanford",
+     "country": "USA",
+     "kind": "power",
+     "observed": 3.76,
+     "coord": [
+      -81.3256,
+      28.8419
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25448988",
+     "name": "Lauderdale",
+     "country": "USA",
+     "kind": "power",
+     "observed": 3.601,
+     "coord": [
+      -80.1984,
+      26.0686
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25448989",
+     "name": "Martin",
+     "country": "USA",
+     "kind": "power",
+     "observed": 3.049,
+     "coord": [
+      -80.5628,
+      27.0536
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449013",
+     "name": "Gulf Clean Energy Center",
+     "country": "USA",
+     "kind": "power",
+     "observed": 2.954,
+     "coord": [
+      -87.2244,
+      30.5661
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25448990",
+     "name": "Manatee",
+     "country": "USA",
+     "kind": "power",
+     "observed": 2.746,
+     "coord": [
+      -82.3456,
+      27.6058
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25448991",
+     "name": "Riviera",
+     "country": "USA",
+     "kind": "power",
+     "observed": 2.742,
+     "coord": [
+      -80.0525,
+      26.7653
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25448993",
+     "name": "Turkey Point",
+     "country": "USA",
+     "kind": "power",
+     "observed": 2.715,
+     "coord": [
+      -80.3308,
+      25.4356
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25448986",
+     "name": "Cape Canaveral",
+     "country": "USA",
+     "kind": "power",
+     "observed": 2.49,
+     "coord": [
+      -80.7644,
+      28.4698
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449076",
+     "name": "Victor J Daniel Jr",
+     "country": "USA",
+     "kind": "power",
+     "observed": 2.454,
+     "coord": [
+      -88.5553,
+      30.5322
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25457076",
+     "name": "Okeechobee Clean Energy Center",
+     "country": "USA",
+     "kind": "power",
+     "observed": 2.117,
+     "coord": [
+      -80.7911,
+      27.6342
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449485",
+     "name": "Port Everglades",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.669,
+     "coord": [
+      -80.1253,
+      26.0856
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449490",
+     "name": "Lansing Smith",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.622,
+     "coord": [
+      -85.7003,
+      30.2686
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "tennessee-valley-authority",
+   "name": "Tennessee Valley Authority",
+   "subsidiaries": [
+    "Tennessee Valley Authority"
+   ],
+   "observed": {
+    "2023": 38.209,
+    "2024": 43.528
+   },
+   "countries": [
+    "USA"
+   ],
+   "asset_count": 16,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25449230",
+     "name": "Cumberland (TN)",
+     "country": "USA",
+     "kind": "power",
+     "observed": 9.207,
+     "coord": [
+      -87.6539,
+      36.3903
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449237",
+     "name": "Shawnee",
+     "country": "USA",
+     "kind": "power",
+     "observed": 6.581,
+     "coord": [
+      -88.775,
+      37.1517
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449232",
+     "name": "Gallatin (TN)",
+     "country": "USA",
+     "kind": "power",
+     "observed": 4.564,
+     "coord": [
+      -86.4006,
+      36.3156
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449233",
+     "name": "Kingston",
+     "country": "USA",
+     "kind": "power",
+     "observed": 4.097,
+     "coord": [
+      -84.5194,
+      35.8992
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449843",
+     "name": "Johnsonville",
+     "country": "USA",
+     "kind": "power",
+     "observed": 3.478,
+     "coord": [
+      -87.9838,
+      36.0352
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25456664",
+     "name": "Magnolia Power Plant",
+     "country": "USA",
+     "kind": "power",
+     "observed": 2.75,
+     "coord": [
+      -89.2026,
+      34.835
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449235",
+     "name": "Paradise",
+     "country": "USA",
+     "kind": "power",
+     "observed": 2.628,
+     "coord": [
+      -86.9791,
+      37.2591
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449234",
+     "name": "John Sevier",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.626,
+     "coord": [
+      -82.9639,
+      36.3767
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25456716",
+     "name": "Quantum Choctaw Power LLC",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.544,
+     "coord": [
+      -89.2089,
+      33.3792
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449347",
+     "name": "Lagoon Creek",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.477,
+     "coord": [
+      -89.3964,
+      35.6578
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "713191",
+     "name": "Allen",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.397,
+     "coord": [
+      -90.1431,
+      35.0664
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25449231",
+     "name": "Colbert",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.343,
+     "coord": [
+      -87.8469,
+      34.7393
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25456601",
+     "name": "Gleason Generating Facility",
+     "country": "USA",
+     "kind": "power",
+     "observed": 1.121,
+     "coord": [
+      -88.612,
+      36.2454
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25456608",
+     "name": "TVA Southaven Combined Cycle",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.959,
+     "coord": [
+      -90.0378,
+      34.9939
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25456588",
+     "name": "Marshall Energy Facility",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.581,
+     "coord": [
+      -88.3958,
+      37.0286
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25456522",
+     "name": "Brownsville Peaking Power",
+     "country": "USA",
+     "kind": "power",
+     "observed": 0.174,
+     "coord": [
+      -89.198,
+      35.5438
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "damodar-valley-corporation",
+   "name": "Damodar Valley Corporation",
+   "subsidiaries": [
+    "Damodar Valley Corp"
+   ],
+   "observed": {
+    "2023": 43.539,
+    "2024": 43.232
+   },
+   "countries": [
+    "IND"
+   ],
+   "asset_count": 8,
+   "kinds": [
+    "mining",
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25450558",
+     "name": "Mejia power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 15.771,
+     "coord": [
+      87.1311,
+      23.4639
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453275",
+     "name": "Koderma Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 7.053,
+     "coord": [
+      85.5619,
+      24.3915
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453274",
+     "name": "Durgapur Steel City Andal power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 6.279,
+     "coord": [
+      87.2043,
+      23.58
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453949",
+     "name": "Raghunathpur Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 5.551,
+     "coord": [
+      86.6607,
+      23.6219
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "714506",
+     "name": "Chandrapura power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 4.81,
+     "coord": [
+      86.1202,
+      23.7413
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447517",
+     "name": "Bokaro Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 3.279,
+     "coord": [
+      85.8834,
+      23.7829
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3584909",
+     "name": "Tubed Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.483,
+     "coord": [
+      84.57721,
+      23.82119
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "43161521",
+     "name": "Bermo Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 0.006,
+     "coord": [
+      85.9634,
+      23.7843
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "china-energy",
+   "name": "China Energy",
+   "subsidiaries": [
+    "CHN ENERGY Yuedian Taishan POWER Generationg Co Ltd",
+    "Guoneng (Suizhong) Power Generation Co Ltd"
+   ],
+   "observed": {
+    "2023": 40.504,
+    "2024": 40.481
+   },
+   "countries": [
+    "CHN"
+   ],
+   "asset_count": 2,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25450976",
+     "name": "Taishan power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 23.252,
+     "coord": [
+      112.9228,
+      21.8667
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450166",
+     "name": "Suizhong power station",
+     "country": "CHN",
+     "kind": "power",
+     "observed": 17.229,
+     "coord": [
+      120.0096,
+      40.0796
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "pge",
+   "name": "PGE",
+   "subsidiaries": [
+    "PGE Górnictwo i Energetyka Konwencjonalna SA"
+   ],
+   "observed": {
+    "2023": 40.294,
+    "2024": 40.309
+   },
+   "countries": [
+    "POL"
+   ],
+   "asset_count": 5,
+   "kinds": [
+    "mining",
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25450764",
+     "name": "Belchatow power station",
+     "country": "POL",
+     "kind": "power",
+     "observed": 26.198,
+     "coord": [
+      19.3265,
+      51.2679
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25450770",
+     "name": "Opole power station",
+     "country": "POL",
+     "kind": "power",
+     "observed": 10.533,
+     "coord": [
+      17.8845,
+      50.7514
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "16168",
+     "name": "KWB Bełchatów Coal Mine",
+     "country": "POL",
+     "kind": "mining",
+     "observed": 2.758,
+     "coord": [
+      19.275356,
+      51.242247
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "16175",
+     "name": "Turow Coal Mine",
+     "country": "POL",
+     "kind": "mining",
+     "observed": 0.584,
+     "coord": [
+      14.926341,
+      50.928753
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449735",
+     "name": "Szczecin power station",
+     "country": "POL",
+     "kind": "power",
+     "observed": 0.237,
+     "coord": [
+      14.586,
+      53.4113
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "t-plus",
+   "name": "T Plus",
+   "subsidiaries": [
+    "T Plus PJSC"
+   ],
+   "observed": {
+    "2023": 38.815,
+    "2024": 39.465
+   },
+   "countries": [
+    "RUS"
+   ],
+   "asset_count": 40,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "449666",
+     "name": "Volzhsky Automobile CHP power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 2.189,
+     "coord": [
+      49.2453,
+      53.575
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451824",
+     "name": "Novo Sverdlovsk power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.879,
+     "coord": [
+      60.841,
+      56.8397
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448717",
+     "name": "Dzerzhinsk power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.863,
+     "coord": [
+      43.5208,
+      56.2336
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449053",
+     "name": "Togliatti power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.586,
+     "coord": [
+      49.4539,
+      53.5472
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "447661",
+     "name": "Cheboksary CHP-2 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.552,
+     "coord": [
+      47.2996,
+      56.126
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4404424",
+     "name": "Kirov-5 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.518,
+     "coord": [
+      49.5835,
+      58.5496
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451770",
+     "name": "Saratov CHP-5 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.501,
+     "coord": [
+      46.0099,
+      51.6238
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449066",
+     "name": "Vladimir CHP-2 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.445,
+     "coord": [
+      40.4546,
+      56.1448
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449063",
+     "name": "Ulyanovsk CHP-2 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.407,
+     "coord": [
+      48.6217,
+      54.3473
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448718",
+     "name": "Novogorkovskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.364,
+     "coord": [
+      44.1354,
+      56.1069
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "450088",
+     "name": "Perm CHP-9 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.303,
+     "coord": [
+      56.1453,
+      57.9247
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451834",
+     "name": "Sakmarskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.278,
+     "coord": [
+      55.0988,
+      51.8433
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449025",
+     "name": "Penza-1 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.248,
+     "coord": [
+      45.0218,
+      53.2224
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449027",
+     "name": "Perm CHP-14 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.212,
+     "coord": [
+      55.8819,
+      58.0189
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449033",
+     "name": "Saransk CHP-2 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.204,
+     "coord": [
+      45.2076,
+      54.216
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449043",
+     "name": "Sormovo power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.181,
+     "coord": [
+      43.8914,
+      56.3525
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449013",
+     "name": "Novocheboksarsk CHP-3 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.137,
+     "coord": [
+      47.5117,
+      56.0817
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449062",
+     "name": "Ulyanovsk CHP-1 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.137,
+     "coord": [
+      48.3405,
+      54.3186
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25457328",
+     "name": "Ivanovo CHP-3 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 1.113,
+     "coord": [
+      41.1093,
+      56.9614
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451957",
+     "name": "Samara power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.945,
+     "coord": [
+      50.2756,
+      53.2514
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449048",
+     "name": "Syzran power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.889,
+     "coord": [
+      48.3994,
+      53.0642
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449044",
+     "name": "Sosnogorsk power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.885,
+     "coord": [
+      53.985,
+      63.5774
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4404423",
+     "name": "Kirov-4 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.82,
+     "coord": [
+      49.5945,
+      58.6215
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "449011",
+     "name": "Nizhnetourinskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.766,
+     "coord": [
+      59.8538,
+      58.6125
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448987",
+     "name": "Izhevsk CHP-2 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.715,
+     "coord": [
+      53.3419,
+      56.8935
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4404426",
+     "name": "Kargalinskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.709,
+     "coord": [
+      54.7741,
+      51.8661
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4403258",
+     "name": "Ivanovskaya CHP-2 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.709,
+     "coord": [
+      41.0118,
+      56.9909
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "451001",
+     "name": "Balakovo CHP-4 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.688,
+     "coord": [
+      47.7831,
+      51.9756
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448978",
+     "name": "Chaikovskaya CHP-18 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.675,
+     "coord": [
+      53.9281,
+      56.7282
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4404187",
+     "name": "Orskaya CHP-1 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 0.658,
+     "coord": [
+      58.4972,
+      51.2413
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "rajasthan-rajya-vidyut-utpadan-nigam",
+   "name": "Rajasthan Rajya Vidyut Utpadan Nigam",
+   "subsidiaries": [
+    "Rajasthan Rajya Vidyut Utpadan Nigam Ltd"
+   ],
+   "observed": {
+    "2023": 34.404,
+    "2024": 37.72
+   },
+   "countries": [
+    "IND"
+   ],
+   "asset_count": 6,
+   "kinds": [
+    "mining",
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25451764",
+     "name": "Suratgarh Super Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 13.355,
+     "coord": [
+      74.0199,
+      29.1754
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25451762",
+     "name": "Kota power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 9.0,
+     "coord": [
+      75.817,
+      25.171
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453594",
+     "name": "Chhabra Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 7.051,
+     "coord": [
+      77.0376,
+      24.6274
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25454021",
+     "name": "Kalisindh Thermal Power Station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 6.588,
+     "coord": [
+      76.1004,
+      24.5325
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "3163706",
+     "name": "Parsa East And Kanta Basan Coal Mine",
+     "country": "IND",
+     "kind": "mining",
+     "observed": 1.714,
+     "coord": [
+      82.81401,
+      22.83795
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25453309",
+     "name": "Giral power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 0.013,
+     "coord": [
+      71.2541,
+      26.0457
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "jsw-group",
+   "name": "JSW Group",
+   "subsidiaries": [
+    "JSW Steel Ltd"
+   ],
+   "observed": {
+    "2023": 38.916,
+    "2024": 37.014
+   },
+   "countries": [
+    "IND"
+   ],
+   "asset_count": 8,
+   "kinds": [
+    "power",
+    "steel"
+   ],
+   "assets": [
+    {
+     "id": "32440775",
+     "name": "JSW Steel Dolvi steel plant",
+     "country": "IND",
+     "kind": "steel",
+     "observed": 13.64,
+     "coord": [
+      73.0392103496705,
+      18.6882527370815
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "32440777",
+     "name": "JSW Steel Vijayanagar steel plant",
+     "country": "IND",
+     "kind": "steel",
+     "observed": 12.599,
+     "coord": [
+      76.659005085373,
+      15.1792329205203
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "32440769",
+     "name": "JSW BPSL Jharsuguda steel plant",
+     "country": "IND",
+     "kind": "steel",
+     "observed": 8.449,
+     "coord": [
+      84.0208371345283,
+      21.7592076459837
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566846",
+     "name": "JSW Steel Salem steel plant",
+     "country": "IND",
+     "kind": "steel",
+     "observed": 1.38,
+     "coord": [
+      77.9186186847251,
+      11.8137075796269
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448606",
+     "name": "Raipur Sponge Iron power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 0.359,
+     "coord": [
+      83.2313,
+      21.9878
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "452316",
+     "name": "JSW Tarapur power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 0.254,
+     "coord": [
+      72.7405,
+      19.7945
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "451202",
+     "name": "Salem Siscol power station",
+     "country": "IND",
+     "kind": "power",
+     "observed": 0.213,
+     "coord": [
+      77.9191,
+      11.814
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "43158210",
+     "name": "Jajang Mine",
+     "country": "IND",
+     "kind": "steel",
+     "observed": 0.119,
+     "coord": [
+      85.427162,
+      21.931082
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "reliance-group",
+   "name": "Reliance Group",
+   "subsidiaries": [
+    "Reliance Power Ltd"
+   ],
+   "observed": {
+    "2023": 35.326,
+    "2024": 36.708
+   },
+   "countries": [
+    "IND"
+   ],
+   "asset_count": 2,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "25453691",
+     "name": "Sasan Ultra Mega Power Project",
+     "country": "IND",
+     "kind": "power",
+     "observed": 29.137,
+     "coord": [
+      82.6265,
+      23.9775
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "25452773",
+     "name": "Rosa Thermal Power Plant",
+     "country": "IND",
+     "kind": "power",
+     "observed": 7.571,
+     "coord": [
+      79.9372,
+      27.8194
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "unipro",
+   "name": "Unipro",
+   "subsidiaries": [
+    "Unipro PJSC"
+   ],
+   "observed": {
+    "2023": 36.026,
+    "2024": 36.677
+   },
+   "countries": [
+    "RUS"
+   ],
+   "asset_count": 5,
+   "kinds": [
+    "power"
+   ],
+   "assets": [
+    {
+     "id": "449560",
+     "name": "Surgut GRES-1 and Surgut GRES-2 power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 13.834,
+     "coord": [
+      73.4889,
+      61.2794
+     ],
+     "shared_with": 1
+    },
+    {
+     "id": "25452661",
+     "name": "Berezovskaya power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 13.605,
+     "coord": [
+      89.0713,
+      55.5795
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "4403315",
+     "name": "Shatura GRES power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 4.402,
+     "coord": [
+      39.5605,
+      55.5794
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "40695293",
+     "name": "Yaivinskaya GRES power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 2.71,
+     "coord": [
+      57.2461,
+      59.3406
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "40694227",
+     "name": "Smolenskaya GRES power station",
+     "country": "RUS",
+     "kind": "power",
+     "observed": 2.126,
+     "coord": [
+      32.4137,
+      55.6077
+     ],
+     "shared_with": 0
+    }
+   ]
+  },
+  {
+   "id": "jfe",
+   "name": "JFE",
+   "subsidiaries": [
+    "JFE Steel Corp"
+   ],
+   "observed": {
+    "2023": 40.003,
+    "2024": 36.479
+   },
+   "countries": [
+    "JPN"
+   ],
+   "asset_count": 5,
+   "kinds": [
+    "power",
+    "steel"
+   ],
+   "assets": [
+    {
+     "id": "1566917",
+     "name": "JFE West Japan Works (Fukuyama) steel plant",
+     "country": "JPN",
+     "kind": "steel",
+     "observed": 15.693,
+     "coord": [
+      133.436263198201,
+      34.4652276750651
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566916",
+     "name": "JFE West Japan Works (Kurashiki) steel plant",
+     "country": "JPN",
+     "kind": "steel",
+     "observed": 13.986,
+     "coord": [
+      133.722980026749,
+      34.4888080379258
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566915",
+     "name": "JFE East Japan Works (Chiba) steel plant",
+     "country": "JPN",
+     "kind": "steel",
+     "observed": 5.817,
+     "coord": [
+      140.101387768371,
+      35.5769155428562
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "448398",
+     "name": "JFE Steel West power station",
+     "country": "JPN",
+     "kind": "power",
+     "observed": 0.819,
+     "coord": [
+      140.0879,
+      35.5714
+     ],
+     "shared_with": 0
+    },
+    {
+     "id": "1566918",
+     "name": "JFE Sendai Works steel plant",
+     "country": "JPN",
+     "kind": "steel",
+     "observed": 0.164,
+     "coord": [
+      141.014177639038,
+      38.2653988526346
+     ],
+     "shared_with": 0
+    }
+   ]
+  }
+ ]
+}

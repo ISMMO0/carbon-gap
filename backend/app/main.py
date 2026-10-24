@@ -31,6 +31,26 @@ def countries():
             "sector_labels": data.SECTOR_LABELS, "countries": data.all_countries()}
 
 
+@app.get("/api/companies")
+def companies():
+    return {"carbon_price": data.CARBON_PRICE, "companies": data.companies()}
+
+
+@app.post("/api/companies/{company_id}/research")
+async def research_company(company_id: str):
+    c = data.find_company(company_id)
+    if not c:
+        raise HTTPException(404, "Unknown company.")
+
+    async def events():
+        try:
+            async for ev in research.research_company(c):
+                yield f"data: {json.dumps(ev)}\n\n"
+        except Exception as e:
+            yield f"data: {json.dumps({'type': 'error', 'message': f'Research failed: {type(e).__name__}'})}\n\n"
+    return StreamingResponse(events(), media_type="text/event-stream")
+
+
 @app.get("/api/market")
 def market():
     m = data.market()

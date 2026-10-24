@@ -14,8 +14,11 @@ const GAP_COLS = ['var(--neg)', 'var(--g0)', 'var(--g1)', 'var(--g2)', 'var(--g3
 const TOT_BREAKS = [10, 30, 100, 300, 1000, 3000];
 const TOT_COLS = ['#EAE9DD', '#CFD3BF', '#A9B79C', '#7F997C', '#58775F', '#36553F', '#1E3628'];
 const NO_DATA = '#E4E2D9';
-const SUGGESTIONS = ['Which countries have the biggest gap?', 'Why is Russia so far above its declaration?',
-  'Compare France and Germany', 'Which big emitters have no recent UN inventory?', 'Who has to buy the most carbon allowances in Europe?'];
+const SUGGESTIONS = {
+  gap: ['Which countries have the biggest gap?', 'Why is Russia so far above its declaration?', 'Compare France and Germany'],
+  companies: ['Which companies report less than their sites emit?', 'Show NTPC and explain its numbers', 'Find Gazprom\'s reported emissions'],
+  market: ['Who has to buy the most carbon allowances?', 'Why does Polish steel have a surplus?', 'What is CBAM?'],
+};
 
 /* ---------- helpers ---------- */
 const $ = s => document.querySelector(s);
@@ -42,8 +45,8 @@ function md(text) {
 }
 
 /* ---------- state ---------- */
-const state = {view: 'gap', metric: 'gap', selected: null, highlight: new Set(), sites: [], activeSite: null, sort: {key: 'gap', dir: -1}};
-let META = {}, MARKET = {countries: {}}, byIso = new Map(), byNum = new Map(), features = [];
+const state = {view: 'gap', metric: 'gap', selected: null, company: null, highlight: new Set(), sites: [], activeSite: null, sort: {key: 'gap', dir: -1}};
+let META = {}, MARKET = {countries: {}}, COMPANIES = [], byIso = new Map(), byNum = new Map(), features = [];
 const COVER_BREAKS = [.3, .45, .6, .8, 1];  // free allowances / verified emissions
 const COVER_COLS = ['var(--g4)', 'var(--g3)', 'var(--g2)', 'var(--g1)', 'var(--g0)', 'var(--neg)'];
 const siteCache = new Map();
@@ -53,6 +56,10 @@ const disp = c => c.name;
 /* ---------- colour ---------- */
 function colourOf(c) {
   if (!c) return NO_DATA;
+  if (state.view === 'companies') {
+    const co = COMPANIES.find(x => x.id === state.company);
+    return co?.countries.includes(c.iso3) ? 'var(--g1)' : '#E4E2D9';
+  }
   if (state.view === 'market') {
     const m = MARKET.countries[c.iso3];
     if (!m) return 'url(#hatch-nodecl)';
@@ -67,6 +74,12 @@ function colourOf(c) {
   let i = 0; while (i < TOT_BREAKS.length && v >= TOT_BREAKS[i]) i++; return TOT_COLS[i];
 }
 function renderLegend() {
+  if (state.view === 'companies') {
+    $('#legend').innerHTML = `<h4>Company sites (Climate TRACE)</h4>
+      <div class="keyrow" style="font-size:13px"><svg class="sw" viewBox="0 0 18 12"><rect width="18" height="12" fill="var(--g1)" stroke="#1C2320"/></svg>Countries where the selected company operates</div>
+      <div class="conf">Symbol size follows emissions. Symbols are explained on the left.</div>`;
+    return;
+  }
   if (state.view === 'market') {
     $('#legend').innerHTML = `<h4>Free allowances, share of verified emissions</h4>
       <div class="ramp">${COVER_COLS.map(c => `<span style="background:${c}"></span>`).join('')}</div>
@@ -104,6 +117,7 @@ function initGlobe() {
       const c = byNum.get(f.id);
       if (!c) return toast(`No data for ${f.properties.name}`);
       if (state.view === 'market' && !MARKET.countries[c.iso3]) return toast(`${c.name} is not in the EU carbon market`);
+      if (state.view === 'companies') return setView('gap', c.iso3);
       selectCountry(c.iso3, {fly: true});
     })
     .append('title').text(f => f.properties.name);
@@ -324,13 +338,95 @@ async function readSSE(res, onEvent) {
 function bindSheet() {
   $('#sheet').querySelectorAll('tr[data-c]').forEach(tr => tr.onclick = () => selectCountry(tr.dataset.c, {fly: true}));
   $('#sheet').querySelectorAll('tr[data-s]').forEach(tr => tr.onclick = () => focusSite(tr.dataset.s));
+  $('#sheet').querySelectorAll('tr[data-co]').forEach(tr => tr.onclick = () => selectCompany(tr.dataset.co));
   $('#sheet').querySelectorAll('[data-sort]').forEach(b => b.onclick = () => {
     const key = b.dataset.sort; state.sort = {key, dir: state.sort.key === key ? -state.sort.dir : (key === 'name' ? 1 : -1)}; renderSheet();
   });
 }
 function renderSheet() {
+  if (state.view === 'companies') return state.company ? renderCompany(state.company) : renderCompanies();
   if (state.view === 'market') return state.selected && MARKET.countries[state.selected] ? renderMarketCountry(state.selected) : renderMarketWorld();
   state.selected ? renderCountry(state.selected) : renderWorld();
+}
+
+/* ---------- companies view ---------- */
+const COMPANY_NAMES = ['Reported Scope 1', 'Observed, tracked sites'];
+function ratioTag(c) {
+  if (!c.compare) return `<span class="sub">${{not_found: 'No reported figure found', implausible: 'Reported figure rejected as implausible'}[c.research?.status] || 'Not researched yet'}</span>`;
+  const r = c.compare.ratio;
+  return `<span class="sub ${r > 1 ? 'gpos' : ''}">${r > 1 ? `Tracked sites ${r < 1.005 ? 'match' : d3.format('.0%')(r - 1) + ' above'} reported` : `Tracked sites cover ${d3.format('.0%')(r)} of reported`}</span>`;
+}
+function companySites(list, per) {
+  return list.flatMap(c => c.assets.slice(0, per).map(a => ({...a, owner: c.name, year: c.observed_year})));
+}
+function renderCompanies() {
+  if (!state.sites.length) { state.sites = companySites(COMPANIES, 4); draw(); }
+  const rows = [...COMPANIES].sort((a, b) => (b.observed_latest || 0) - (a.observed_latest || 0));
+  const flagged = rows.filter(c => c.compare?.ratio > 1);
+  $('#sheet').innerHTML = `
+    <div class="sheet-head"><div class="crumb">Largest emitting companies · sites tracked by Climate TRACE</div><h2>Companies</h2>
+      <div class="meta"><span>${rows.length} groups</span><span>${rows.filter(c => c.reported).length} with a reported Scope 1 found</span><span>${flagged.length} where tracked sites exceed the report</span></div></div>
+    <div class="block"><h3>Reported vs observed</h3>
+      <table><thead><tr><th>Company</th><th>Observed</th><th>Reported</th></tr></thead>
+      <tbody>${rows.map(c => `<tr data-co="${c.id}"><td>${esc(c.name)}${ratioTag(c)}</td><td>${fmtMt(c.compare?.observed ?? c.observed_latest)}</td><td>${c.reported ? `${fmtMt(c.reported.scope1_mt)}<span class="sub">${c.reported.year}</span>` : '–'}</td></tr>`).join('')}</tbody></table>
+      <p class="lede" style="margin-top:10px">Mt CO₂e. Observed covers only the sites Climate TRACE tracks, so it is usually below what a company reports.</p></div>`;
+  bindSheet();
+}
+function renderCompany(id) {
+  const c = COMPANIES.find(x => x.id === id), cmp = c.compare, rep = c.reported;
+  const head = `<div class="sheet-head"><div class="crumb"><button id="back">Companies</button><span>/</span><span>${esc(c.name)}</span></div><h2>${esc(c.name)}</h2>
+    <div class="meta"><span>${c.asset_count} tracked sites</span><span>${c.countries.length} ${c.countries.length > 1 ? 'countries' : 'country'}</span></div></div>`;
+  const compare = cmp ? `<div class="block"><h3>Reported Scope 1 vs observed sites, ${cmp.reported_year === cmp.year ? cmp.year : `${cmp.reported_year} vs ${cmp.year}`}</h3>${strata(cmp.reported, cmp.observed, Math.max(cmp.reported, cmp.observed), {names: COMPANY_NAMES})}
+      <dl class="figs" style="grid-template-columns:repeat(3,1fr)"><div><dt>Reported</dt><dd>${fmtMt(cmp.reported)} <small>Mt</small></dd></div><div><dt>Observed sites</dt><dd>${fmtMt(cmp.observed)} <small>Mt</small></dd></div>
+      <div class="${cmp.ratio > 1 ? 'gap' : ''}"><dt>${cmp.ratio > 1 ? 'Above report' : 'Coverage'}</dt><dd>${cmp.ratio > 1 ? '+' + d3.format('.0%')(cmp.ratio - 1) : d3.format('.0%')(cmp.ratio)}</dd></div></dl>
+      <div class="note-box">${cmp.ratio > 1 ? '<b>The tracked sites alone emit more than the company reports for its whole group.</b> Check the reporting boundary (equity share vs operational control), the year and the sites included.' : 'The tracked sites cover part of what the company reports, as expected: Climate TRACE does not track every site.'}</div>
+      ${agentQuote(rep)}</div>`
+    : `<div class="block"><h3>Observed, ${c.observed_year}</h3><dl class="figs" style="grid-template-columns:1fr 1fr"><div><dt>Observed sites</dt><dd>${fmtMt(c.observed_latest)} <small>Mt</small></dd></div><div><dt>Reported</dt><dd><small>${c.research?.status === 'not_found' ? 'Not found' : 'Not researched'}</small></dd></div></dl>
+      <div id="research"><button class="btn ghost" id="dores-co" style="margin-top:12px"><i data-lucide="search" class="icon"></i>${c.research ? 'Search again' : 'Find its reported emissions'}</button></div></div>`;
+  $('#sheet').innerHTML = head + compare + `
+    <div class="block"><h3>Largest tracked sites</h3><table><thead><tr><th>Site</th><th>Observed ${c.observed_year}</th></tr></thead>
+      <tbody>${c.assets.slice(0, 15).map(a => `<tr data-s="${a.id}" class="${a.id === state.activeSite ? 'on' : ''}"><td><span class="secdot" style="background:${KINDS[a.kind].color}"></span>${esc(a.name)}<span class="sub">${esc(byIso.get(a.country)?.name || a.country)}${a.shared_with ? ` · shared with ${a.shared_with} other owner${a.shared_with > 1 ? 's' : ''}` : ''}</span></td><td>${fmtMt(a.observed)} Mt</td></tr>`).join('')}</tbody></table></div>
+    ${c.subsidiaries.length > 1 ? `<div class="block"><h3>Entities grouped</h3><p class="lede">${c.subsidiaries.map(esc).join(' · ')}</p></div>` : ''}
+    <div class="actions"><button class="btn ghost" id="askco"><i data-lucide="message-square-text" class="icon"></i>Ask about ${esc(c.name)}</button></div>`;
+  $('#back').onclick = () => { state.company = null; state.sites = []; renderSheet(); recolour(); draw(); flyToPoint([75, 25], 1); };
+  $('#askco').onclick = () => ask(`What do we know about ${c.name}'s emissions? Compare what it reports with its tracked sites.`);
+  $('#dores-co')?.addEventListener('click', () => runCompanyResearch(c.id));
+  bindSheet(); icons();
+}
+function agentQuote(rep) {
+  if (!rep) return '';
+  return `<div class="note-box"><b>Reported figure found by a research agent</b> (confidence ${esc(rep.confidence)}).<br>“${esc(rep.quote)}”<br>
+    <a href="${esc(rep.source_url)}" target="_blank" rel="noopener">${esc(rep.source_title || rep.document)} ↗</a></div>`;
+}
+async function selectCompany(id, {fly = true} = {}) {
+  const c = COMPANIES.find(x => x.id === id); if (!c) return;
+  if (state.view !== 'companies') { state.view = 'companies'; syncViewChrome(); }
+  state.company = id; state.selected = null; state.activeSite = null; state.highlight.clear();
+  state.sites = c.assets.map(a => ({...a, owner: c.name, year: c.observed_year}));
+  recolour(); renderSheet(); draw();
+  if (fly) {
+    const pts = state.sites.slice(0, 15).map(a => a.coord);
+    const mid = d3.geoCentroid({type: 'MultiPoint', coordinates: pts});
+    const spread = d3.max(pts, p => d3.geoDistance(p, mid)) || .05;
+    await flyToPoint(mid, Math.max(1, Math.min(5, .5 / Math.max(spread, .04))));
+  }
+}
+async function reloadCompanies() {
+  const api = await fetch('/api/companies').then(r => r.json()).catch(() => null);
+  if (api) { COMPANIES = api.companies; renderSheet(); }
+}
+async function runCompanyResearch(id) {
+  const box = $('#research'); if (!box) return;
+  box.innerHTML = '<ol class="steps" style="margin:12px 0 0;max-width:none"></ol>';
+  const list = box.querySelector('ol');
+  const step = t => { list.querySelector('.now')?.classList.replace('now', 'done'); list.insertAdjacentHTML('beforeend', `<li class="now"><span class="dot"></span>${esc(t)}</li>`); };
+  try {
+    await readSSE(await fetch(`/api/companies/${id}/research`, {method: 'POST'}), ev => {
+      if (ev.type === 'step') step(ev.text);
+      else if (ev.type === 'error') step(ev.message);
+      else if (ev.type === 'result') { list.querySelector('.now')?.classList.replace('now', 'done'); reloadCompanies(); }
+    });
+  } catch { step('The research agent is unreachable.'); }
 }
 
 /* ---------- carbon market view (EU ETS) ---------- */
@@ -384,14 +480,25 @@ function renderMarketCountry(iso) {
   $('#askmk').onclick = () => ask(`Explain ${m.name}'s position in the EU carbon market.`);
   bindSheet(); icons();
 }
-async function setView(view, iso = state.selected) {
-  state.view = view;
+function renderSuggestions() {
+  $('#sugg').innerHTML = SUGGESTIONS[state.view].map(q => `<button type="button">${esc(q)}</button>`).join('');
+  $('#sugg').querySelectorAll('button').forEach(b => b.onclick = () => ask(b.textContent));
+}
+function syncViewChrome() {
+  const view = state.view;
+  if (!lastResponseId) { $('#sugg').hidden = false; renderSuggestions(); }
   document.querySelectorAll('[data-view]').forEach(t => t.dataset.view === view ? t.setAttribute('aria-current', 'page') : t.removeAttribute('aria-current'));
-  $('#metric-sec').hidden = $('#symbols-sec').hidden = $('#data-gap').hidden = view === 'market'; $('#data-market').hidden = view !== 'market';
-  state.highlight.clear(); state.sites = []; state.activeSite = null; state.selected = null;
-  renderLegend(); recolour();
+  $('#metric-sec').hidden = $('#data-gap').hidden = view !== 'gap';
+  $('#symbols-sec').hidden = view === 'market';
+  $('#data-market').hidden = view !== 'market'; $('#data-companies').hidden = view !== 'companies';
+  renderLegend();
+}
+async function setView(view, iso = state.selected) {
+  state.view = view; syncViewChrome();
+  state.highlight.clear(); state.sites = []; state.activeSite = null; state.selected = null; state.company = null;
+  recolour();
   if (iso && (view === 'gap' ? byIso.has(iso) : MARKET.countries[iso])) await selectCountry(iso, {fly: true});
-  else { renderSheet(); draw(); if (view === 'market') flyToPoint([14, 51], 2.3); }
+  else { renderSheet(); draw(); if (view === 'market') flyToPoint([14, 51], 2.3); if (view === 'companies') flyToPoint([75, 25], 1); }
 }
 
 async function loadSites(iso) {
@@ -500,7 +607,7 @@ function addTool(name, args) {
 async function runAction(a) {
   switch (a.name) {
     case 'select_country':
-      if (state.view === 'market' && !MARKET.countries[a.iso3]) await setView('gap');
+      if ((state.view === 'market' && !MARKET.countries[a.iso3]) || state.view === 'companies') await setView('gap');
       state.highlight.clear(); await selectCountry(a.iso3, {fly: true}); break;
     case 'highlight_countries':
       state.highlight = new Set(a.iso3s); state.selected = null; state.sites = []; renderSheet(); draw();
@@ -513,6 +620,8 @@ async function runAction(a) {
     case 'set_metric': setMetric(a.metric); break;
     case 'open_report': openReport(a.iso3); break;
     case 'show_market': await setView('market', a.iso3); break;
+    case 'show_company': if (a.company_id) await selectCompany(a.company_id); else await setView('companies', null); break;
+    case 'refresh_companies': await reloadCompanies(); if (a.company_id) await selectCompany(a.company_id); break;
     case 'refresh_data': await reloadData(); if (a.iso3) await selectCountry(a.iso3, {fly: true}); break;
   }
 }
@@ -570,9 +679,8 @@ function initControls() {
   };
   $('#ask').onsubmit = e => { e.preventDefault(); const q = $('#q').value; $('#q').value = ''; ask(q); };
   $('#amin').onclick = () => { const a = $('#analyst'); a.classList.toggle('min'); $('#amin').setAttribute('aria-label', a.classList.contains('min') ? 'Expand analyst' : 'Minimise analyst'); };
-  $('#sugg').innerHTML = SUGGESTIONS.map(s => `<button type="button">${esc(s)}</button>`).join('');
-  $('#sugg').querySelectorAll('button').forEach(b => b.onclick = () => ask(b.textContent));
-  addMsg('ai', '<p>Ask me where declared and observed emissions disagree. I read the data, move the map, search the web for context and write sourced reports.</p>');
+  renderSuggestions();
+  addMsg('ai', '<p>Ask about any country, company or carbon market. I move the map as I answer.</p>');
   addEventListener('resize', resize);
   addEventListener('keydown', e => { if (e.key === 'Escape' && $('#report').classList.contains('open')) closeReport(); });
 }
@@ -583,8 +691,9 @@ Promise.all([
   d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json'),
   fetch('/api/countries').then(r => { if (!r.ok) throw new Error('api'); return r.json(); }),
   fetch('/api/market').then(r => r.ok ? r.json() : {countries: {}}).catch(() => ({countries: {}})),
-]).then(([topo, api, market]) => {
-  META = api; MARKET = market;
+  fetch('/api/companies').then(r => r.ok ? r.json() : {companies: []}).catch(() => ({companies: []})),
+]).then(([topo, api, market, companies]) => {
+  META = api; MARKET = market; COMPANIES = companies.companies;
   for (const c of api.countries) { byIso.set(c.iso3, c); byNum.set(c.numeric, c); }
   features = topojson.feature(topo, topo.objects.countries).features.filter(f => f.properties.name !== 'Antarctica');
   $('#stage-msg').remove();

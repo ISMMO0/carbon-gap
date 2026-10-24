@@ -29,6 +29,8 @@ Rules:
 - Some declared figures were found by Carbon Gap research agents in recent UN reports (BTRs). Say so when you use
   them, and whether a person has verified the source (field "verified").
 - Answer in the user's language, short: 2-5 sentences or a short list. No headings. Bold the key numbers.
+- Company questions: get_companies, then show_company to put its sites on the globe. Observed company emissions only
+  cover the sites Climate TRACE tracks; if they exceed the reported Scope 1, that is a lead (check boundaries, year).
 - Carbon market questions (who must buy allowances, free allocation, surplus) about Europe: use get_market and show_market.
 - Countries without a UN inventory since 2015 (e.g. China) only have observed emissions: say so.
 """
@@ -60,6 +62,16 @@ TOOLS = [
      "description": "Switch the globe to the carbon market view (EU ETS allowances: who must buy, who has surplus).",
      "parameters": {"type": "object", "properties": {"country": {"type": "string", "description": "Country to open, or empty"}},
                     "required": ["country"], "additionalProperties": False}},
+    {"type": "function", "name": "get_companies", "strict": True,
+     "description": "Largest emitting companies: observed emissions of their sites tracked by Climate TRACE vs the Scope 1 "
+                    "they report themselves (found by research agents). Pass a company name, or an empty string for the ranking.",
+     "parameters": {"type": "object", "properties": {"company": {"type": "string"}}, "required": ["company"], "additionalProperties": False}},
+    {"type": "function", "name": "show_company", "strict": True,
+     "description": "Open a company on the globe (its tracked sites) and in the side panel. Empty string opens the company list.",
+     "parameters": {"type": "object", "properties": {"company": {"type": "string"}}, "required": ["company"], "additionalProperties": False}},
+    {"type": "function", "name": "research_company", "strict": True,
+     "description": "Launch a research agent that finds the company's self-reported Scope 1 emissions in its reports (~25 s).",
+     "parameters": {"type": "object", "properties": {"company": {"type": "string"}}, "required": ["company"], "additionalProperties": False}},
     {"type": "function", "name": "research_declaration", "strict": True,
      "description": "Launch a research agent that searches the web for the latest GHG inventory a country reported to the UN "
                     "(e.g. its Biennial Transparency Report) and adds it to Carbon Gap. Takes ~25 s. Use when a country has no declaration.",
@@ -84,7 +96,7 @@ TOOLS = [
      "description": "Generate and open the full sourced report (dossier) for a country.",
      "parameters": {"type": "object", "properties": {"country": COUNTRY}, "required": ["country"], "additionalProperties": False}},
 ]
-MAP_TOOLS = {"select_country", "highlight_countries", "focus_site", "set_metric", "open_report", "show_market"}
+MAP_TOOLS = {"select_country", "highlight_countries", "focus_site", "set_metric", "open_report", "show_market", "show_company"}
 
 
 def _iso(name: str) -> str | None:
@@ -141,6 +153,27 @@ def run_tool(name: str, args: dict) -> tuple[dict, dict | None]:
     if name == "show_market":
         iso = _iso(args["country"]) if args["country"].strip() else None
         return {"ok": True}, {"name": name, "iso3": iso}
+    if name == "get_companies":
+        if args["company"].strip():
+            c = data.find_company(args["company"])
+            if not c:
+                return {"error": "Company not in Carbon Gap's list of the 40 largest groups."}, None
+            return {k: c.get(k) for k in ("id", "name", "observed", "observed_year", "reported", "compare", "countries",
+                                          "asset_count", "subsidiaries")} | {
+                "top_sites": [{k: a[k] for k in ("name", "country", "kind", "observed")} for a in c["assets"][:8]],
+                "note": "Observed = sites tracked by Climate TRACE only (partial coverage, equal split between co-owners)."}, None
+        return {"companies": [{"name": c["name"], "observed_Mt": c["observed_latest"], "reported_scope1_Mt": (c["reported"] or {}).get("scope1_mt"),
+                               "ratio_observed_to_reported": round(c["compare"]["ratio"], 2) if c.get("compare") else None}
+                              for c in data.companies()]}, None
+    if name == "show_company":
+        c = data.find_company(args["company"]) if args["company"].strip() else None
+        return {"ok": True}, {"name": name, "company_id": c["id"] if c else None}
+    if name == "research_company":
+        c = data.find_company(args["company"])
+        if not c:
+            return {"error": "Unknown company"}, None
+        f = asyncio.run(_research_company(c))
+        return f, {"name": "refresh_companies", "company_id": c["id"]}
     if name == "research_declaration":
         iso = _iso(args["country"])
         if not iso:
@@ -214,6 +247,14 @@ async def _research(iso: str) -> dict:
         last = ev
     f = last.get("finding") or {"status": "error", "notes": last.get("message")}
     return {k: v for k, v in f.items() if k != "observed"} | {"observed_same_year": (f.get("observed") or {}).get("total")}
+
+
+async def _research_company(c: dict) -> dict:
+    from . import research
+    last = {}
+    async for ev in research.research_company(c):
+        last = ev
+    return last.get("finding") or {"status": "error", "notes": last.get("message")}
 
 
 def _short(args: dict) -> str:

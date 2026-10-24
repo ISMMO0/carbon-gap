@@ -102,54 +102,62 @@ async def _observed(http: httpx.AsyncClient, iso3: str, year: int) -> dict | Non
     return out if out["total"] > 0 else None
 
 
+async def _read_sources(http: httpx.AsyncClient, queries: list[str], prefer: tuple[str, ...]) -> tuple[dict, dict]:
+    """Search, then read the 3 most promising pages. Returns ({url: text}, {url: title})."""
+    batches = await asyncio.gather(*(_search(http, q) for q in queries))
+    results, seen = [], set()
+    for r in (x for b in zip(*batches) for x in b):  # interleave the queries
+        if r["url"] not in seen:
+            seen.add(r["url"])
+            results.append(r)
+    complete = [r for r in results if not r["url"].endswith("...")]  # search sometimes truncates URLs
+    results = (complete if len(complete) >= 4 else results)[:8]
+    best = sorted(results[:6], key=lambda r: not any(p in r["url"] for p in prefer))[:3]
+    pages = await asyncio.gather(*(_fetch(http, r["url"]) for r in best))
+    texts = {r["url"]: (r.get("snippet") or "") for r in results}
+    texts.update({r["url"]: p for r, p in zip(best, pages) if p})
+    return texts, {r["url"]: r.get("title") or r["url"] for r in results}
+
+
+async def _extract(prompt: str, name: str, schema: dict, texts: dict, titles: dict) -> dict:
+    sources = "\n\n".join(f"[{i + 1}] {titles[u]}\nURL: {u}\n{t}" for i, (u, t) in enumerate(texts.items()))
+    resp = await AsyncOpenAI().responses.create(
+        model=EXTRACT_MODEL, reasoning={"effort": "low"}, input=prompt.format(sources=sources),
+        text={"format": {"type": "json_schema", "name": name, "strict": True, "schema": schema}})
+    return json.loads(resp.output_text)
+
+
+def _quote_ok(x: dict, texts: dict) -> bool:
+    """The cited quote must appear in the cited source: our guard against invented numbers."""
+    return x.get("source_url") in texts and _norm(x["quote"])[:60] in _norm(texts[x["source_url"]])
+
+
 async def research(iso3: str) -> AsyncIterator[dict]:
-    """Run one research agent. Yields step events, then {'type': 'result', 'finding': ...}."""
+    """Country research agent. Yields step events, then {'type': 'result', 'finding': ...}."""
     c = data.find(iso3)
     if not c:
         yield {"type": "error", "message": "Unknown country."}
         return
     name, iso3 = c["name"], c["iso3"]
-    oai = AsyncOpenAI()
     async with httpx.AsyncClient(timeout=40, follow_redirects=True) as http:
         yield {"type": "step", "text": f"Searching for {name}'s latest UN inventory"}
-        queries = [f"{name} biennial transparency report national greenhouse gas inventory total emissions excluding LULUCF",
-                   f"{name} national GHG inventory total emissions MtCO2e excluding LULUCF UNFCCC"]
         try:
-            batches = await asyncio.gather(*(_search(http, q) for q in queries))
+            texts, titles = await _read_sources(http, [
+                f"{name} biennial transparency report national greenhouse gas inventory total emissions excluding LULUCF",
+                f"{name} national GHG inventory total emissions MtCO2e excluding LULUCF UNFCCC"], ("unfccc.int", ".gov"))
         except Exception:
             yield {"type": "error", "message": "Web search is unavailable right now."}
             return
-        results, seen = [], set()
-        for r in (x for b in zip(*batches) for x in b):  # interleave the two queries
-            if r["url"] not in seen:
-                seen.add(r["url"])
-                results.append(r)
-        complete = [r for r in results if not r["url"].endswith("...")]  # search sometimes truncates URLs
-        results = (complete if len(complete) >= 4 else results)[:8]
-        yield {"type": "step", "text": f"{len(results)} sources found, reading the most relevant"}
-        official = sorted(results[:6], key=lambda r: ("unfccc.int" not in r["url"] and ".gov" not in r["url"]))
-        pages = await asyncio.gather(*(_fetch(http, r["url"]) for r in official[:3]))
-        texts = {r["url"]: (r.get("snippet") or "") for r in results}
-        for r, p in zip(official[:3], pages):
-            if p:
-                texts[r["url"]] = p
-        titles = {r["url"]: r.get("title") or r["url"] for r in results}
-        yield {"type": "step", "text": f"Extracting the declared total with {EXTRACT_MODEL}"}
-        sources = "\n\n".join(f"[{i + 1}] {titles[u]}\nURL: {u}\n{t}" for i, (u, t) in enumerate(texts.items()))
+        yield {"type": "step", "text": f"{len(texts)} sources found. Extracting the declared total with {EXTRACT_MODEL}"}
         try:
-            resp = await oai.responses.create(
-                model=EXTRACT_MODEL, reasoning={"effort": "low"},
-                input=PROMPT.format(name=name, min_year=MIN_YEAR, sources=sources),
-                text={"format": {"type": "json_schema", "name": "inventory", "strict": True, "schema": SCHEMA}})
-            x = json.loads(resp.output_text)
+            x = await _extract(PROMPT.replace("{name}", name).replace("{min_year}", str(MIN_YEAR)), "inventory", SCHEMA, texts, titles)
         except Exception:
             yield {"type": "error", "message": "Extraction failed."}
             return
-
         finding = {"iso3": iso3, "status": "not_found", "notes": x.get("notes")}
-        ok = x["found"] and x["year"] and x["total_mt"] and x["year"] >= MIN_YEAR and x["source_url"] in texts
-        if ok and _norm(x["quote"])[:60] not in _norm(texts[x["source_url"]]):
-            ok, finding["notes"] = False, "Rejected: the quote was not found in the cited source."
+        ok = x["found"] and x["year"] and x["total_mt"] and x["year"] >= MIN_YEAR and _quote_ok(x, texts)
+        if x["found"] and not _quote_ok(x, texts):
+            finding["notes"] = "Rejected: the quote was not found in the cited source."
         if ok:
             yield {"type": "step", "text": f"Found {x['total_mt']:,.0f} Mt for {x['year']}. Fetching Climate TRACE for the same year"}
             observed = await _observed(http, iso3, x["year"])
@@ -164,16 +172,88 @@ async def research(iso3: str) -> AsyncIterator[dict]:
         yield {"type": "result", "finding": finding}
 
 
-async def research_many(isos: list[str], concurrency: int = 6) -> list[dict]:
-    """Run several research agents in parallel."""
+COMPANY_SCHEMA = {
+    "type": "object", "additionalProperties": False,
+    "required": ["found", "year", "scope1_mt", "document", "source_url", "quote", "confidence", "notes"],
+    "properties": {
+        "found": {"type": "boolean", "description": "True only if the company's own reported Scope 1 total is stated."},
+        "year": {"type": ["integer", "null"], "description": "Reporting year (fiscal year end) the Scope 1 figure refers to."},
+        "scope1_mt": {"type": ["number", "null"], "description": "Group Scope 1 emissions in MtCO2e (1 Mt = 1,000,000 t)."},
+        "document": {"type": "string", "description": "Report name, e.g. 'Sustainability Report 2024'."},
+        "source_url": {"type": "string", "description": "One of the provided URLs."},
+        "quote": {"type": "string", "description": "Verbatim text from that source containing the Scope 1 figure."},
+        "confidence": {"type": "string", "enum": ["high", "medium", "low"],
+                       "description": "high = company report or filing; medium = reputable outlet or database; low = unclear."},
+        "notes": {"type": "string", "description": "Boundary (operational control / equity share), unit conversion, caveats."},
+    },
+}
+
+COMPANY_PROMPT = """You are a climate data researcher. Find the latest Scope 1 greenhouse-gas emissions that {name}
+reported itself (sustainability report, annual report, CDP response, CSRD statement), for reporting year 2022 or later.
+{hint}
+Rules:
+- Use only the sources below. Never use your own memory for numbers.
+- Scope 1 only (not Scope 2 or 3, not total). Group level. Convert to MtCO2e (tonnes / 1,000,000; million tonnes = Mt).
+- source_url must be one of the URLs below, and quote must be copied word for word from that source.
+- Prefer the company's own report and the latest year.
+
+SOURCES:
+{sources}"""
+
+
+async def research_company(company: dict) -> AsyncIterator[dict]:
+    """Company research agent: finds the company's self-reported Scope 1 emissions."""
+    name = company["name"]
+    hint = f"Known subsidiaries: {', '.join(company.get('subsidiaries', [])[:6])}." if company.get("subsidiaries") else ""
+    async with httpx.AsyncClient(timeout=40, follow_redirects=True) as http:
+        yield {"type": "step", "text": f"Searching {name}'s sustainability reports"}
+        try:
+            texts, titles = await _read_sources(http, [
+                f"{name} scope 1 greenhouse gas emissions 2024 tCO2e sustainability report",
+                f"{name} annual report direct GHG emissions scope 1 million tonnes CO2e"], ("report", "sustainab", "esg", ".pdf"))
+        except Exception:
+            yield {"type": "error", "message": "Web search is unavailable right now."}
+            return
+        yield {"type": "step", "text": f"{len(texts)} sources found. Extracting Scope 1 with {EXTRACT_MODEL}"}
+        try:
+            prompt = COMPANY_PROMPT.replace("{name}", name).replace("{hint}", hint)
+            x = await _extract(prompt, "scope1", COMPANY_SCHEMA, texts, titles)
+        except Exception:
+            yield {"type": "error", "message": "Extraction failed."}
+            return
+        finding = {"key": company["id"], "status": "not_found", "notes": x.get("notes")}
+        tracked = max(company["observed"].values() or [0])
+        if x["found"] and x["scope1_mt"] and tracked and x["scope1_mt"] < tracked / 3:
+            x["found"] = False  # far below its own tracked sites: almost always a unit or scope mix-up
+            finding["notes"] = f"Rejected as implausible: {x['scope1_mt']} Mt is far below the {tracked:.0f} Mt of tracked sites."
+        if x["found"] and x["year"] and x["scope1_mt"] and _quote_ok(x, texts):
+            finding.update(status="found", year=x["year"], scope1_mt=x["scope1_mt"], document=x["document"],
+                           source_url=x["source_url"], source_title=titles[x["source_url"]], quote=x["quote"],
+                           confidence=x["confidence"])
+            yield {"type": "step", "text": f"Found {x['scope1_mt']:,.1f} Mt Scope 1 for {x['year']}"}
+        else:
+            if x["found"]:
+                finding["notes"] = "Rejected: the quote was not found in the cited source."
+            elif x["scope1_mt"] and "implausible" in (finding["notes"] or ""):
+                yield {"type": "step", "text": finding["notes"]}
+            yield {"type": "step", "text": "No usable self-reported Scope 1 found"}
+        await asyncio.to_thread(store.save_company, finding)
+        data.invalidate()
+        yield {"type": "result", "finding": finding}
+
+
+async def research_many(isos: list, concurrency: int = 6) -> list[dict]:
+    """Run several research agents in parallel (countries as ISO3 codes, companies as dicts)."""
     sem = asyncio.Semaphore(concurrency)
 
-    async def one(iso):
+    async def one(iso):  # an ISO3 code (country) or a company dict
+        tag = iso if isinstance(iso, str) else iso["id"]
         async with sem:
             last = None
-            async for ev in research(iso):
+            agent = research(iso) if isinstance(iso, str) else research_company(iso)
+            async for ev in agent:
                 if ev["type"] == "step":
-                    print(f"[{iso}] {ev['text']}", flush=True)
+                    print(f"[{tag}] {ev['text']}", flush=True)
                 last = ev
             return last
     return await asyncio.gather(*(one(i) for i in isos))
