@@ -194,6 +194,8 @@ reported itself (sustainability report, annual report, CDP response, CSRD statem
 Rules:
 - Use only the sources below. Never use your own memory for numbers.
 - Scope 1 only (not Scope 2 or 3, not total). Group level. Convert to MtCO2e (tonnes / 1,000,000; million tonnes = Mt).
+- Read the unit in table headers carefully (t, kt, '000 t, million t, MtCO2e). Sanity check: the large sites tracked
+  for this company alone emit about {tracked} MtCO2e per year, so its group Scope 1 should be of that order or larger.
 - source_url must be one of the URLs below, and quote must be copied word for word from that source.
 - Prefer the company's own report and the latest year.
 
@@ -216,7 +218,8 @@ async def research_company(company: dict) -> AsyncIterator[dict]:
             return
         yield {"type": "step", "text": f"{len(texts)} sources found. Extracting Scope 1 with {EXTRACT_MODEL}"}
         try:
-            prompt = COMPANY_PROMPT.replace("{name}", name).replace("{hint}", hint)
+            tracked = max(company["observed"].values() or [0])
+            prompt = COMPANY_PROMPT.replace("{name}", name).replace("{hint}", hint).replace("{tracked}", f"{tracked:,.0f}")
             x = await _extract(prompt, "scope1", COMPANY_SCHEMA, texts, titles)
         except Exception:
             yield {"type": "error", "message": "Extraction failed."}

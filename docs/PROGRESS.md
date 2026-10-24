@@ -89,8 +89,16 @@ Or open `mockup/index.html` directly in a browser.
   raw CSV in data/raw, git-ignored). Analyst tools get_market + show_market.
 - Human verification: "I checked the source" on agent findings → POST /api/research/{iso3}/verify (Postgres).
 
+### Phase 4: companies, logo ✅ (25 Oct, early)
+- scripts/build_companies.py: Climate TRACE assets (power, manufacturing, fossil fuel ops, mining; 24 countries; 2023-24),
+  emissions split equally between co-owners, subsidiaries grouped under parents by gpt-5.5 (Structured Outputs) → top 40.
+- Company research agents (research.research_company): self-reported Scope 1 from reports, quote check, plus a
+  plausibility check (rejected if far below the company's own tracked sites: unit errors). 14 found.
+  Story: Coal India reports 26.7 Mt Scope 1, its tracked mines emit 66 Mt (coal mine methane).
+- Companies tab, analyst tools get_companies / show_company / research_company. Table company_findings in Postgres.
+- New logo (web/logo.svg): globe crossed by declared/observed bands, the gap hatched. Also the favicon.
+
 ## 5. Next
 
-- Companies tab: CSRD / annual reports (PDF) → Structured Outputs → company declared vs Climate TRACE assets.
 - Structured Outputs to extract declared emissions from company reports (PDF) → company-level gaps.
 - Deploy, re-shoot the film with real data, pitch video.

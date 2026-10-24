@@ -486,7 +486,7 @@ function renderSuggestions() {
 }
 function syncViewChrome() {
   const view = state.view;
-  if (!lastResponseId) { $('#sugg').hidden = false; renderSuggestions(); }
+  if (!askedOnce) renderSuggestions();
   document.querySelectorAll('[data-view]').forEach(t => t.dataset.view === view ? t.setAttribute('aria-current', 'page') : t.removeAttribute('aria-current'));
   $('#metric-sec').hidden = $('#data-gap').hidden = view !== 'gap';
   $('#symbols-sec').hidden = view === 'market';
@@ -596,7 +596,7 @@ function closeReport() { const el = $('#report'); el.classList.remove('open'); e
 
 /* ---------- analyst ---------- */
 const log = $('#log');
-let lastResponseId = null, busy = false;
+let lastResponseId = null, busy = false, askedOnce = false;
 const scrollLog = () => { log.scrollTop = log.scrollHeight; };
 function addMsg(cls, html) { const d = document.createElement('div'); d.className = 'msg ' + cls; d.innerHTML = html; log.appendChild(d); scrollLog(); return d; }
 function addTool(name, args) {
@@ -630,7 +630,7 @@ async function ask(q, {voice = false, hooks = {}} = {}) {
   q = q.trim(); if (busy || !q) return '';
   busy = true; $('#ask button').disabled = true; if (!voice) $('#analyst').classList.remove('min');
   [...$('#sugg').children].forEach(b => { if (b.textContent === q) b.remove(); });
-  $('#sugg').hidden = true;
+  $('#sugg').hidden = askedOnce = true;
   addMsg('user', esc(q));
   const thinking = document.createElement('div'); thinking.className = 'thinking'; thinking.innerHTML = '<i></i>Thinking'; log.appendChild(thinking); scrollLog();
   let text = '', bubble = null;
@@ -682,7 +682,10 @@ function initControls() {
   renderSuggestions();
   addMsg('ai', '<p>Ask about any country, company or carbon market. I move the map as I answer.</p>');
   addEventListener('resize', resize);
-  addEventListener('keydown', e => { if (e.key === 'Escape' && $('#report').classList.contains('open')) closeReport(); });
+  addEventListener('keydown', e => {
+    if (e.key === 'Escape' && $('#report').classList.contains('open')) closeReport();
+    if (e.key === '/' && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)) { e.preventDefault(); $('#analyst').classList.remove('min'); $('#q').focus(); }
+  });
 }
 
 /* ---------- boot ---------- */
