@@ -98,6 +98,16 @@ Or open `mockup/index.html` directly in a browser.
 - Companies tab, analyst tools get_companies / show_company / research_company. Table company_findings in Postgres.
 - New logo (web/logo.svg): globe crossed by declared/observed bands, the gap hatched. Also the favicon.
 
+### Phase 5: any company, simpler UI ✅ (25 Oct)
+- backend/app/discover.py: research ANY company. gpt-5.5 + web_search + Structured Outputs profile (subsidiaries,
+  countries with large facilities, sectors) → Climate TRACE assets in those countries matched on owner names →
+  company research agent for reported Scope 1. ~20-60 s. Saved in Postgres table company_profiles.
+  Entry points: search bar (unknown names), "Research any company" box in Companies, analyst tool discover_company,
+  scripts/discover_companies.py (30 well-known groups pre-run). Now 72 companies, 44 with a reported Scope 1.
+- UI: left rail removed (metric switch, symbols and "How we compare" live in the legend), unified search for countries
+  and companies, hero with the headline number (6.2 Gt more than declared, about the US), 60-second guided tour
+  (China, Coal India, Polish allowances, voice), analyst collapsed by default, front-end served with no-cache.
+
 ## 5. Next
 
 - Structured Outputs to extract declared emissions from company reports (PDF) → company-level gaps.

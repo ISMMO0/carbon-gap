@@ -77,27 +77,45 @@ function renderLegend() {
   if (state.view === 'companies') {
     $('#legend').innerHTML = `<h4>Company sites (Climate TRACE)</h4>
       <div class="keyrow" style="font-size:13px"><svg class="sw" viewBox="0 0 18 12"><rect width="18" height="12" fill="var(--g1)" stroke="#1C2320"/></svg>Countries where the selected company operates</div>
-      <div class="conf">Symbol size follows emissions. Symbols are explained on the left.</div>`;
+      ${siteKeys()}<button class="about" id="about">How we compare</button>`;
+    $('#about').onclick = renderMethod;
     return;
   }
   if (state.view === 'market') {
     $('#legend').innerHTML = `<h4>Free allowances, share of verified emissions</h4>
       <div class="ramp">${COVER_COLS.map(c => `<span style="background:${c}"></span>`).join('')}</div>
       <div class="ticks">${['<30%', '30', '45', '60', '80', '100%+'].map(t => `<span>${t}</span>`).join('')}</div>
-      <div class="conf"><svg class="sw" viewBox="0 0 18 12"><rect width="18" height="12" fill="url(#hatch-nodecl)"/></svg>Not in the EU carbon market</div>`;
+      <div class="conf"><svg class="sw" viewBox="0 0 18 12"><rect width="18" height="12" fill="url(#hatch-nodecl)"/></svg>Not in the EU carbon market</div>
+      <button class="about" id="about">How we compare</button>`;
+    $('#about').onclick = renderMethod;
     return;
   }
   const g = state.metric === 'gap';
   const cols = g ? GAP_COLS : TOT_COLS, ticks = g ? ['<0', '0', '2%', '5%', '10%', '20%', '35%+'] : ['<10', '10', '30', '100', '300', '1k', '3k+'];
-  $('#legend').innerHTML = `<h4>${g ? 'Gap: observed vs declared' : (state.metric === 'declared' ? 'Declared' : 'Observed') + ' emissions, MtCO₂e'}</h4>
+  $('#legend').innerHTML = `<div class="seg" role="group" aria-label="Colour countries by">${['gap', 'declared', 'observed'].map(m =>
+      `<button data-metric="${m}" aria-pressed="${state.metric === m}">${m[0].toUpperCase() + m.slice(1)}</button>`).join('')}</div>
+    <h4>${g ? 'Observed minus declared, same year' : (state.metric === 'declared' ? 'Declared to the UN' : 'Observed by Climate TRACE') + ', MtCO₂e'}</h4>
     <div class="ramp">${cols.map(c => `<span style="background:${c}"></span>`).join('')}</div>
     <div class="ticks">${ticks.map(t => `<span>${t}</span>`).join('')}</div>
-    <div class="conf"><svg class="sw" viewBox="0 0 18 12"><rect width="18" height="12" fill="url(#hatch-nodecl)"/></svg>No UN inventory since 2015</div>`;
-  $('#metric-note').textContent = {
-    gap: 'Observed minus declared, as a share of what was declared, same year.',
-    declared: 'What the country reported to the UN for its latest inventory year.',
-    observed: 'Independent Climate TRACE estimate (inventory year, or 2024 when there is no inventory).',
-  }[state.metric];
+    <div class="conf"><svg class="sw" viewBox="0 0 18 12"><rect width="18" height="12" fill="url(#hatch-nodecl)"/></svg>No UN inventory found since 2015</div>
+    ${siteKeys()}<button class="about" id="about">How we compare</button>`;
+  $('#legend').querySelectorAll('[data-metric]').forEach(b => b.onclick = () => setMetric(b.dataset.metric));
+  $('#about').onclick = renderMethod;
+}
+function siteKeys() {
+  return `<div class="keys">${Object.values(KINDS).map(k => `<span><svg width="12" height="12" viewBox="-7 -7 14 14"><path d="${d3.symbol(k.sym, 40)()}" fill="${k.color}" stroke="#1C2320"/></svg>${k.name}</span>`).join('')}</div>`;
+}
+function renderMethod() {
+  $('#sheet').innerHTML = `<div class="sheet-head"><div class="crumb"><button id="back">Back</button></div><h2>How we compare</h2></div>
+    <div class="block method">
+      <h4>Declared</h4><p>National inventories reported to the UN (UNFCCC, via Climate Watch): total greenhouse gases excluding land use and forestry, latest year since 2015. For countries with no recent inventory there, research agents read their latest official reports (Biennial Transparency Reports) and quote the exact sentence.</p>
+      <h4>Observed</h4><p>Climate TRACE estimates for the same year, built from satellites, remote sensing and models of hundreds of thousands of facilities. All sectors except forestry, so the scope matches.</p>
+      <h4>Companies</h4><p>Observed = emissions of the large sites Climate TRACE tracks for a company (shared equally between co-owners). Reported = the company's own Scope 1, found in its reports by an agent. Tracked sites are only part of a company: when they alone exceed the report, it is a lead.</p>
+      <h4>Carbon market</h4><p>EU ETS verified emissions and free allowances per country and sector (EEA Union Registry).</p>
+      <h4>Money</h4><p>Gaps are valued at €72 per tonne, an assumption close to recent EU carbon prices, not a live price.</p>
+      <h4>Limits</h4><p>Both sides are estimates. Methane from oil, gas and coal drives many large gaps; emission factors, global warming potentials and reporting years differ. A gap is a lead to investigate, never proof of misreporting.</p>
+    </div>`;
+  $('#back').onclick = () => renderSheet();
 }
 
 /* ---------- globe ---------- */
@@ -352,7 +370,7 @@ function renderSheet() {
 /* ---------- companies view ---------- */
 const COMPANY_NAMES = ['Reported Scope 1', 'Observed, tracked sites'];
 function ratioTag(c) {
-  if (!c.compare) return `<span class="sub">${{not_found: 'No reported figure found', implausible: 'Reported figure rejected as implausible'}[c.research?.status] || 'Not researched yet'}</span>`;
+  if (!c.compare) return `<span class="sub">${c.reported ? 'No tracked sites to compare' : {not_found: 'No reported figure found', implausible: 'Reported figure rejected as implausible'}[c.research?.status] || 'Not researched yet'}</span>`;
   const r = c.compare.ratio;
   return `<span class="sub ${r > 1 ? 'gpos' : ''}">${r > 1 ? `Tracked sites ${r < 1.005 ? 'match' : d3.format('.0%')(r - 1) + ' above'} reported` : `Tracked sites cover ${d3.format('.0%')(r)} of reported`}</span>`;
 }
@@ -361,21 +379,26 @@ function companySites(list, per) {
 }
 function renderCompanies() {
   if (!state.sites.length) { state.sites = companySites(COMPANIES, 4); draw(); }
-  const rows = [...COMPANIES].sort((a, b) => (b.observed_latest || 0) - (a.observed_latest || 0));
+  const rows = [...COMPANIES].sort((a, b) => ((b.compare?.ratio > 1) - (a.compare?.ratio > 1)) || ((b.observed_latest || 0) - (a.observed_latest || 0)));
   const flagged = rows.filter(c => c.compare?.ratio > 1);
   $('#sheet').innerHTML = `
     <div class="sheet-head"><div class="crumb">Largest emitting companies · sites tracked by Climate TRACE</div><h2>Companies</h2>
       <div class="meta"><span>${rows.length} groups</span><span>${rows.filter(c => c.reported).length} with a reported Scope 1 found</span><span>${flagged.length} where tracked sites exceed the report</span></div></div>
+    <div class="block"><h3>Research any company in the world</h3>
+      <form class="discover" id="discover-form"><input id="discover-q" placeholder="e.g. Shell, Holcim, Glencore" autocomplete="off" aria-label="Company name"><button class="btn">Research</button></form>
+      <div id="discover-steps"></div></div>
     <div class="block"><h3>Reported vs observed</h3>
       <table><thead><tr><th>Company</th><th>Observed</th><th>Reported</th></tr></thead>
       <tbody>${rows.map(c => `<tr data-co="${c.id}"><td>${esc(c.name)}${ratioTag(c)}</td><td>${fmtMt(c.compare?.observed ?? c.observed_latest)}</td><td>${c.reported ? `${fmtMt(c.reported.scope1_mt)}<span class="sub">${c.reported.year}</span>` : '–'}</td></tr>`).join('')}</tbody></table>
       <p class="lede" style="margin-top:10px">Mt CO₂e. Observed covers only the sites Climate TRACE tracks, so it is usually below what a company reports.</p></div>`;
+  $('#discover-form').onsubmit = e => { e.preventDefault(); const v = $('#discover-q').value.trim(); if (v) search(v); };
   bindSheet();
 }
 function renderCompany(id) {
   const c = COMPANIES.find(x => x.id === id), cmp = c.compare, rep = c.reported;
   const head = `<div class="sheet-head"><div class="crumb"><button id="back">Companies</button><span>/</span><span>${esc(c.name)}</span></div><h2>${esc(c.name)}</h2>
-    <div class="meta"><span>${c.asset_count} tracked sites</span><span>${c.countries.length} ${c.countries.length > 1 ? 'countries' : 'country'}</span></div></div>`;
+    <div class="meta">${c.industry ? `<span>${esc(c.industry)}</span>` : ''}<span>${c.asset_count} tracked sites</span><span>${c.countries.length} ${c.countries.length > 1 ? 'countries' : 'country'}</span></div>
+    ${c.summary ? `<p class="lede clamp" style="margin-top:8px">${esc(c.summary)}</p>` : ''}</div>`;
   const compare = cmp ? `<div class="block"><h3>Reported Scope 1 vs observed sites, ${cmp.reported_year === cmp.year ? cmp.year : `${cmp.reported_year} vs ${cmp.year}`}</h3>${strata(cmp.reported, cmp.observed, Math.max(cmp.reported, cmp.observed), {names: COMPANY_NAMES})}
       <dl class="figs" style="grid-template-columns:repeat(3,1fr)"><div><dt>Reported</dt><dd>${fmtMt(cmp.reported)} <small>Mt</small></dd></div><div><dt>Observed sites</dt><dd>${fmtMt(cmp.observed)} <small>Mt</small></dd></div>
       <div class="${cmp.ratio > 1 ? 'gap' : ''}"><dt>${cmp.ratio > 1 ? 'Above report' : 'Coverage'}</dt><dd>${cmp.ratio > 1 ? '+' + d3.format('.0%')(cmp.ratio - 1) : d3.format('.0%')(cmp.ratio)}</dd></div></dl>
@@ -488,12 +511,10 @@ function syncViewChrome() {
   const view = state.view;
   if (!askedOnce) renderSuggestions();
   document.querySelectorAll('[data-view]').forEach(t => t.dataset.view === view ? t.setAttribute('aria-current', 'page') : t.removeAttribute('aria-current'));
-  $('#metric-sec').hidden = $('#data-gap').hidden = view !== 'gap';
-  $('#symbols-sec').hidden = view === 'market';
-  $('#data-market').hidden = view !== 'market'; $('#data-companies').hidden = view !== 'companies';
   renderLegend();
 }
 async function setView(view, iso = state.selected) {
+  if (!touring) $('#hero').hidden = true;
   state.view = view; syncViewChrome();
   state.highlight.clear(); state.sites = []; state.activeSite = null; state.selected = null; state.company = null;
   recolour();
@@ -511,6 +532,7 @@ async function loadSites(iso) {
 }
 async function selectCountry(iso, {fly = false} = {}) {
   if (!byIso.has(iso)) return;
+  $('#hero').hidden = true;
   state.selected = iso; state.activeSite = null; state.sites = []; state.sort = {key: 'gap', dir: -1};
   renderSheet(); draw(); history.replaceState(null, '', '#' + iso);
   if (state.view === 'market') { if (fly) await flyToCountry(iso); return; }
@@ -630,7 +652,7 @@ async function ask(q, {voice = false, hooks = {}} = {}) {
   q = q.trim(); if (busy || !q) return '';
   busy = true; $('#ask button').disabled = true; if (!voice) $('#analyst').classList.remove('min');
   [...$('#sugg').children].forEach(b => { if (b.textContent === q) b.remove(); });
-  $('#sugg').hidden = askedOnce = true;
+  $('#sugg').hidden = askedOnce = true; $('#hero').hidden = true;
   addMsg('user', esc(q));
   const thinking = document.createElement('div'); thinking.className = 'thinking'; thinking.innerHTML = '<i></i>Thinking'; log.appendChild(thinking); scrollLog();
   let text = '', bubble = null;
@@ -658,25 +680,74 @@ async function ask(q, {voice = false, hooks = {}} = {}) {
   return text;
 }
 
+/* ---------- unified search: countries, known companies, or discover any company ---------- */
+function fillSearchList() {
+  const names = [...[...byIso.values()].map(c => c.name), ...COMPANIES.map(c => c.name)].sort();
+  $('#countries').innerHTML = names.map(n => `<option value="${esc(n)}">`).join('');
+}
+async function search(v) {
+  const l = v.toLowerCase();
+  const country = [...byIso.values()].find(c => c.name.toLowerCase() === l || c.iso3.toLowerCase() === l);
+  const company = COMPANIES.find(c => c.name.toLowerCase() === l) || COMPANIES.find(c => c.name.toLowerCase().includes(l) || c.subsidiaries.some(x => x.toLowerCase().includes(l)));
+  if (country) return setView('gap', country.iso3);
+  if (company) return selectCompany(company.id);
+  const partial = [...byIso.values()].find(c => c.name.toLowerCase().includes(l));
+  if (partial && l.length > 3) return setView('gap', partial.iso3);
+  await setView('companies', null);
+  runDiscover(v);
+}
+async function runDiscover(name) {
+  renderCompanies();
+  const box = $('#discover-steps'); if (!box) return;
+  box.innerHTML = `<p class="lede" style="margin:10px 0 0"><b>Researching ${esc(name)}</b>: profile with web search, Climate TRACE sites, reported Scope 1.</p><ol class="steps" style="margin:8px 0 0;max-width:none"></ol>`;
+  const list = box.querySelector('ol');
+  const step = t => { list.querySelector('.now')?.classList.replace('now', 'done'); list.insertAdjacentHTML('beforeend', `<li class="now"><span class="dot"></span>${esc(t)}</li>`); };
+  try {
+    await readSSE(await fetch('/api/companies/discover', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({name})}), async ev => {
+      if (ev.type === 'step') step(ev.text);
+      else if (ev.type === 'error') step(ev.message);
+      else if (ev.type === 'result') { await reloadCompanies(); fillSearchList(); selectCompany(ev.company_id); toast(`${name} added`); }
+    });
+  } catch { step('The research agent is unreachable.'); }
+}
+
+/* ---------- hero and guided tour ---------- */
+function initHero() {
+  const dec = [...byIso.values()].filter(isDeclared);
+  const D = d3.sum(dec, c => c.declared), O = d3.sum(dec, c => c.observed), gap = (O - D) / 1000;
+  $('#hero-p').innerHTML = `Independent estimates see <b>${d3.format('.1f')(gap)} Gt</b> more greenhouse gas than the ${dec.length} countries we compared declare to the UN, about what the United States emits in a year. At €${META.carbon_price}/t, that is <b>${fmtEur((O - D) * 1e6 * META.carbon_price)}</b>.`;
+  $('#hero-close').onclick = () => { $('#hero').hidden = true; };
+  $('#hero-tour').onclick = () => { $('#hero').hidden = true; tour(); };
+}
+let touring = false;
+async function tour() {
+  if (touring) return; touring = true;
+  const cap = document.createElement('div'); cap.className = 'tour-cap'; $('#stage').appendChild(cap);
+  const say = html => { cap.innerHTML = html + '<button id="tour-stop">Skip</button>'; $('#tour-stop').onclick = () => { touring = false; }; };
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+  const chn = byIso.get('CHN'), coal = COMPANIES.find(c => c.id === 'coal-india'), pol = MARKET.countries.POL;
+  const steps = [
+    async () => { say('The red countries emit more than they declare to the UN, <b>same year, same scope</b>.'); await setView('gap', null); state.highlight = new Set(['CHN', 'RUS', 'IDN', 'IND', 'AUS']); draw(); flyToPoint([95, 35], 1.1); },
+    async () => { if (chn) { say(`China declared <b>${fmtMt(chn.declared)} Mt</b> for ${chn.year}. Independent data sees <b>${fmtMt(chn.observed)} Mt</b>.`); state.highlight.clear(); await selectCountry('CHN', {fly: true}); } },
+    async () => { if (coal?.compare) { say(`Coal India reports <b>${fmtMt(coal.compare.reported)} Mt</b>. Its own tracked mines emit <b>${fmtMt(coal.compare.observed)} Mt</b>.`); await selectCompany('coal-india'); } },
+    async () => { if (pol) { say(`In the EU carbon market, Poland's plants must buy <b>${fmtMt(pol.shortfall)} Mt</b> of allowances a year.`); await setView('market', 'POL'); } },
+    async () => { say('Ask anything, or press <b>Talk</b> and ask out loud. Agents fetch what is missing.'); await setView('gap', null); $('#analyst').classList.remove('min'); },
+  ];
+  for (const s of steps) { if (!touring) break; await s(); await wait(6000); }
+  cap.remove(); touring = false;
+}
+
 /* ---------- controls ---------- */
 function setMetric(m) {
   state.metric = m;
-  document.querySelectorAll('[data-metric]').forEach(x => x.setAttribute('aria-pressed', x.dataset.metric === m));
   renderLegend(); recolour();
 }
 function initControls() {
-  $('#symbols').innerHTML = Object.values(KINDS).map(s => `<div class="keyrow"><svg class="sw" viewBox="-9 -7 18 14" style="border:0"><path d="${d3.symbol(s.sym, 50)()}" fill="${s.color}" stroke="#1C2320"/></svg>${s.name}</div>`).join('');
-  document.querySelectorAll('[data-metric]').forEach(b => b.onclick = () => setMetric(b.dataset.metric));
   $('#zin').onclick = () => zoomBy(1.4); $('#zout').onclick = () => zoomBy(1 / 1.4); $('#zreset').onclick = () => clearSelection();
   document.querySelectorAll('[data-soon]').forEach(b => b.onclick = () => toast('Coming soon'));
   document.querySelectorAll('[data-view]').forEach(b => b.onclick = () => setView(b.dataset.view, null));
-  const names = [...byIso.values()].map(c => c.name).sort();
-  $('#countries').innerHTML = names.map(n => `<option value="${esc(n)}">`).join('');
-  $('#search').onchange = e => {
-    const v = e.target.value.trim().toLowerCase();
-    const c = [...byIso.values()].find(c => c.name.toLowerCase() === v || c.iso3.toLowerCase() === v) || [...byIso.values()].find(c => c.name.toLowerCase().includes(v));
-    if (c) { selectCountry(c.iso3, {fly: true}); e.target.value = ''; } else toast(`No country matches “${e.target.value}”`);
-  };
+  fillSearchList();
+  $('#search').onchange = e => { const v = e.target.value.trim(); e.target.value = ''; if (v) search(v); };
   $('#ask').onsubmit = e => { e.preventDefault(); const q = $('#q').value; $('#q').value = ''; ask(q); };
   $('#amin').onclick = () => { const a = $('#analyst'); a.classList.toggle('min'); $('#amin').setAttribute('aria-label', a.classList.contains('min') ? 'Expand analyst' : 'Minimise analyst'); };
   renderSuggestions();
@@ -700,6 +771,7 @@ Promise.all([
   for (const c of api.countries) { byIso.set(c.iso3, c); byNum.set(c.numeric, c); }
   features = topojson.feature(topo, topo.objects.countries).features.filter(f => f.properties.name !== 'Antarctica');
   $('#stage-msg').remove();
-  initControls(); renderLegend(); initGlobe(); renderSheet();
-  const h = location.hash.slice(1).toUpperCase(); if (byIso.has(h)) selectCountry(h, {fly: true});
+  initControls(); renderLegend(); initGlobe(); renderSheet(); initHero();
+  $('#analyst').classList.add('min');
+  const h = location.hash.slice(1).toUpperCase(); if (byIso.has(h)) { $('#hero').hidden = true; selectCountry(h, {fly: true}); }
 }).catch(() => { $('#stage-msg').textContent = 'The map could not load. Check your connection and that the server is running, then reload.'; });

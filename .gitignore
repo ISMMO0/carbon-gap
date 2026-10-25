@@ -17,3 +17,5 @@ backend/data/sites/
 backend/data/reports/
 backend/data/findings.json
 backend/data/raw/
+backend/data/company_findings.json
+backend/data/company_profiles.json

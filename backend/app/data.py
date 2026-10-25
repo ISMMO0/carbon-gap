@@ -81,22 +81,29 @@ def companies() -> list[dict]:
             _company_findings = _company_findings or {}
         _company_at = time.monotonic()
     raw = _companies_raw()
-    latest = str(max(raw["years"])) if raw["years"] else None
+    latest = str(max(raw["years"])) if raw["years"] else "2024"
+    try:
+        profiles = store.company_profiles() if _company_findings is not None else {}
+    except Exception:
+        profiles = {}
+    merged = {c["id"]: c for c in raw["companies"]}
+    merged.update(profiles)  # companies discovered on demand override the static list
     out = []
-    for c in raw["companies"]:
+    for c in merged.values():
         f = _company_findings.get(c["id"])
         row = {**c, "observed_latest": c["observed"].get(latest), "observed_year": latest, "reported": None,
                "research": {"status": f["status"], "notes": f.get("notes")} if f else None}
-        if f and f.get("status") == "found" and f["scope1_mt"] < max(c["observed"].values()) / 3:
+        if f and f.get("status") == "found" and f["scope1_mt"] < max(c["observed"].values() or [0]) / 3:
             row["research"] = {"status": "implausible", "notes": f"Reported {f['scope1_mt']} Mt is far below the tracked sites: "
                                "likely a unit or scope error. Run the agent again."}
         elif f and f.get("status") == "found":
             year = str(f["year"]) if str(f["year"]) in c["observed"] else latest
-            obs = c["observed"][year]
+            obs = c["observed"].get(year) or 0
             row["reported"] = {k: f.get(k) for k in ("year", "scope1_mt", "document", "source_url", "source_title",
                                                      "quote", "confidence", "verified")}
-            row["compare"] = {"year": int(year), "reported_year": f["year"], "observed": obs, "reported": f["scope1_mt"],
-                              "ratio": obs / f["scope1_mt"] if f["scope1_mt"] else None}
+            if obs > 0:  # no tracked sites = nothing to compare with
+                row["compare"] = {"year": int(year), "reported_year": f["year"], "observed": obs, "reported": f["scope1_mt"],
+                                  "ratio": obs / f["scope1_mt"] if f["scope1_mt"] else None}
         out.append(row)
     return out
 

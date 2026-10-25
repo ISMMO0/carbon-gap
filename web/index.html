@@ -33,50 +33,18 @@
       Carbon Gap
     </div>
     <nav class="tabs" aria-label="Main">
-      <button class="tab" data-view="gap" aria-current="page"><i data-lucide="globe-2" class="icon"></i>Emissions gap</button>
+      <button class="tab" data-view="gap" aria-current="page"><i data-lucide="globe-2" class="icon"></i>Countries</button>
       <button class="tab" data-view="companies"><i data-lucide="building-2" class="icon"></i>Companies</button>
       <button class="tab" data-view="market"><i data-lucide="arrow-left-right" class="icon"></i>Carbon market</button>
     </nav>
     <button class="talk-btn" id="talk" aria-label="Talk to Carbon Gap" title="Talk to Carbon Gap (voice)"><i data-lucide="mic" class="icon"></i>Talk</button>
     <label class="bar-search"><i data-lucide="search" class="icon"></i>
-      <input id="search" list="countries" placeholder="Find a country" autocomplete="off" aria-label="Find a country">
+      <input id="search" list="countries" placeholder="Search a country or any company" autocomplete="off" aria-label="Search a country or any company">
       <datalist id="countries"></datalist>
     </label>
   </header>
 
   <div class="main">
-    <aside class="rail" aria-label="Map layers">
-      <section id="metric-sec">
-        <h2>Colour countries by</h2>
-        <div class="seg" role="group" aria-label="Metric">
-          <button data-metric="gap" aria-pressed="true">Gap</button>
-          <button data-metric="declared" aria-pressed="false">Declared</button>
-          <button data-metric="observed" aria-pressed="false">Observed</button>
-        </div>
-        <p class="note" id="metric-note"></p>
-      </section>
-      <section id="symbols-sec">
-        <h2>Site symbols</h2>
-        <div id="symbols"></div>
-      </section>
-      <section id="data-companies" hidden>
-        <h2>Data</h2>
-        <p class="note" style="margin-top:0"><b>Observed:</b> emissions of the large sites Climate TRACE tracks for each company (power, industry, oil and gas, mining) in 24 major countries. A site with several owners is split equally.</p>
-        <p class="note"><b>Reported:</b> the company's own Scope 1 figure, found in its reports by a research agent, with the exact quote.</p>
-        <p class="note">Tracked sites are only part of a company. If they alone exceed what it reports, that is worth a look.</p>
-      </section>
-      <section id="data-market" hidden>
-        <h2>Data</h2>
-        <p class="note" style="margin-top:0"><b>EU ETS:</b> verified emissions and free allowances of stationary installations (power, industry), from the EEA Union Registry.</p>
-        <p class="note">What free allocation does not cover, installations must buy at auction or on the market.</p>
-      </section>
-      <section id="data-gap">
-        <h2>Data</h2>
-        <p class="note" style="margin-top:0"><b>Declared:</b> national inventories reported to the UN (UNFCCC), total GHG excluding land use, latest year since 2015.</p>
-        <p class="note"><b>Observed:</b> Climate TRACE estimates for the same year (satellites and asset models), all sectors except forestry.</p>
-        <p class="note">A gap is a lead to investigate, not proof of misreporting.</p>
-      </section>
-    </aside>
 
     <div class="stage" id="stage">
       <svg id="globe" role="img" aria-label="Globe coloured by emissions gap"></svg>
@@ -88,9 +56,19 @@
       </div>
       <div class="legend" id="legend"></div>
 
+      <section class="hero" id="hero" aria-label="Introduction">
+        <p class="hero-k">Declared vs observed greenhouse-gas emissions</p>
+        <h1 id="hero-h">Countries declare less than satellites see.</h1>
+        <p id="hero-p"></p>
+        <div class="hero-actions">
+          <button class="btn" id="hero-tour"><i data-lucide="play" class="icon"></i>Take the 60-second tour</button>
+          <button class="btn ghost" id="hero-close">Explore the map</button>
+        </div>
+      </section>
+
       <section class="analyst" id="analyst" aria-label="Analyst">
         <header>
-          <i data-lucide="message-square-text" class="icon"></i><b>Analyst</b><small>GPT-5.5 · moves the map · searches the web</small>
+          <i data-lucide="message-square-text" class="icon"></i><b>Analyst</b><small>GPT-5.5 · moves the map</small>
           <button id="amin" aria-label="Minimise analyst"><i data-lucide="chevron-down" class="icon"></i></button>
         </header>
         <div class="log" id="log" aria-live="polite"></div>

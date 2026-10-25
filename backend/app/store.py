@@ -48,6 +48,14 @@ create table if not exists company_findings (
 COMPANY_COLS = ["key", "status", "year", "scope1_mt", "document", "source_url", "source_title", "quote", "confidence",
                 "notes", "verified", "updated_at"]
 COMPANY_FALLBACK = DATA / "company_findings.json"
+PROFILE_SCHEMA = """
+create table if not exists company_profiles (
+  id text primary key,
+  data jsonb not null,
+  updated_at timestamptz not null default now()
+);
+"""
+PROFILE_FALLBACK = DATA / "company_profiles.json"
 
 COLS = ["iso3", "status", "year", "total_mt", "energy_mt", "agriculture_mt", "waste_mt", "observed", "document",
         "source_url", "source_title", "quote", "confidence", "notes", "verified", "updated_at"]
@@ -69,6 +77,7 @@ def backend() -> str:
             with _pg() as c:
                 c.execute(SCHEMA)
                 c.execute(COMPANY_SCHEMA)
+                c.execute(PROFILE_SCHEMA)
             _pg_ok = True
         except Exception:
             _pg_ok = False
@@ -157,6 +166,35 @@ def company_findings() -> dict[str, dict]:
             with _pg() as c, c.cursor(row_factory=dict_row) as cur:
                 rows = cur.execute("select * from company_findings").fetchall()
             return {**local, **{r["key"]: {**r, "updated_at": r["updated_at"].isoformat()} for r in rows}}
+        except Exception:
+            pass
+    return local
+
+
+def save_company_profile(profile: dict) -> None:
+    """A company discovered on demand (metadata + observed sites)."""
+    if backend() == "postgres":
+        from psycopg.types.json import Jsonb
+        try:
+            with _pg() as c:
+                c.execute("insert into company_profiles (id, data) values (%s, %s) on conflict (id) do update "
+                          "set data = excluded.data, updated_at = now()", [profile["id"], Jsonb(profile)])
+            return
+        except Exception:
+            pass
+    with _lock:
+        rows = json.loads(PROFILE_FALLBACK.read_text()) if PROFILE_FALLBACK.exists() else {}
+        rows[profile["id"]] = profile
+        PROFILE_FALLBACK.write_text(json.dumps(rows, ensure_ascii=False))
+
+
+def company_profiles() -> dict[str, dict]:
+    local = json.loads(PROFILE_FALLBACK.read_text()) if PROFILE_FALLBACK.exists() else {}
+    if backend() == "postgres":
+        try:
+            with _pg() as c:
+                rows = c.execute("select id, data from company_profiles").fetchall()
+            return {**local, **{i: d for i, d in rows}}
         except Exception:
             pass
     return local

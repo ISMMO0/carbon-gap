@@ -29,7 +29,7 @@ Rules:
 - Some declared figures were found by Carbon Gap research agents in recent UN reports (BTRs). Say so when you use
   them, and whether a person has verified the source (field "verified").
 - Answer in the user's language, short: 2-5 sentences or a short list. No headings. Bold the key numbers.
-- Company questions: get_companies, then show_company to put its sites on the globe. Observed company emissions only
+- Company questions: get_companies (if unknown, discover_company), then show_company to put its sites on the globe. Observed company emissions only
   cover the sites Climate TRACE tracks; if they exceed the reported Scope 1, that is a lead (check boundaries, year).
 - Carbon market questions (who must buy allowances, free allocation, surplus) about Europe: use get_market and show_market.
 - Countries without a UN inventory since 2015 (e.g. China) only have observed emissions: say so.
@@ -68,6 +68,10 @@ TOOLS = [
      "parameters": {"type": "object", "properties": {"company": {"type": "string"}}, "required": ["company"], "additionalProperties": False}},
     {"type": "function", "name": "show_company", "strict": True,
      "description": "Open a company on the globe (its tracked sites) and in the side panel. Empty string opens the company list.",
+     "parameters": {"type": "object", "properties": {"company": {"type": "string"}}, "required": ["company"], "additionalProperties": False}},
+    {"type": "function", "name": "discover_company", "strict": True,
+     "description": "Add ANY company not yet in Carbon Gap: profiles it with web search, finds its sites in Climate TRACE and "
+                    "its reported Scope 1 (~30-60 s). Use when get_companies does not know the company.",
      "parameters": {"type": "object", "properties": {"company": {"type": "string"}}, "required": ["company"], "additionalProperties": False}},
     {"type": "function", "name": "research_company", "strict": True,
      "description": "Launch a research agent that finds the company's self-reported Scope 1 emissions in its reports (~25 s).",
@@ -168,6 +172,13 @@ def run_tool(name: str, args: dict) -> tuple[dict, dict | None]:
     if name == "show_company":
         c = data.find_company(args["company"]) if args["company"].strip() else None
         return {"ok": True}, {"name": name, "company_id": c["id"] if c else None}
+    if name == "discover_company":
+        cid = asyncio.run(_discover(args["company"]))
+        c = data.find_company(cid) if cid else None
+        if not c:
+            return {"error": f"Could not find emitting operations for {args['company']}."}, None
+        return ({k: c.get(k) for k in ("name", "industry", "observed", "reported", "compare", "countries", "asset_count")},
+                {"name": "refresh_companies", "company_id": c["id"]})
     if name == "research_company":
         c = data.find_company(args["company"])
         if not c:
@@ -247,6 +258,14 @@ async def _research(iso: str) -> dict:
         last = ev
     f = last.get("finding") or {"status": "error", "notes": last.get("message")}
     return {k: v for k, v in f.items() if k != "observed"} | {"observed_same_year": (f.get("observed") or {}).get("total")}
+
+
+async def _discover(name: str) -> str | None:
+    from . import discover
+    cid = None
+    async for ev in discover.discover(name):
+        cid = ev.get("company_id", cid)
+    return cid
 
 
 async def _research_company(c: dict) -> dict:

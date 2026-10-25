@@ -14,9 +14,18 @@ from fastapi.responses import FileResponse, StreamingResponse  # noqa: E402
 from fastapi.staticfiles import StaticFiles  # noqa: E402
 from pydantic import BaseModel  # noqa: E402
 
-from . import agent, data, report, research, store, voice  # noqa: E402
+from . import agent, data, discover, report, research, store, voice  # noqa: E402
 
 app = FastAPI(title="Carbon Gap")
+
+
+@app.middleware("http")
+async def no_stale_frontend(request, call_next):
+    """The front-end changes often during the hackathon: never let browsers serve an old copy."""
+    response = await call_next(request)
+    if not request.url.path.startswith("/api/"):
+        response.headers["Cache-Control"] = "no-cache"
+    return response
 
 
 @app.get("/api/health")
@@ -34,6 +43,22 @@ def countries():
 @app.get("/api/companies")
 def companies():
     return {"carbon_price": data.CARBON_PRICE, "companies": data.companies()}
+
+
+class DiscoverIn(BaseModel):
+    name: str
+
+
+@app.post("/api/companies/discover")
+async def discover_company(body: DiscoverIn):
+    """Find any company: profile (OpenAI web search), Climate TRACE sites, reported Scope 1. Streams steps."""
+    async def events():
+        try:
+            async for ev in discover.discover(body.name.strip()[:120]):
+                yield f"data: {json.dumps(ev)}\n\n"
+        except Exception as e:
+            yield f"data: {json.dumps({'type': 'error', 'message': f'Discovery failed: {type(e).__name__}'})}\n\n"
+    return StreamingResponse(events(), media_type="text/event-stream")
 
 
 @app.post("/api/companies/{company_id}/research")
