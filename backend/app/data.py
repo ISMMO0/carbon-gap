@@ -91,7 +91,10 @@ def companies() -> list[dict]:
     out = []
     for c in merged.values():
         f = _company_findings.get(c["id"])
+        site_total = sum(a["observed"] for a in c["assets"]) or 0
+        shared = sum(a["observed"] for a in c["assets"] if a.get("shared_with")) / site_total if site_total else 0
         row = {**c, "observed_latest": c["observed"].get(latest), "observed_year": latest, "reported": None,
+               "shared_share": round(shared, 2),
                "research": {"status": f["status"], "notes": f.get("notes")} if f else None}
         if f and f.get("status") == "found" and f["scope1_mt"] < max(c["observed"].values() or [0]) / 3:
             row["research"] = {"status": "implausible", "notes": f"Reported {f['scope1_mt']} Mt is far below the tracked sites: "

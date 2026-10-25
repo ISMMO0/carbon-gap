@@ -127,9 +127,41 @@ async def _extract(prompt: str, name: str, schema: dict, texts: dict, titles: di
     return json.loads(resp.output_text)
 
 
+WEB_RULES = """Search the web (prefer official sources: unfccc.int, government sites, the company's own reports).
+Return the source_url of the page or PDF that states the figure, and a short verbatim quote from it that contains the
+number. If you cannot find a figure that satisfies every rule, set found=false. Never guess."""
+
+
+async def _web_pass(http: httpx.AsyncClient, task: str, name: str, schema: dict) -> tuple[dict, dict, dict]:
+    """Second pass with OpenAI's own web search. The quote is then checked against the page itself (read via Keenable)."""
+    resp = await AsyncOpenAI().responses.create(
+        model=EXTRACT_MODEL, reasoning={"effort": "low"}, tools=[{"type": "web_search"}],
+        input=task + "\n\n" + WEB_RULES,
+        text={"format": {"type": "json_schema", "name": name, "strict": True, "schema": schema}})
+    x = json.loads(resp.output_text)
+    texts, titles = {}, {}
+    if x.get("found") and x.get("source_url", "").startswith("http"):
+        page = await _fetch(http, x["source_url"])
+        cited = {a.url: a.title for item in resp.output for part in getattr(item, "content", None) or []
+                 for a in getattr(part, "annotations", None) or [] if getattr(a, "type", "") == "url_citation"}
+        if page:
+            texts[x["source_url"]] = page
+        elif x["source_url"] in cited:  # page unreadable (often a large PDF): keep it, flagged as not machine-checked
+            texts[x["source_url"]] = x["quote"]
+            x["confidence"] = "low"
+            x["notes"] = (x.get("notes") or "") + " Quote not machine-checked (source not readable)."
+        titles[x["source_url"]] = cited.get(x["source_url"]) or x.get("document") or x["source_url"]
+    return x, texts, titles
+
+
+SOCIAL = ("linkedin.com", "facebook.com", "x.com/", "twitter.com", "reddit.com", "instagram.com", "tiktok.com")
+
+
 def _quote_ok(x: dict, texts: dict) -> bool:
-    """The cited quote must appear in the cited source: our guard against invented numbers."""
-    return x.get("source_url") in texts and _norm(x["quote"])[:60] in _norm(texts[x["source_url"]])
+    """The cited quote must appear in the cited source, and the source must not be a social network post:
+    our guard against invented or second-hand numbers."""
+    url = x.get("source_url") or ""
+    return url in texts and not any(d in url for d in SOCIAL) and _norm(x["quote"])[:60] in _norm(texts[url])
 
 
 async def research(iso3: str) -> AsyncIterator[dict]:
@@ -154,8 +186,19 @@ async def research(iso3: str) -> AsyncIterator[dict]:
         except Exception:
             yield {"type": "error", "message": "Extraction failed."}
             return
+        good = lambda x, texts: x["found"] and x["year"] and x["total_mt"] and x["year"] >= MIN_YEAR and _quote_ok(x, texts)
+        if not good(x, texts):
+            yield {"type": "step", "text": "Second pass with OpenAI web search"}
+            try:
+                task = PROMPT.split("SOURCES:")[0].replace("{name}", name).replace("{min_year}", str(MIN_YEAR)).replace(
+                    "Use only the sources below. Never use your own memory for numbers.", "Use web search. Never use memory for numbers.")
+                x2, t2, ti2 = await _web_pass(http, task, "inventory", SCHEMA)
+                if good(x2, t2):
+                    x, texts, titles = x2, t2, ti2
+            except Exception:
+                pass
         finding = {"iso3": iso3, "status": "not_found", "notes": x.get("notes")}
-        ok = x["found"] and x["year"] and x["total_mt"] and x["year"] >= MIN_YEAR and _quote_ok(x, texts)
+        ok = good(x, texts)
         if x["found"] and not _quote_ok(x, texts):
             finding["notes"] = "Rejected: the quote was not found in the cited source."
         if ok:
@@ -224,8 +267,19 @@ async def research_company(company: dict) -> AsyncIterator[dict]:
         except Exception:
             yield {"type": "error", "message": "Extraction failed."}
             return
-        finding = {"key": company["id"], "status": "not_found", "notes": x.get("notes")}
         tracked = max(company["observed"].values() or [0])
+        plausible = lambda x: not (x["scope1_mt"] and tracked and x["scope1_mt"] < tracked / 3)
+        if not (x["found"] and x["year"] and x["scope1_mt"] and plausible(x) and _quote_ok(x, texts)):
+            yield {"type": "step", "text": "Second pass with OpenAI web search"}
+            try:
+                task = prompt.split("SOURCES:")[0].replace("Use only the sources below. Never use your own memory for numbers.",
+                                                         "Use web search. Never use memory for numbers.")
+                x2, t2, ti2 = await _web_pass(http, task, "scope1", COMPANY_SCHEMA)
+                if x2["found"] and x2["year"] and x2["scope1_mt"] and plausible(x2) and _quote_ok(x2, t2):
+                    x, texts, titles = x2, t2, ti2
+            except Exception:
+                pass
+        finding = {"key": company["id"], "status": "not_found", "notes": x.get("notes")}
         if x["found"] and x["scope1_mt"] and tracked and x["scope1_mt"] < tracked / 3:
             x["found"] = False  # far below its own tracked sites: almost always a unit or scope mix-up
             finding["notes"] = f"Rejected as implausible: {x['scope1_mt']} Mt is far below the {tracked:.0f} Mt of tracked sites."

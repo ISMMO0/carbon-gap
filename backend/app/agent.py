@@ -4,6 +4,7 @@ Data tools run on the server. Map tools are forwarded to the browser as
 `action` events (the map moves while the model keeps talking)."""
 import asyncio
 import json
+import os
 from collections.abc import Iterator
 
 from openai import OpenAI
@@ -11,7 +12,8 @@ from openai import OpenAI
 from . import data
 
 MODEL = "gpt-5.5"
-client = OpenAI()
+# Created even without a key so the app and its data views start; AI features then report a clear error.
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY") or "missing-key")
 
 INSTRUCTIONS = f"""You are the analyst inside Carbon Gap, a tool for climate journalists and NGOs.
 Carbon Gap compares what countries DECLARE to the UN (UNFCCC national inventories, total GHG excluding land use)
