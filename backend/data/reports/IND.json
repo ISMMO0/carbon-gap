@@ -1,0 +1,236 @@
+{
+ "headline": "India’s 2016 emissions gap is concentrated outside power and heavy industry.",
+ "summary": "India’s 2016 declared emissions were 2839.4 MtCO2e, while the observed estimate is 3089.9 MtCO2e, leaving a 250.4 MtCO2e gap, or 8.8%. At a carbon price of €72.0 per tonne, that gap is valued at €18032112000. The largest absolute discrepancies are in Agriculture and Waste, not Energy & industry.\n\nThe lead matters now because observed emissions reached 4165.367 MtCO2e in 2024, while India is simultaneously expanding clean-energy policy, defending development needs, and remaining highly dependent on coal-fired electricity. Recent policy context includes India’s net-zero-by-2070 framing and updated NDC language, continued renewable buildout, and a power system in which coal remains central to reliability and demand growth. ([unfccc.int](https://www.unfccc.int/sites/default/files/2026-04/INDIA%20NDC%202031-35.pdf?utm_source=openai))",
+ "findings": [
+  "The national gap is 250.4 MtCO2e: declared 2839.4 MtCO2e versus observed 3089.9 MtCO2e for inventory year 2016.",
+  "Agriculture is the standout lead: declared 407.97 MtCO2e versus observed 579.102 MtCO2e, a difference of 171.132 MtCO2e.",
+  "Waste is proportionally important: declared 75.34 MtCO2e versus observed 123.926 MtCO2e, a difference of 48.586 MtCO2e.",
+  "Energy & industry shows a much smaller difference: declared 2356.11 MtCO2e versus observed 2386.838 MtCO2e, a difference of 30.728 MtCO2e, despite power and manufacturing dominating observed sector totals."
+ ],
+ "sectors": [
+  {
+   "group": "Energy & industry",
+   "note": "Observed sector detail points to large 2016 emissions in power at 1078.615 MtCO2e, manufacturing at 629.26 MtCO2e, buildings at 242.234 MtCO2e, fossil-fuel operations at 222.233 MtCO2e, transportation at 158.583 MtCO2e, fluorinated gases at 51.517 MtCO2e, and mineral extraction at 4.396 MtCO2e. The small aggregate gap could reflect relatively mature fuel-use accounting, but site-level coal assets remain important for attribution and trend checks."
+  },
+  {
+   "group": "Agriculture",
+   "note": "The observed estimate is 579.102 MtCO2e against 407.97 MtCO2e declared. This is the main investigation lead. Plausible methodological causes include different methane and nitrous oxide emission factors, livestock population assumptions, rice-cultivation treatment, manure management assumptions, and differences between production statistics and atmospheric or model-based estimates."
+  },
+  {
+   "group": "Waste",
+   "note": "The observed estimate is 123.926 MtCO2e against 75.34 MtCO2e declared. Plausible causes include landfill methane modelling, informal dumping, wastewater assumptions, urbanization data, open burning, waste composition, and oxidation or methane-capture assumptions. This is a lead for methods review, not evidence of misreporting."
+  }
+ ],
+ "sites_to_investigate": [
+  {
+   "name": "India_OtherBasins_OtherResources",
+   "owner": "unknown",
+   "why": "Largest listed 2024 observed site at 44.253 MtCO2e, categorized as oil with low confidence. Because ownership and confidence are weak, this is a priority for source-tracing: basin boundaries, operator identity, flaring or venting assumptions, and whether emissions are allocated correctly."
+  },
+  {
+   "name": "Vindhyachal power station",
+   "owner": "NTPC Ltd",
+   "why": "Large high-confidence power source at 36.247 MtCO2e in 2024. It matters because coal power remains central to India’s electricity system, and NTPC assets can be cross-checked against plant generation, coal quality, heat-rate assumptions, and official environmental filings. ([iea.blob.core.windows.net](https://iea.blob.core.windows.net/assets/6b1447c8-1dee-41da-ab6b-5e87ae015351/Electricity2025.pdf?utm_source=openai))"
+  },
+  {
+   "name": "Sasan Ultra Mega Power Project",
+   "owner": "Reliance Power Ltd",
+   "why": "High-confidence 2024 emissions of 29.137 MtCO2e. As a large coal project, it is useful for testing whether observed emissions align with generation, captive-mine supply, coal characteristics, and plant operating factors."
+  },
+  {
+   "name": "Mundra Thermal Power Project (Adani)",
+   "owner": "Adani Power Ltd",
+   "why": "High-confidence 2024 emissions of 26.444 MtCO2e. The Mundra cluster is important for checking imported or domestic coal assumptions, dispatch changes, coastal plant operations, and corporate reporting consistency."
+  },
+  {
+   "name": "Anpara power station",
+   "owner": "U.P. Rajya Vidyut Utpadan Nigam Ltd",
+   "why": "High-confidence 2024 emissions of 25.769 MtCO2e. As a state-owned utility plant, it is a useful contrast with central and private operators when comparing fuel-use data, plant age, efficiency, and state-level electricity-demand pressures."
+  }
+ ],
+ "next_steps": [
+  "Obtain India’s 2016 inventory methodology tables and compare emission factors, activity data, and category boundaries against the observed model, especially for agriculture and waste.",
+  "For the selected coal sites, build a plant file with generation, coal consumption, coal grade, operating status, and stack or satellite observations, then test whether differences come from utilization or emissions-factor assumptions.",
+  "Interview inventory compilers, agricultural statisticians, municipal-waste experts, and methane researchers to identify where data gaps are most likely: livestock, rice, landfill methane, wastewater, open burning, and informal waste handling."
+ ],
+ "caveats": [
+  "A gap is an investigative lead, not proof of misreporting. Declared inventories and observed estimates can differ because they use different boundaries, gases, emission factors, activity data, time alignment, and uncertainty treatment.",
+  "The inventory year is 2016, while listed site emissions are for 2024. Site choices help current reporting and accountability, but they do not by themselves explain the 2016 national gap.",
+  "Only the provided dataset is used for emissions numbers here; recent web context is used only to frame policy and energy-system relevance."
+ ],
+ "briefing": "India’s 2016 emissions gap is 250.4 MtCO2e, or 8.8%, with declared emissions of 2839.4 MtCO2e and an observed estimate of 3089.9 MtCO2e. The strongest lead is not coal power, but agriculture, followed by waste. Energy and industry show only a 30.728 MtCO2e difference, even though power and manufacturing dominate observed emissions. Journalists should treat this as a methods investigation, not an allegation. The key questions are whether methane and nitrous oxide assumptions, livestock and rice data, landfill methane, wastewater, and informal waste are being counted in the same way. Current coal assets still matter because observed emissions reached 4165.367 MtCO2e in 2024 and India’s power system remains heavily coal-dependent while clean-energy policy expands.",
+ "sources": [
+  {
+   "title": "Microsoft Word - INDIA NDC 2031-35 V 8 Approved",
+   "url": "https://www.unfccc.int/sites/default/files/2026-04/INDIA%20NDC%202031-35.pdf?utm_source=openai"
+  },
+  {
+   "title": "Electricity 2025",
+   "url": "https://iea.blob.core.windows.net/assets/6b1447c8-1dee-41da-ab6b-5e87ae015351/Electricity2025.pdf?utm_source=openai"
+  }
+ ],
+ "data": {
+  "country": "India",
+  "iso3": "IND",
+  "inventory_year": 2016,
+  "declared_source": "UNFCCC non-Annex I",
+  "declared_Mt": 2839.4,
+  "observed_Mt": 3089.9,
+  "gap_Mt": 250.4,
+  "gap_pct": 8.8,
+  "gap_value_eur": 18032112000,
+  "carbon_price_eur_per_t": 72.0,
+  "by_group": {
+   "Energy & industry": {
+    "declared": 2356.11,
+    "observed": 2386.838
+   },
+   "Agriculture": {
+    "declared": 407.97,
+    "observed": 579.102
+   },
+   "Waste": {
+    "declared": 75.34,
+    "observed": 123.926
+   }
+  },
+  "observed_by_sector_Mt": {
+   "power": 1078.615,
+   "transportation": 158.583,
+   "buildings": 242.234,
+   "fossil-fuel-operations": 222.233,
+   "manufacturing": 629.26,
+   "mineral-extraction": 4.396,
+   "fluorinated-gases": 51.517,
+   "agriculture": 579.102,
+   "waste": 123.926
+  },
+  "observed_latest": {
+   "year": 2024,
+   "total": 4165.367
+  }
+ },
+ "sites": [
+  {
+   "id": "60952083",
+   "name": "India_OtherBasins_OtherResources",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-production",
+   "type": "",
+   "observed": 44.253,
+   "confidence": "low",
+   "coord": [
+    80.336375,
+    20.746132
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25451489",
+   "name": "Vindhyachal power station",
+   "owner": "NTPC Ltd",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 36.247,
+   "confidence": "high",
+   "coord": [
+    82.6719,
+    24.0983
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25453691",
+   "name": "Sasan Ultra Mega Power Project",
+   "owner": "Reliance Power Ltd",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 29.137,
+   "confidence": "high",
+   "coord": [
+    82.6265,
+    23.9775
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25453453",
+   "name": "Mundra Thermal Power Project (Adani)",
+   "owner": "Adani Power Ltd",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 26.444,
+   "confidence": "high",
+   "coord": [
+    69.5535,
+    22.8235
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25452419",
+   "name": "Anpara power station",
+   "owner": "U.P. Rajya Vidyut Utpadan Nigam Ltd",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 25.769,
+   "confidence": "high",
+   "coord": [
+    82.7883,
+    24.2031
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25453047",
+   "name": "Tamnar power station",
+   "owner": "Jindal Steel Ltd",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 24.736,
+   "confidence": "high",
+   "coord": [
+    83.4513,
+    22.0987
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25451483",
+   "name": "Ramagundam power station",
+   "owner": "NTPC Ltd",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 23.765,
+   "confidence": "high",
+   "coord": [
+    79.4601,
+    18.7565
+   ],
+   "year": 2024
+  },
+  {
+   "id": "448682",
+   "name": "Rihand power station",
+   "owner": "NTPC Ltd",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal, oil",
+   "observed": 22.514,
+   "confidence": "high",
+   "coord": [
+    82.7915,
+    24.027
+   ],
+   "year": 2024
+  }
+ ],
+ "iso3": "IND"
+}

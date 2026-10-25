@@ -1,0 +1,259 @@
+{
+ "headline": "China’s 2021 emissions gap is a major investigative lead.",
+ "summary": "China’s declared 2021 emissions were 14314.0 MtCO2e excluding LULUCF, while the observed estimate supplied here is 16405.8 MtCO2e. The gap is 2091.8 MtCO2e, or 14.6%, with an indicative carbon value of €150608952000 at €72.0 per tonne.\n\nThis is not proof of misreporting. It is a lead for journalists and NGOs to test against inventory boundaries, sector definitions, emission factors, facility attribution, and timing differences. Recent context matters: China’s first Biennial Transparency Report was released under the Paris Agreement transparency framework, coal remains central to energy security, renewables are expanding quickly, and the national carbon market is being widened to heavy industry. ([unfccc.int](https://unfccc.int/sites/default/files/resource/The%20People%E2%80%99s%20Republic%20of%20China%20First%20Biennial%20Transparency%20Report%20on%20Climate%20Change.pdf?utm_source=openai))",
+ "findings": [
+  "The largest supplied sectoral pressure point is Energy & industry, with observed emissions of 15478.335 MtCO2e, far above Agriculture at 544.948 MtCO2e and Waste at 382.508 MtCO2e.",
+  "Within observed 2021 sectors, the biggest components are power at 6002.882 MtCO2e, manufacturing at 5003.088 MtCO2e, fossil-fuel operations at 2131.59 MtCO2e, and transportation at 1104.741 MtCO2e.",
+  "The observed latest total for 2024 is 17240.664 MtCO2e, suggesting the investigation should not stop at the 2021 inventory year but should test whether the same boundary questions persist in newer data.",
+  "China’s carbon-market expansion to steel, cement, and aluminium makes heavy-industry facility data especially newsworthy, because these sectors are moving deeper into compliance and allocation systems. ([english.www.gov.cn](https://english.www.gov.cn/news/202511/24/content_WS6924244bc6d00ca5f9a07c81.html?utm_source=openai))"
+ ],
+ "sectors": [
+  {
+   "group": "Power",
+   "note": "Observed 2021 emissions are 6002.882 MtCO2e. This is the largest named sector in the supplied data and should be checked against coal-plant generation, heat rates, captive power, grid dispatch, and whether facility-level power emissions are allocated to power producers or consuming industries."
+  },
+  {
+   "group": "Manufacturing",
+   "note": "Observed 2021 emissions are 5003.088 MtCO2e. Steel, cement, aluminium, and other heavy industrial processes can create boundary problems between fuel combustion, process CO2, purchased electricity, and captive generation."
+  },
+  {
+   "group": "Fossil-fuel operations",
+   "note": "Observed 2021 emissions are 2131.59 MtCO2e. Investigators should test methane assumptions, coal mining and oil-and-gas fugitive emissions, oxidation factors, and whether basin-level estimates are being compared with inventory categories on the same basis."
+  },
+  {
+   "group": "Agriculture and waste",
+   "note": "Observed 2021 emissions are 544.948 MtCO2e for agriculture and 382.508 MtCO2e for waste. These are smaller than energy and industry but are methodologically sensitive to methane, nitrous oxide, landfill assumptions, wastewater treatment, and livestock or rice-cultivation activity data."
+  }
+ ],
+ "sites_to_investigate": [
+  {
+   "name": "China_OtherBasins_OtherResources",
+   "owner": "Unknown",
+   "why": "It is the largest supplied 2024 site estimate at 106.81 MtCO2e and has low confidence. That combination makes it a priority for verification, not accusation: the first question is whether this is a real operational cluster, an aggregated basin category, or an attribution artifact."
+  },
+  {
+   "name": "Angang Steel Co Ltd",
+   "owner": "Angang Steel Co Ltd",
+   "why": "At 37.194 MtCO2e with medium confidence, it is the largest named steel source in the supplied list. Steel is directly relevant because China is expanding carbon-market coverage for heavy industry, so facility boundaries, blast-furnace activity, power sourcing, and process-emissions accounting are all worth checking. ([english.www.gov.cn](https://english.www.gov.cn/news/202511/24/content_WS6924244bc6d00ca5f9a07c81.html?utm_source=openai))"
+  },
+  {
+   "name": "Inner Mongolia BaoTou Steel Union Co Ltd",
+   "owner": "Inner Mongolia BaoTou Steel Union Co Ltd",
+   "why": "At 30.252 MtCO2e with medium confidence, it is a major steel emitter in a coal- and heavy-industry region. It is useful for testing whether observed facility estimates align with production, fuel consumption, and provincial reporting."
+  },
+  {
+   "name": "Togtoh power station",
+   "owner": "INNER MONGOLIA Datang International Tuoketuo POWER Genration Co Ltd",
+   "why": "At 28.91 MtCO2e with medium confidence, it is a large power-sector source. Power is the largest observed sector in the supplied data, and recent energy reporting says China is adding clean generation while still relying heavily on coal, making large coal plants central to the gap story. ([ember-energy.org](https://ember-energy.org/latest-insights/global-electricity-review-2025/major-countries-and-regions/?utm_source=openai))"
+  },
+  {
+   "name": "East Hope Metals Wucaiwan power station",
+   "owner": "Xinjiang East Hope Nonferrous Metals Co Ltd",
+   "why": "At 23.838 MtCO2e with medium confidence, it may connect captive power with metals production. Captive or self-supplied electricity can blur boundaries between power, manufacturing, and industrial-process emissions."
+  }
+ ],
+ "next_steps": [
+  "Obtain the official Chinese BTR tables and annexes from the UNFCCC record, then map each observed sector to the exact IPCC inventory categories used in the declaration before comparing totals. ([unfccc.int](https://unfccc.int/sites/default/files/resource/The%20People%E2%80%99s%20Republic%20of%20China%20First%20Biennial%20Transparency%20Report%20on%20Climate%20Change.pdf?utm_source=openai))",
+  "For the selected sites, request or compile plant-level production, fuel-use, power-generation, and ETS compliance records; compare ownership names, coordinates, and whether emissions are direct, indirect, or basin-aggregated.",
+  "Interview inventory specialists about plausible causes of the 2091.8 MtCO2e gap, especially LULUCF exclusion, AR4/AR5/AR6 global-warming-potential choices, oxidation factors, methane treatment, captive power, facility-to-sector allocation, and observed-data uncertainty."
+ ],
+ "caveats": [
+  "The declared figure is marked in the supplied data as medium confidence and not independently verified by the research agent; the official UNFCCC document should be treated as the primary source for the declaration.",
+  "Observed data may use different sector boundaries, emission factors, global-warming potentials, facility attribution methods, or calendar-year/activity datasets than the national inventory.",
+  "A gap is an investigative lead, never proof of misreporting; it can arise from legitimate methodological differences as well as errors in either declared or observed estimates."
+ ],
+ "briefing": "China’s supplied 2021 inventory figure is 14314.0 MtCO2e, while the observed estimate is 16405.8 MtCO2e, leaving a gap of 2091.8 MtCO2e. The largest pressure points are power, manufacturing, and fossil-fuel operations. This should be investigated carefully, not framed as proof of misreporting. The key questions are whether the inventory and observed datasets use the same boundaries, warming potentials, methane methods, and facility allocations. Priority site leads include a low-confidence basin-level oil category, major steel companies, and large coal-power assets, especially as China expands carbon-market coverage into heavy industry.",
+ "sources": [
+  {
+   "title": "The People’s Republic of China First Biennial Transparency Report on Climate Change",
+   "url": "https://unfccc.int/sites/default/files/resource/The%20People%E2%80%99s%20Republic%20of%20China%20First%20Biennial%20Transparency%20Report%20on%20Climate%20Change.pdf?utm_source=openai"
+  },
+  {
+   "title": "China aims to cover key industrial emitters in carbon market by 2027",
+   "url": "https://english.www.gov.cn/news/202511/24/content_WS6924244bc6d00ca5f9a07c81.html?utm_source=openai"
+  },
+  {
+   "title": "China aims to cover key industrial emitters in carbon market by 2027",
+   "url": "https://english.www.gov.cn/news/202511/24/content_WS6924244bc6d00ca5f9a07c81.html?utm_source=openai"
+  },
+  {
+   "title": "Global Electricity Review 2025 | Ember",
+   "url": "https://ember-energy.org/latest-insights/global-electricity-review-2025/major-countries-and-regions/?utm_source=openai"
+  },
+  {
+   "title": "The People’s Republic of China First Biennial Transparency Report on Climate Change",
+   "url": "https://unfccc.int/sites/default/files/resource/The%20People%E2%80%99s%20Republic%20of%20China%20First%20Biennial%20Transparency%20Report%20on%20Climate%20Change.pdf?utm_source=openai"
+  }
+ ],
+ "data": {
+  "country": "China",
+  "iso3": "CHN",
+  "inventory_year": 2021,
+  "declared_source": "Found by agent: The People’s Republic of China’s First Biennial Transparency Report on Climate Change",
+  "declared_Mt": 14314.0,
+  "observed_Mt": 16405.8,
+  "gap_Mt": 2091.8,
+  "gap_pct": 14.6,
+  "gap_value_eur": 150608952000,
+  "carbon_price_eur_per_t": 72.0,
+  "by_group": {
+   "Energy & industry": {
+    "declared": null,
+    "observed": 15478.335
+   },
+   "Agriculture": {
+    "declared": null,
+    "observed": 544.948
+   },
+   "Waste": {
+    "declared": null,
+    "observed": 382.508
+   }
+  },
+  "observed_by_sector_Mt": {
+   "power": 6002.882,
+   "waste": 382.508,
+   "buildings": 700.727,
+   "agriculture": 544.948,
+   "manufacturing": 5003.088,
+   "transportation": 1104.741,
+   "fluorinated-gases": 500.454,
+   "mineral-extraction": 34.854,
+   "fossil-fuel-operations": 2131.59
+  },
+  "observed_latest": {
+   "year": 2024,
+   "total": 17240.664
+  },
+  "declaration_found_by_research_agent": {
+   "document": "The People’s Republic of China’s First Biennial Transparency Report on Climate Change",
+   "source_url": "https://policycn.com/public/commentaries/the-prc-s-first-biennial-climate-change-transparency-report-45253",
+   "quote": "excluding LULUCF, total emissions were about 14.314 bn tonnes of CO2 equivalent, an increase of 4 percent y-o-y",
+   "confidence": "medium",
+   "verified": false
+  }
+ },
+ "sites": [
+  {
+   "id": "60951996",
+   "name": "China_OtherBasins_OtherResources",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-production",
+   "type": "",
+   "observed": 106.81,
+   "confidence": "low",
+   "coord": [
+    105.62589,
+    32.826526
+   ],
+   "year": 2024
+  },
+  {
+   "id": "1566610",
+   "name": "Angang Steel Co Ltd",
+   "owner": "Angang Steel Co Ltd",
+   "kind": "steel",
+   "sector": "iron-and-steel",
+   "type": "BF/BOF",
+   "observed": 37.194,
+   "confidence": "medium",
+   "coord": [
+    122.981078374674,
+    41.1392046339499
+   ],
+   "year": 2024
+  },
+  {
+   "id": "1567260",
+   "name": "Inner Mongolia BaoTou Steel Union Co Ltd",
+   "owner": "Inner Mongolia BaoTou Steel Union Co Ltd",
+   "kind": "steel",
+   "sector": "iron-and-steel",
+   "type": "BF/BOF",
+   "observed": 30.252,
+   "confidence": "medium",
+   "coord": [
+    109.736137308756,
+    40.6402765541958
+   ],
+   "year": 2024
+  },
+  {
+   "id": "38089178",
+   "name": "Maanshan Iron and Steel Co Ltd",
+   "owner": "Maanshan Iron & Steel Co Ltd",
+   "kind": "steel",
+   "sector": "iron-and-steel",
+   "type": "EAF,BF/BOF",
+   "observed": 29.359,
+   "confidence": "medium",
+   "coord": [
+    118.472269928503,
+    31.7031920212503
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25451405",
+   "name": "Togtoh power station",
+   "owner": "INNER MONGOLIA Datang International Tuoketuo POWER Genration Co Ltd",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 28.91,
+   "confidence": "medium",
+   "coord": [
+    111.3589,
+    40.1952
+   ],
+   "year": 2024
+  },
+  {
+   "id": "1566560",
+   "name": "Wuhan Iron and Steel Co Ltd",
+   "owner": "Wuhan Iron and Steel Co Ltd",
+   "kind": "steel",
+   "sector": "iron-and-steel",
+   "type": "BF/BOF",
+   "observed": 26.018,
+   "confidence": "medium",
+   "coord": [
+    114.448152348092,
+    30.6269888930925
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25453357",
+   "name": "Changshu-2 power station",
+   "owner": "China Resources Electric Power (Changshu) Co Ltd",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 25.516,
+   "confidence": "medium",
+   "coord": [
+    120.9731,
+    31.7566
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25452549",
+   "name": "Jiaxing power station",
+   "owner": "Zhejiang Zheneng Jiahua Power Generator Co Ltd",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 24.669,
+   "confidence": "medium",
+   "coord": [
+    121.1442,
+    30.628
+   ],
+   "year": 2024
+  }
+ ],
+ "iso3": "CHN"
+}

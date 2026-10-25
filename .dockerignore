@@ -1,0 +1,9 @@
+.git
+**/.venv
+**/__pycache__
+backend/.env
+backend/data/raw
+video
+docs
+*.mp4
+*.wav

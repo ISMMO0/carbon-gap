@@ -1,0 +1,244 @@
+{
+ "headline": "Germany’s 2021 emissions gap was 80.5 MtCO2e, led by non-energy sectors.",
+ "summary": "Germany’s declared 2021 emissions were 760.4 MtCO2e, while observed emissions were 840.8 MtCO2e, leaving an 80.5 MtCO2e gap, or 10.6%. At the supplied carbon price, that gap has an indicative value of €5,793,840,000. This is an investigation lead, not proof of misreporting.\n\nRecent context strengthens the case for scrutiny without implying wrongdoing: Germany has been cutting coal generation, expanding renewables, and managing coal phase-out rules, while transport and buildings remain recurring policy concerns. Official and institutional sources also point to continuing coal-exit implementation by operators and regulators, with power-sector changes shaped by renewables growth, lignite closures, and market-security decisions. ([bundesnetzagentur.de](https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/EN/2024/20240902_Kohle.html?utm_source=openai))",
+ "findings": [
+  "The headline gap is 80.5 MtCO2e: declared emissions of 760.4 MtCO2e versus observed emissions of 840.8 MtCO2e in 2021.",
+  "Energy & industry accounts for the largest absolute observed emissions in the supplied grouping, but agriculture and waste show the sharpest proportional-looking discrepancies: Agriculture is 56.33 declared versus 84.538 observed, and Waste is 4.49 declared versus 17.112 observed.",
+  "Observed 2021 sector hotspots include power at 258.829 MtCO2e, manufacturing at 156.134 MtCO2e, buildings at 134.315 MtCO2e, transportation at 132.693 MtCO2e, and agriculture at 84.538 MtCO2e.",
+  "Observed latest total emissions in the supplied dataset fall to 737.723 MtCO2e in 2024, but this does not resolve the 2021 accounting gap; it only changes the current-priority context."
+ ],
+ "sectors": [
+  {
+   "group": "Energy & industry",
+   "note": "Declared 699.53 MtCO2e versus observed 739.18 MtCO2e. Plausible causes include facility-boundary differences, treatment of industrial process emissions, fuel-use allocation between power and manufacturing, and timing differences between inventories and observation models."
+  },
+  {
+   "group": "Agriculture",
+   "note": "Declared 56.33 MtCO2e versus observed 84.538 MtCO2e. Plausible causes include methane and nitrous oxide estimation methods, livestock and manure factors, soil-emissions modelling, and whether observed estimates capture diffuse rural sources differently from inventory categories."
+  },
+  {
+   "group": "Waste",
+   "note": "Declared 4.49 MtCO2e versus observed 17.112 MtCO2e. Plausible causes include landfill methane modelling assumptions, wastewater coverage, legacy-site emissions, oxidation factors, and the difficulty of attributing diffuse methane plumes to formal waste categories."
+  },
+  {
+   "group": "Cross-cutting sectors",
+   "note": "Power, manufacturing, buildings, transportation, fossil-fuel operations, fluorinated gases, mineral extraction, agriculture, and waste should be checked for classification differences before alleging under-reporting. A gap can arise from scope, activity data, emission factors, temporal alignment, or observation-model uncertainty."
+  }
+ ],
+ "sites_to_investigate": [
+  {
+   "name": "ThyssenKrupp Steel Duisburg steel plant",
+   "owner": "Thyssenkrupp Steel Europe AG",
+   "why": "Largest supplied observed site at 15.213 MtCO2e in 2024, with medium confidence. It matters because steel can involve both combustion and process emissions, making boundary and method checks especially important."
+  },
+  {
+   "name": "Boxberg power station",
+   "owner": "Lausitz Energie Kraftwerke AG",
+   "why": "High-confidence observed power-site emissions of 13.13 MtCO2e in 2024. It matters because lignite and coal-plant operations sit directly inside Germany’s coal phase-out and energy-security debate. ([bundesnetzagentur.de](https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/EN/2024/20240902_Kohle.html?utm_source=openai))"
+  },
+  {
+   "name": "Janschwalde power station",
+   "owner": "Lausitz Energie Kraftwerke AG",
+   "why": "High-confidence observed emissions of 10.658 MtCO2e in 2024. Together with Boxberg and Schwarze Pumpe, it allows journalists to examine whether LEAG-linked lignite assets are consistently represented across observed data, EU ETS reporting, and national inventory categories."
+  },
+  {
+   "name": "Niederaussem power station",
+   "owner": "RWE Power AG",
+   "why": "High-confidence observed emissions of 10.222 MtCO2e in 2024. RWE’s lignite fleet is central to early coal-exit implementation and decommissioning claims, making it a key test case for reconciling plant-level, company-level, and inventory figures. ([rwe.com](https://www.rwe.com/en/press/rwe-power/2024-03-26-rwe-power-permanently-shuts-down-a-further-five-power-plant-units/?utm_source=openai))"
+  },
+  {
+   "name": "Salzgitter Flachstahl steel plant",
+   "owner": "Salzgitter Flachstahl GmbH",
+   "why": "Medium-confidence observed emissions of 8.456 MtCO2e in 2024. It provides a second steel benchmark beyond Duisburg, useful for checking whether the observed-versus-declared gap is concentrated in iron and steel methodology rather than only in power generation."
+  }
+ ],
+ "next_steps": [
+  "Reconcile the supplied 2021 observed sector totals against Germany’s UNFCCC Annex I inventory categories, documenting every boundary difference before publishing any allegation.",
+  "For the selected sites, compare observed 2024 site estimates with operator disclosures, EU ETS installation data, shutdown or reserve-status records, and local permitting files.",
+  "Interview inventory compilers, satellite/model providers, plant operators, and methane specialists on agriculture and waste methods, especially where diffuse sources may be assigned differently."
+ ],
+ "caveats": [
+  "This dossier uses the supplied emissions figures only; web research is used only for recent policy and energy-context framing.",
+  "An emissions gap is a lead for investigation, not evidence of misreporting. Differences may arise from scope, sector mapping, temporal coverage, emission factors, model uncertainty, or facility-boundary definitions.",
+  "Site-level confidence varies: several steel sites are marked medium confidence, so they require stronger corroboration before being framed as specific discrepancies."
+ ],
+ "briefing": "Germany’s 2021 emissions gap is a substantial lead: declared emissions were 760.4 MtCO2e, while observed emissions were 840.8 MtCO2e, leaving an 80.5 MtCO2e gap. The biggest observed sectors are power, manufacturing, buildings, transport, and agriculture. The most interesting investigative angle may not be power alone, because agriculture and waste show notable declared-versus-observed differences. Recent policy context points to coal phase-out, renewables growth, and persistent pressure in transport and buildings. Journalists should treat this as an accounting and methods investigation, not proof of misreporting.",
+ "sources": [
+  {
+   "title": "Bundesnetzagentur - Press - Coal phase-out – no coal-fired operation bans necessary for 2027 for first time",
+   "url": "https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/EN/2024/20240902_Kohle.html?utm_source=openai"
+  },
+  {
+   "title": "Bundesnetzagentur - Press - Coal phase-out – no coal-fired operation bans necessary for 2027 for first time",
+   "url": "https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/EN/2024/20240902_Kohle.html?utm_source=openai"
+  },
+  {
+   "title": "RWE Power permanently shuts down a further five power plant units and continues to implement coal phase-out",
+   "url": "https://www.rwe.com/en/press/rwe-power/2024-03-26-rwe-power-permanently-shuts-down-a-further-five-power-plant-units/?utm_source=openai"
+  }
+ ],
+ "data": {
+  "country": "Germany",
+  "iso3": "DEU",
+  "inventory_year": 2021,
+  "declared_source": "UNFCCC Annex I",
+  "declared_Mt": 760.4,
+  "observed_Mt": 840.8,
+  "gap_Mt": 80.5,
+  "gap_pct": 10.6,
+  "gap_value_eur": 5793840000,
+  "carbon_price_eur_per_t": 72.0,
+  "by_group": {
+   "Energy & industry": {
+    "declared": 699.53,
+    "observed": 739.18
+   },
+   "Agriculture": {
+    "declared": 56.33,
+    "observed": 84.538
+   },
+   "Waste": {
+    "declared": 4.49,
+    "observed": 17.112
+   }
+  },
+  "observed_by_sector_Mt": {
+   "power": 258.829,
+   "transportation": 132.693,
+   "buildings": 134.315,
+   "fossil-fuel-operations": 43.24,
+   "manufacturing": 156.134,
+   "mineral-extraction": 0.654,
+   "fluorinated-gases": 13.315,
+   "agriculture": 84.538,
+   "waste": 17.112
+  },
+  "observed_latest": {
+   "year": 2024,
+   "total": 737.723
+  }
+ },
+ "sites": [
+  {
+   "id": "1566771",
+   "name": "ThyssenKrupp Steel Duisburg steel plant",
+   "owner": "Thyssenkrupp Steel Europe AG",
+   "kind": "steel",
+   "sector": "iron-and-steel",
+   "type": "BF/BOF",
+   "observed": 15.213,
+   "confidence": "medium",
+   "coord": [
+    6.72618872977656,
+    51.492850088943
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25452444",
+   "name": "Boxberg power station",
+   "owner": "Lausitz Energie Kraftwerke AG",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 13.13,
+   "confidence": "high",
+   "coord": [
+    14.5703,
+    51.4205
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25452445",
+   "name": "Janschwalde power station",
+   "owner": "Lausitz Energie Kraftwerke AG",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 10.658,
+   "confidence": "high",
+   "coord": [
+    14.4578,
+    51.8357
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25451940",
+   "name": "Niederaussem power station",
+   "owner": "RWE Power AG",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 10.222,
+   "confidence": "high",
+   "coord": [
+    6.6675,
+    50.994
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25451941",
+   "name": "Weisweiler power station",
+   "owner": "RWE Power AG",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal, gas",
+   "observed": 9.147,
+   "confidence": "high",
+   "coord": [
+    6.3224,
+    50.8396
+   ],
+   "year": 2024
+  },
+  {
+   "id": "1566774",
+   "name": "Salzgitter Flachstahl steel plant",
+   "owner": "Salzgitter Flachstahl GmbH",
+   "kind": "steel",
+   "sector": "iron-and-steel",
+   "type": "BF/BOF",
+   "observed": 8.456,
+   "confidence": "medium",
+   "coord": [
+    10.4070470335969,
+    52.1592527001596
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25452447",
+   "name": "Schwarze Pumpe power station",
+   "owner": "Lausitz Energie Kraftwerke AG",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 7.378,
+   "confidence": "high",
+   "coord": [
+    14.3535,
+    51.5379
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25451939",
+   "name": "Neurath power station",
+   "owner": "RWE Power AG",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 7.086,
+   "confidence": "medium",
+   "coord": [
+    6.633,
+    51.0358
+   ],
+   "year": 2024
+  }
+ ],
+ "iso3": "DEU"
+}

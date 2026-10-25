@@ -368,6 +368,7 @@ async function runResearch(iso) {
   } catch { step('The research agent is unreachable.'); }
 }
 async function readSSE(res, onEvent) {
+  if (res.status === 429) { const m = (await res.json().catch(() => ({}))).detail || 'Demo limit reached.'; toast(m); onEvent({type: 'error', message: m}); return; }
   if (!res.ok || !res.body) throw new Error('http');
   const reader = res.body.getReader(), dec = new TextDecoder(); let buf = '';
   for (;;) {

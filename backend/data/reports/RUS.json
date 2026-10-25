@@ -1,0 +1,244 @@
+{
+ "headline": "Russia’s 2021 emissions gap is concentrated in energy and industry.",
+ "summary": "For 2021, Russia declared 2156.6 MtCO2e to the UNFCCC Annex I inventory, while the observed estimate supplied here is 2909.1 MtCO2e. The resulting gap is 752.5 MtCO2e, or 34.9%, with an indicative carbon-price value of €54178344000 at €72.0 per tonne.\n\nThis is an investigation lead, not proof of misreporting. The gap is overwhelmingly in Energy & industry: declared 1938.62 MtCO2e versus observed 2661.253 MtCO2e. Recent context points journalists toward fossil-fuel operations, power, steel, methane, and flaring: Russia’s policy framework still relies heavily on fossil gas and efficiency rather than rapid clean-power substitution, and Russia has a 2060 net-zero goal but is assessed as lacking a clear implementation roadmap. ([climateactiontracker.org](https://climateactiontracker.org/countries/russian-federation/policies-action/?utm_source=openai))",
+ "findings": [
+  "The largest supplied gap is Energy & industry: 722.633 MtCO2e, far larger than the Agriculture gap of 16.223 MtCO2e and Waste gap of 13.631 MtCO2e.",
+  "The supplied observed sector data point to fossil-fuel-operations at 869.79 MtCO2e and power at 840.529 MtCO2e as the biggest observed categories, followed by manufacturing at 332.921 MtCO2e and transportation at 301.766 MtCO2e.",
+  "Observed latest emissions for 2024 are supplied as 2854.453 MtCO2e, below the 2021 observed estimate of 2909.1 MtCO2e but still far above the 2021 declared value of 2156.6 MtCO2e.",
+  "Methane and flaring are high-priority lines of inquiry because recent international monitoring highlights large uncertainty in major emitters including Russia, satellite-detected oil and gas emissions, and the role of flaring and incomplete combustion in oil and gas methane. ([iea.org](https://www.iea.org/reports/global-methane-tracker-2024/progress-on-data-and-lingering-uncertainties?utm_source=openai))"
+ ],
+ "sectors": [
+  {
+   "group": "Energy & industry",
+   "note": "Main lead: declared 1938.62 MtCO2e versus observed 2661.253 MtCO2e. Within the supplied observed sectors, fossil-fuel-operations, power, manufacturing, transportation, and buildings dominate. Plausible methodological causes include different treatment of upstream methane, flare efficiency, facility allocation, oxidation factors, fuel-use statistics, and boundary differences between national inventory categories and observed sector models."
+  },
+  {
+   "group": "Agriculture",
+   "note": "Smaller but still material lead: declared 121.28 MtCO2e versus observed 137.503 MtCO2e. Possible causes include differing livestock, manure, fertilizer, soil-emissions, or land-use boundary assumptions."
+  },
+  {
+   "group": "Waste",
+   "note": "Declared 96.69 MtCO2e versus observed 110.321 MtCO2e. Possible causes include landfill methane decay models, informal waste handling, wastewater assumptions, oxidation factors, and urban coverage differences."
+  },
+  {
+   "group": "Cross-cutting methane",
+   "note": "Russia’s oil, gas, coal, and waste systems warrant attention because methane estimates are sensitive to super-emitter events, satellite coverage, reporting thresholds, and assumed equipment performance. The IEA has noted higher uncertainty where measurement data are limited, including Russia. ([iea.org](https://www.iea.org/reports/global-methane-tracker-2024/progress-on-data-and-lingering-uncertainties?utm_source=openai))"
+  }
+ ],
+ "sites_to_investigate": [
+  {
+   "name": "Russia_Central Sub-basin - West Siberia_Conventional onshore",
+   "owner": "owner unknown",
+   "why": "Largest supplied 2024 observed site at 234.7 MtCO2e, oil, low confidence. It matters because a very large low-confidence upstream estimate could reflect real oilfield emissions, model allocation, methane/flaring assumptions, or aggregation of multiple assets rather than one discrete facility."
+  },
+  {
+   "name": "Russia_OtherBasins_OtherResources",
+   "owner": "owner unknown",
+   "why": "Second-largest supplied 2024 observed site at 145.568 MtCO2e, oil, low confidence. It is a priority because vague basin/resource labels and unknown ownership make attribution, permitting, and operator accountability difficult."
+  },
+  {
+   "name": "Surgut GRES-1 and Surgut GRES-2 power station",
+   "owner": "Unipro PJSC",
+   "why": "Largest named medium-confidence facility in the supplied list at 27.667 MtCO2e. It matters for testing power-sector fuel data, plant-level generation, heat supply, and emissions-factor assumptions."
+  },
+  {
+   "name": "NLMK Lipetsk steel plant",
+   "owner": "Novolipetsk Steel PJSC",
+   "why": "Largest supplied steel site at 23.06 MtCO2e, medium confidence. Steel is a major industrial emissions source, and site-level checks can compare production volumes, fuel use, coke/coal inputs, and process-emissions accounting."
+  },
+  {
+   "name": "Severstal Cherepovets steel plant",
+   "owner": "Severstal PJSC",
+   "why": "Major supplied steel site at 19.017 MtCO2e, medium confidence. It offers a second industrial benchmark to assess whether the observed manufacturing total of 332.921 MtCO2e is driven by a few large integrated steelworks or wider sector assumptions."
+  }
+ ],
+ "next_steps": [
+  "Request plant- and operator-level fuel consumption, flaring, methane-management, and production data for the named power and steel facilities, then compare those records with the supplied observed site estimates.",
+  "Map the low-confidence West Siberia and OtherBasins oil entries against known fields, licenses, operators, flaring hotspots, and satellite methane detections to test whether the large estimates are physical sites, basin aggregates, or model artefacts.",
+  "Interview inventory experts on category boundaries: whether the declared UNFCCC figures and observed estimates use comparable global-warming potentials, LULUCF exclusions, bunker-fuel treatment, oxidation assumptions, and methane source classifications."
+ ],
+ "caveats": [
+  "A gap is a lead to investigate, not evidence of misreporting. Declared inventories and observed estimates can differ because of methodology, category mapping, emission factors, satellite sensitivity, facility aggregation, or timing.",
+  "The supplied largest oil entries are low confidence and owner unknown, so they should not be framed as company-level findings without corroboration.",
+  "All emissions numbers in this dossier come only from the user-supplied data; web sources are used only for recent context on policy, methane, flaring, and monitoring uncertainty."
+ ],
+ "briefing": "Russia’s supplied 2021 emissions gap is 752.5 MtCO2e, or 34.9%, between declared UNFCCC Annex I emissions and the observed estimate. The lead sits mainly in Energy and industry, especially fossil-fuel operations and power, with manufacturing also important. This is not proof of misreporting. It could reflect methane assumptions, flaring efficiency, sector boundaries, facility aggregation, or inventory methods. Journalists should focus on low-confidence West Siberian oil estimates, named power stations, and major steel plants, while asking whether observed models and national inventory categories are being compared on the same basis.",
+ "sources": [
+  {
+   "title": "Policies & action | Climate Action Tracker",
+   "url": "https://climateactiontracker.org/countries/russian-federation/policies-action/?utm_source=openai"
+  },
+  {
+   "title": "Progress on data and lingering uncertainties - Global Methane Tracker 2024 - IEA",
+   "url": "https://www.iea.org/reports/global-methane-tracker-2024/progress-on-data-and-lingering-uncertainties?utm_source=openai"
+  },
+  {
+   "title": "Progress on data and lingering uncertainties - Global Methane Tracker 2024 - IEA",
+   "url": "https://www.iea.org/reports/global-methane-tracker-2024/progress-on-data-and-lingering-uncertainties?utm_source=openai"
+  }
+ ],
+ "data": {
+  "country": "Russian Federation",
+  "iso3": "RUS",
+  "inventory_year": 2021,
+  "declared_source": "UNFCCC Annex I",
+  "declared_Mt": 2156.6,
+  "observed_Mt": 2909.1,
+  "gap_Mt": 752.5,
+  "gap_pct": 34.9,
+  "gap_value_eur": 54178344000,
+  "carbon_price_eur_per_t": 72.0,
+  "by_group": {
+   "Energy & industry": {
+    "declared": 1938.62,
+    "observed": 2661.253
+   },
+   "Agriculture": {
+    "declared": 121.28,
+    "observed": 137.503
+   },
+   "Waste": {
+    "declared": 96.69,
+    "observed": 110.321
+   }
+  },
+  "observed_by_sector_Mt": {
+   "power": 840.529,
+   "transportation": 301.766,
+   "buildings": 241.742,
+   "fossil-fuel-operations": 869.79,
+   "manufacturing": 332.921,
+   "mineral-extraction": 14.174,
+   "fluorinated-gases": 60.332,
+   "agriculture": 137.503,
+   "waste": 110.321
+  },
+  "observed_latest": {
+   "year": 2024,
+   "total": 2854.453
+  }
+ },
+ "sites": [
+  {
+   "id": "53059054",
+   "name": "Russia_Central Sub-basin - West Siberia_Conventional onshore",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-production",
+   "type": "",
+   "observed": 234.7,
+   "confidence": "low",
+   "coord": [
+    75.121774,
+    63.161917
+   ],
+   "year": 2024
+  },
+  {
+   "id": "60952289",
+   "name": "Russia_OtherBasins_OtherResources",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-production",
+   "type": "",
+   "observed": 145.568,
+   "confidence": "low",
+   "coord": [
+    82.551403,
+    57.689546
+   ],
+   "year": 2024
+  },
+  {
+   "id": "53059897",
+   "name": "Russia_Central Sub-basin - West Siberia_Conventional onshore",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-transport",
+   "type": "",
+   "observed": 56.342,
+   "confidence": "low",
+   "coord": [
+    75.121774,
+    63.161917
+   ],
+   "year": 2024
+  },
+  {
+   "id": "53059076",
+   "name": "Russia_Volga - Urals_Conventional onshore",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-production",
+   "type": "",
+   "observed": 44.114,
+   "confidence": "low",
+   "coord": [
+    52.345751,
+    54.482542
+   ],
+   "year": 2024
+  },
+  {
+   "id": "60953022",
+   "name": "Russia_OtherBasins_OtherResources",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-transport",
+   "type": "",
+   "observed": 33.865,
+   "confidence": "low",
+   "coord": [
+    82.551403,
+    57.689546
+   ],
+   "year": 2024
+  },
+  {
+   "id": "449560",
+   "name": "Surgut GRES-1 and Surgut GRES-2 power station",
+   "owner": "Unipro PJSC",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "gas",
+   "observed": 27.667,
+   "confidence": "medium",
+   "coord": [
+    73.4889,
+    61.2794
+   ],
+   "year": 2024
+  },
+  {
+   "id": "1567021",
+   "name": "NLMK Lipetsk steel plant",
+   "owner": "Novolipetsk Steel PJSC",
+   "kind": "steel",
+   "sector": "iron-and-steel",
+   "type": "BF/BOF",
+   "observed": 23.06,
+   "confidence": "medium",
+   "coord": [
+    39.6384379860879,
+    52.5538212579753
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25452218",
+   "name": "Reftinskaya GRES power station",
+   "owner": "Kuzbassenergo JSC",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 19.442,
+   "confidence": "medium",
+   "coord": [
+    61.7059,
+    57.1108
+   ],
+   "year": 2024
+  }
+ ],
+ "iso3": "RUS"
+}

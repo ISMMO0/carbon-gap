@@ -10,18 +10,22 @@ load_dotenv(ROOT / "backend" / ".env")
 
 from fastapi import FastAPI, File, HTTPException, UploadFile  # noqa: E402
 from fastapi.concurrency import run_in_threadpool  # noqa: E402
-from fastapi.responses import FileResponse, StreamingResponse  # noqa: E402
+from fastapi.responses import FileResponse, JSONResponse, StreamingResponse  # noqa: E402
 from fastapi.staticfiles import StaticFiles  # noqa: E402
 from pydantic import BaseModel  # noqa: E402
 
-from . import agent, data, discover, report, research, store, voice  # noqa: E402
+from . import agent, data, discover, limits, report, research, store, voice  # noqa: E402
 
 app = FastAPI(title="Carbon Gap")
 
 
 @app.middleware("http")
 async def no_stale_frontend(request, call_next):
-    """The front-end changes often during the hackathon: never let browsers serve an old copy."""
+    """Usage limits on the public demo; and never let browsers serve an old copy of the front-end."""
+    visitor = (request.headers.get("x-forwarded-for") or (request.client.host if request.client else "?")).split(",")[0].strip()
+    blocked = limits.check(request.url.path, request.method, visitor)
+    if blocked:
+        return JSONResponse({"detail": blocked}, status_code=429)
     response = await call_next(request)
     if not request.url.path.startswith("/api/"):
         response.headers["Cache-Control"] = "no-cache"
@@ -30,7 +34,7 @@ async def no_stale_frontend(request, call_next):
 
 @app.get("/api/health")
 def health():
-    return {"ok": True, "openai": bool(os.getenv("OPENAI_API_KEY")), "countries": len(data.compared()),
+    return {"ok": True, "public_demo": limits.ENABLED, "openai": bool(os.getenv("OPENAI_API_KEY")), "countries": len(data.compared()),
             "store": store.backend(), "findings": len(data.findings())}
 
 

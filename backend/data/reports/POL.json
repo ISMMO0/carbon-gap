@@ -1,0 +1,244 @@
+{
+ "headline": "Poland’s 2021 emissions gap is 42.2 MtCO2e, led by agriculture and waste.",
+ "summary": "Poland reported 399.4 MtCO2e for 2021, while the observed estimate is 441.7 MtCO2e, leaving a 42.2 MtCO2e gap, or 10.6%. At €72/t, that gap is valued at about €3.041 billion, but it should be treated as an investigation lead, not evidence of misreporting.\n\nThe largest absolute sector signal is Energy & industry: 360.73 MtCO2e declared versus 374.358 MtCO2e observed. The largest proportional leads are Agriculture, at 34.04 declared versus 56.0 observed, and Waste, at 4.67 declared versus 11.319 observed. Poland’s coal-heavy power system remains central context: coal still supplied a majority of electricity in 2024 according to recent energy reporting, even as renewables expanded and policy aims to cut coal dependence. ([trade.gov](https://www.trade.gov/country-commercial-guides/poland-energy-sector?utm_source=openai))",
+ "findings": [
+  "The national gap is 42.2 MtCO2e in 2021, equal to 10.6% of declared emissions; this is a prioritisation signal for reporting, not proof of under-reporting.",
+  "Energy & industry accounts for the biggest volume: declared 360.73 MtCO2e versus observed 374.358 MtCO2e, a difference of about 13.628 MtCO2e.",
+  "Agriculture is the sharpest sector lead: declared 34.04 MtCO2e versus observed 56.0 MtCO2e, a difference of about 21.96 MtCO2e; plausible causes include different methane/nitrous oxide factors, livestock assumptions, manure handling, soil emissions boundaries, or allocation between agriculture and energy.",
+  "Waste is small in absolute terms but large proportionally: declared 4.67 MtCO2e versus observed 11.319 MtCO2e, suggesting reporters should examine landfill methane assumptions, waste-in-place models, oxidation factors, capture rates, and whether observed plumes are assigned differently."
+ ],
+ "sectors": [
+  {
+   "group": "Energy & industry",
+   "note": "Declared 360.73 MtCO2e; observed 374.358 MtCO2e. Observed 2021 sector components include power at 166.821 MtCO2e, buildings at 54.677 MtCO2e, manufacturing at 51.928 MtCO2e, transportation at 50.702 MtCO2e, fossil-fuel operations at 43.486 MtCO2e, fluorinated gases at 6.319 MtCO2e, and mineral extraction at 0.425 MtCO2e. Poland’s continued coal dependence makes large power stations a practical starting point; official and market sources also show coal’s share has been falling while renewables have expanded. ([trade.gov](https://www.trade.gov/country-commercial-guides/poland-energy-sector?utm_source=openai))"
+  },
+  {
+   "group": "Agriculture",
+   "note": "Declared 34.04 MtCO2e; observed 56.0 MtCO2e. This 21.96 MtCO2e difference may reflect methodological divergence rather than errors: emission factors, herd data, manure systems, fertiliser and soil assumptions, or satellite/model sensitivity to methane and nitrous oxide sources."
+  },
+  {
+   "group": "Waste",
+   "note": "Declared 4.67 MtCO2e; observed 11.319 MtCO2e. The lead is worth probing because landfill methane can be episodic and site-specific. Plausible causes include different decay models, landfill-gas collection assumptions, informal waste streams, wastewater boundaries, or attribution of urban methane sources."
+  },
+  {
+   "group": "Latest observed total",
+   "note": "Observed total emissions fall to 380.013 MtCO2e in 2024 in the supplied dataset. That newer estimate should not be compared directly with the 2021 inventory gap without checking methodology, sector coverage, and whether economic, weather, power-demand, and fuel-mix changes are being treated consistently."
+  }
+ ],
+ "sites_to_investigate": [
+  {
+   "name": "Bełchatów power station",
+   "owner": "PGE Górnictwo i Energetyka Konwencjonalna SA",
+   "why": "Largest listed observed site in 2024 at 26.198 MtCO2e, confidence high. It anchors the power-sector story and can be checked against EU ETS records, lignite burn, operating hours, plant efficiency, and unit-level outages."
+  },
+  {
+   "name": "Kozienice power station",
+   "owner": "ENEA Wytwarzanie SP zoo",
+   "why": "Second-largest listed site at 14.025 MtCO2e, confidence medium. Its medium confidence makes it useful for testing whether observed estimates align with plant-level fuel use, generation, and verified emissions."
+  },
+  {
+   "name": "Opole power station",
+   "owner": "PGE Górnictwo i Energetyka Konwencjonalna SA",
+   "why": "Large coal plant at 10.533 MtCO2e, confidence high. It helps assess whether the energy-and-industry gap is concentrated in major coal generators or spread across smaller industrial and fossil-fuel operations."
+  },
+  {
+   "name": "Turów power station",
+   "owner": "PGE Polska Grupa Energetyczna SA",
+   "why": "Listed at 8.789 MtCO2e, confidence high, and tied to the Turów lignite complex, which has faced legal and cross-border scrutiny over mining permits and environmental impacts. That makes it a strong site for linking emissions, permitting, water impacts, and transition-risk reporting. ([curia.europa.eu](https://curia.europa.eu/site/upload/docs/application/pdf/2025-07/cp250092en.pdf?utm_source=openai))"
+  },
+  {
+   "name": "ArcelorMittal Dąbrowa Górnicza steel plant",
+   "owner": "ArcelorMittal Poland SA",
+   "why": "Largest non-power site listed at 7.319 MtCO2e, confidence medium. It broadens the investigation beyond coal power into industrial process and fuel emissions, where allocation between energy, manufacturing, and industrial-process categories can affect gap analysis."
+  }
+ ],
+ "next_steps": [
+  "Compare the 2021 declared inventory categories with observed-sector definitions before alleging discrepancies; document any boundary differences, GWP assumptions, land-use exclusions, and treatment of biogenic CO2.",
+  "For the five priority sites, request or compile EU ETS verified emissions, fuel-input data, generation/output, outage records, and permit limits for 2021 and 2024, then compare them with the observed site estimates.",
+  "Investigate agriculture and waste separately from the big power plants: interview inventory compilers, methane scientists, landfill operators, farm groups, and NGOs about emission factors, methane capture, manure systems, and waste-data quality."
+ ],
+ "caveats": [
+  "A gap is a lead, not proof of misreporting. Declared inventories and observed estimates can differ because of sector boundaries, top-down versus bottom-up methods, emission factors, time windows, uncertainty ranges, and attribution rules.",
+  "The supplied 2024 site list and 2024 observed national total are useful for current reporting targets, but the formal gap provided is for inventory year 2021.",
+  "Some site estimates have medium or very low confidence; this dossier prioritises high- and medium-confidence sites and avoids drawing conclusions from low-confidence facility data."
+ ],
+ "briefing": "Poland’s 2021 emissions gap is 42.2 MtCO2e, or 10.6% above the declared 399.4 MtCO2e. The headline lead is not only coal power. Energy and industry show the largest volume, but agriculture and waste show the most striking gaps against declared figures. Recent context still points to a coal-heavy electricity system, even as renewables grow and policy aims to reduce coal dependence. Journalists should treat the gap as a map for questions: check Bełchatów, Kozienice, Opole, Turów, and Dąbrowa Górnicza, then scrutinise methane methods in farming and waste before making any claim about reporting accuracy.",
+ "sources": [
+  {
+   "title": "Poland - Energy Sector",
+   "url": "https://www.trade.gov/country-commercial-guides/poland-energy-sector?utm_source=openai"
+  },
+  {
+   "title": "Poland - Energy Sector",
+   "url": "https://www.trade.gov/country-commercial-guides/poland-energy-sector?utm_source=openai"
+  },
+  {
+   "title": "Advocate General Kokott: No penalty payment for Poland due to lignite mining in Turów",
+   "url": "https://curia.europa.eu/site/upload/docs/application/pdf/2025-07/cp250092en.pdf?utm_source=openai"
+  }
+ ],
+ "data": {
+  "country": "Poland",
+  "iso3": "POL",
+  "inventory_year": 2021,
+  "declared_source": "UNFCCC Annex I",
+  "declared_Mt": 399.4,
+  "observed_Mt": 441.7,
+  "gap_Mt": 42.2,
+  "gap_pct": 10.6,
+  "gap_value_eur": 3041136000,
+  "carbon_price_eur_per_t": 72.0,
+  "by_group": {
+   "Energy & industry": {
+    "declared": 360.73,
+    "observed": 374.358
+   },
+   "Agriculture": {
+    "declared": 34.04,
+    "observed": 56.0
+   },
+   "Waste": {
+    "declared": 4.67,
+    "observed": 11.319
+   }
+  },
+  "observed_by_sector_Mt": {
+   "power": 166.821,
+   "transportation": 50.702,
+   "buildings": 54.677,
+   "fossil-fuel-operations": 43.486,
+   "manufacturing": 51.928,
+   "mineral-extraction": 0.425,
+   "fluorinated-gases": 6.319,
+   "agriculture": 56.0,
+   "waste": 11.319
+  },
+  "observed_latest": {
+   "year": 2024,
+   "total": 380.013
+  }
+ },
+ "sites": [
+  {
+   "id": "25450764",
+   "name": "Belchatow power station",
+   "owner": "PGE Górnictwo i Energetyka Konwencjonalna SA",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 26.198,
+   "confidence": "high",
+   "coord": [
+    19.3265,
+    51.2679
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25450767",
+   "name": "Kozienice power station",
+   "owner": "ENEA Wytwarzanie SP zoo",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 14.025,
+   "confidence": "medium",
+   "coord": [
+    21.462,
+    51.667
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25450770",
+   "name": "Opole power station",
+   "owner": "PGE Górnictwo i Energetyka Konwencjonalna SA",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 10.533,
+   "confidence": "high",
+   "coord": [
+    17.8845,
+    50.7514
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25450775",
+   "name": "Turów power station",
+   "owner": "PGE Polska Grupa Energetyczna SA",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 8.789,
+   "confidence": "high",
+   "coord": [
+    14.9131,
+    50.9486
+   ],
+   "year": 2024
+  },
+  {
+   "id": "1567002",
+   "name": "ArcelorMittal Dąbrowa Górnicza steel plant",
+   "owner": "ArcelorMittal Poland SA",
+   "kind": "steel",
+   "sector": "iron-and-steel",
+   "type": "BF/BOF",
+   "observed": 7.319,
+   "confidence": "medium",
+   "coord": [
+    19.3116488426648,
+    50.3402037458102
+   ],
+   "year": 2024
+  },
+  {
+   "id": "447962",
+   "name": "Polaniec power station",
+   "owner": "ENEA SA",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal, biomass",
+   "observed": 5.55,
+   "confidence": "high",
+   "coord": [
+    21.3377,
+    50.4377
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25450765",
+   "name": "JAWORZNO-III",
+   "owner": null,
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 4.474,
+   "confidence": "high",
+   "coord": [
+    19.2053,
+    50.2072
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25452534",
+   "name": "Dolna Odra power station",
+   "owner": "PGE Zespol Elek Dolna Odra SA",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "gas, coal",
+   "observed": 3.952,
+   "confidence": "medium",
+   "coord": [
+    14.4672,
+    53.2078
+   ],
+   "year": 2024
+  }
+ ],
+ "iso3": "POL"
+}

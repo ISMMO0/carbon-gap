@@ -1,0 +1,259 @@
+{
+ "headline": "France’s 2021 emissions gap is a 21.6 MtCO2e investigation lead.",
+ "summary": "France’s declared 2021 Annex I total is 420.1 MtCO2e, while the observed estimate is 441.6 MtCO2e, leaving a 21.6 MtCO2e gap, or 5.1%. At the supplied carbon price of €72.0/tCO2e, that gap is valued at €1,551,888,000.\n\nThe gap is not proof of misreporting. It is a lead to test against inventory boundaries, sector definitions, uncertainty ranges, facility allocation, land-sector treatment, timing, and bottom-up versus atmospheric or asset-level methods. France’s policy context is active: its low-carbon strategy and energy planning were updated in 2026, with a legal net-zero goal for 2050 and continued focus on reducing fossil-fuel use. ([ecologie.gouv.fr](https://www.ecologie.gouv.fr/strategie-nationale-bas-carbone/feuille-route-climatique-francaise?utm_source=openai))",
+ "findings": [
+  "The biggest absolute positive gap is in Energy & industry: declared 335.08 MtCO2e versus observed 353.277 MtCO2e, a difference of 18.197 MtCO2e.",
+  "Waste is the sharpest sectoral red flag: declared 18.45 MtCO2e versus observed 24.465 MtCO2e, a 6.015 MtCO2e difference that may reflect landfill methane, waste-to-energy allocation, or data coverage differences.",
+  "Agriculture goes the other way: declared 66.53 MtCO2e versus observed 63.873 MtCO2e, suggesting the aggregate national gap is not uniform across sectors.",
+  "The observed latest total for 2024 is 403.623 MtCO2e, below the observed 2021 total of 441.6 MtCO2e, but journalists should not compare this directly with declared inventory data without checking methodology and scope."
+ ],
+ "sectors": [
+  {
+   "group": "Energy & industry",
+   "note": "Observed emissions exceed declared emissions by 18.197 MtCO2e. Focus on transport, buildings, manufacturing, power, refineries, steel, and fluorinated gases, while checking whether the observed estimate includes sources or allocation rules not used in the Annex I inventory."
+  },
+  {
+   "group": "Agriculture",
+   "note": "Observed emissions are 2.657 MtCO2e lower than declared emissions. This could arise from different livestock, soil, fertilizer, methane, nitrous oxide, or land-use boundary assumptions rather than under-reporting."
+  },
+  {
+   "group": "Waste",
+   "note": "Observed emissions exceed declared emissions by 6.015 MtCO2e. Plausible methodological causes include landfill methane modelling, oxidation assumptions, waste incineration classification, biogenic carbon treatment, and municipal versus industrial waste boundaries."
+  },
+  {
+   "group": "Policy context",
+   "note": "France’s 2026 policy updates point to continued fossil-fuel phase-down and electrification, while official and OECD commentary stresses that emission reductions need to accelerate to meet upcoming targets. ([ecologie.gouv.fr](https://www.ecologie.gouv.fr/strategie-nationale-bas-carbone/feuille-route-climatique-francaise?utm_source=openai))"
+  }
+ ],
+ "sites_to_investigate": [
+  {
+   "name": "ArcelorMittal Dunkerque steel plant",
+   "owner": "ArcelorMittal Atlantique et Lorraine SAS",
+   "why": "Largest listed observed site at 7.957 MtCO2e, but confidence is low. It is a priority for source verification, permit matching, ETS comparison, and checking whether steel-process emissions are consistently classified."
+  },
+  {
+   "name": "ArcelorMittal Méditerranée Fos sur Mer steel plant",
+   "owner": "ArcelorMittal Méditerranée SAS",
+   "why": "Second-largest listed observed site at 4.858 MtCO2e with medium confidence. It matters because heavy industry drives the Energy & industry gap and because site-level decarbonisation claims can be checked against emissions estimates."
+  },
+  {
+   "name": "Total Normandy Refinery",
+   "owner": "TotalEnergies SE",
+   "why": "Largest listed refinery source at 2.944 MtCO2e with medium confidence. Refineries are useful test cases for comparing observed site estimates with EU ETS entries, fuel-throughput data, and national inventory allocation."
+  },
+  {
+   "name": "INEOS Lavera Marseilles Refinery",
+   "owner": "INEOS AG",
+   "why": "A major oil-sector site at 2.444 MtCO2e with medium confidence, located in a broader industrial cluster where attribution between refinery, chemical, and other industrial sources may be difficult."
+  },
+  {
+   "name": "ExxonMobil Port Jerome-Gravenchon Refinery",
+   "owner": "small shareholder(s)",
+   "why": "A 2.122 MtCO2e medium-confidence refinery source. The ownership label itself is a reporting lead: journalists should clarify operator, legal owner, ETS account holder, and any recent asset transfers."
+  }
+ ],
+ "next_steps": [
+  "Reconcile the 2021 gap sector by sector against France’s UNFCCC Annex I tables, especially Energy & industry and Waste, documenting every boundary difference before alleging any discrepancy.",
+  "For the selected steel and refinery sites, compare observed 2024 site estimates with EU ETS installation records, prefectural permits, operator sustainability reports, production data, and local air-pollution filings.",
+  "Interview inventory compilers, CITEPA specialists, satellite-emissions researchers, landfill methane experts, and affected local groups to distinguish real emissions signals from classification or model artefacts."
+ ],
+ "caveats": [
+  "A gap is an investigation lead, not proof of misreporting. Declared inventories and observed estimates may use different scopes, global warming potentials, source categories, facility boundaries, and temporal allocation methods.",
+  "The site list uses 2024 observed estimates, while the national gap is for 2021; this is useful for leads but not direct proof of the 2021 discrepancy.",
+  "Low-confidence site estimates, especially for Dunkerque and some industrial categories, should be treated as prompts for verification rather than as settled facility totals."
+ ],
+ "briefing": "France’s 2021 declared emissions were 420.1 MtCO2e, while the observed estimate is 441.6 MtCO2e. That leaves a 21.6 MtCO2e gap, worth about €1.55 billion at the supplied carbon price. The main lead is Energy & industry, followed by Waste, while Agriculture is lower in the observed data than in the declared inventory. This is not evidence of misreporting. It may reflect different boundaries, models, facility attribution, landfill methane assumptions, or timing. Reporters should start with steel, refining, and waste, especially the Dunkerque and Fos steel plants and the major Normandy, Lavera, and Port Jerome-Gravenchon refineries.",
+ "sources": [
+  {
+   "title": "La SNBC, feuille de route climatique française | Ministères Transition écologique, Aménagement du Territoire, Transports, Ville et Logement",
+   "url": "https://www.ecologie.gouv.fr/strategie-nationale-bas-carbone/feuille-route-climatique-francaise?utm_source=openai"
+  },
+  {
+   "title": "La SNBC, feuille de route climatique française | Ministères Transition écologique, Aménagement du Territoire, Transports, Ville et Logement",
+   "url": "https://www.ecologie.gouv.fr/strategie-nationale-bas-carbone/feuille-route-climatique-francaise?utm_source=openai"
+  }
+ ],
+ "data": {
+  "country": "France",
+  "iso3": "FRA",
+  "inventory_year": 2021,
+  "declared_source": "UNFCCC Annex I",
+  "declared_Mt": 420.1,
+  "observed_Mt": 441.6,
+  "gap_Mt": 21.6,
+  "gap_pct": 5.1,
+  "gap_value_eur": 1551888000,
+  "carbon_price_eur_per_t": 72.0,
+  "by_group": {
+   "Energy & industry": {
+    "declared": 335.08,
+    "observed": 353.277
+   },
+   "Agriculture": {
+    "declared": 66.53,
+    "observed": 63.873
+   },
+   "Waste": {
+    "declared": 18.45,
+    "observed": 24.465
+   }
+  },
+  "observed_by_sector_Mt": {
+   "power": 36.226,
+   "transportation": 138.762,
+   "buildings": 80.445,
+   "fossil-fuel-operations": 8.806,
+   "manufacturing": 75.703,
+   "mineral-extraction": 0.736,
+   "fluorinated-gases": 12.598,
+   "agriculture": 63.873,
+   "waste": 24.465
+  },
+  "observed_latest": {
+   "year": 2024,
+   "total": 403.623
+  },
+  "climate_policy": {
+   "ndc_target": "EU joint NDC: -66.25% to -72.5% net GHG by 2035 vs 1990",
+   "net_zero_year": 2050,
+   "net_zero_status": "in law",
+   "carbon_pricing": [
+    {
+     "name": "EU Emissions Trading System (EU ETS 1)",
+     "type": "ETS",
+     "price": "€78.93/tCO2e average allowance price, Apr–Sep 2026; EEX common-platform auction clearing prices around €84–86/tCO2e in late Sep/early Oct 2026"
+    },
+    {
+     "name": "Contribution climat-énergie (CCE) / carbon component of French energy excise taxes",
+     "type": "tax",
+     "price": "€44.60/tCO2 in 2026"
+    }
+   ],
+   "paris_status": "Party",
+   "latest_un_report": "BTR1, 26 Dec 2024"
+  }
+ },
+ "sites": [
+  {
+   "id": "1566816",
+   "name": "ArcelorMittal Dunkerque steel plant",
+   "owner": "ArcelorMittal Atlantique et Lorraine SAS",
+   "kind": "steel",
+   "sector": "iron-and-steel",
+   "type": "BF/BOF",
+   "observed": 7.957,
+   "confidence": "low",
+   "coord": [
+    2.29612864454798,
+    51.0379153539752
+   ],
+   "year": 2024
+  },
+  {
+   "id": "1566817",
+   "name": "ArcelorMittal Méditerranée Fos sur Mer steel plant",
+   "owner": "ArcelorMittal Méditerranée SAS",
+   "kind": "steel",
+   "sector": "iron-and-steel",
+   "type": "BOF",
+   "observed": 4.858,
+   "confidence": "medium",
+   "coord": [
+    4.8901339898248,
+    43.4375430937667
+   ],
+   "year": 2024
+  },
+  {
+   "id": "3143881",
+   "name": "Total Normandy Refinery",
+   "owner": "TotalEnergies SE",
+   "kind": "oil",
+   "sector": "oil-and-gas-refining",
+   "type": "Deep Conversion",
+   "observed": 2.944,
+   "confidence": "medium",
+   "coord": [
+    0.240675,
+    49.486225
+   ],
+   "year": 2024
+  },
+  {
+   "id": "3143884",
+   "name": "INEOS Lavera Marseilles Refinery",
+   "owner": "INEOS AG",
+   "kind": "oil",
+   "sector": "oil-and-gas-refining",
+   "type": "Deep Conversion",
+   "observed": 2.444,
+   "confidence": "medium",
+   "coord": [
+    5.00396,
+    43.39076
+   ],
+   "year": 2024
+  },
+  {
+   "id": "3143882",
+   "name": "ExxonMobil Port Jerome-Gravenchon Refinery",
+   "owner": "small shareholder(s)",
+   "kind": "oil",
+   "sector": "oil-and-gas-refining",
+   "type": "Medium Conversion",
+   "observed": 2.122,
+   "confidence": "medium",
+   "coord": [
+    0.55077,
+    49.475
+   ],
+   "year": 2024
+  },
+  {
+   "id": "3143883",
+   "name": "Total Donges Refinery",
+   "owner": "TotalEnergies SE",
+   "kind": "oil",
+   "sector": "oil-and-gas-refining",
+   "type": "Medium Conversion",
+   "observed": 1.965,
+   "confidence": "medium",
+   "coord": [
+    -2.07209,
+    47.31425
+   ],
+   "year": 2024
+  },
+  {
+   "id": "3143886",
+   "name": "ExxonMobil Fos-sur-Mer Refinery",
+   "owner": "Rhône Energies SARL",
+   "kind": "oil",
+   "sector": "oil-and-gas-refining",
+   "type": "Medium Conversion",
+   "observed": 1.214,
+   "confidence": "medium",
+   "coord": [
+    4.9243,
+    43.45032
+   ],
+   "year": 2024
+  },
+  {
+   "id": "60952030",
+   "name": "France_OtherBasins_OtherResources",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-production",
+   "type": "",
+   "observed": 1.094,
+   "confidence": "low",
+   "coord": [
+    1.87299,
+    46.911065
+   ],
+   "year": 2024
+  }
+ ],
+ "iso3": "FRA"
+}

@@ -1,0 +1,19 @@
+# Render Blueprint: New > Blueprint > pick this repo. Fill the secret values when asked.
+services:
+  - type: web
+    name: carbon-gap
+    runtime: docker
+    plan: free   # "starter" (paid) avoids the cold start after 15 min idle
+    region: frankfurt
+    healthCheckPath: /api/health
+    envVars:
+      - key: PUBLIC_DEMO
+        value: "1"
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ELEVENLABS_API_KEY
+        sync: false
+      - key: KEENABLE_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false

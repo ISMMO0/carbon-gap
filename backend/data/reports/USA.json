@@ -1,0 +1,244 @@
+{
+ "headline": "U.S. observed 2021 emissions exceed declared emissions by 221.9 MtCO2e.",
+ "summary": "The supplied data show the United States declared 6,340.2 MtCO2e to the UNFCCC for 2021, while the observed estimate is 6,562.1 MtCO2e. That leaves a 221.9 MtCO2e gap, or 3.5%, valued at €15,977,016,000 using the supplied €72/t carbon price. Treat this as an investigative lead, not evidence of misreporting.\n\nThe gap is concentrated in Energy & industry: observed emissions are 6,001.0 MtCO2e versus 5,573.0 MtCO2e declared. Agriculture and Waste move in the opposite direction, with observed estimates below declared levels. Recent context matters: U.S. energy-related CO2 was still dominated by fossil fuels in 2024, while gas remained central to power and domestic energy production; EPA has also tightened methane reporting and oil-and-gas methane rules, signaling known uncertainty around methane measurement. ([eia.gov](https://www.eia.gov/energyexplained/us-energy-facts/data-and-statistics.php?utm_source=openai))",
+ "findings": [
+  "The national 2021 gap is 221.9 MtCO2e, equal to 3.5% of declared emissions. This is material, but small enough that boundary choices, sector allocation, gas metrics, and inventory methodology could plausibly explain part of it.",
+  "Energy & industry is the key lead: observed emissions exceed declared emissions by 428.0 MtCO2e. Within the observed sector split, transportation, power, fossil-fuel operations, manufacturing, and buildings are the largest areas to test.",
+  "Agriculture is not driving the positive gap in this dataset: observed agriculture is 403.9 MtCO2e versus 598.1 MtCO2e declared, a negative difference of 194.2 MtCO2e.",
+  "Observed latest total emissions for 2024 are 6,613.4 MtCO2e, slightly above the supplied 2021 observed total of 6,562.1 MtCO2e. This suggests journalists should examine whether post-2021 oil, gas, transport, and power trends are widening or reshaping the gap."
+ ],
+ "sectors": [
+  {
+   "group": "Energy & industry",
+   "note": "Declared: 5,573.0 MtCO2e; observed: 6,001.0 MtCO2e. Main investigation lead. Plausible causes include different treatment of upstream oil-and-gas methane, facility versus national accounting boundaries, combustion versus lifecycle allocation, and revised empirical methane factors. EPA’s 2024 methane reporting update specifically points to improved accuracy and transparency for petroleum and natural gas systems. ([epa.gov](https://www.epa.gov/inflation-reduction-act/methane-emissions-reduction-program-and-ghgrp-subpart-w-petroleum-and?utm_source=openai))"
+  },
+  {
+   "group": "Agriculture",
+   "note": "Declared: 598.1 MtCO2e; observed: 403.9 MtCO2e. This negative gap could stem from different livestock, manure, fertilizer, soil, land-boundary, or global-warming-potential assumptions rather than undercounting by either source."
+  },
+  {
+   "group": "Waste",
+   "note": "Declared: 169.2 MtCO2e; observed: 157.2 MtCO2e. The smaller negative gap may reflect landfill methane model choices, oxidation assumptions, gas capture rates, wastewater boundaries, or timing differences in waste decay models."
+  },
+  {
+   "group": "Largest observed 2024 sectors",
+   "note": "Observed 2024 site and sector context points to power, transportation, fossil-fuel operations, manufacturing, and buildings as practical reporting priorities. EIA reported 2024 power-sector CO2 was roughly flat, with lower coal emissions offsetting higher natural-gas emissions. ([eia.gov](https://www.eia.gov/environment/emissions/carbon/pdf/2024_emissions_report_final.pdf?utm_source=openai))"
+  }
+ ],
+ "sites_to_investigate": [
+  {
+   "name": "Marcellus Dry Gas PA",
+   "owner": "owner unknown",
+   "why": "Largest listed observed 2024 site at 41.002 MtCO2e, confidence low. It matters because a high-emitting gas basin with low confidence is a strong place to test methane factors, super-emitter events, operator attribution, and whether basin-level emissions are being mapped to the correct owners and facilities."
+  },
+  {
+   "name": "Alaska North Slope Wet Gas AK",
+   "owner": "owner unknown",
+   "why": "Second-largest listed site at 39.389 MtCO2e, confidence low. It matters because wet-gas operations can involve methane, liquids handling, flaring, and remote infrastructure; reporters should examine monitoring coverage, venting/flaring records, and state/federal lease data."
+  },
+  {
+   "name": "Permian Spraberry Lower Lower Spraberry Lower Light Oil TX",
+   "owner": "owner unknown",
+   "why": "Third-largest listed site at 38.846 MtCO2e, confidence low. The Permian is central to U.S. oil-and-gas output, and the combination of high emissions and unclear ownership makes it important for checking operator-level accountability, satellite detections, and reporting thresholds."
+  },
+  {
+   "name": "James H Miller Jr",
+   "owner": "Alabama Power Co",
+   "why": "Largest high-confidence point source on the list at 18.463 MtCO2e. Because it is a power plant with high confidence and a named owner, it is a good benchmark case for comparing observed estimates with facility-level reporting, fuel burn, generation, and dispatch data."
+  },
+  {
+   "name": "North Antelope Rochelle Coal Mine",
+   "owner": "Peabody Powder River Mining LLC",
+   "why": "Listed at 15.168 MtCO2e with very low confidence. It matters because coal mining emissions can involve methane estimation and boundary questions; the very-low-confidence tag makes it a candidate for verification before publication."
+  }
+ ],
+ "next_steps": [
+  "Build a reconciliation table for 2021 comparing declared and observed emissions by gas, sector, boundary, and global-warming-potential metric; focus first on the 428.0 MtCO2e Energy & industry positive difference.",
+  "For the selected oil-and-gas basins, match observed site names to operators, leases, EPA GHGRP facilities, state production records, flaring permits, and satellite methane detections; flag where ownership is unknown before implying accountability.",
+  "Interview inventory compilers, atmospheric scientists, EPA methane-program staff, state regulators, and operators about methodological differences, especially empirical methane data, reporting thresholds, facility aggregation, and timing."
+ ],
+ "caveats": [
+  "A gap is not proof of misreporting. It may reflect different system boundaries, sector definitions, activity data, emission factors, methane detection methods, or global-warming-potential assumptions.",
+  "The supplied dataset mixes 2021 inventory comparisons with 2024 observed site data. Sites are leads for current reporting, not direct proof of the 2021 national gap.",
+  "Several largest sites have low or very low confidence and unknown ownership, so they require independent verification before naming operators as responsible for specific emissions."
+ ],
+ "briefing": "The United States shows a 2021 emissions gap of 221.9 MtCO2e, with observed emissions 3.5% above the declared UNFCCC figure. The main lead is Energy and industry, where the observed estimate is 428.0 MtCO2e higher than declared. Agriculture and waste go the other way, so they may offset part of the national gap rather than explain it. The strongest reporting trail is oil and gas methane, power generation, and large fossil-fuel sites, especially low-confidence basins with unknown ownership. This is not evidence of misreporting. It is a roadmap for checking methods, boundaries, methane assumptions, and facility attribution.",
+ "sources": [
+  {
+   "title": "U.S. energy facts - data and statistics - U.S. Energy Information Administration (EIA)",
+   "url": "https://www.eia.gov/energyexplained/us-energy-facts/data-and-statistics.php?utm_source=openai"
+  },
+  {
+   "title": "Methane Emissions Reduction Program and GHGRP Subpart W (Petroleum and Natural Gas Systems) | US EPA",
+   "url": "https://www.epa.gov/inflation-reduction-act/methane-emissions-reduction-program-and-ghgrp-subpart-w-petroleum-and?utm_source=openai"
+  },
+  {
+   "title": "U.S. Energy-Related Carbon Dioxide Emissions, 2024",
+   "url": "https://www.eia.gov/environment/emissions/carbon/pdf/2024_emissions_report_final.pdf?utm_source=openai"
+  }
+ ],
+ "data": {
+  "country": "United States",
+  "iso3": "USA",
+  "inventory_year": 2021,
+  "declared_source": "UNFCCC Annex I",
+  "declared_Mt": 6340.2,
+  "observed_Mt": 6562.1,
+  "gap_Mt": 221.9,
+  "gap_pct": 3.5,
+  "gap_value_eur": 15977016000,
+  "carbon_price_eur_per_t": 72.0,
+  "by_group": {
+   "Energy & industry": {
+    "declared": 5572.96,
+    "observed": 6000.984
+   },
+   "Agriculture": {
+    "declared": 598.1,
+    "observed": 403.908
+   },
+   "Waste": {
+    "declared": 169.16,
+    "observed": 157.241
+   }
+  },
+  "observed_by_sector_Mt": {
+   "power": 1679.39,
+   "transportation": 1886.195,
+   "buildings": 577.859,
+   "fossil-fuel-operations": 944.014,
+   "manufacturing": 664.726,
+   "mineral-extraction": 11.322,
+   "fluorinated-gases": 237.478,
+   "agriculture": 403.908,
+   "waste": 157.241
+  },
+  "observed_latest": {
+   "year": 2024,
+   "total": 6613.431
+  }
+ },
+ "sites": [
+  {
+   "id": "53058916",
+   "name": "Marcellus Dry Gas PA",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-production",
+   "type": "",
+   "observed": 41.002,
+   "confidence": "low",
+   "coord": [
+    -78.055689,
+    41.050154
+   ],
+   "year": 2024
+  },
+  {
+   "id": "53058448",
+   "name": "Alaska North Slope Wet Gas AK",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-production",
+   "type": "",
+   "observed": 39.389,
+   "confidence": "low",
+   "coord": [
+    -148.661465,
+    70.299822
+   ],
+   "year": 2024
+  },
+  {
+   "id": "60952256",
+   "name": "Permian Spraberry Lower Lower Spraberry Lower Light Oil TX",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-production",
+   "type": "",
+   "observed": 38.846,
+   "confidence": "low",
+   "coord": [
+    -101.884572,
+    32.019864
+   ],
+   "year": 2024
+  },
+  {
+   "id": "60952068",
+   "name": "Haynesville-Bossier-Bossier Haynesville-Bossier Dry Gas LA",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-production",
+   "type": "",
+   "observed": 19.945,
+   "confidence": "low",
+   "coord": [
+    -93.662939,
+    32.154247
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25448871",
+   "name": "James H Miller Jr",
+   "owner": "Alabama Power Co",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 18.463,
+   "confidence": "high",
+   "coord": [
+    -87.0597,
+    33.6319
+   ],
+   "year": 2024
+  },
+  {
+   "id": "53059245",
+   "name": "Williston Light Oil ND",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-production",
+   "type": "",
+   "observed": 16.214,
+   "confidence": "low",
+   "coord": [
+    -102.547119,
+    48.038097
+   ],
+   "year": 2024
+  },
+  {
+   "id": "60952259",
+   "name": "Permian Spraberry Lower Lower Spraberry Lower Wet Gas TX",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-production",
+   "type": "",
+   "observed": 16.074,
+   "confidence": "low",
+   "coord": [
+    -101.781868,
+    31.803309
+   ],
+   "year": 2024
+  },
+  {
+   "id": "53059759",
+   "name": "Marcellus Dry Gas PA",
+   "owner": null,
+   "kind": "oil",
+   "sector": "oil-and-gas-transport",
+   "type": "",
+   "observed": 16.041,
+   "confidence": "low",
+   "coord": [
+    -78.055689,
+    41.050154
+   ],
+   "year": 2024
+  }
+ ],
+ "iso3": "USA"
+}
