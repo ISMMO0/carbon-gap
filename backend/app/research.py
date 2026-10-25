@@ -260,3 +260,32 @@ async def research_many(isos: list, concurrency: int = 6) -> list[dict]:
                 last = ev
             return last
     return await asyncio.gather(*(one(i) for i in isos))
+
+
+async def swarm(isos: list[str], concurrency: int = 3) -> AsyncIterator[dict]:
+    """Run country agents in parallel and merge their events into one stream, each tagged with its agent."""
+    queue: asyncio.Queue = asyncio.Queue()
+    sem = asyncio.Semaphore(concurrency)
+
+    async def run(iso):
+        async with sem:
+            await queue.put({"type": "start", "agent": iso})
+            status = "error"
+            try:
+                async for ev in research(iso):
+                    if ev["type"] == "result":
+                        status = ev["finding"]["status"]
+                        await queue.put({"type": "done", "agent": iso, "status": status, "finding": {
+                            k: ev["finding"].get(k) for k in ("year", "total_mt", "document", "confidence")}})
+                    else:
+                        await queue.put({**ev, "agent": iso})
+            except Exception:
+                await queue.put({"type": "done", "agent": iso, "status": "error"})
+
+    tasks = [asyncio.create_task(run(i)) for i in isos]
+    pending = len(tasks)
+    while pending:
+        ev = await queue.get()
+        if ev["type"] == "done":
+            pending -= 1
+        yield ev

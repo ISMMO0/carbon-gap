@@ -280,3 +280,36 @@ th button{white-space:nowrap}
 .legend{min-width:0;width:340px}
 .bar-search input{width:280px}
 .clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ---------- satellite card ---------- */
+.sat{position:absolute;left:14px;top:14px;width:320px;background:var(--sheet);border:1.5px solid var(--ink);z-index:5;box-shadow:0 18px 40px -18px rgba(28,35,32,.5)}
+.sat[hidden]{display:none}
+.sat-view{position:relative;width:100%;height:210px;overflow:hidden;background:#2B3C36}
+.sat-tiles{position:absolute;display:grid;grid-template-columns:repeat(3,256px);width:768px}
+.sat-tiles img{width:256px;height:256px;display:block}
+.sat-pin{position:absolute;left:50%;top:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border:2px solid #F0D68A;border-radius:50%;box-shadow:0 0 0 2px rgba(28,35,32,.6)}
+.sat-body{padding:10px 12px 12px}
+.sat-body b{font:700 18px/1.1 var(--cond);display:block}
+.sat-body .lede{font-size:13px}
+.sat-body .row{display:flex;justify-content:space-between;margin-top:6px;font-size:13.5px}
+.sat-credit{font-size:10.5px;color:var(--ink-3);margin-top:6px}
+.sat-close{position:absolute;top:6px;right:6px;z-index:1;border:0;border-radius:3px;background:rgba(248,247,243,.9);padding:4px;cursor:pointer;display:grid;place-items:center}
+
+/* ---------- agent swarm ---------- */
+.swarm{position:absolute;left:14px;top:14px;width:340px;background:var(--sheet);border:1.5px solid var(--ink);z-index:6;padding:12px 14px;box-shadow:0 18px 40px -18px rgba(28,35,32,.5)}
+.swarm[hidden]{display:none}
+.swarm h4{margin:0 0 2px;font:700 16px/1.1 var(--cond);letter-spacing:.04em;text-transform:uppercase}
+.swarm .lede{font-size:12.5px;margin-bottom:6px}
+.agent{display:grid;grid-template-columns:12px 1fr;gap:4px 8px;padding:6px 0;border-top:1px solid var(--rule)}
+.agent .d{width:10px;height:10px;border-radius:50%;margin-top:4px;border:1.5px solid var(--ink-3)}
+.agent.running .d{background:var(--g2);border-color:var(--g3);animation:pulse 1s infinite}
+.agent.found .d{background:var(--ok);border-color:var(--ok)}
+.agent.not_found .d,.agent.error .d{background:var(--rule-2)}
+.agent b{font-size:14px}
+.agent .t{grid-column:2;font-size:12.5px;color:var(--ink-2);line-height:1.35}
+.agent.found .t{color:var(--ok)}
+.ring{fill:none;stroke:var(--g3);stroke-width:2.5;transform-box:fill-box;transform-origin:center;animation:ring 1.6s ease-out infinite}
+.ring.found{stroke:var(--ok);animation:none}
+.ring.not_found,.ring.error{stroke:var(--ink-3);animation:none;opacity:.5}
+.ring.queued{animation:none;opacity:.35}
+@keyframes ring{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.8);opacity:0}}

@@ -58,6 +58,11 @@ TOOLS = [
      "description": "EU ETS carbon market position: verified emissions vs free allowances per country (latest year), the "
                     "shortfall its installations must buy, by sector. Pass an empty string for all countries ranked.",
      "parameters": {"type": "object", "properties": {"country": COUNTRY}, "required": ["country"], "additionalProperties": False}},
+    {"type": "function", "name": "launch_agents", "strict": True,
+     "description": "Launch several research agents in parallel, visible on the globe, to find the missing UN declarations "
+                    "of the largest emitters that have none yet. Use when the user asks to fill gaps or find missing data.",
+     "parameters": {"type": "object", "properties": {"count": {"type": "integer", "description": "2-12, default 6"}},
+                    "required": ["count"], "additionalProperties": False}},
     {"type": "function", "name": "show_market", "strict": True,
      "description": "Switch the globe to the carbon market view (EU ETS allowances: who must buy, who has surplus).",
      "parameters": {"type": "object", "properties": {"country": {"type": "string", "description": "Country to open, or empty"}},
@@ -100,7 +105,7 @@ TOOLS = [
      "description": "Generate and open the full sourced report (dossier) for a country.",
      "parameters": {"type": "object", "properties": {"country": COUNTRY}, "required": ["country"], "additionalProperties": False}},
 ]
-MAP_TOOLS = {"select_country", "highlight_countries", "focus_site", "set_metric", "open_report", "show_market", "show_company"}
+MAP_TOOLS = {"select_country", "highlight_countries", "focus_site", "set_metric", "open_report", "show_market", "show_company", "launch_agents"}
 
 
 def _iso(name: str) -> str | None:
@@ -154,6 +159,9 @@ def run_tool(name: str, args: dict) -> tuple[dict, dict | None]:
         rows = sorted(m["countries"].values(), key=lambda r: -r["shortfall"])
         return {"year": m["year"], "unit": "MtCO2e", "carbon_price": price, "countries": [
             {k: r[k] for k in ("name", "verified", "free", "shortfall")} for r in rows]}, None
+    if name == "launch_agents":
+        n = max(2, min(12, args["count"] or 6))
+        return {"ok": True, "note": f"{n} agents launched in the browser; results appear on the map in about a minute."}, {"name": name, "count": n}
     if name == "show_market":
         iso = _iso(args["country"]) if args["country"].strip() else None
         return {"ok": True}, {"name": name, "iso3": iso}

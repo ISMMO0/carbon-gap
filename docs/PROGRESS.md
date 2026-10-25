@@ -108,6 +108,14 @@ Or open `mockup/index.html` directly in a browser.
   and companies, hero with the headline number (6.2 Gt more than declared, about the US), 60-second guided tour
   (China, Coal India, Polish allowances, voice), analyst collapsed by default, front-end served with no-cache.
 
+### Phase 6: satellite, swarm, share ✅ (25 Oct afternoon)
+- Satellite view of any site (Esri World Imagery tiles at zoom 15, credited), opened by clicking a site or by the
+  analyst's focus_site. E.g. Bełchatów's cooling towers.
+- Agent swarm: POST /api/swarm runs N country agents in parallel (research.swarm merges their events into one SSE
+  stream). Globe shows pulsing rings per agent, a live panel lists their steps, countries recolour as declarations
+  are found. Button in the World sheet, analyst tool launch_agents. 81 countries compared now.
+- Share card: 1200×675 PNG of a country or company finding (canvas), for X posts.
+
 ## 5. Next
 
 - Structured Outputs to extract declared emissions from company reports (PDF) → company-level gaps.

@@ -123,12 +123,12 @@ const svg = d3.select('#globe');
 const proj = d3.geoOrthographic().clipAngle(90).precision(.4);
 const path = d3.geoPath(proj);
 let base = 300, W = 800, H = 600;
-let gSea, gGrat, gC, gHl, gSel, gSites, gLab, gRim;
+let gSea, gGrat, gC, gHl, gSel, gSites, gLab, gRim, gSwarm;
 
 function initGlobe() {
   gSea = svg.append('path').datum({type: 'Sphere'}).attr('fill', 'var(--sea)');
   gGrat = svg.append('path').datum(d3.geoGraticule10()).attr('fill', 'none').attr('stroke', 'var(--sea-line)').attr('stroke-width', .6);
-  gC = svg.append('g'); gHl = svg.append('g'); gSel = svg.append('g'); gSites = svg.append('g'); gLab = svg.append('g');
+  gC = svg.append('g'); gHl = svg.append('g'); gSel = svg.append('g'); gSites = svg.append('g'); gLab = svg.append('g'); gSwarm = svg.append('g');
   gRim = svg.append('path').datum({type: 'Sphere'}).attr('fill', 'none').attr('stroke', 'var(--ink)').attr('stroke-width', 1.2);
   gC.selectAll('path').data(features).join('path').attr('class', 'country')
     .on('click', (e, f) => {
@@ -168,6 +168,9 @@ function draw() {
     .attr('transform', s => `translate(${proj(s.coord)})`)
     .on('click', (e, s) => { e.stopPropagation(); focusSite(s.id); })
     .selectAll('title').data(s => [s]).join('title').text(s => `${s.name}${s.owner ? ' · ' + s.owner : ''} · ${fmtMt(s.observed)} Mt`);
+  const rings = swarmAgents.filter(a => a.coord && visible(a.coord));
+  gSwarm.selectAll('circle').data(rings, a => a.id).join('circle')
+    .attr('class', a => 'ring ' + a.status).attr('r', 16).attr('cx', a => proj(a.coord)[0]).attr('cy', a => proj(a.coord)[1]);
   const labs = hl.map(f => ({f, c: d3.geoCentroid(f)})).filter(l => visible(l.c));
   gLab.selectAll('text').data(labs, l => l.f.id).join('text').attr('class', 'glabel').attr('text-anchor', 'middle')
     .attr('x', l => proj(l.c)[0]).attr('y', l => proj(l.c)[1] + 4).text(l => byNum.get(l.f.id)?.name || l.f.properties.name);
@@ -250,8 +253,12 @@ function renderWorld() {
     <div class="block"><h3>Big emitters with no UN inventory since 2015</h3>
       <table><thead><tr><th>Country</th><th>Observed ${noInv[0]?.observed_latest?.year || ''}</th></tr></thead>
       <tbody>${noInv.map(c => `<tr data-c="${c.iso3}"><td>${esc(c.name)}</td><td>${fmtMt(c.observed_latest?.total)} Mt</td></tr>`).join('')}</tbody></table>
-      <p class="lede" style="margin-top:10px">Select a country to see the sectors and sites behind its emissions.</p></div>`;
-  bindSheet();
+      <p class="lede" style="margin-top:10px">Select a country to see the sectors and sites behind its emissions.</p></div>
+    <div class="block"><h3>Fill the gaps with agents</h3>
+      <p class="lede">${all.filter(c => !isDeclared(c) && !c.research).length} countries still have no declaration in our data. Research agents read their latest official reports, in parallel, and quote the exact figure.</p>
+      <button class="btn" id="swarm-go" style="margin-top:10px"><i data-lucide="sparkles" class="icon"></i>Launch 6 research agents</button></div>`;
+  $('#swarm-go').onclick = () => launchSwarm(6);
+  bindSheet(); icons();
 }
 function sectorBars(sectors) {
   const rows = Object.entries(sectors || {}).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]);
@@ -293,7 +300,7 @@ function renderCountry(iso) {
       <li><span>Climate TRACE country estimates</span><span>${isDeclared(c) ? c.year : c.observed_latest?.year}</span></li>
       <li><span>Climate TRACE asset-level estimates (sites)</span><span>2024</span></li></ul>
       <p class="lede" style="margin-top:10px">A gap is a lead to investigate, not proof of misreporting.</p></div>
-    <div class="actions"><button class="btn" id="mkreport"><i data-lucide="file-text" class="icon"></i>Generate report</button><button class="btn ghost" id="askwhy"><i data-lucide="message-square-text" class="icon"></i>Ask why</button></div>`;
+    <div class="actions"><button class="btn" id="mkreport"><i data-lucide="file-text" class="icon"></i>Report</button><button class="btn ghost" id="askwhy"><i data-lucide="message-square-text" class="icon"></i>Ask why</button>${isDeclared(c) ? '<button class="btn ghost icon-only" id="share" aria-label="Share this finding as an image" title="Share as image"><i data-lucide="share" class="icon"></i></button>' : ''}</div>`;
   $('#back').onclick = () => clearSelection();
   $('#dores')?.addEventListener('click', () => runResearch(iso));
   $('#verify')?.addEventListener('click', async e => {
@@ -302,6 +309,9 @@ function renderCountry(iso) {
     if (r.ok) { toast(verified ? 'Marked as verified' : 'Verification removed'); reloadData(); } else toast('Could not save the verification');
   });
   $('#mkreport').onclick = () => openReport(iso);
+  $('#share')?.addEventListener('click', () => shareCard({title: c.name, kicker: `Greenhouse-gas emissions, ${c.year}`, aLabel: 'Declared to the UN', a: c.declared,
+    bLabel: 'Observed (Climate TRACE)', b: c.observed, verdict: `${fmtPct(c.gap_pct)} · ${fmtMt(c.gap)} Mt more than declared`,
+    source: `Sources: ${c.agent ? c.agent.document : c.source + ' inventory'}; Climate TRACE.`}));
   $('#askwhy').onclick = () => ask(isDeclared(c) ? `Why is ${c.name}'s gap ${c.gap >= 0 ? 'positive' : 'negative'}?` : `What drives ${c.name}'s emissions?`);
   bindSheet(); icons();
 }
@@ -410,8 +420,12 @@ function renderCompany(id) {
     <div class="block"><h3>Largest tracked sites</h3><table><thead><tr><th>Site</th><th>Observed ${c.observed_year}</th></tr></thead>
       <tbody>${c.assets.slice(0, 15).map(a => `<tr data-s="${a.id}" class="${a.id === state.activeSite ? 'on' : ''}"><td><span class="secdot" style="background:${KINDS[a.kind].color}"></span>${esc(a.name)}<span class="sub">${esc(byIso.get(a.country)?.name || a.country)}${a.shared_with ? ` · shared with ${a.shared_with} other owner${a.shared_with > 1 ? 's' : ''}` : ''}</span></td><td>${fmtMt(a.observed)} Mt</td></tr>`).join('')}</tbody></table></div>
     ${c.subsidiaries.length > 1 ? `<div class="block"><h3>Entities grouped</h3><p class="lede">${c.subsidiaries.map(esc).join(' · ')}</p></div>` : ''}
-    <div class="actions"><button class="btn ghost" id="askco"><i data-lucide="message-square-text" class="icon"></i>Ask about ${esc(c.name)}</button></div>`;
+    <div class="actions"><button class="btn ghost" id="askco"><i data-lucide="message-square-text" class="icon"></i>Ask about ${esc(c.name)}</button>${cmp ? '<button class="btn ghost icon-only" id="share" aria-label="Share this finding as an image" title="Share as image"><i data-lucide="share" class="icon"></i></button>' : ''}</div>`;
   $('#back').onclick = () => { state.company = null; state.sites = []; renderSheet(); recolour(); draw(); flyToPoint([75, 25], 1); };
+  $('#share')?.addEventListener('click', () => shareCard({title: c.name, kicker: `Scope 1 reported vs tracked sites`, aLabel: `Reported Scope 1 (${cmp.reported_year})`, a: cmp.reported,
+    bLabel: `Its tracked sites (${cmp.year}, Climate TRACE)`, b: cmp.observed,
+    verdict: cmp.ratio > 1 ? `Tracked sites alone: ${d3.format('.1f')(cmp.ratio)}× its reported Scope 1` : `Tracked sites cover ${d3.format('.0%')(cmp.ratio)} of its report`,
+    source: `Sources: ${rep?.document || 'company report'}; Climate TRACE.`}));
   $('#askco').onclick = () => ask(`What do we know about ${c.name}'s emissions? Compare what it reports with its tracked sites.`);
   $('#dores-co')?.addEventListener('click', () => runCompanyResearch(c.id));
   bindSheet(); icons();
@@ -424,7 +438,7 @@ function agentQuote(rep) {
 async function selectCompany(id, {fly = true} = {}) {
   const c = COMPANIES.find(x => x.id === id); if (!c) return;
   if (state.view !== 'companies') { state.view = 'companies'; syncViewChrome(); }
-  state.company = id; state.selected = null; state.activeSite = null; state.highlight.clear();
+  state.company = id; state.selected = null; state.activeSite = null; state.highlight.clear(); $('#sat').hidden = true;
   state.sites = c.assets.map(a => ({...a, owner: c.name, year: c.observed_year}));
   recolour(); renderSheet(); draw();
   if (fly) {
@@ -515,6 +529,7 @@ function syncViewChrome() {
 }
 async function setView(view, iso = state.selected) {
   if (!touring) $('#hero').hidden = true;
+  $('#sat').hidden = true;
   state.view = view; syncViewChrome();
   state.highlight.clear(); state.sites = []; state.activeSite = null; state.selected = null; state.company = null;
   recolour();
@@ -532,7 +547,7 @@ async function loadSites(iso) {
 }
 async function selectCountry(iso, {fly = false} = {}) {
   if (!byIso.has(iso)) return;
-  $('#hero').hidden = true;
+  $('#hero').hidden = true; $('#sat').hidden = true;
   state.selected = iso; state.activeSite = null; state.sites = []; state.sort = {key: 'gap', dir: -1};
   renderSheet(); draw(); history.replaceState(null, '', '#' + iso);
   if (state.view === 'market') { if (fly) await flyToCountry(iso); return; }
@@ -549,9 +564,26 @@ function clearSelection() {
   state.selected = null; state.sites = []; state.activeSite = null; state.highlight.clear(); state.sort = {key: 'gap', dir: -1};
   renderSheet(); draw(); history.replaceState(null, '', location.pathname); flyToPoint([12, 30], 1);
 }
+/** The site seen from space: 3×3 Esri World Imagery tiles centred on its coordinates. */
+function showSatellite(s) {
+  const z = 15, n = 2 ** z, [lon, lat] = s.coord, r = lat * Math.PI / 180;
+  const px = (lon + 180) / 360 * n * 256, py = (1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * n * 256;
+  const tx = Math.floor(px / 256) - 1, ty = Math.floor(py / 256) - 1;
+  const tiles = [0, 1, 2].flatMap(j => [0, 1, 2].map(i =>
+    `<img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${z}/${ty + j}/${tx + i}">`)).join('');
+  const el = $('#sat');
+  el.innerHTML = `<button class="sat-close" id="sat-close" aria-label="Close satellite view"><i data-lucide="x" class="icon"></i></button>
+    <div class="sat-view"><div class="sat-tiles" style="left:${160 - (px - tx * 256)}px;top:${105 - (py - ty * 256)}px">${tiles}</div><span class="sat-pin"></span></div>
+    <div class="sat-body"><b>${esc(s.name)}</b><span class="lede">${esc(s.owner || 'Owner unknown')} · ${esc(KINDS[s.kind].name)}${s.country ? ' · ' + esc(byIso.get(s.country)?.name || s.country) : ''}</span>
+      <div class="row"><span>Observed ${s.year || ''}</span><b style="font:600 15px var(--font)">${fmtMt(s.observed)} MtCO₂e</b></div>
+      ${s.confidence ? `<div class="row"><span>Estimate confidence</span>${confTag(s.confidence)}</div>` : ''}
+      <div class="sat-credit">Imagery © Esri, Maxar, Earthstar Geographics · emissions: Climate TRACE</div></div>`;
+  el.hidden = false; icons();
+  $('#sat-close').onclick = () => { el.hidden = true; };
+}
 function focusSite(id) {
   const s = state.sites.find(x => x.id === id); if (!s) return false;
-  state.activeSite = id; draw();
+  state.activeSite = id; draw(); showSatellite(s); $('#hero').hidden = true;
   $('#sheet').querySelectorAll('tr[data-s]').forEach(tr => tr.classList.toggle('on', tr.dataset.s === id));
   flyToPoint(s.coord, Math.max(proj.scale() / base, 4));
   $(`tr[data-s="${CSS.escape(id)}"]`)?.scrollIntoView({block: 'nearest', behavior: 'smooth'});
@@ -642,6 +674,7 @@ async function runAction(a) {
     case 'set_metric': setMetric(a.metric); break;
     case 'open_report': openReport(a.iso3); break;
     case 'show_market': await setView('market', a.iso3); break;
+    case 'launch_agents': launchSwarm(a.count || 6); break;
     case 'show_company': if (a.company_id) await selectCompany(a.company_id); else await setView('companies', null); break;
     case 'refresh_companies': await reloadCompanies(); if (a.company_id) await selectCompany(a.company_id); break;
     case 'refresh_data': await reloadData(); if (a.iso3) await selectCountry(a.iso3, {fly: true}); break;
@@ -709,6 +742,79 @@ async function runDiscover(name) {
       else if (ev.type === 'result') { await reloadCompanies(); fillSearchList(); selectCompany(ev.company_id); toast(`${name} added`); }
     });
   } catch { step('The research agent is unreachable.'); }
+}
+
+/* ---------- share card: a 1200×675 PNG of one finding, for X ---------- */
+async function shareCard({title, kicker, aLabel, a, bLabel, b, verdict, source}) {
+  await document.fonts.ready;
+  const W = 1200, H = 675, cv = Object.assign(document.createElement('canvas'), {width: W, height: H}), g = cv.getContext('2d');
+  const ink = '#1C2320', paper = '#ECEBE4', crit = '#A3362E';
+  g.fillStyle = paper; g.fillRect(0, 0, W, H);
+  g.fillStyle = '#1F2D28'; g.fillRect(0, 0, W, 86);
+  const logo = new Image(); logo.src = 'logo-light.svg'; await logo.decode().catch(() => {});
+  if (logo.complete) g.drawImage(logo, 48, 21, 44, 44);
+  g.fillStyle = '#EEF0EA'; g.font = '700 34px "Barlow Condensed"'; g.fillText('Carbon Gap', 106, 56);
+  g.fillStyle = '#F0D68A'; g.font = '600 20px "Barlow Condensed"'; g.textAlign = 'right'; g.fillText('#parisdevdayhack', W - 48, 54); g.textAlign = 'left';
+  g.fillStyle = '#47514D'; g.font = '600 22px "Barlow Condensed"'; g.fillText(kicker.toUpperCase(), 64, 150);
+  g.fillStyle = ink; g.font = '700 76px "Barlow Condensed"'; g.fillText(title, 60, 228);
+  const max = Math.max(a, b), bw = 1072, x0 = 64, bar = (y, v, fill) => { g.fillStyle = fill; g.fillRect(x0, y, v / max * bw, 52); g.strokeStyle = ink; g.lineWidth = 2; g.strokeRect(x0, y, v / max * bw, 52); };
+  bar(300, a, '#E8E5CC'); bar(380, b, '#D8E1DF');
+  if (b > a) {  // hatched gap
+    const gx = x0 + a / max * bw, gw = (b - a) / max * bw;
+    g.save(); g.beginPath(); g.rect(gx, 380, gw, 52); g.clip(); g.fillStyle = '#F2D6CF'; g.fillRect(gx, 380, gw, 52);
+    g.strokeStyle = crit; g.lineWidth = 4; for (let i = -60; i < gw + 60; i += 12) { g.beginPath(); g.moveTo(gx + i, 432); g.lineTo(gx + i + 52, 380); g.stroke(); }
+    g.restore(); g.strokeStyle = crit; g.lineWidth = 2; g.strokeRect(gx, 380, gw, 52);
+  }
+  g.fillStyle = ink; g.font = '600 26px Barlow';
+  g.fillText(`${aLabel}  ${fmtMt(a)} Mt`, x0, 292); g.fillText(`${bLabel}  ${fmtMt(b)} Mt`, x0, 466);
+  g.fillStyle = crit; g.font = '700 54px "Barlow Condensed"'; g.fillText(verdict, x0, 560);
+  g.fillStyle = '#646E6A'; g.font = '500 20px Barlow'; g.fillText(source, x0, 620);
+  g.fillText('A gap is a lead to investigate, not proof of misreporting.', x0, 648);
+  const blob = await new Promise(r => cv.toBlob(r, 'image/png'));
+  const link = Object.assign(document.createElement('a'), {href: URL.createObjectURL(blob), download: `carbon-gap-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`});
+  link.click(); toast('Image saved, ready to post');
+}
+
+/* ---------- agent swarm: several research agents in parallel, visible on the globe ---------- */
+let swarmAgents = [], swarming = false;
+function renderSwarm(note = '') {
+  const el = $('#swarm'); el.hidden = false;
+  const found = swarmAgents.filter(a => a.status === 'found').length, done = swarmAgents.filter(a => ['found', 'not_found', 'error'].includes(a.status)).length;
+  el.innerHTML = `<button class="sat-close" id="swarm-close" aria-label="Close"><i data-lucide="x" class="icon"></i></button>
+    <h4>Research agents</h4><p class="lede">${note || `${done}/${swarmAgents.length} done · ${found} declaration${found === 1 ? '' : 's'} found`}</p>
+    ${swarmAgents.map(a => `<div class="agent ${a.status}"><i class="d"></i><b>${esc(a.name)}</b><small class="t">${esc(a.text)}</small></div>`).join('')}`;
+  icons(); $('#swarm-close').onclick = () => { el.hidden = true; if (!swarming) { swarmAgents = []; draw(); } };
+}
+async function launchSwarm(count = 6) {
+  if (swarming) return toast('Agents are already running');
+  swarming = true; $('#hero').hidden = $('#sat').hidden = true;
+  if (state.view !== 'gap') await setView('gap', null);
+  swarmAgents = []; renderSwarm('Choosing the largest emitters without a declaration…');
+  try {
+    await readSSE(await fetch('/api/swarm', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({count})}), async ev => {
+      if (ev.type === 'agents') {
+        swarmAgents = ev.agents.map(a => {
+          const f = featureOf(a.id);
+          return {...a, status: 'queued', text: 'Waiting', coord: f ? d3.geoCentroid(f) : null};
+        });
+        flyToMany(swarmAgents.map(a => a.id));
+      } else if (ev.agent) {
+        const a = swarmAgents.find(x => x.id === ev.agent); if (!a) return;
+        if (ev.type === 'start') { a.status = 'running'; a.text = 'Starting'; }
+        else if (ev.type === 'step' || ev.type === 'error') a.text = ev.text || ev.message;
+        else if (ev.type === 'done') {
+          a.status = ev.status;
+          a.text = ev.status === 'found' ? `${fmtMt(ev.finding.total_mt)} Mt declared for ${ev.finding.year} · ${ev.finding.document || ''}` : 'No usable official total found';
+          if (ev.status === 'found') reloadData();
+        }
+      }
+      renderSwarm(); draw();
+    });
+  } catch { renderSwarm('The agents could not be reached.'); }
+  swarming = false;
+  const found = swarmAgents.filter(a => a.status === 'found').length;
+  toast(`${found} new declaration${found === 1 ? '' : 's'} found`);
+  renderSwarm(); draw();
 }
 
 /* ---------- hero and guided tour ---------- */
