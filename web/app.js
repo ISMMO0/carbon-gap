@@ -582,6 +582,7 @@ async function selectCountry(iso, {fly = false} = {}) {
 }
 function clearSelection() {
   if (state.view === 'market') return setView('market', null);
+  $('#sat').hidden = true; $('#sheet').scrollTop = 0;
   state.selected = null; state.sites = []; state.activeSite = null; state.highlight.clear(); state.sort = {key: 'gap', dir: -1};
   renderSheet(); draw(); history.replaceState(null, '', location.pathname); flyToPoint([12, 30], 1);
 }
