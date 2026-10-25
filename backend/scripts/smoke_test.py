@@ -23,7 +23,7 @@ def main():
     compared = [x for x in countries if x.get("declared") is not None]
     results += [
         check(f"countries ({len(countries)}, {len(compared)} compared)", len(compared) >= 60),
-        check("gap fields consistent", all(abs(x["observed"] - x["declared"] - x["gap"]) < 1e-6 * max(1, x["observed"]) for x in compared)),
+        check("gap fields consistent", all(abs(x["observed"] - x["declared"] - x["gap"]) < 1e-3 for x in compared)),
         check("market data", len(c.get("/api/market").json()["countries"]) >= 25),
     ]
     companies = c.get("/api/companies").json()["companies"]

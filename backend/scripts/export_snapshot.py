@@ -14,6 +14,6 @@ from app import store  # noqa: E402
 
 if __name__ == "__main__":
     snap = {"findings": store.all_findings(), "company_findings": store.company_findings(),
-            "company_profiles": store.company_profiles()}
+            "company_profiles": store.company_profiles(), "country_policies": store.policies()}
     store.SNAPSHOT.write_text(json.dumps(snap, ensure_ascii=False, default=str))
     print({k: len(v) for k, v in snap.items()}, "→", store.SNAPSHOT)

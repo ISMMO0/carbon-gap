@@ -20,3 +20,8 @@ backend/data/raw/
 backend/data/company_findings.json
 backend/data/company_profiles.json
 backend/data/country_policies.json
+video/demo/frames/
+video/demo/vo/
+video/demo/*.wav
+video/demo/*.mp4
+video/demo/audio_events.json

@@ -30,10 +30,12 @@ const fmtEur = e => { const s = e < 0 ? '−' : ''; e = Math.abs(e); return e >=
 const reduceMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 function toast(t) { const el = $('#toast'); el.textContent = t; el.classList.add('show'); clearTimeout(toast._t); toast._t = setTimeout(() => el.classList.remove('show'), 2400); }
 function icons() { lucide.createIcons({attrs: {'stroke-width': 1.75}}); }
+/** Safe inline markdown: **bold** and [text](url). */
+const mdInline = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+  .replace(/\(?\[([^\]]+)\]\((https?:[^)\s]+)\)\)?/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 /** Minimal, safe markdown: **bold**, [text](url), lists, paragraphs. */
 function md(text) {
-  const inline = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  const inline = mdInline;
   return text.trim().split(/\n{2,}/).map(block => {
     const lines = block.split('\n');
     if (lines.every(l => /^\s*([-*]|\d+\.)\s+/.test(l))) {
@@ -255,7 +257,7 @@ function renderWorld() {
       <tbody>${noInv.map(c => `<tr data-c="${c.iso3}"><td>${esc(c.name)}</td><td>${fmtMt(c.observed_latest?.total)} Mt</td></tr>`).join('')}</tbody></table>
       <p class="lede" style="margin-top:10px">Select a country to see the sectors and sites behind its emissions.</p></div>
     <div class="block"><h3>Fill the gaps with agents</h3>
-      <p class="lede">${all.filter(c => !isDeclared(c) && !c.research).length} countries still have no declaration in our data. Research agents read their latest official reports, in parallel, and quote the exact figure.</p>
+      <p class="lede">${all.filter(c => !isDeclared(c)).length} countries still have no declaration in our data. Research agents read their latest official reports, in parallel, and quote the exact figure.</p>
       <button class="btn" id="swarm-go" style="margin-top:10px"><i data-lucide="sparkles" class="icon"></i>Launch 6 research agents</button></div>`;
   $('#swarm-go').onclick = () => launchSwarm(6);
   bindSheet(); icons();
@@ -455,6 +457,7 @@ async function selectCompany(id, {fly = true} = {}) {
   const c = COMPANIES.find(x => x.id === id); if (!c) return;
   if (state.view !== 'companies') { state.view = 'companies'; syncViewChrome(); }
   state.company = id; state.selected = null; state.activeSite = null; state.highlight.clear(); $('#sat').hidden = true;
+  $('#sheet').scrollTop = 0;
   state.sites = c.assets.map(a => ({...a, owner: c.name, year: c.observed_year}));
   recolour(); renderSheet(); draw();
   if (fly) {
@@ -548,6 +551,7 @@ async function setView(view, iso = state.selected) {
   $('#sat').hidden = true;
   state.view = view; syncViewChrome();
   state.highlight.clear(); state.sites = []; state.activeSite = null; state.selected = null; state.company = null;
+  $('#sheet').scrollTop = 0;
   recolour();
   if (iso && (view === 'gap' ? byIso.has(iso) : MARKET.countries[iso])) await selectCountry(iso, {fly: true});
   else { renderSheet(); draw(); if (view === 'market') flyToPoint([14, 51], 2.3); if (view === 'companies') flyToPoint([75, 25], 1); }
@@ -565,6 +569,7 @@ async function selectCountry(iso, {fly = false} = {}) {
   if (!byIso.has(iso)) return;
   $('#hero').hidden = true; $('#sat').hidden = true;
   state.selected = iso; state.activeSite = null; state.sites = []; state.sort = {key: 'gap', dir: -1};
+  $('#sheet').scrollTop = 0;
   renderSheet(); draw(); history.replaceState(null, '', '#' + iso);
   if (state.view === 'market') { if (fly) await flyToCountry(iso); return; }
   const sitesP = loadSites(iso).then(sites => {
@@ -639,12 +644,12 @@ async function openReport(iso) {
       <h3>Summary</h3>${md(r.summary)}
       ${d.declared_Mt != null ? `<h3>Declared vs observed</h3>${strata(d.declared_Mt, d.observed_Mt, Math.max(d.declared_Mt, d.observed_Mt), {h: 22, w: 700})}
       <dl class="figs"><div><dt>Declared</dt><dd>${fmtMt(d.declared_Mt)} <small>Mt</small></dd></div><div><dt>Observed</dt><dd>${fmtMt(d.observed_Mt)} <small>Mt</small></dd></div><div class="gap"><dt>Gap</dt><dd>${fmtMt(d.gap_Mt)} <small>Mt · ${d.gap_pct > 0 ? '+' : ''}${d.gap_pct}%</small></dd></div><div class="gap"><dt>At €${d.carbon_price_eur_per_t}/t</dt><dd>${fmtEur(d.gap_value_eur)}</dd></div></dl>` : ''}
-      <h3>Key findings</h3><ul>${r.findings.map(f => `<li>${esc(f)}</li>`).join('')}</ul>
-      <h3>By sector</h3><table><tbody>${r.sectors.map(s => `<tr><td style="width:30%"><b>${esc(s.group)}</b></td><td style="text-align:left">${esc(s.note)}</td></tr>`).join('')}</tbody></table>
+      <h3>Key findings</h3><ul>${r.findings.map(f => `<li>${mdInline(f)}</li>`).join('')}</ul>
+      <h3>By sector</h3><table><tbody>${r.sectors.map(s => `<tr><td style="width:30%"><b>${esc(s.group)}</b></td><td style="text-align:left">${mdInline(s.note)}</td></tr>`).join('')}</tbody></table>
       <h3>Sites to investigate</h3><table><thead><tr><th>Site</th><th style="text-align:left">Owner</th><th style="text-align:left">Why</th></tr></thead>
-      <tbody>${r.sites_to_investigate.map(s => `<tr><td>${esc(s.name)}</td><td style="text-align:left">${esc(s.owner)}</td><td style="text-align:left">${esc(s.why)}</td></tr>`).join('')}</tbody></table>
-      <h3>Next steps</h3><ol>${r.next_steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
-      <div class="callout"><b>Caveats.</b> ${r.caveats.map(esc).join(' ')}</div>
+      <tbody>${r.sites_to_investigate.map(s => `<tr><td>${esc(s.name)}</td><td style="text-align:left">${esc(s.owner)}</td><td style="text-align:left">${mdInline(s.why)}</td></tr>`).join('')}</tbody></table>
+      <h3>Next steps</h3><ol>${r.next_steps.map(s => `<li>${mdInline(s)}</li>`).join('')}</ol>
+      <div class="callout"><b>Caveats.</b> ${r.caveats.map(mdInline).join(' ')}</div>
       <h3>Sources</h3><ul class="sources">
         ${d.declared_source ? `<li><span>${esc(d.declared_source)} inventory via Climate Watch</span><span>${d.inventory_year}</span></li>` : ''}
         <li><span>Climate TRACE country and asset estimates</span><span>climatetrace.org</span></li>
@@ -788,7 +793,8 @@ async function shareCard({title, kicker, aLabel, a, bLabel, b, verdict, source})
   g.fillText('A gap is a lead to investigate, not proof of misreporting.', x0, 648);
   const blob = await new Promise(r => cv.toBlob(r, 'image/png'));
   const link = Object.assign(document.createElement('a'), {href: URL.createObjectURL(blob), download: `carbon-gap-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`});
-  link.click(); toast('Image saved, ready to post');
+  if (!window.__noDownload) { link.click(); toast('Image saved, ready to post'); }
+  return link.href;
 }
 
 /* ---------- agent swarm: several research agents in parallel, visible on the globe ---------- */

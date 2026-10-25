@@ -122,8 +122,10 @@ class SwarmIn(BaseModel):
 @app.post("/api/swarm")
 async def run_swarm(body: SwarmIn):
     """Launch research agents in parallel on the largest emitters that still have no declaration."""
-    todo = sorted((c for c in data.undeclared().values() if c["iso3"] not in data.findings()),
-                  key=lambda c: -(c["observed_latest"] or {}).get("total", 0))[:max(1, min(12, body.count))]
+    found = data.findings()
+    # never-researched countries first, then retry past failures; largest emitters first
+    todo = sorted(data.undeclared().values(),
+                  key=lambda c: (c["iso3"] in found, -(c["observed_latest"] or {}).get("total", 0)))[:max(1, min(12, body.count))]
 
     async def events():
         yield f"data: {json.dumps({'type': 'agents', 'agents': [{'id': c['iso3'], 'name': c['name']} for c in todo]})}\n\n"

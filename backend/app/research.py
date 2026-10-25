@@ -203,6 +203,13 @@ async def research(iso3: str) -> AsyncIterator[dict]:
         if ok:
             yield {"type": "step", "text": f"Found {x['total_mt']:,.0f} Mt for {x['year']}. Fetching Climate TRACE for the same year"}
             observed = await _observed(http, iso3, x["year"])
+            if not observed or not data.plausible(x["total_mt"], observed["total"]):
+                finding["notes"] = f"Rejected as implausible: {x['total_mt']:,.1f} Mt declared vs {(observed or {}).get('total', 0):,.1f} Mt observed (unit or scope error)."
+                yield {"type": "step", "text": "Figure rejected as implausible (unit or scope error)"}
+                await asyncio.to_thread(store.save, finding)
+                data.invalidate()
+                yield {"type": "result", "finding": finding}
+                return
             finding.update(status="found", year=x["year"], total_mt=x["total_mt"], energy_mt=x["energy_mt"],
                            agriculture_mt=x["agriculture_mt"], waste_mt=x["waste_mt"], observed=observed,
                            document=x["document"], source_url=x["source_url"], source_title=titles[x["source_url"]],

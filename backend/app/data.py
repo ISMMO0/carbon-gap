@@ -141,6 +141,12 @@ def market() -> dict:
     return json.loads(path.read_text()) if path.exists() else {"year": None, "countries": {}}
 
 
+def plausible(declared: float, observed: float) -> bool:
+    """A declared total far outside the observed one is almost always a unit or scope error (kt read as Mt, a
+    territory given its mother country's total). Real gaps stay well inside these bounds."""
+    return observed > 0 and observed / 4 <= declared <= observed * 2.5
+
+
 def compared() -> dict:
     """Countries with a declaration: Climate Watch inventories, replaced by a newer one found by an agent, plus
     countries whose only declaration was found by an agent."""
@@ -149,6 +155,8 @@ def compared() -> dict:
         if f.get("status") != "found" or not f.get("observed"):
             continue
         base = load()["undeclared"].get(iso) or load()["countries"].get(iso)
+        if not plausible(f["total_mt"], f["observed"]["total"]):
+            continue
         if base and (iso not in out or (f.get("year") or 0) > out[iso]["year"]):
             out[iso] = _from_finding(base, f)
     return out
@@ -173,6 +181,9 @@ def summary(c: dict) -> dict:
                 "groups": {k: {"declared": c["declared"][k], "observed": c["observed"][k]} for k in GROUP_LABELS},
                 "sectors": c["observed_sectors"], "observed_latest": c["observed_latest"], "agent": c.get("agent")}
     f = findings().get(c["iso3"])
+    if f and f["status"] == "found":  # found, but rejected as implausible by compared()
+        f = {**f, "status": "implausible", "notes": f"Agent figure {f['total_mt']:,.1f} Mt rejected: far from the "
+             f"observed total, likely a unit or scope error."}
     return {"research": {"status": f["status"], "notes": f.get("notes"), "updated_at": f.get("updated_at")} if f else None,
             "iso3": c["iso3"], "numeric": c["numeric"], "name": c["name"], "declared": None,
             "observed_latest": c["observed_latest"], "sectors": c["observed_sectors"]}
