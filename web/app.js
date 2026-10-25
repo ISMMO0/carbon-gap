@@ -798,18 +798,20 @@ async function shareCard({title, kicker, aLabel, a, bLabel, b, verdict, source})
 }
 
 /* ---------- agent swarm: several research agents in parallel, visible on the globe ---------- */
-let swarmAgents = [], swarming = false;
+let swarmAgents = [], swarming = false, swarmClosed = false;
 function renderSwarm(note = '') {
-  const el = $('#swarm'); el.hidden = false;
+  const el = $('#swarm');
+  if (swarmClosed) return;  // the user closed the panel: agents keep running, the map keeps updating
+  el.hidden = false;
   const found = swarmAgents.filter(a => a.status === 'found').length, done = swarmAgents.filter(a => ['found', 'not_found', 'error'].includes(a.status)).length;
   el.innerHTML = `<button class="sat-close" id="swarm-close" aria-label="Close"><i data-lucide="x" class="icon"></i></button>
     <h4>Research agents</h4><p class="lede">${note || `${done}/${swarmAgents.length} done · ${found} declaration${found === 1 ? '' : 's'} found`}</p>
     ${swarmAgents.map(a => `<div class="agent ${a.status}"><i class="d"></i><b>${esc(a.name)}</b><small class="t">${esc(a.text)}</small></div>`).join('')}`;
-  icons(); $('#swarm-close').onclick = () => { el.hidden = true; if (!swarming) { swarmAgents = []; draw(); } };
+  icons(); $('#swarm-close').onclick = () => { el.hidden = true; swarmClosed = true; if (!swarming) { swarmAgents = []; draw(); } };
 }
 async function launchSwarm(count = 6) {
   if (swarming) return toast('Agents are already running');
-  swarming = true; $('#hero').hidden = $('#sat').hidden = true;
+  swarming = true; swarmClosed = false; $('#hero').hidden = $('#sat').hidden = true;
   if (state.view !== 'gap') await setView('gap', null);
   swarmAgents = []; renderSwarm('Choosing the largest emitters without a declaration…');
   try {
