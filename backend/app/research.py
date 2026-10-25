@@ -14,7 +14,7 @@ import httpx
 from . import data, llm, store
 
 KEENABLE = "https://api.keenable.ai/v1"
-EXTRACT_MODEL = "gpt-5.5"
+EXTRACT_MODEL = llm.MODEL
 PAGE_CHARS = 14000
 MIN_YEAR = 2015
 

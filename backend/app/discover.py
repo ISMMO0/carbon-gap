@@ -16,7 +16,7 @@ import httpx
 
 from . import data, llm, research, store
 
-MODEL = "gpt-5.5"
+MODEL = llm.MODEL
 YEARS = [2023, 2024]
 CT_SECTORS = ["power", "manufacturing", "fossil-fuel-operations", "mineral-extraction"]
 

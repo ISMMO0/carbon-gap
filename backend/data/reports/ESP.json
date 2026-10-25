@@ -1,0 +1,279 @@
+{
+ "headline": "Spain’s 2022 emissions gap is 34.8 MtCO2e and merits sector-by-sector scrutiny.",
+ "summary": "Spain’s inventory-year gap is 34.8 MtCO2e, or 11.8%, between declared emissions of 293.8 MtCO2e and observed emissions of 328.6 MtCO2e. At the user-supplied carbon price, that gap is worth about EUR 2.50 billion. Recent context matters: Spain’s power system had record renewable output in 2024, with renewables supplying about 56.8% of electricity, while fossil generation still remained material through gas and other thermal technologies. ([miteco.gob.es](https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/temas/sistema-espanol-de-inventario-sei-/inventario-gases-efecto-invernadero.html?utm_source=openai))\n\nThe gap is a lead, not proof of misreporting. Plausible methodological causes include different boundary choices across inventories, delayed or revised activity data, sector allocation differences, treatment of fugitive emissions and fluorinated gases, and the fact that national inventories are periodically recalculated as methodologies improve. Spain’s official inventory page says the 2026 edition covers 1990–2024 and that later editions restate emissions to keep the time series coherent. ([miteco.gob.es](https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/temas/sistema-espanol-de-inventario-sei-/inventario-gases-efecto-invernadero.html?utm_source=openai))",
+ "findings": [
+  "The biggest observed emissions concentrations are transport, energy and industry, and agriculture; those three sectors dominate where the gap should be probed first.",
+  "Power and industrial combustion are especially relevant because Spain’s 2024 electricity mix still included combined cycle gas at a meaningful share even as renewables set records.",
+  "Large point sources in steel, refining, and power generation are likely to explain a substantial share of any inventory mismatch, especially if coverage or emission factors differ.",
+  "The latest official context suggests continuing methodological updates in Spain’s inventory process, so the gap may reflect revisions, timing, or sector mapping rather than a single error."
+ ],
+ "sectors": [
+  {
+   "group": "Energy & industry",
+   "note": "Observed at 270.056 MtCO2e. This is the core comparison zone for power, refineries, steel, and other combustion-heavy sources; Spain’s 2024 electricity mix still had significant gas-fired generation even with renewables at record highs. ([ree.es](https://www.ree.es/en/node/17159?utm_source=openai))"
+  },
+  {
+   "group": "Agriculture",
+   "note": "Observed at 37.6 MtCO2e. Differences here often come from livestock, fertilizer, manure management, and emission-factor assumptions, especially when inventories rely on updated agronomic data."
+  },
+  {
+   "group": "Waste",
+   "note": "Observed at 20.926 MtCO2e. Waste emissions can move with landfill gas capture assumptions, oxidation factors, and treatment of wastewater or waste-to-energy pathways."
+  }
+ ],
+ "sites_to_investigate": [
+  {
+   "name": "Aboño power station",
+   "owner": "EDP España SA",
+   "why": "High-confidence point source in the power sector. Useful for checking whether combustion data, operating hours, or emission factors align with the national inventory’s power totals."
+  },
+  {
+   "name": "ArcelorMittal Asturias (Aviles) steel plant",
+   "owner": "ArcelorMittal España SA",
+   "why": "Largest observed site in the dataset and a major industrial combustion source. Steel plants are a common place to test boundary differences, especially between process and energy emissions."
+  },
+  {
+   "name": "Repsol Cartagena Refinery",
+   "owner": "REPSOL",
+   "why": "Refining is a high-emitting subsector with complex fuel balances and flaring. Repsol also says it operates five refineries in Spain, so refinery-level reconciliation matters. ([repsol.com](https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/rif/2026/rif19022026-2025-group-annual-financial-report.pdf?utm_source=openai))"
+  },
+  {
+   "name": "CEPSA Gibraltar-San Roque Refinery",
+   "owner": "Cepsa",
+   "why": "Another major refinery where flaring, hydrogen use, and fuel-switching can create differences between observed facility data and inventory classification."
+  },
+  {
+   "name": "San Ciprián Alumina Refinery",
+   "owner": "Alcoa Corp",
+   "why": "A large industrial site outside the usual power-refinery focus. It helps test whether industrial process emissions and site ownership are consistently captured."
+  }
+ ],
+ "next_steps": [
+  "Request the underlying activity data and emission factors behind Spain’s 2022 inventory totals, especially for power, refining, steel, agriculture, and waste.",
+  "Cross-check facility-level emissions against EU ETS and plant permit records for the largest sources, then compare them with the national inventory allocation.",
+  "Ask whether the gap changes after the latest inventory recalculation cycle, since Spain’s official inventory is regularly updated and restated."
+ ],
+ "caveats": [
+  "This dossier uses the supplied numbers as the sole quantitative basis; no independent recalculation was performed.",
+  "A national gap does not by itself imply underreporting; it may reflect timing, revisions, category mapping, or methodology differences between observed and declared datasets.",
+  "Observed site rankings are not a complete national source list; they are a targeted shortlist for follow-up, not proof of where the entire gap sits."
+ ],
+ "briefing": "Spain shows a 34.8 MtCO2e emissions gap in 2022, equal to 11.8% of declared emissions. The gap is most plausibly investigated in energy, industry, agriculture, and waste, not treated as proof of misreporting. Recent context matters because Spain’s power sector had record renewable output in 2024, yet gas and industrial combustion still remained significant. The best leads are the largest point sources: a power station, a steel plant, and several refineries. Journalists and NGOs should compare facility records, inventory methods, and recalculation notes before drawing conclusions. ([miteco.gob.es](https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/temas/sistema-espanol-de-inventario-sei-/inventario-gases-efecto-invernadero.html?utm_source=openai))",
+ "sources": [
+  {
+   "title": "Inventario Nacional de Gases de Efecto Invernadero (GEI)",
+   "url": "https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/temas/sistema-espanol-de-inventario-sei-/inventario-gases-efecto-invernadero.html?utm_source=openai"
+  },
+  {
+   "title": "Inventario Nacional de Gases de Efecto Invernadero (GEI)",
+   "url": "https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/temas/sistema-espanol-de-inventario-sei-/inventario-gases-efecto-invernadero.html?utm_source=openai"
+  },
+  {
+   "title": "Clone of Electricity generation from renewable energies in Spain grows by 10.3% in 2024, reaching record levels | Red Eléctrica",
+   "url": "https://www.ree.es/en/node/17159?utm_source=openai"
+  },
+  {
+   "title": "1 2 3 4 5 6 7 A.",
+   "url": "https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/rif/2026/rif19022026-2025-group-annual-financial-report.pdf?utm_source=openai"
+  },
+  {
+   "title": "Inventario Nacional de Gases de Efecto Invernadero (GEI)",
+   "url": "https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/temas/sistema-espanol-de-inventario-sei-/inventario-gases-efecto-invernadero.html?utm_source=openai"
+  }
+ ],
+ "data": {
+  "country": "Spain",
+  "iso3": "ESP",
+  "inventory_year": 2022,
+  "declared_source": "Found by agent: Country profile_template_2023CAPR.xlsx / Spain 2023 factsheet",
+  "declared_Mt": 293.8,
+  "observed_Mt": 328.6,
+  "gap_Mt": 34.8,
+  "gap_pct": 11.8,
+  "gap_value_eur": 2504304000,
+  "carbon_price_eur_per_t": 72.0,
+  "by_group": {
+   "Energy & industry": {
+    "declared": null,
+    "observed": 270.056
+   },
+   "Agriculture": {
+    "declared": null,
+    "observed": 37.6
+   },
+   "Waste": {
+    "declared": null,
+    "observed": 20.926
+   }
+  },
+  "observed_by_sector_Mt": {
+   "power": 50.268,
+   "waste": 20.926,
+   "buildings": 32.454,
+   "agriculture": 37.6,
+   "manufacturing": 47.16,
+   "transportation": 116.135,
+   "fluorinated-gases": 5.219,
+   "mineral-extraction": 0.78,
+   "fossil-fuel-operations": 18.041
+  },
+  "observed_latest": {
+   "year": 2024,
+   "total": 313.993
+  },
+  "declaration_found_by_research_agent": {
+   "document": "Country profile_template_2023CAPR.xlsx / Spain 2023 factsheet",
+   "source_url": "https://climate.ec.europa.eu/document/download/c9c92d31-1ffa-4639-8e78-cd4dc64e6b86_en?filename=es_2023_factsheet_en.pdf",
+   "quote": "In 2022, GHG emissions in Spain were 293.8 MtCO2-eq, 1.7% higher compared to 2021.",
+   "confidence": "medium",
+   "verified": false
+  },
+  "climate_policy": {
+   "ndc_target": "EU joint NDC: at least -55% net GHG by 2030 vs 1990, plus an indicative 2035 contribution of -66.25% to -72.5% vs 1990 in the latest 2025 EU NDC.",
+   "net_zero_year": 2050,
+   "net_zero_status": "in law",
+   "carbon_pricing": [
+    {
+     "name": "EU ETS 1 (stationary installations, aviation, maritime; applies in Spain)",
+     "type": "ETS",
+     "price": "EUR 78.93/tCO2e average allowance price, Apr-Sep 2026 (European Commission Article 29a indicator)"
+    },
+    {
+     "name": "Spanish tax on fluorinated greenhouse gases",
+     "type": "tax",
+     "price": "EUR 15/tCO2e formula rate (0.015 × GWP per kg; cap EUR 100/kg), 2026"
+    },
+    {
+     "name": "Spanish coal tax (Impuesto sobre el Carbón)",
+     "type": "tax",
+     "price": "EUR 0.15/GJ for professional uses except power/cogeneration; EUR 0.65/GJ for other uses, 2026"
+    }
+   ],
+   "paris_status": "Party; Spain ratified the Paris Agreement on 12 Jan 2017.",
+   "latest_un_report": "BTR1, submitted 7 Nov 2024; latest UNFCCC reporting entries also show 2026 NID/CRT inventory submissions on 14 Apr 2026."
+  }
+ },
+ "sites": [
+  {
+   "id": "1566806",
+   "name": "ArcelorMittal Asturias (Aviles) steel plant",
+   "owner": "ArcelorMittal España SA",
+   "kind": "steel",
+   "sector": "iron-and-steel",
+   "type": "BOF",
+   "observed": 4.105,
+   "confidence": "low",
+   "coord": [
+    -5.86134945319113,
+    43.5494928625859
+   ],
+   "year": 2024
+  },
+  {
+   "id": "38480924",
+   "name": "Frinsa del Noroeste S.A.",
+   "owner": null,
+   "kind": "other",
+   "sector": "food-beverage-tobacco",
+   "type": "other_food_manufacturing",
+   "observed": 3.121,
+   "confidence": "very low",
+   "coord": [
+    -8.997258,
+    42.577494
+   ],
+   "year": 2024
+  },
+  {
+   "id": "25451019",
+   "name": "Aboño power station",
+   "owner": "EDP España SA",
+   "kind": "power",
+   "sector": "electricity-generation",
+   "type": "coal",
+   "observed": 2.648,
+   "confidence": "high",
+   "coord": [
+    -5.7219,
+    43.5536
+   ],
+   "year": 2024
+  },
+  {
+   "id": "3144122",
+   "name": "Repsol Cartagena Refinery",
+   "owner": "REPSOL",
+   "kind": "oil",
+   "sector": "oil-and-gas-refining",
+   "type": "Deep Conversion",
+   "observed": 2.567,
+   "confidence": "low",
+   "coord": [
+    -0.918588,
+    37.572135
+   ],
+   "year": 2024
+  },
+  {
+   "id": "3144116",
+   "name": "Repsol Bilbao Refinery",
+   "owner": "Repsol",
+   "kind": "oil",
+   "sector": "oil-and-gas-refining",
+   "type": "Deep Conversion",
+   "observed": 2.567,
+   "confidence": "low",
+   "coord": [
+    -3.106611,
+    43.325857
+   ],
+   "year": 2024
+  },
+  {
+   "id": "3144121",
+   "name": "CEPSA La Rabida Refinery",
+   "owner": "Cepsa",
+   "kind": "oil",
+   "sector": "oil-and-gas-refining",
+   "type": "Deep Conversion",
+   "observed": 2.217,
+   "confidence": "low",
+   "coord": [
+    -6.90394,
+    37.18408
+   ],
+   "year": 2024
+  },
+  {
+   "id": "1753783",
+   "name": "CEPSA Gibraltar-San Roque Refinery",
+   "owner": "Cepsa",
+   "kind": "oil",
+   "sector": "oil-and-gas-refining",
+   "type": "Medium Conversion",
+   "observed": 2.211,
+   "confidence": "low",
+   "coord": [
+    -5.39725,
+    36.18569
+   ],
+   "year": 2024
+  },
+  {
+   "id": "3144117",
+   "name": "Repsol Tarragona Refinery",
+   "owner": "Repsol",
+   "kind": "oil",
+   "sector": "oil-and-gas-refining",
+   "type": "Deep Conversion",
+   "observed": 2.17,
+   "confidence": "low",
+   "coord": [
+    1.222034,
+    41.173629
+   ],
+   "year": 2024
+  }
+ ],
+ "iso3": "ESP"
+}

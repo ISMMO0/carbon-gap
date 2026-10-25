@@ -119,6 +119,8 @@ We used the OpenAI platform for every intelligent part of the product.
 | Spoken report briefings | **Text-to-speech** | `gpt-4o-mini-tts` |
 | Voice input | **Speech-to-text** | `gpt-4o-transcribe` |
 
+The model is one setting (`OPENAI_MODEL`): the dataset was researched with `gpt-5.5`; the public demo runs on `gpt-5.4-mini` to keep live usage affordable, with the same tools and structured outputs.
+
 Agents run in parallel (`asyncio`), with automatic retries on rate limits. Also used: **Keenable** (web search and page reading for agents), **ElevenLabs** (spoken answers in voice mode, film voiceover), **Postgres on Aiven** (agent results).
 
 ### Guardrails against invented numbers

@@ -9,9 +9,9 @@ from collections.abc import Iterator
 
 from openai import OpenAI
 
-from . import data
+from . import data, llm
 
-MODEL = "gpt-5.5"
+MODEL = llm.MODEL
 # Created even without a key so the app and its data views start; AI features then report a clear error.
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY") or "missing-key")
 

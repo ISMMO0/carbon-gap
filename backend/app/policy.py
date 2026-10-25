@@ -5,7 +5,7 @@ import json
 
 from . import data, llm, store
 
-MODEL = "gpt-5.5"
+MODEL = llm.MODEL
 
 SCHEMA = {
     "type": "object", "additionalProperties": False,

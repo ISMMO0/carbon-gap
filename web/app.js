@@ -330,7 +330,7 @@ function policyBlock(p) {
       <tr><td>Latest UN report</td><td style="text-align:left">${esc(p.latest_un_report)}</td></tr>
     </tbody></table>
     ${p.notes ? `<p class="lede" style="margin-top:8px">${esc(p.notes)}</p>` : ''}
-    ${p.sources?.length ? `<p class="lede" style="margin-top:6px;font-size:12.5px">Sources: ${p.sources.slice(0, 3).map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">${i + 1}</a>`).join(' · ')} · researched with GPT-5.5 web search</p>` : ''}</div>`;
+    ${p.sources?.length ? `<p class="lede" style="margin-top:6px;font-size:12.5px">Sources: ${p.sources.slice(0, 3).map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">${i + 1}</a>`).join(' · ')} · researched with OpenAI web search</p>` : ''}</div>`;
 }
 function groupsBlock(c) {
   const rows = Object.entries(c.groups).filter(([, g]) => g.declared != null);
@@ -656,7 +656,7 @@ async function openReport(iso) {
         ${d.declared_source ? `<li><span>${esc(d.declared_source)} inventory via Climate Watch</span><span>${d.inventory_year}</span></li>` : ''}
         <li><span>Climate TRACE country and asset estimates</span><span>climatetrace.org</span></li>
         ${(r.sources || []).map(s => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a><span>web</span></li>`).join('')}</ul>
-      <p style="margin-top:12px;font-size:13px;color:var(--ink-3)">Written by GPT-5.5 from the data above, with web search for context. Check figures against the sources before publishing.</p>
+      <p style="margin-top:12px;font-size:13px;color:var(--ink-3)">Written by ${esc(META.model || 'GPT')} from the data above, with web search for context. Check figures against the sources before publishing.</p>
     </article>`;
   icons();
   $('#rclose').onclick = closeReport; $('#rprint').onclick = () => window.print();
@@ -900,6 +900,10 @@ Promise.all([
   fetch('/api/companies').then(r => r.ok ? r.json() : {companies: []}).catch(() => ({companies: []})),
 ]).then(([topo, api, market, companies]) => {
   META = api; MARKET = market; COMPANIES = companies.companies;
+  fetch('/api/health').then(r => r.json()).then(h => {
+    META.model = h.model ? h.model.replace(/^gpt/, 'GPT') : 'GPT';
+    $('#model-label').textContent = `${META.model} · moves the map`;
+  }).catch(() => {});
   for (const c of api.countries) { byIso.set(c.iso3, c); byNum.set(c.numeric, c); }
   features = topojson.feature(topo, topo.objects.countries).features.filter(f => f.properties.name !== 'Antarctica');
   $('#stage-msg').remove();

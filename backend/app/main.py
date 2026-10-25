@@ -34,7 +34,7 @@ async def no_stale_frontend(request, call_next):
 
 @app.get("/api/health")
 def health():
-    return {"ok": True, "public_demo": limits.ENABLED, "openai": bool(os.getenv("OPENAI_API_KEY")), "countries": len(data.compared()),
+    return {"ok": True, "public_demo": limits.ENABLED, "model": agent.MODEL, "openai": bool(os.getenv("OPENAI_API_KEY")), "countries": len(data.compared()),
             "store": store.backend(), "findings": len(data.findings())}
 
 
