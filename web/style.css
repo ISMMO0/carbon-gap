@@ -36,28 +36,10 @@ button,input,select{font:inherit;color:inherit}
 
 .main{display:grid;grid-template-columns:minmax(0,1fr) 420px;min-height:0}
 
-/* ---------- left rail ---------- */
-.rail{background:var(--sheet);border-right:1px solid var(--rule);overflow:auto;padding:16px 16px 24px}
-.rail h2,.sheet h3,.report h3{font:600 13px/1.2 var(--cond);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin:0 0 8px}
-.rail section+section{margin-top:22px}
 .seg{display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--rule-2);border-radius:var(--r);overflow:hidden}
 .seg button{border:0;background:var(--sheet);padding:7px 0;font-weight:500;font-size:14px;cursor:pointer}
 .seg button+button{border-left:1px solid var(--rule-2)}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
-.field{display:flex;flex-direction:column;gap:6px}
-.field select{height:34px;border:1px solid var(--rule-2);border-radius:var(--r);background:var(--sheet);padding:0 8px}
-.sector{display:flex;align-items:center;gap:10px;padding:6px 6px;margin:0 -6px;border-radius:var(--r);cursor:pointer}
-.sector:hover{background:var(--sheet-2)}
-.sector input{position:absolute;opacity:0;pointer-events:none}
-.sector .sw{width:18px;height:14px;border:1px solid var(--ink);flex:none}
-.sector .name{flex:1}
-.sector .chk{width:16px;height:16px;border:1.5px solid var(--ink-2);border-radius:3px;display:grid;place-items:center;flex:none}
-.sector input:checked~.chk{background:var(--ink);border-color:var(--ink)}
-.sector input:checked~.chk::after{content:"";width:8px;height:4px;border:2px solid var(--sheet);border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
-.sector input:not(:checked)~.sw{opacity:.3}
-.sector input:not(:checked)~.name{color:var(--ink-3)}
-.sector input:focus-visible~.chk{outline:2px solid var(--blue);outline-offset:2px}
-.rail .note{font-size:13px;color:var(--ink-3);margin:8px 0 0}
 .keyrow{display:flex;align-items:center;gap:10px;font-size:14px;margin-top:6px}
 .keyrow .sw{width:18px;height:14px;border:1px solid var(--ink);flex:none}
 
@@ -198,7 +180,6 @@ td .secdot{display:inline-block;width:9px;height:9px;border:1px solid var(--ink)
   body{overflow:auto}
   .app{height:auto;min-height:100vh}
   .main{grid-template-columns:1fr}
-  .rail{border-right:0;border-bottom:1px solid var(--rule)}
   .stage{height:78vh}
   .sheet{border-left:0;overflow:visible}
   .tabs,.bar-search{display:none}
@@ -313,3 +294,5 @@ th button{white-space:nowrap}
 .ring.not_found,.ring.error{stroke:var(--ink-3);animation:none;opacity:.5}
 .ring.queued{animation:none;opacity:.35}
 @keyframes ring{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.8);opacity:0}}
+.sheet h3,.report h3{font:600 13px/1.2 var(--cond);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin:0 0 8px}
+.actions .btn.icon-only{flex:0 0 36px}

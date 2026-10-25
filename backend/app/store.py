@@ -8,6 +8,14 @@ from pathlib import Path
 
 DATA = Path(__file__).resolve().parents[1] / "data"
 FALLBACK = DATA / "findings.json"
+SNAPSHOT = DATA / "snapshot.json"  # committed copy of the agents' results, used when Postgres is not configured
+
+
+def _snapshot(key: str) -> dict:
+    try:
+        return json.loads(SNAPSHOT.read_text()).get(key, {})
+    except (OSError, ValueError):
+        return {}
 
 SCHEMA = """
 create table if not exists findings (
@@ -114,7 +122,7 @@ def all_findings() -> dict[str, dict]:
         except Exception:
             pass
     with _lock:
-        return _read_file()
+        return {**_snapshot("findings"), **_read_file()}
 
 
 def _read_file() -> dict:
@@ -159,7 +167,7 @@ def save_company(f: dict) -> None:
 
 
 def company_findings() -> dict[str, dict]:
-    local = json.loads(COMPANY_FALLBACK.read_text()) if COMPANY_FALLBACK.exists() else {}
+    local = {**_snapshot("company_findings"), **(json.loads(COMPANY_FALLBACK.read_text()) if COMPANY_FALLBACK.exists() else {})}
     if backend() == "postgres":
         from psycopg.rows import dict_row
         try:
@@ -189,7 +197,7 @@ def save_company_profile(profile: dict) -> None:
 
 
 def company_profiles() -> dict[str, dict]:
-    local = json.loads(PROFILE_FALLBACK.read_text()) if PROFILE_FALLBACK.exists() else {}
+    local = {**_snapshot("company_profiles"), **(json.loads(PROFILE_FALLBACK.read_text()) if PROFILE_FALLBACK.exists() else {})}
     if backend() == "postgres":
         try:
             with _pg() as c:

@@ -155,7 +155,9 @@ def chat(body: ChatIn):
             for ev in agent.chat(body.message, body.previous_response_id, {"selected": body.selected, "voice": body.voice}):
                 yield f"data: {json.dumps(ev)}\n\n"
         except Exception as e:  # surface a readable error to the UI
-            yield f"data: {json.dumps({'type': 'error', 'message': f'Analyst error: {type(e).__name__}'})}\n\n"
+            msg = ("The OpenAI API key is missing or invalid (backend/.env)." if type(e).__name__ == "AuthenticationError"
+                   else f"Analyst error: {type(e).__name__}. Try again.")
+            yield f"data: {json.dumps({'type': 'error', 'message': msg})}\n\n"
     return StreamingResponse(events(), media_type="text/event-stream")
 
 
