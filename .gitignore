@@ -19,3 +19,4 @@ backend/data/findings.json
 backend/data/raw/
 backend/data/company_findings.json
 backend/data/company_profiles.json
+backend/data/country_policies.json

@@ -292,6 +292,7 @@ function renderCountry(iso) {
       <div id="research"><button class="btn ghost" id="dores" style="margin-top:10px"><i data-lucide="search" class="icon"></i>${c.research ? 'Search again' : 'Find its latest declaration'}</button></div></div>`;
   }
   $('#sheet').innerHTML = head + body + `
+    ${policyBlock(c.policy)}
     <div class="block bars"><h3>Observed by sector</h3>${sectorBars(c.sectors)}</div>
     <div class="block"><h3>Largest observed sites</h3><div id="sites">${sitesBlock(c)}</div></div>
     <div class="block"><h3>Sources</h3><ul class="sources">
@@ -314,6 +315,20 @@ function renderCountry(iso) {
     source: `Sources: ${c.agent ? c.agent.document : c.source + ' inventory'}; Climate TRACE.`}));
   $('#askwhy').onclick = () => ask(isDeclared(c) ? `Why is ${c.name}'s gap ${c.gap >= 0 ? 'positive' : 'negative'}?` : `What drives ${c.name}'s emissions?`);
   bindSheet(); icons();
+}
+function policyBlock(p) {
+  if (!p) return '';
+  const nz = p.net_zero_year ? `${p.net_zero_year} <span class="sub" style="display:inline">(${esc(p.net_zero_status)})</span>` : 'No target';
+  return `<div class="block"><h3>Climate commitments</h3>
+    <table><tbody>
+      <tr><td style="width:38%">Target (NDC)</td><td style="text-align:left">${esc(p.ndc_target)}</td></tr>
+      <tr><td>Net zero</td><td style="text-align:left">${nz}</td></tr>
+      <tr><td>Carbon price</td><td style="text-align:left">${p.carbon_pricing.length ? p.carbon_pricing.map(x => `${esc(x.name)} <span class="sub" style="display:inline">${esc(x.type)} · ${esc(x.price)}</span>`).join('<br>') : 'None in force'}</td></tr>
+      <tr><td>Paris Agreement</td><td style="text-align:left">${esc(p.paris_status)}</td></tr>
+      <tr><td>Latest UN report</td><td style="text-align:left">${esc(p.latest_un_report)}</td></tr>
+    </tbody></table>
+    ${p.notes ? `<p class="lede" style="margin-top:8px">${esc(p.notes)}</p>` : ''}
+    ${p.sources?.length ? `<p class="lede" style="margin-top:6px;font-size:12.5px">Sources: ${p.sources.slice(0, 3).map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">${i + 1}</a>`).join(' · ')} · researched with GPT-5.5 web search</p>` : ''}</div>`;
 }
 function groupsBlock(c) {
   const rows = Object.entries(c.groups).filter(([, g]) => g.declared != null);

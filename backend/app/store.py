@@ -64,6 +64,14 @@ create table if not exists company_profiles (
 );
 """
 PROFILE_FALLBACK = DATA / "company_profiles.json"
+POLICY_SCHEMA = """
+create table if not exists country_policies (
+  iso3 text primary key,
+  data jsonb not null,
+  updated_at timestamptz not null default now()
+);
+"""
+POLICY_FALLBACK = DATA / "country_policies.json"
 
 COLS = ["iso3", "status", "year", "total_mt", "energy_mt", "agriculture_mt", "waste_mt", "observed", "document",
         "source_url", "source_title", "quote", "confidence", "notes", "verified", "updated_at"]
@@ -86,6 +94,7 @@ def backend() -> str:
                 c.execute(SCHEMA)
                 c.execute(COMPANY_SCHEMA)
                 c.execute(PROFILE_SCHEMA)
+                c.execute(POLICY_SCHEMA)
             _pg_ok = True
         except Exception:
             _pg_ok = False
@@ -202,6 +211,34 @@ def company_profiles() -> dict[str, dict]:
         try:
             with _pg() as c:
                 rows = c.execute("select id, data from company_profiles").fetchall()
+            return {**local, **{i: d for i, d in rows}}
+        except Exception:
+            pass
+    return local
+
+
+def save_policy(profile: dict) -> None:
+    if backend() == "postgres":
+        from psycopg.types.json import Jsonb
+        try:
+            with _pg() as c:
+                c.execute("insert into country_policies (iso3, data) values (%s, %s) on conflict (iso3) do update "
+                          "set data = excluded.data, updated_at = now()", [profile["iso3"], Jsonb(profile)])
+            return
+        except Exception:
+            pass
+    with _lock:
+        rows = json.loads(POLICY_FALLBACK.read_text()) if POLICY_FALLBACK.exists() else {}
+        rows[profile["iso3"]] = profile
+        POLICY_FALLBACK.write_text(json.dumps(rows, ensure_ascii=False))
+
+
+def policies() -> dict[str, dict]:
+    local = {**_snapshot("country_policies"), **(json.loads(POLICY_FALLBACK.read_text()) if POLICY_FALLBACK.exists() else {})}
+    if backend() == "postgres":
+        try:
+            with _pg() as c:
+                rows = c.execute("select iso3, data from country_policies").fetchall()
             return {**local, **{i: d for i, d in rows}}
         except Exception:
             pass

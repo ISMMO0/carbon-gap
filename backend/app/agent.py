@@ -116,6 +116,15 @@ def _iso(name: str) -> str | None:
 
 
 def _country_payload(c: dict) -> dict:
+    out = _country_core(c)
+    pol = data.policies().get(c["iso3"])
+    if pol:
+        out["climate_policy"] = {k: pol[k] for k in ("ndc_target", "net_zero_year", "net_zero_status", "carbon_pricing",
+                                                    "paris_status", "latest_un_report")}
+    return out
+
+
+def _country_core(c: dict) -> dict:
     s = data.summary(c)
     if s.get("declared") is None:
         return {"country": c["name"], "iso3": c["iso3"], "note": "No UN inventory since 2015: observed only.",

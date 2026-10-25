@@ -51,6 +51,22 @@ def findings() -> dict:
     return _findings
 
 
+_policies: dict | None = None
+_policies_at = 0.0
+
+
+def policies() -> dict:
+    """Climate policy profiles (NDC, net zero, carbon pricing), cached for a few seconds."""
+    global _policies, _policies_at
+    if _policies is None or time.monotonic() - _policies_at > 15:
+        try:
+            _policies = store.policies()
+        except Exception:
+            _policies = _policies or {}
+        _policies_at = time.monotonic()
+    return _policies
+
+
 def _from_finding(base: dict, f: dict) -> dict:
     o = f["observed"]
     return {"iso3": base["iso3"], "numeric": base["numeric"], "name": base["name"], "year": f["year"],
@@ -126,10 +142,14 @@ def market() -> dict:
 
 
 def compared() -> dict:
+    """Countries with a declaration: Climate Watch inventories, replaced by a newer one found by an agent, plus
+    countries whose only declaration was found by an agent."""
     out = dict(load()["countries"])
     for iso, f in findings().items():
-        base = load()["undeclared"].get(iso)
-        if base and f.get("status") == "found" and f.get("observed"):
+        if f.get("status") != "found" or not f.get("observed"):
+            continue
+        base = load()["undeclared"].get(iso) or load()["countries"].get(iso)
+        if base and (iso not in out or (f.get("year") or 0) > out[iso]["year"]):
             out[iso] = _from_finding(base, f)
     return out
 
@@ -159,7 +179,8 @@ def summary(c: dict) -> dict:
 
 
 def all_countries() -> list[dict]:
-    return [summary(c) for c in (*compared().values(), *undeclared().values())]
+    pol = policies()
+    return [{**summary(c), "policy": pol.get(c["iso3"])} for c in (*compared().values(), *undeclared().values())]
 
 
 def find(query: str) -> dict | None:

@@ -10,9 +10,8 @@ import re
 from collections.abc import AsyncIterator
 
 import httpx
-from openai import AsyncOpenAI
 
-from . import data, store
+from . import data, llm, store
 
 KEENABLE = "https://api.keenable.ai/v1"
 EXTRACT_MODEL = "gpt-5.5"
@@ -121,7 +120,7 @@ async def _read_sources(http: httpx.AsyncClient, queries: list[str], prefer: tup
 
 async def _extract(prompt: str, name: str, schema: dict, texts: dict, titles: dict) -> dict:
     sources = "\n\n".join(f"[{i + 1}] {titles[u]}\nURL: {u}\n{t}" for i, (u, t) in enumerate(texts.items()))
-    resp = await AsyncOpenAI().responses.create(
+    resp = await llm.respond(
         model=EXTRACT_MODEL, reasoning={"effort": "low"}, input=prompt.format(sources=sources),
         text={"format": {"type": "json_schema", "name": name, "strict": True, "schema": schema}})
     return json.loads(resp.output_text)
@@ -134,7 +133,7 @@ number. If you cannot find a figure that satisfies every rule, set found=false. 
 
 async def _web_pass(http: httpx.AsyncClient, task: str, name: str, schema: dict) -> tuple[dict, dict, dict]:
     """Second pass with OpenAI's own web search. The quote is then checked against the page itself (read via Keenable)."""
-    resp = await AsyncOpenAI().responses.create(
+    resp = await llm.respond(
         model=EXTRACT_MODEL, reasoning={"effort": "low"}, tools=[{"type": "web_search"}],
         input=task + "\n\n" + WEB_RULES,
         text={"format": {"type": "json_schema", "name": name, "strict": True, "schema": schema}})

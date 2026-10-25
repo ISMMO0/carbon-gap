@@ -13,9 +13,8 @@ from collections import defaultdict
 from collections.abc import AsyncIterator
 
 import httpx
-from openai import AsyncOpenAI
 
-from . import data, research, store
+from . import data, llm, research, store
 
 MODEL = "gpt-5.5"
 YEARS = [2023, 2024]
@@ -44,7 +43,7 @@ def _norm(s: str) -> str:
 
 
 async def _profile(name: str) -> dict:
-    resp = await AsyncOpenAI().responses.create(
+    resp = await llm.respond(
         model=MODEL, reasoning={"effort": "low"}, tools=[{"type": "web_search"}],
         input=f"Profile the company '{name}' for an emissions investigation: its group name, the legal entities and "
               f"subsidiaries that own its plants, refineries, mines or mills, and the countries where its largest "
