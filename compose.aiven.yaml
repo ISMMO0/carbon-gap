@@ -1,0 +1,11 @@
+# Aiven App Runtime: create an application from this repo (branch main) and this compose file.
+# Import the environment variables from backend/.env.aiven (kept local, never committed), marked as secret.
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8010:8010"
+    environment:
+      PUBLIC_DEMO: "1"
