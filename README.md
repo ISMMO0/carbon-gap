@@ -8,7 +8,8 @@
 What countries and companies <b>declare</b> they emit, versus what independent data <b>observes</b>, priced at the cost of carbon.</p>
 
 <p align="center">
-  <a href="docs/media/carbon-gap-demo.mp4"><b>▶ Watch the 2:40 demo</b></a> ·
+  <a href="https://videotourl.com/videos/1794411574212-73555f94-95e0-4216-8ef0-1d82945b9ce7.mp4"><b>▶ Watch the demo video</b></a> ·
+  <a href="docs/media/carbon-gap-demo.mp4">2:40 feature film</a> ·
   Built for the <b>OpenAI Paris DevDay Community Hackathon</b> (24–25 Oct 2026) · Tracks: <b>Impact</b> (climate action) + <b>Build in public</b>
 </p>
 
